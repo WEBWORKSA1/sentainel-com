@@ -1,0 +1,289 @@
+---
+slug: ca-on-phipa-ai-scribe
+short_name: Ontario PHIPA + AI Scribe Guidance
+long_name: |
+  Personal Health Information Protection Act, 2004 (S.O. 2004,
+  c. 3, Sched. A), as supplemented by the Information and
+  Privacy Commissioner of Ontario's "AI Scribes: Key
+  Considerations for the Health Sector" guidance (January 28,
+  2026)
+citation: |
+  S.O. 2004, c. 3, Sched. A (PHIPA); O. Reg. 329/04 (general);
+  IPC "AI Scribes: Key Considerations for the Health Sector"
+  (Jan 28, 2026); CPSO "Advice to the Profession — Using
+  Artificial Intelligence in Clinical Practice" (Aug 2025)
+jurisdiction:
+  code: CA-ON
+  level: state_province
+  parent: CA-Federal
+status: in_force
+status_notes: |
+  PHIPA itself is in force since 2004 and has been amended
+  multiple times (most consequentially in 2020 and the 2024
+  amendments adding administrative monetary penalty regime).
+
+  The AI Scribe Guidance is IPC interpretive guidance, not
+  statute. However, IPC guidance under PHIPA functions as the
+  de facto enforcement standard — non-compliance with IPC
+  guidance creates significant risk of IPC order, AMP imposition,
+  and reputational exposure.
+
+  The CPSO "Advice to the Profession" on AI in Clinical Practice
+  (August 2025) layers professional-conduct obligations on top
+  of PHIPA for Ontario physicians using AI.
+
+  Administrative monetary penalties under PHIPA s. 61.1 came
+  into force January 1, 2024. The IPC has imposed AMPs in
+  multiple cases since (notably Decision 298).
+signed_date: 2004-05-20
+effective_date: 2004-11-01
+amp_effective_date: 2024-01-01
+ai_scribe_guidance_date: 2026-01-28
+cpso_advice_date: 2025-08-01
+sunset_date: null
+source_url: https://www.ipc.on.ca/en/media/5916/download?attachment=
+statute_url: https://www.ontario.ca/laws/statute/04p03
+companion_legislation:
+  - ca-on-bill-194-edsta
+  - ca-on-fippa
+  - ca-on-mfippa
+  - ca-on-human-rights-code
+  - ca-federal-pipeda
+  - us-federal-nist-ai-rmf
+summary: |
+  PHIPA governs the collection, use, and disclosure of personal
+  health information (PHI) by "health information custodians"
+  (HICs) in Ontario. The statute predates AI but applies to AI
+  systems by operation of its technology-neutral language:
+  custodians remain responsible for PHI in their custody or
+  control regardless of the processing tool used.
+
+  The IPC released "AI Scribes: Key Considerations for the
+  Health Sector" on January 28, 2026 as the first detailed
+  interpretive guidance on PHIPA compliance when using AI. The
+  guidance is structured around AI scribes (ambient transcription
+  tools that capture clinical conversations and generate
+  structured notes) but explicitly identifies its expectations
+  as a "regulatory baseline" for any clinical AI.
+
+  Eight operational obligations follow from PHIPA + the AI Scribe
+  Guidance:
+
+  1. AI GOVERNANCE COMMITTEE (PHIPA s. 10 + Guidance): establish
+     a dedicated committee anchored in PHIPA accountability with
+     authority to approve, pause, or decommission AI deployments.
+
+  2. PRIVACY IMPACT ASSESSMENT (PHIPA s. 10 + Guidance):
+     conduct PIA before deploying AI that handles PHI; update
+     PIA through lifecycle.
+
+  3. EXPRESS PATIENT CONSENT (PHIPA s. 18 + Guidance): obtain
+     informed express patient consent for AI scribe use,
+     including disclosure of recording, vendors, risks, and
+     opt-out availability.
+
+  4. DATA MINIMIZATION (PHIPA s. 30 + Guidance): collect, use,
+     and retain only the PHI necessary; scrutinize whether full
+     audio retention is necessary.
+
+  5. VENDOR DUE DILIGENCE + CONTRACTUAL SAFEGUARDS (PHIPA s. 6
+     definition of "agent" + Guidance): comprehensive vendor
+     assessment; contracts must include retention limits,
+     subcontractor controls, PHIPA breach notification
+     commitments, training-data prohibitions, and ongoing
+     performance monitoring.
+
+  6. PHIPA BREACH NOTIFICATION (O. Reg. 329/04 s. 12.1): 60-day
+     IPC notification clock from custodian awareness of a
+     privacy breach. Vendor delays do not pause the clock.
+
+  7. HUMAN OVERSIGHT + CLINICAL ACCOUNTABILITY (CPSO Advice +
+     Guidance): physicians retain ultimate clinical
+     accountability; verify every AI-generated note before
+     it enters the chart; documented use policy.
+
+  8. TRAINING + CONFIDENTIALITY AGREEMENTS (PHIPA s. 12 + s. 17
+     + Guidance): training and awareness programs before agents
+     access PHI through AI; confidentiality agreements
+     acknowledging AI-specific obligations.
+
+  Penalty regime: AMPs up to CAD $50K individual / $500K
+  organization under s. 61.1; criminal prosecution up to
+  $200K individual (with up to 1 year imprisonment) / $1M
+  organization under s. 72; civil action up to $10K mental
+  anguish under s. 65 for wilful/reckless misconduct.
+scope_description: |
+  PHIPA s. 3 "health information custodian" includes:
+  - Health care practitioners (regulated and unregulated)
+  - Hospitals, psychiatric facilities, independent health
+    facilities
+  - Long-term care homes
+  - Pharmacies
+  - Ambulance services
+  - Laboratories
+  - Specimen collection centres
+  - Community care access centres
+  - Boards of health
+  - The Minister and Ministry of Health
+  - The Ontario Health agency
+  - Such other persons as may be prescribed
+
+  Scope is broader than EDSTA: PHIPA reaches both public sector
+  HICs (hospitals, the Ministry) AND private sector HICs (solo
+  family physicians, private clinics, pharmacies). This is the
+  major distinction from EDSTA, FIPPA, and MFIPPA which apply
+  only to defined public bodies.
+
+  AI scribe applicability: any HIC using ambient AI transcription
+  or any AI system processing PHI is subject to the IPC
+  guidance and underlying PHIPA obligations. The guidance
+  explicitly extends from AI scribes to "any clinical AI."
+
+  CPSO Advice applies to all Ontario physicians regardless of
+  practice setting.
+extraterritorial_reach: false
+extraterritorial_notes: |
+  PHIPA applies to HICs located in Ontario and to PHI in their
+  custody or control regardless of where the data is processed.
+  Cross-border data flows (e.g., US-hosted AI scribe vendors)
+  require transfer impact assessment and contractual safeguards
+  matching Ontario standards.
+
+  Vendor flow-down: AI scribe vendors serving Ontario HICs are
+  effectively bound by PHIPA via contract even if not directly
+  subject. The IPC has signaled in multiple decisions that it
+  treats vendor non-compliance as custodian non-compliance.
+safe_harbor_via:
+  - us-federal-nist-ai-rmf       # IPC guidance explicitly references AI RMF
+  - eu-iso-iec-42001             # ISO 42001 alignment for AI governance
+safe_harbor_notes: |
+  PHIPA does not contain a statutory affirmative defense for AI.
+  However, the IPC's AI Scribe Guidance explicitly recommends
+  alignment with NIST AI Risk Management Framework:
+  "An AI Risk Management Framework can assist custodians in
+  evaluating and monitoring risks related to AI systems across
+  their lifecycles."
+
+  This is the strongest practitioner-recognized safe harbor in
+  Canadian health privacy law. A HIC that aligns its AI
+  governance with NIST AI RMF GOVERN and MEASURE functions has
+  the best available defense against IPC enforcement.
+
+  Sentainel positioning: "Your NIST AI RMF documentation is
+  also your PHIPA defense. IPC inspections look for the same
+  controls."
+notes: |
+  - The IPC has TEETH that EDSTA lacks. PHIPA s. 61.1 AMPs
+    ($50K/$500K) plus s. 72 criminal ($200K/$1M with prison)
+    plus s. 65 civil ($10K mental anguish) make PHIPA the
+    most enforcement-active Ontario regime for AI.
+
+  - Express consent for AI scribes is the IPC's clearest
+    interpretive position. This goes beyond PHIPA's general
+    deemed-consent framework for HIC activities. The IPC's
+    rationale: AI scribes' audio recording + vendor involvement
+    + secondary-use risk make implied consent insufficient.
+
+  - The Hospital for Sick Children case (Decision 298, upheld
+    in 2025 ONSC 5208) established that email account
+    compromise for even one hour triggers PHIPA breach
+    notification — the threshold is low. AI scribes accessing
+    PHI through compromised vendor systems would similarly
+    trigger notification.
+
+  - The "Otter.ai hospital incident" of September 2024
+    (unauthorized AI joining virtual hepatology rounds via
+    departed-physician calendar invite) is the cautionary tale
+    every HIC compliance team references. IPC recommended
+    blocking unapproved AI tools at the firewall level. This
+    creates a SHADOW AI risk surface that PHIPA custodians
+    must manage.
+
+  - Vendor training prohibition is effectively absolute. PHIPA
+    permits secondary use only with consent or de-identification
+    to "very low" re-identification risk. IPC guidance indicates
+    audio recordings almost never meet this standard, so vendors
+    cannot use Ontario HIC data to train their models.
+
+  - PHIPA breach notification clock (60 days under O. Reg.
+    329/04 s. 12.1) does NOT pause for vendor investigation.
+    The custodian's awareness starts the clock. This forces
+    custodians to maintain real-time visibility into vendor
+    systems.
+
+  - The CPSO Advice (Aug 2025) layers professional-conduct
+    obligations on individual physicians: documented use policy,
+    patient transparency, verification of every AI note before
+    it enters the chart. Failure can trigger College discipline
+    separate from PHIPA enforcement.
+
+  - Sentainel's Ontario healthcare go-to-market:
+    Operations tier ($2,499/mo) for solo physicians / small
+    clinics adopting AI scribes — covers the IPC governance
+    expectations.
+    Continuous tier ($4,999/mo) for hospitals and FHO/FHN
+    group practices — covers full lifecycle monitoring plus
+    breach notification orchestration.
+  - The IPC has signaled increasing AI focus in its 2024
+    annual report and the explicit Bill 194 written submission.
+    Expect more guidance documents and likely AMP enforcement
+    of AI-related PHIPA breaches through 2026-2027.
+penalty_schedules:
+  - tier_name: administrative_monetary_penalty
+    basis: per_violation
+    min_amount: 0
+    max_amount: 500000
+    currency: CAD
+    citation: PHIPA s. 61.1
+    notes: |
+      In force January 1, 2024. The IPC may impose AMPs of:
+      - Up to CAD $50,000 against individuals
+      - Up to CAD $500,000 against organizations
+      Plus an amount equal to any economic benefit derived from
+      the contravention. This is the IPC's primary enforcement
+      lever for systemic non-compliance.
+  - tier_name: criminal_prosecution_individual
+    basis: per_violation
+    min_amount: 0
+    max_amount: 200000
+    currency: CAD
+    citation: PHIPA s. 72(2)
+    notes: |
+      Up to CAD $200,000 plus up to 1 year imprisonment.
+      Requires Attorney General consent to prosecute. No
+      limitation period for commencing proceedings. Corporate
+      officers who authorized or failed to prevent an offence
+      face personal liability.
+  - tier_name: criminal_prosecution_organization
+    basis: per_violation
+    min_amount: 0
+    max_amount: 1000000
+    currency: CAD
+    citation: PHIPA s. 72(2)
+    notes: Up to CAD $1,000,000 per offence for organizations.
+  - tier_name: civil_action_mental_anguish
+    basis: per_violation
+    min_amount: 0
+    max_amount: 10000
+    currency: CAD
+    citation: PHIPA s. 65
+    notes: |
+      Actual damages plus up to CAD $10,000 mental anguish
+      damages where wilful or reckless misconduct is established.
+      Private right of action.
+private_right_of_action: true
+private_right_of_action_notes: |
+  PHIPA s. 65 provides a private right of action where the IPC
+  has made an order or issued a report under the Act, or where
+  the person was convicted under s. 72.
+
+  Damages: actual damages plus up to $10,000 mental anguish
+  damages for wilful or reckless misconduct.
+
+  Class action exposure is real and growing — multiple PHIPA
+  class actions have been certified against Ontario hospitals
+  for snooping and unauthorized disclosure incidents.
+last_reviewed: 2026-05-13
+reviewer: web@sentainel.com
+extraction_method: claude-opus-4-7-2026-05-13 + PHIPA statute (ontario.ca) + IPC AI Scribe Guidance (Jan 2026) + CPSO Advice (Aug 2025) + Norton Rose, BLG, Baker McKenzie, McCarthy Tetrault, Fasken commentary
+---
