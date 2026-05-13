@@ -1,0 +1,170 @@
+---
+slug: ca-qc-law-25
+short_name: Quebec Law 25 (Loi 25)
+long_name: |
+  An Act to modernize legislative provisions as regards the
+  protection of personal information (formerly Bill 64);
+  modifying the Act respecting the protection of personal
+  information in the private sector (P-39.1) and related statutes
+citation: |
+  S.Q. 2021, c. 25 (formerly Bill 64);
+  amending CQLR c. P-39.1 (Act respecting the protection of
+  personal information in the private sector)
+jurisdiction:
+  code: CA-QC
+  level: state_province
+  parent: CA-Federal
+status: in_force
+status_notes: |
+  Fully in force as of September 22, 2024. Three-phase implementation
+  completed:
+  - Phase 1 (Sept 22, 2022): privacy officer designation, breach
+    notification, biometric database disclosure
+  - Phase 2 (Sept 22, 2023): mandatory PIAs, consent standards,
+    automated decision-making transparency (s. 12.1), privacy
+    policy publication, cross-border transfer rules
+  - Phase 3 (Sept 22, 2024): data portability, all penalty
+    provisions fully active
+signed_date: 2021-09-22
+effective_date: 2022-09-22
+phase_2_effective_date: 2023-09-22
+phase_3_effective_date: 2024-09-22
+sunset_date: null
+source_url: https://www.publicationsduquebec.gouv.qc.ca/fichiers/lois/2021C25.PDF
+amended_statute_url: https://www.legisquebec.gouv.qc.ca/en/document/cs/P-39.1
+companion_legislation:
+  - ca-federal-pipeda
+  - ca-federal-cppa-aida-pending
+  - ca-qc-charter-of-human-rights
+summary: |
+  Quebec Law 25 (formerly Bill 64) is the most stringent privacy
+  regime in North America. Modeled on GDPR with adapted French civil
+  law concepts, it imposes mandatory privacy impact assessments,
+  72-hour breach notification, granular consent requirements, data
+  portability rights, automated decision-making transparency, and
+  cross-border transfer restrictions.
+
+  For AI: Section 12.1 (automated decision-making transparency) and
+  Section 3.3 (mandatory PIAs for processing presenting elevated
+  privacy risk) are the operational core. Sections 14 (consent),
+  17 (cross-border transfers), and 27 (data portability) add layers
+  that materially affect every AI deployment touching Quebec data.
+
+  Strategic significance for Sentainel: Quebec is the most mature
+  AI-relevant privacy regime in North America. Penalties exceed
+  any US state law. The French-language legislative environment
+  creates a natural barrier to US competitors (TXAIMS, CO-AIMS,
+  Holistic AI) who do not extract Quebec statutes. Pairs naturally
+  with Ontario MFIPPA/Bill 149/Code/PHIPA for cross-Canada
+  positioning.
+scope_description: |
+  Applies to every "person carrying on an enterprise" in Quebec
+  that collects, holds, uses, or communicates personal information.
+  "Enterprise" is interpreted broadly (Civil Code of Quebec, art. 1525):
+  any organized economic activity, including non-profit and most
+  professional activities.
+
+  Critically, Law 25 has EXTRATERRITORIAL REACH: an organization
+  outside Quebec that collects, uses, or discloses personal
+  information of Quebec residents is subject to Law 25. A US SaaS
+  company with Quebec users falls under Law 25 even with no Quebec
+  physical presence.
+
+  Public sector institutions fall under a parallel statute (Act
+  respecting Access to documents held by public bodies and the
+  Protection of personal information, CQLR c. A-2.1), also amended
+  by Law 25 with similar AI-relevant provisions.
+extraterritorial_reach: true
+extraterritorial_notes: |
+  Confirmed extraterritorial reach. CAI guidance: Law 25 applies
+  to any organization collecting, using, or disclosing personal
+  information of Quebec residents regardless of where the organization
+  is headquartered. Cross-border data transfers under Section 17
+  require Privacy Impact Assessment with documented analysis of the
+  receiving jurisdiction's protection regime.
+safe_harbor_via: []
+notes: |
+  Law 25 has NO formal statutory safe harbor for AI compliance.
+  However, demonstrated alignment with CAI guidance and OECD AI
+  Principles provides evidence of "reasonable measures" for due
+  diligence defense. Documenting PIAs, governance policies, and
+  consent flows is the practical defense against penalties.
+
+  The Charter of Human Rights and Freedoms of Quebec (CQLR c. C-12)
+  contains parallel discrimination protections. AI systems producing
+  discriminatory outputs in Quebec face Charter complaints in
+  addition to Law 25 penalties — similar to Ontario Human Rights
+  Code primacy dynamic.
+
+  Quebec is the only Canadian jurisdiction with TWO tiers of fines:
+  administrative monetary penalties (AMPs, imposed by CAI without
+  court) AND penal sanctions (prosecuted in court). Both can apply
+  to the same incident.
+penalty_schedules:
+  - tier_name: administrative_monetary_penalty_individual
+    basis: per_violation
+    min_amount: 1000
+    max_amount: 10000
+    currency: CAD
+    citation: P-39.1 s. 90.1
+    notes: |
+      AMP imposed directly by the CAI without court proceeding.
+      Applies to natural persons (e.g., privacy officers, executives,
+      contractors) who fail to comply with Law 25 obligations.
+  - tier_name: administrative_monetary_penalty_enterprise
+    basis: per_violation
+    min_amount: 15000
+    max_amount: 10000000
+    currency: CAD
+    alternative_basis: percentage_worldwide_turnover
+    alternative_max_pct: 2.0
+    citation: P-39.1 s. 90.1
+    notes: |
+      AMP for enterprises capped at the GREATER of CAD $10 million
+      or 2% of worldwide turnover. Imposed by CAI directly.
+      Maximum applies even to small enterprises if violations are
+      systemic.
+  - tier_name: penal_sanction_individual
+    basis: per_violation
+    min_amount: 5000
+    max_amount: 100000
+    currency: CAD
+    citation: P-39.1 s. 91
+    notes: |
+      Penal fine for natural persons prosecuted by the Director
+      of Criminal and Penal Prosecutions (DPCP).
+  - tier_name: penal_sanction_enterprise
+    basis: per_violation
+    min_amount: 15000
+    max_amount: 25000000
+    currency: CAD
+    alternative_basis: percentage_worldwide_turnover
+    alternative_max_pct: 4.0
+    citation: P-39.1 s. 91
+    notes: |
+      Penal fine for enterprises capped at the GREATER of CAD $25
+      million or 4% of worldwide turnover. THE HIGHEST PRIVACY
+      PENALTY IN NORTH AMERICA. Reserved for serious violations:
+      knowing collection without consent, communication outside
+      Quebec without PIA, refusal to cease processing, etc.
+  - tier_name: private_right_of_action_minimum
+    basis: per_individual
+    min_amount: 1000
+    max_amount: null
+    currency: CAD
+    citation: P-39.1 s. 93.1
+    notes: |
+      Minimum statutory damages of CAD $1,000 per individual for
+      unlawful interference with privacy rights. Class actions are
+      common; aggregated damages can scale dramatically.
+  - tier_name: compliance_orders_publication_orders
+    basis: per_violation
+    citation: P-39.1 s. 89-90
+    notes: |
+      CAI may issue compliance orders requiring specific remedial
+      action AND publication orders requiring public disclosure of
+      violations. Reputational impact often exceeds monetary penalties.
+last_reviewed: 2026-05-13
+reviewer: web@sentainel.com
+extraction_method: claude-opus-4-7-2026-05-13 + manual review
+---
