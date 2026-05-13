@@ -10,6 +10,8 @@ This repository is the regulatory content engine for Sentainel.com. It contains 
 
 The viz tells the entire Sentainel story in three panels: a scope calculator showing obligations × NIST controls × cost differential, a full hover-tooltip-enabled obligation × control grid, and three strategic insights cards. At default (all jurisdictions active) it lands on **59 obligations, 4 jurisdictions, 58+ NIST controls, with a 5–10× cost differential vs direct legal spend.**
 
+> **Note for next session:** the repo-resident `viz/index.html` is still v1.2 (44 obligations). The v1.3 build (59 obligations, EDSTA + PHIPA added to JURISDICTIONS, `prettyObl` extended, all hero stats refreshed) is staged at `/mnt/user-data/outputs/sentainel-viz-v1.3.html` ready for Netlify/Vercel drop. Re-push to the repo is the first item in the next-session priority list.
+
 ## Why This Repo Exists
 
 Every AI compliance tool on the market today either (a) covers a single jurisdiction (TXAIMS — Texas only; CO-AIMS — Colorado only; Augure — Quebec only) or (b) covers governance frameworks without statute-level granularity (Credo AI, Holistic AI). **Sentainel is the only product that maps atomic regulatory obligations across all major North American AI jurisdictions AND cross-references them to NIST AI RMF for safe-harbor defense.**
@@ -29,8 +31,8 @@ This regulatory database is our **moat**. Every obligation here was extracted by
 | **Illinois AIVIA (820 ILCS 42)** | ✅ Complete | 4 | 0.94 |
 | **Ontario EDSTA (Bill 194)** | ✅ Complete | 7 | 0.90 |
 | **Ontario PHIPA + AI Scribe Guidance** | ✅ Complete | 8 | 0.94 |
-| **NIST AI RMF Cross-Reference Matrix** | 🟡 Refresh pending | 44 obligations × 58 controls (matrix) / 59 obligations live | — |
-| **Customer-facing Viz** | 🟡 v1.2 (Ontario stack pending re-embed) | `cross-references/viz/index.html` | — |
+| **NIST AI RMF Cross-Reference Matrix** | ✅ Complete | 341 rows / 59 obligations / 58 unique controls | — |
+| **Customer-facing Viz (repo)** | 🟡 v1.2 in repo · v1.3 staged for re-push | `cross-references/viz/index.html` (repo) + `/mnt/user-data/outputs/sentainel-viz-v1.3.html` (staged) | — |
 | **Postgres schema** | ✅ Complete | 10 migrations 0001–0010 | — |
 | Ontario Trustworthy AI Framework | ⬜ Pending | ~6 (target) | — |
 | Colorado SB 26-189 | ⏸️ Deferred until rulemaking | ~20 (target) | — |
@@ -38,7 +40,7 @@ This regulatory database is our **moat**. Every obligation here was extracted by
 | EU AI Act (high-risk overlay) | ⬜ Pending | ~30 (target) | — |
 | Illinois BIPA (biometric overlay) | ⬜ Pending | ~5 (target) | — |
 
-**Current totals:** 59 atomic obligations live across 9 regulations and 4 jurisdictions. Coverage matrix at `cross-references/coverage-matrix.csv` covers the first 44 obligations (248 rows); the 15 new Ontario obligations (EDSTA 7 + PHIPA 8) are awaiting matrix and viz refresh.
+**Current totals:** 59 atomic obligations live across 9 regulations and 4 jurisdictions. Coverage matrix at `cross-references/coverage-matrix.csv` covers all 59 obligations across 341 obligation×control rows (22 Ontario, 17 Quebec, 12 Texas, 8 Illinois). NIST Ontario mapping at `cross-references/mappings/nist-to-ca-on-stack.yaml` covers all 22 Ontario obligations. The viz v1.3 build is staged for re-push but not yet in the repo — the repo viz still displays v1.2.
 
 ## The Strategic Anchor: NIST AI RMF Safe Harbor
 
@@ -73,14 +75,14 @@ sentainel-com/
 ├── cross-references/                 # NIST AI RMF cross-reference matrix (THE product anchor)
 │   ├── README.md                     # Matrix narrative + high-leverage controls
 │   ├── nist-controls.yaml            # Full NIST AI RMF control catalog (46 + 12 GenAI)
-│   ├── coverage-matrix.csv           # Flattened analytics: 248 obligation×control rows (Ontario EDSTA + PHIPA pending)
+│   ├── coverage-matrix.csv           # 341 obligation×control rows covering all 59 obligations
 │   ├── mappings/                     # Per-jurisdiction NIST mappings
 │   │   ├── nist-to-us-tx-traiga.yaml
 │   │   ├── nist-to-ca-qc-law-25.yaml
-│   │   ├── nist-to-ca-on-stack.yaml  # Bill 149 + Code + MFIPPA (EDSTA + PHIPA pending)
+│   │   ├── nist-to-ca-on-stack.yaml  # 22 obligations: Bill 149 + Code + MFIPPA + EDSTA + PHIPA
 │   │   └── nist-to-us-il-stack.yaml
 │   └── viz/                          # Customer-facing visualization
-│       ├── index.html                # Self-contained interactive matrix (v1.2)
+│       ├── index.html                # Self-contained interactive matrix (v1.2 in repo; v1.3 staged)
 │       └── README.md                 # Deployment notes
 ├── etl/                              # Python loaders → Postgres
 │   ├── load.py                       # Obligation upserter
