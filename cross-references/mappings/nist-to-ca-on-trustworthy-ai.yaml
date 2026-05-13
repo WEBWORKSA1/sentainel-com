@@ -1,0 +1,193 @@
+# NIST AI RMF → Ontario Trustworthy AI Framework + OPS Directive Mapping
+#
+# Maps 6 atomic obligations from the Ontario Responsible Use of AI Directive
+# (Management Board of Cabinet, in force Dec 1, 2024) to NIST AI Risk Management
+# Framework controls.
+#
+# Purpose: when Sentainel customers face IPC or MBC scrutiny over their AI use,
+# the NIST AI RMF alignment serves as evidence that they followed a recognized
+# risk management framework. This is the same safe-harbor logic that Texas TRAIGA
+# s. 552.105 explicitly recognizes.
+#
+# Reviewer: web@sentainel.com
+# Last updated: 2026-05-13
+
+jurisdiction: CA-ON
+regulation: ca-on-trustworthy-ai-framework
+nist_framework: NIST AI 100-1 (Jan 2023) + NIST AI 600-1 GenAI Profile (July 2024)
+
+obligations:
+
+  - obligation_id: ca-on-trustworthy-ai-ops-1-principles-adoption
+    obligation_title: Adopt and operationalize the 6 Principles for Responsible Use of AI
+    nist_controls:
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: Legal & regulatory requirements managed (Trustworthy AI Framework in scope)
+      - control_id: GOVERN-1.2
+        coverage: fully_satisfies
+        note: Risk management characterizes broader policy commitments
+      - control_id: GOVERN-1.4
+        coverage: fully_satisfies
+        note: Risk management documented
+      - control_id: MAP-1.1
+        coverage: partially_satisfies
+        note: Context of use established per principle
+      - control_id: MEASURE-2.8
+        coverage: partially_satisfies
+        note: Transparency principle requires explainability evidence
+
+  - obligation_id: ca-on-trustworthy-ai-ops-2-risk-management
+    obligation_title: AI risk management before use of any AI system (lifecycle)
+    nist_controls:
+      - control_id: GOVERN-1.4
+        coverage: fully_satisfies
+        note: AI risk management is the entire NIST AI RMF
+      - control_id: MAP-1.1
+        coverage: fully_satisfies
+        note: Context of use - first lifecycle stage
+      - control_id: MAP-2.1
+        coverage: fully_satisfies
+        note: Tasks and methods - design stage
+      - control_id: MAP-5.1
+        coverage: fully_satisfies
+        note: Likelihood and magnitude of impact
+      - control_id: MAP-5.2
+        coverage: fully_satisfies
+        note: Risk assessment practices
+      - control_id: MEASURE-2.1
+        coverage: fully_satisfies
+        note: Test sets and metrics - validation lifecycle stage
+      - control_id: MEASURE-2.3
+        coverage: fully_satisfies
+        note: Performance evaluation - operations stage
+      - control_id: MANAGE-1.3
+        coverage: fully_satisfies
+        note: Risk mitigation decisions
+      - control_id: MANAGE-2.2
+        coverage: fully_satisfies
+        note: Mechanisms sustain value across lifecycle
+      - control_id: MANAGE-4.1
+        coverage: fully_satisfies
+        note: Post-deployment monitoring - operations stage
+
+  - obligation_id: ca-on-trustworthy-ai-ops-3-disclosure-reporting
+    obligation_title: Mandatory AI use disclosure + reporting (No AI in secret)
+    nist_controls:
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: Regulatory disclosure obligation tracked
+      - control_id: GOVERN-1.6
+        coverage: fully_satisfies
+        note: AI inventory mechanisms feed disclosure
+      - control_id: MEASURE-2.8
+        coverage: fully_satisfies
+        note: Transparency is the core control - directly satisfies No AI in Secret
+      - control_id: MANAGE-4.1
+        coverage: fully_satisfies
+        note: Post-deployment monitoring for reporting cadence
+
+  - obligation_id: ca-on-trustworthy-ai-ops-4-accountability-roles
+    obligation_title: Designated AI accountability roles for officials
+    nist_controls:
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: Roles documented in governance framework
+      - control_id: GOVERN-2.1
+        coverage: fully_satisfies
+        note: Roles and responsibilities documented
+      - control_id: GOVERN-2.2
+        coverage: fully_satisfies
+        note: Workforce training for designated officials
+      - control_id: GOVERN-2.3
+        coverage: fully_satisfies
+        note: Executive accountability anchors the role chain
+      - control_id: GOVERN-4.1
+        coverage: fully_satisfies
+        note: Organizational practices support roles
+
+  - obligation_id: ca-on-trustworthy-ai-ops-5-alignment-fippa-phipa
+    obligation_title: Mandatory alignment with FIPPA + PHIPA + freedom-of-information requirements
+    nist_controls:
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: FIPPA/MFIPPA/PHIPA cross-referenced in governance framework
+      - control_id: GOVERN-4.3
+        coverage: fully_satisfies
+        note: Testing & incident sharing across privacy regimes
+      - control_id: MEASURE-2.7
+        coverage: fully_satisfies
+        note: Security & privacy risks (FIPPA s. 4 + MFIPPA s. 3 baseline)
+      - control_id: MEASURE-2.10
+        coverage: fully_satisfies
+        note: Privacy risk evaluation
+      - control_id: MANAGE-3.1
+        coverage: fully_satisfies
+        note: Third-party risk monitoring (vendor compliance with FIPPA chain)
+      - control_id: MANAGE-4.1
+        coverage: fully_satisfies
+        note: Post-deployment monitoring against privacy law alignment
+
+  - obligation_id: ca-on-trustworthy-ai-ops-6-biennial-review
+    obligation_title: Biennial Directive review and update
+    nist_controls:
+      - control_id: GOVERN-1.5
+        coverage: fully_satisfies
+        note: Ongoing oversight - biennial review cadence
+      - control_id: GOVERN-1.7
+        coverage: partially_satisfies
+        note: Decommissioning procedures may emerge from biennial review
+      - control_id: MANAGE-2.2
+        coverage: partially_satisfies
+        note: Mechanisms sustain value across review cycles
+
+# Aggregate analysis
+
+aggregate:
+  total_obligations: 6
+  total_control_mappings: 34
+  avg_controls_per_obligation: 5.67
+
+  top_controls:
+    - control_id: GOVERN-1.1
+      hits: 6
+      coverage_density: 100%
+      note: Universal anchor - hits every obligation
+    - control_id: MEASURE-2.8
+      hits: 3
+      coverage_density: 50%
+      note: Transparency is the second universal hook
+    - control_id: GOVERN-1.4
+      hits: 2
+      coverage_density: 33%
+      note: Risk management documentation
+    - control_id: MANAGE-4.1
+      hits: 3
+      coverage_density: 50%
+      note: Post-deployment monitoring
+
+  safe_harbor_strength: |
+    Trustworthy AI Framework is itself a soft-law overlay. Direct NIST AI RMF
+    alignment via this mapping provides defensive posture when ministries or
+    municipalities are reviewed by Management Board of Cabinet (for ministries)
+    or IPC/OHRC (for municipalities using framework as benchmark).
+
+    GOVERN-1.1 + MEASURE-2.8 + MANAGE-4.1 together demonstrate the three pillars
+    Ontario's framework requires: governance, transparency, monitoring.
+
+  municipal_application: |
+    Although the Directive binds only provincial entities directly, municipalities
+    voluntarily adopting it gain the same NIST AI RMF alignment. Sentainel positions
+    voluntary adoption as the 12-24 month head start before EDSTA Bill 194 AI
+    provisions are proclaimed - at which point this mapping likely becomes the
+    de facto compliance posture for all 444 Ontario municipalities.
+
+cross_references:
+  - sibling_mapping: nist-to-ca-on-ipc-ohrc.yaml
+    relationship: |
+      IPC-OHRC Principles operationalize the Directive's 6 Principles. Together
+      they form the complete soft-law overlay for Ontario public-sector AI use.
+  - sibling_mapping: nist-to-ca-on-stack.yaml
+    relationship: |
+      Hard-law Ontario stack (Bill 149, Code, MFIPPA, EDSTA, PHIPA). Trustworthy
+      AI Framework and IPC-OHRC are the soft-law complement.
