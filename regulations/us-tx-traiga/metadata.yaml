@@ -1,0 +1,229 @@
+---
+slug: us-tx-traiga
+short_name: Texas TRAIGA
+long_name: |
+  Texas Responsible Artificial Intelligence Governance Act (HB 149,
+  89th Leg., R.S., 2025); codified at Texas Business & Commerce Code,
+  Title 11, Subtitle D, Chapters 551–554 (Artificial Intelligence
+  Protection), plus amendments to Texas Bus. & Comm. Code §§ 503.001,
+  541.104, and Texas Gov't Code §§ 325.011, 2054.068, 2054.0965.
+citation: |
+  Tex. Bus. & Comm. Code §§ 551.001-554.103 (Artificial Intelligence
+  Protection), as added by Acts 2025, 89th Leg., R.S., Ch. 1174
+  (H.B. 149), Sec. 4, eff. January 1, 2026.
+jurisdiction:
+  code: US-TX
+  level: state_province
+  parent: US-Federal
+status: in_force
+status_notes: |
+  Effective January 1, 2026 (now in force as of this extraction).
+  No amendments to date. Texas AI Council (Ch. 554) is in formation;
+  no rules promulgated yet. Attorney general complaint portal due by
+  September 1, 2026 (HB 149 § 8).
+signed_date: 2025-06-22
+effective_date: 2026-01-01
+sunset_date: null
+source_url: https://capitol.texas.gov/tlodocs/89R/billtext/pdf/HB00149F.pdf
+statute_url: https://statutes.capitol.texas.gov/Docs/BC/htm/BC.552.htm
+companion_legislation:
+  - us-federal-nist-ai-rmf
+  - us-tx-503-001-biometric
+  - us-tx-541-data-privacy
+summary: |
+  TRAIGA establishes Texas's AI regulatory framework via four new
+  chapters of the Business & Commerce Code:
+
+  - Chapter 551: General provisions (definitions, scope, purpose)
+  - Chapter 552: Duties and prohibitions on AI use + enforcement
+  - Chapter 553: AI Regulatory Sandbox Program (DIR-administered,
+    36-month testing exemption)
+  - Chapter 554: Texas AI Council (advisory body, no rulemaking
+    authority)
+
+  CRITICAL FOR EXTRACTION ACCURACY: The final HB 149 is significantly
+  narrower than its earlier drafts. Several Subchapter B provisions
+  apply ONLY to GOVERNMENTAL ENTITIES, not private sector deployers:
+
+  - s. 552.051 (consumer disclosure): governmental agencies only
+    (plus a separate healthcare-provider duty in (f))
+  - s. 552.053 (social scoring): governmental entities only
+  - s. 552.054 (biometric data capture): governmental entities only
+    (private sector reached via existing s. 503.001 cross-reference)
+
+  Sections that apply broadly to all persons developing or deploying
+  AI in Texas:
+  - s. 552.052 (manipulation of human behavior - intent-based)
+  - s. 552.055 (constitutional protection - sole-intent test)
+  - s. 552.056 (unlawful discrimination - intent-based, not
+    disparate impact)
+  - s. 552.057 (sexually explicit content / child sexual abuse
+    material - sole-intent test)
+
+  Most-cited media descriptions of TRAIGA as a "sweeping consumer
+  disclosure law" are inaccurate. The actual private-sector
+  consumer-disclosure duty (the kind Colorado proposed) was
+  stripped from the final bill. The actual private-sector duties
+  in TRAIGA are intent-based prohibitions on a narrow set of harms.
+
+  Strategic significance for Sentainel: TRAIGA is the load-bearing
+  US state AI law currently enforceable. Its NIST AI RMF safe harbor
+  (s. 552.105(e)(2)(D)) is the cross-jurisdictional anchor — once a
+  customer documents NIST AI RMF substantial compliance, they get
+  an affirmative defense in Texas, which Sentainel can map to all
+  other jurisdictions through the NIST cross-reference matrix.
+scope_description: |
+  TRAIGA applies to any person who:
+    (1) promotes, advertises, or conducts business in Texas;
+    (2) produces a product or service used by Texas residents; or
+    (3) develops or deploys an AI system in Texas.
+        (Tex. Bus. & Comm. Code § 551.002)
+
+  "Consumer" is defined narrowly: a Texas resident "acting only in
+  an individual or household context." Employment and commercial
+  context interactions are EXCLUDED from the consumer definition
+  (s. 551.001(2)) — meaning TRAIGA's consumer disclosure duties
+  do not capture B2B AI or HR-tech AI in the way Colorado and
+  Illinois do.
+
+  Local preemption: TRAIGA supersedes any municipal or county AI
+  regulation (s. 552.003). Texas cities cannot impose stricter
+  rules.
+
+  TRAIGA does NOT apply during sandbox testing if the testing is
+  authorized under Ch. 553 — EXCEPT that Subchapter B duties
+  (552.051-052.057) are explicitly non-waivable for sandbox
+  participants (s. 553.051(e)).
+extraterritorial_reach: true
+extraterritorial_notes: |
+  Confirmed extraterritorial reach via § 551.002. A non-Texas entity
+  that "produces a product or service used by residents of this
+  state" is subject to TRAIGA. This is geography-of-effect, not
+  geography-of-location — mirroring how Quebec Law 25 reaches
+  US enterprises with Quebec users.
+
+  Practical effect: most national SaaS and consumer-facing products
+  fall within scope simply by having Texas users. AG enforcement
+  reach across state lines remains untested but the statutory
+  language is broad.
+safe_harbor_via:
+  - us-federal-nist-ai-rmf
+  - eu-iso-iec-42001
+  - any-nationally-or-internationally-recognized-ai-risk-framework
+safe_harbor_notes: |
+  Section 552.105(e)(2)(D) creates an affirmative defense for any
+  defendant who "substantially complies with the most recent version
+  of the 'Artificial Intelligence Risk Management Framework:
+  Generative Artificial Intelligence Profile' published by the
+  National Institute of Standards and Technology or another
+  nationally or internationally recognized risk management framework
+  for artificial intelligence systems, an internal review process."
+
+  This is the most operationally valuable provision in TRAIGA from
+  Sentainel's perspective: substantial NIST AI RMF compliance =
+  affirmative defense. The framework cited specifically is the
+  NIST AI RMF GenAI Profile (NIST-AI-600-1, July 2024), though
+  the section also accepts "another nationally or internationally
+  recognized risk management framework" — opening ISO/IEC 42001
+  as an alternative safe harbor.
+
+  Additional rebuttable presumption of reasonable care under
+  s. 552.105(c) applies generally — burden shifts to plaintiff
+  to prove unreasonable conduct.
+
+  Defenses also available under s. 552.105(e):
+  - Third-party misuse of the AI system
+  - Discovery of violation through feedback, adversarial testing,
+    red-team testing, or following state agency guidelines
+notes: |
+  - TRAIGA replaces an earlier draft that was broader; the enacted
+    version is far more deferential to industry.
+  - The 60-day cure period under s. 552.104 is uniquely generous
+    among state AI laws — most state regimes (e.g., the Colorado
+    proposal) had similar cure periods that were stripped or
+    sunsetted. Texas retains it.
+  - "Disparate impact is not sufficient by itself to demonstrate
+    an intent to discriminate" (s. 552.056(c)) is a major
+    industry-friendly provision. Plaintiffs cannot use statistical
+    disparities alone — they must show intent. This dramatically
+    narrows discrimination claims compared to Title VII federal
+    employment law.
+  - Insurance entities are carved out of s. 552.056 if subject to
+    Texas Insurance Code (s. 552.056(d)).
+  - Federally insured financial institutions are deemed compliant
+    with s. 552.056 if they comply with federal/state banking
+    regulations (s. 552.056(e)).
+  - Sandbox participants enjoy 36-month testing windows with
+    most state law waived, but cannot waive Subchapter B duties
+    (s. 553.051(e)).
+  - The Texas AI Council (Ch. 554) is advisory only; it cannot
+    issue binding rules (s. 554.103). This limits TRAIGA's
+    evolution via agency rulemaking — amendments require
+    legislative action.
+  - HB 149 § 9 contains a "subject to appropriation" clause:
+    state agency duties under the Act are contingent on funding.
+    Practical effect: AG enforcement may be slow to ramp.
+penalty_schedules:
+  - tier_name: curable_violation
+    basis: per_violation
+    min_amount: 10000
+    max_amount: 12000
+    currency: USD
+    citation: Tex. Bus. & Comm. Code § 552.105(a)(1)
+    notes: |
+      Applies to violations the court determines to be curable AND
+      breaches of cure statements submitted to the AG under
+      s. 552.104(b)(2). Note: the cure period itself (s. 552.104)
+      means most curable violations never reach penalty if cured
+      within 60 days.
+  - tier_name: uncurable_violation
+    basis: per_violation
+    min_amount: 80000
+    max_amount: 200000
+    currency: USD
+    citation: Tex. Bus. & Comm. Code § 552.105(a)(2)
+    notes: |
+      Applies to violations the court determines to be uncurable.
+      Per-violation basis means high-volume systems (e.g., AI
+      affecting thousands of Texans) face multiplied exposure.
+  - tier_name: continuing_violation
+    basis: per_day
+    min_amount: 2000
+    max_amount: 40000
+    currency: USD
+    citation: Tex. Bus. & Comm. Code § 552.105(a)(3)
+    notes: |
+      Daily penalty for each day a violation continues. Stacks on
+      top of the underlying violation penalty.
+  - tier_name: state_agency_sanction
+    basis: per_violation
+    min_amount: 0
+    max_amount: 100000
+    currency: USD
+    citation: Tex. Bus. & Comm. Code § 552.106(b)(2)
+    notes: |
+      Additional monetary penalty available to licensing/regulatory
+      state agencies, layered on top of AG penalties, where the AG
+      has recommended additional agency enforcement. Includes
+      license suspension/revocation as a non-monetary sanction.
+  - tier_name: attorney_fees_costs
+    basis: actual
+    citation: Tex. Bus. & Comm. Code § 552.105(b)(3)
+    notes: |
+      AG may recover attorney's fees and reasonable court costs
+      or investigative expenses on top of penalties.
+private_right_of_action: false
+private_right_of_action_notes: |
+  Section 552.101(b) is unambiguous: "This chapter does not provide
+  a basis for, and is not subject to, a private right of action for
+  a violation of this chapter or any other law."
+
+  This is a SIGNIFICANT differentiator from Quebec Law 25 (which
+  grants minimum $1,000 CAD per individual class actions). TRAIGA
+  is AG-only enforcement. Class action exposure under TRAIGA is
+  zero. Customers facing TRAIGA exposure need to model against
+  AG enforcement priorities, not consumer class actions.
+last_reviewed: 2026-05-13
+reviewer: web@sentainel.com
+extraction_method: claude-opus-4-7-2026-05-13 + direct statute review
+---
