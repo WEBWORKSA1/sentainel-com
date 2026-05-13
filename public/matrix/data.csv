@@ -1,0 +1,342 @@
+obligation_slug,jurisdiction,nist_control_id,coverage_level,notes
+us-tx-traiga-552-051-gov-disclosure,US-TX,GOVERN-1.1,fully_satisfies,Legal & regulatory requirements managed
+us-tx-traiga-552-051-gov-disclosure,US-TX,MAP-3.3,partially_satisfies,Targeted application scope
+us-tx-traiga-552-051-gov-disclosure,US-TX,MEASURE-2.8,partially_satisfies,Transparency and accountability
+us-tx-traiga-552-051-gov-disclosure,US-TX,MANAGE-4.1,supports,Post-deployment monitoring
+us-tx-traiga-552-051-f-healthcare,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-051-f-healthcare,US-TX,MAP-1.1,partially_satisfies,Healthcare context
+us-tx-traiga-552-051-f-healthcare,US-TX,MAP-3.5,partially_satisfies,Human oversight workflow
+us-tx-traiga-552-051-f-healthcare,US-TX,MEASURE-2.8,partially_satisfies,
+us-tx-traiga-552-051-f-healthcare,US-TX,MANAGE-4.1,supports,
+us-tx-traiga-552-052-manipulation,US-TX,GAI-3,safe_harbor,GenAI dangerous content
+us-tx-traiga-552-052-manipulation,US-TX,GAI-11,safe_harbor,GenAI obscene content
+us-tx-traiga-552-052-manipulation,US-TX,MAP-1.1,partially_satisfies,
+us-tx-traiga-552-052-manipulation,US-TX,MAP-5.1,partially_satisfies,Harm impact analysis
+us-tx-traiga-552-052-manipulation,US-TX,MEASURE-2.6,partially_satisfies,AI safety eval
+us-tx-traiga-552-052-manipulation,US-TX,MEASURE-3.3,supports,Feedback discovery defense
+us-tx-traiga-552-052-manipulation,US-TX,MANAGE-1.3,partially_satisfies,Risk mitigation
+us-tx-traiga-552-052-manipulation,US-TX,MANAGE-4.3,partially_satisfies,Crisis pathway
+us-tx-traiga-552-053-social-scoring,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-053-social-scoring,US-TX,MAP-1.1,partially_satisfies,
+us-tx-traiga-552-053-social-scoring,US-TX,MAP-3.3,partially_satisfies,
+us-tx-traiga-552-053-social-scoring,US-TX,MEASURE-2.11,supports,Fairness & bias
+us-tx-traiga-552-054-biometric,US-TX,GAI-4,safe_harbor,Biometric data privacy
+us-tx-traiga-552-054-biometric,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-054-biometric,US-TX,GOVERN-6.1,partially_satisfies,Third-party policies
+us-tx-traiga-552-054-biometric,US-TX,MAP-4.1,partially_satisfies,Training data legal risks
+us-tx-traiga-552-054-biometric,US-TX,MEASURE-2.7,fully_satisfies,
+us-tx-traiga-552-054-biometric,US-TX,MEASURE-2.10,fully_satisfies,Privacy risk
+us-tx-traiga-552-054-biometric,US-TX,MANAGE-1.3,partially_satisfies,
+us-tx-traiga-552-055-constitutional,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-055-constitutional,US-TX,MAP-1.1,partially_satisfies,Legitimate purpose
+us-tx-traiga-552-055-constitutional,US-TX,MAP-3.2,supports,
+us-tx-traiga-552-056-discrimination,US-TX,GAI-6,safe_harbor,GenAI harmful bias
+us-tx-traiga-552-056-discrimination,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-056-discrimination,US-TX,GOVERN-3.1,partially_satisfies,Diversity in risk mgmt
+us-tx-traiga-552-056-discrimination,US-TX,MAP-1.2,partially_satisfies,Interdisciplinary actors
+us-tx-traiga-552-056-discrimination,US-TX,MEASURE-2.11,fully_satisfies,Fairness & bias eval
+us-tx-traiga-552-056-discrimination,US-TX,MANAGE-1.3,partially_satisfies,
+us-tx-traiga-552-057-csam-explicit,US-TX,GAI-3,safe_harbor,
+us-tx-traiga-552-057-csam-explicit,US-TX,GAI-11,safe_harbor,
+us-tx-traiga-552-057-csam-explicit,US-TX,GAI-12,partially_satisfies,Value chain
+us-tx-traiga-552-057-csam-explicit,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-057-csam-explicit,US-TX,GOVERN-6.1,partially_satisfies,
+us-tx-traiga-552-057-csam-explicit,US-TX,MAP-3.4,partially_satisfies,Content moderation
+us-tx-traiga-552-057-csam-explicit,US-TX,MEASURE-2.6,fully_satisfies,CSAM/deepfake detection
+us-tx-traiga-552-057-csam-explicit,US-TX,MANAGE-1.3,partially_satisfies,
+us-tx-traiga-552-057-csam-explicit,US-TX,MANAGE-4.3,partially_satisfies,NCMEC reporting
+us-tx-traiga-552-103-ag-investigation,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,GOVERN-1.4,fully_satisfies,Documented process
+us-tx-traiga-552-103-ag-investigation,US-TX,GOVERN-1.6,fully_satisfies,AI inventory
+us-tx-traiga-552-103-ag-investigation,US-TX,MAP-1.1,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,MAP-2.1,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,MAP-2.2,fully_satisfies,Knowledge limits
+us-tx-traiga-552-103-ag-investigation,US-TX,MAP-3.1,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,MEASURE-2.1,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,MEASURE-2.3,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,MANAGE-4.1,fully_satisfies,
+us-tx-traiga-552-104-cure-period,US-TX,GOVERN-1.5,partially_satisfies,
+us-tx-traiga-552-104-cure-period,US-TX,MANAGE-1.3,fully_satisfies,Cure response
+us-tx-traiga-552-104-cure-period,US-TX,MANAGE-2.2,partially_satisfies,Policy revisions
+us-tx-traiga-552-104-cure-period,US-TX,MANAGE-2.4,partially_satisfies,System supersession
+us-tx-traiga-552-104-cure-period,US-TX,MANAGE-4.3,supports,Written statement
+us-tx-traiga-552-105-nist-safe-harbor,US-TX,ALL-GENAI-PROFILE,safe_harbor,Direct statutory anchor
+us-tx-traiga-553-sandbox,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-553-sandbox,US-TX,GOVERN-1.4,fully_satisfies,
+us-tx-traiga-553-sandbox,US-TX,MAP-1.1,partially_satisfies,
+us-tx-traiga-553-sandbox,US-TX,MAP-5.1,partially_satisfies,Benefit assessment
+us-tx-traiga-553-sandbox,US-TX,MAP-5.2,partially_satisfies,Mitigation plan
+us-tx-traiga-553-sandbox,US-TX,MEASURE-2.3,fully_satisfies,Quarterly metrics
+us-tx-traiga-553-sandbox,US-TX,MEASURE-3.3,fully_satisfies,Stakeholder feedback
+us-tx-traiga-553-sandbox,US-TX,MANAGE-4.1,fully_satisfies,
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MAP-2.2,fully_satisfies,Explanation requirements
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MAP-3.1,fully_satisfies,
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MAP-3.5,fully_satisfies,Human oversight right
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MEASURE-2.8,fully_satisfies,
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MEASURE-2.9,fully_satisfies,Explainability
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MEASURE-3.3,fully_satisfies,Contestation right
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MAP-1.1,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MAP-1.5,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MAP-3.1,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MAP-3.2,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MAP-5.1,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MEASURE-2.7,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MANAGE-1.3,fully_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,GAI-9,partially_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,GOVERN-4.3,fully_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,MEASURE-2.7,fully_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,MANAGE-2.3,partially_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,MANAGE-4.1,fully_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,MANAGE-4.3,fully_satisfies,Individual notification
+ca-qc-law-25-s14-consent,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s14-consent,CA-QC,GOVERN-5.1,partially_satisfies,
+ca-qc-law-25-s14-consent,CA-QC,MAP-1.1,partially_satisfies,
+ca-qc-law-25-s14-consent,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,GAI-12,partially_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,GOVERN-6.1,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,GOVERN-6.2,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,MAP-4.1,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,MAP-4.2,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,MEASURE-2.7,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,MANAGE-3.1,fully_satisfies,
+ca-qc-law-25-s27-data-portability,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s27-data-portability,CA-QC,MAP-2.1,partially_satisfies,
+ca-qc-law-25-s27-data-portability,CA-QC,MEASURE-2.8,partially_satisfies,
+ca-qc-law-25-s3-1-privacy-officer,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s3-1-privacy-officer,CA-QC,GOVERN-2.1,fully_satisfies,
+ca-qc-law-25-s3-1-privacy-officer,CA-QC,GOVERN-2.3,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-1.2,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-1.3,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-1.4,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-2.2,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-4.1,fully_satisfies,
+ca-qc-law-25-s8-privacy-by-default,CA-QC,GAI-4,partially_satisfies,
+ca-qc-law-25-s8-privacy-by-default,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s8-privacy-by-default,CA-QC,GOVERN-1.2,fully_satisfies,
+ca-qc-law-25-s8-privacy-by-default,CA-QC,MAP-1.6,fully_satisfies,
+ca-qc-law-25-s8-privacy-by-default,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s8-2-privacy-policy,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s8-2-privacy-policy,CA-QC,GOVERN-5.1,partially_satisfies,
+ca-qc-law-25-s8-2-privacy-policy,CA-QC,MEASURE-2.8,fully_satisfies,
+ca-qc-law-25-s28-1-deindexation,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s28-1-deindexation,CA-QC,MAP-3.5,partially_satisfies,
+ca-qc-law-25-s28-1-deindexation,CA-QC,MANAGE-2.2,partially_satisfies,
+ca-qc-law-25-s28-1-deindexation,CA-QC,MANAGE-2.4,partially_satisfies,
+ca-qc-law-25-s28-1-deindexation,CA-QC,MANAGE-4.3,supports,
+ca-qc-law-25-biometric-database-disclosure,CA-QC,GAI-4,safe_harbor,
+ca-qc-law-25-biometric-database-disclosure,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-biometric-database-disclosure,CA-QC,GOVERN-1.6,fully_satisfies,
+ca-qc-law-25-biometric-database-disclosure,CA-QC,MEASURE-2.7,fully_satisfies,
+ca-qc-law-25-biometric-database-disclosure,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s12-purpose-limitation,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s12-purpose-limitation,CA-QC,MAP-1.1,fully_satisfies,
+ca-qc-law-25-s12-purpose-limitation,CA-QC,MAP-2.1,fully_satisfies,
+ca-qc-law-25-s12-purpose-limitation,CA-QC,MAP-3.3,fully_satisfies,
+ca-qc-law-25-s23-data-minimization-retention,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s23-data-minimization-retention,CA-QC,GOVERN-1.7,fully_satisfies,Decommissioning
+ca-qc-law-25-s23-data-minimization-retention,CA-QC,MEASURE-2.7,fully_satisfies,
+ca-qc-law-25-s23-data-minimization-retention,CA-QC,MANAGE-4.1,fully_satisfies,
+ca-qc-law-25-s27-32-right-of-access,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s27-32-right-of-access,CA-QC,GOVERN-1.6,fully_satisfies,
+ca-qc-law-25-s27-32-right-of-access,CA-QC,MAP-2.2,partially_satisfies,
+ca-qc-law-25-s27-32-right-of-access,CA-QC,MEASURE-2.8,fully_satisfies,
+ca-qc-law-25-s27-32-right-of-access,CA-QC,MEASURE-2.9,fully_satisfies,
+ca-qc-law-25-s18-3-service-provider-agreements,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s18-3-service-provider-agreements,CA-QC,GOVERN-6.1,fully_satisfies,
+ca-qc-law-25-s18-3-service-provider-agreements,CA-QC,GOVERN-6.2,fully_satisfies,
+ca-qc-law-25-s18-3-service-provider-agreements,CA-QC,MAP-4.1,fully_satisfies,
+ca-qc-law-25-s18-3-service-provider-agreements,CA-QC,MANAGE-3.1,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,GAI-4,partially_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,GOVERN-4.1,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,GOVERN-4.2,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,MAP-3.2,partially_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,MEASURE-1.3,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,MANAGE-3.2,partially_satisfies,
+ca-on-bill-149-esa-8-4,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-149-esa-8-4,CA-ON,GOVERN-1.6,fully_satisfies,
+ca-on-bill-149-esa-8-4,CA-ON,MAP-1.1,partially_satisfies,
+ca-on-bill-149-esa-8-4,CA-ON,MAP-3.3,partially_satisfies,
+ca-on-bill-149-esa-8-4,CA-ON,MEASURE-2.8,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,GAI-6,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,GOVERN-3.1,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,MAP-1.2,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,MAP-5.1,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,MEASURE-2.11,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,MANAGE-1.3,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,MAP-1.1,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,MAP-3.1,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,MAP-5.1,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,MEASURE-2.10,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,MANAGE-1.3,fully_satisfies,
+ca-on-mfippa-safeguards-bill97,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-mfippa-safeguards-bill97,CA-ON,GOVERN-4.1,fully_satisfies,
+ca-on-mfippa-safeguards-bill97,CA-ON,MEASURE-2.7,fully_satisfies,
+ca-on-mfippa-safeguards-bill97,CA-ON,MANAGE-4.1,fully_satisfies,
+ca-on-mfippa-breach-reporting-bill97,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-mfippa-breach-reporting-bill97,CA-ON,GOVERN-4.3,fully_satisfies,
+ca-on-mfippa-breach-reporting-bill97,CA-ON,MANAGE-2.3,partially_satisfies,
+ca-on-mfippa-breach-reporting-bill97,CA-ON,MANAGE-4.1,fully_satisfies,
+ca-on-mfippa-breach-reporting-bill97,CA-ON,MANAGE-4.3,fully_satisfies,
+ca-on-mfippa-ipc-binding-orders-bill97,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-mfippa-ipc-binding-orders-bill97,CA-ON,GOVERN-1.5,partially_satisfies,
+ca-on-mfippa-ipc-binding-orders-bill97,CA-ON,MANAGE-2.4,partially_satisfies,
+ca-on-mfippa-whistleblower-bill97,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-mfippa-whistleblower-bill97,CA-ON,GOVERN-5.1,fully_satisfies,
+ca-on-mfippa-whistleblower-bill97,CA-ON,GOVERN-5.2,partially_satisfies,
+us-il-hra-ai-2-102-l-1-no-discrimination,US-IL,GOVERN-1.1,fully_satisfies,Illinois HRA AI applicability documented
+us-il-hra-ai-2-102-l-1-no-discrimination,US-IL,GOVERN-3.1,partially_satisfies,Diversity in risk management
+us-il-hra-ai-2-102-l-1-no-discrimination,US-IL,MAP-1.2,partially_satisfies,Interdisciplinary actors review for disparate impact
+us-il-hra-ai-2-102-l-1-no-discrimination,US-IL,MAP-5.1,partially_satisfies,Likelihood and magnitude of impact
+us-il-hra-ai-2-102-l-1-no-discrimination,US-IL,MEASURE-2.11,fully_satisfies,Fairness & bias eval defends disparate-impact claims
+us-il-hra-ai-2-102-l-1-no-discrimination,US-IL,MANAGE-1.3,partially_satisfies,Decisions inform mitigation
+us-il-hra-ai-2-102-l-1-no-discrimination,US-IL,MANAGE-2.4,supports,Supersede deficient AI
+us-il-hra-ai-2-102-l-1-no-zipcode-proxy,US-IL,GOVERN-1.1,fully_satisfies,Zip-code-proxy prohibition documented
+us-il-hra-ai-2-102-l-1-no-zipcode-proxy,US-IL,MAP-1.1,partially_satisfies,Context of use
+us-il-hra-ai-2-102-l-1-no-zipcode-proxy,US-IL,MAP-4.1,partially_satisfies,Map third-party legal risks
+us-il-hra-ai-2-102-l-1-no-zipcode-proxy,US-IL,MEASURE-2.11,partially_satisfies,Fairness & bias correlation analysis
+us-il-hra-ai-2-102-l-1-no-zipcode-proxy,US-IL,MANAGE-1.3,supports,Decisions inform mitigation
+us-il-hra-ai-2-102-l-2-employee-notice,US-IL,GOVERN-1.1,fully_satisfies,Notice template repository
+us-il-hra-ai-2-102-l-2-employee-notice,US-IL,GOVERN-5.1,partially_satisfies,Stakeholder feedback
+us-il-hra-ai-2-102-l-2-employee-notice,US-IL,MAP-2.2,partially_satisfies,Knowledge limits
+us-il-hra-ai-2-102-l-2-employee-notice,US-IL,MEASURE-2.8,fully_satisfies,Transparency
+us-il-hra-ai-2-102-l-2-employee-notice,US-IL,MEASURE-2.9,partially_satisfies,Explainability
+us-il-hra-ai-2-102-l-2-employee-notice,US-IL,MANAGE-4.1,supports,Post-deployment monitoring
+us-il-hra-ai-2-102-l-idhr-rulemaking-compliance,US-IL,GOVERN-1.1,fully_satisfies,Regulatory monitoring
+us-il-hra-ai-2-102-l-idhr-rulemaking-compliance,US-IL,GOVERN-1.5,fully_satisfies,Ongoing oversight
+us-il-hra-ai-2-102-l-idhr-rulemaking-compliance,US-IL,GOVERN-1.7,partially_satisfies,Decommissioning procedures
+us-il-hra-ai-2-102-l-idhr-rulemaking-compliance,US-IL,MANAGE-2.2,partially_satisfies,Mechanisms sustain value
+us-il-hra-ai-2-102-l-idhr-rulemaking-compliance,US-IL,MANAGE-2.4,partially_satisfies,Supersede deficient AI
+us-il-aivia-s5-pre-interview-notice-consent,US-IL,GOVERN-1.1,fully_satisfies,AIVIA tracked in regulatory inventory
+us-il-aivia-s5-pre-interview-notice-consent,US-IL,GOVERN-5.1,fully_satisfies,Stakeholder feedback via consent
+us-il-aivia-s5-pre-interview-notice-consent,US-IL,MAP-2.2,fully_satisfies,Knowledge limits (s. 5(2) explanation)
+us-il-aivia-s5-pre-interview-notice-consent,US-IL,MAP-3.5,partially_satisfies,Human oversight pathway
+us-il-aivia-s5-pre-interview-notice-consent,US-IL,MEASURE-2.8,fully_satisfies,Transparency
+us-il-aivia-s5-pre-interview-notice-consent,US-IL,MEASURE-2.9,fully_satisfies,Explainability
+us-il-aivia-s5-pre-interview-notice-consent,US-IL,MEASURE-3.3,partially_satisfies,Stakeholder feedback channels
+us-il-aivia-s10-sharing-limited,US-IL,GOVERN-1.1,fully_satisfies,Sharing limitation in registry
+us-il-aivia-s10-sharing-limited,US-IL,GOVERN-6.1,fully_satisfies,Third-party policies / vendor DPA
+us-il-aivia-s10-sharing-limited,US-IL,GOVERN-6.2,partially_satisfies,Contingency processes
+us-il-aivia-s10-sharing-limited,US-IL,MAP-4.1,fully_satisfies,Map third-party legal risks
+us-il-aivia-s10-sharing-limited,US-IL,MEASURE-2.7,partially_satisfies,Security & privacy risks (access control)
+us-il-aivia-s10-sharing-limited,US-IL,MANAGE-3.1,fully_satisfies,Third-party risk monitoring
+us-il-aivia-s15-destruction-on-request,US-IL,GOVERN-1.1,fully_satisfies,Deletion right in registry
+us-il-aivia-s15-destruction-on-request,US-IL,GOVERN-1.7,fully_satisfies,Decommissioning at data level
+us-il-aivia-s15-destruction-on-request,US-IL,GOVERN-6.1,partially_satisfies,Third-party deletion obligations
+us-il-aivia-s15-destruction-on-request,US-IL,MAP-4.1,partially_satisfies,Vendor failure cascades
+us-il-aivia-s15-destruction-on-request,US-IL,MEASURE-2.7,fully_satisfies,Deletion verification
+us-il-aivia-s15-destruction-on-request,US-IL,MEASURE-2.10,fully_satisfies,Privacy risk (erasure)
+us-il-aivia-s15-destruction-on-request,US-IL,MANAGE-2.3,fully_satisfies,Superseded systems response
+us-il-aivia-s15-destruction-on-request,US-IL,MANAGE-3.1,partially_satisfies,Third-party deletion compliance
+us-il-aivia-s15-destruction-on-request,US-IL,MANAGE-4.3,supports,Incidents communicated
+us-il-aivia-s30-dceo-demographic-reporting,US-IL,GOVERN-1.1,fully_satisfies,Reporting obligation in registry
+us-il-aivia-s30-dceo-demographic-reporting,US-IL,GOVERN-1.6,fully_satisfies,AI inventory mechanisms
+us-il-aivia-s30-dceo-demographic-reporting,US-IL,GOVERN-3.1,partially_satisfies,Diversity in risk management
+us-il-aivia-s30-dceo-demographic-reporting,US-IL,MAP-3.5,fully_satisfies,Human oversight (out of sole-AI scope)
+us-il-aivia-s30-dceo-demographic-reporting,US-IL,MEASURE-2.1,fully_satisfies,Test sets & metrics
+us-il-aivia-s30-dceo-demographic-reporting,US-IL,MEASURE-2.3,fully_satisfies,Performance evaluation
+us-il-aivia-s30-dceo-demographic-reporting,US-IL,MEASURE-2.11,fully_satisfies,Fairness & bias
+us-il-aivia-s30-dceo-demographic-reporting,US-IL,MANAGE-4.1,fully_satisfies,Post-deployment monitoring
+ca-on-bill-194-edsta-s5-2-public-information,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-2-public-information,CA-ON,GOVERN-1.6,fully_satisfies,AI inventory feeds public disclosure
+ca-on-bill-194-edsta-s5-2-public-information,CA-ON,MEASURE-2.8,fully_satisfies,Transparency is the core control
+ca-on-bill-194-edsta-s5-2-public-information,CA-ON,MANAGE-4.1,partially_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.2,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.3,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.4,fully_satisfies,Risk management documented
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.5,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.6,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.7,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-2.1,fully_satisfies,Roles & responsibilities
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-2.2,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-2.3,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-4.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,GOVERN-1.4,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MAP-5.1,fully_satisfies,Likelihood & magnitude of impact
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MAP-5.2,fully_satisfies,Risk assessment practices
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MANAGE-1.3,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MANAGE-2.2,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MANAGE-4.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MANAGE-4.3,fully_satisfies,
+ca-on-bill-194-edsta-s5-5-purpose-limitation,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-5-purpose-limitation,CA-ON,MAP-1.1,fully_satisfies,Context of use
+ca-on-bill-194-edsta-s5-5-purpose-limitation,CA-ON,MAP-2.1,fully_satisfies,Tasks and methods
+ca-on-bill-194-edsta-s5-5-purpose-limitation,CA-ON,MAP-3.3,partially_satisfies,
+ca-on-bill-194-edsta-s5-6-prohibited-uses,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-6-prohibited-uses,CA-ON,GOVERN-1.6,fully_satisfies,AI inventory cross-referenced against prohibition list
+ca-on-bill-194-edsta-s5-6-prohibited-uses,CA-ON,MAP-1.1,partially_satisfies,
+ca-on-bill-194-edsta-s5-6-prohibited-uses,CA-ON,MANAGE-2.4,fully_satisfies,Supersede deficient AI
+ca-on-bill-194-edsta-s6-2-a-specific-use-disclosure,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s6-2-a-specific-use-disclosure,CA-ON,MEASURE-2.8,fully_satisfies,Transparency
+ca-on-bill-194-edsta-s6-2-a-specific-use-disclosure,CA-ON,MEASURE-2.9,fully_satisfies,Explainability
+ca-on-bill-194-edsta-s6-2-a-specific-use-disclosure,CA-ON,MEASURE-3.3,partially_satisfies,
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,GOVERN-2.1,fully_satisfies,Roles & responsibilities
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,GOVERN-2.3,fully_satisfies,Executive accountability
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,MAP-3.5,fully_satisfies,Human oversight
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,MEASURE-3.3,fully_satisfies,Stakeholder feedback channels
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,MANAGE-4.3,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-1.2,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-1.4,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-1.5,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-2.1,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-2.3,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,MANAGE-2.4,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MAP-1.1,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MAP-1.5,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MAP-3.1,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MAP-3.2,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MAP-5.1,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MEASURE-2.7,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MEASURE-2.10,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MANAGE-1.3,fully_satisfies,
+ca-on-phipa-express-patient-consent,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-express-patient-consent,CA-ON,GOVERN-5.1,fully_satisfies,
+ca-on-phipa-express-patient-consent,CA-ON,MAP-2.2,partially_satisfies,Knowledge limits explanation in consent
+ca-on-phipa-express-patient-consent,CA-ON,MEASURE-2.8,fully_satisfies,Transparency
+ca-on-phipa-express-patient-consent,CA-ON,MEASURE-2.9,fully_satisfies,Explainability
+ca-on-phipa-express-patient-consent,CA-ON,MEASURE-3.3,fully_satisfies,Stakeholder feedback (consent + opt-out)
+ca-on-phipa-data-minimization,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-data-minimization,CA-ON,GOVERN-1.7,fully_satisfies,Decommissioning + disposal
+ca-on-phipa-data-minimization,CA-ON,MEASURE-2.7,fully_satisfies,Security & privacy
+ca-on-phipa-data-minimization,CA-ON,MEASURE-2.10,fully_satisfies,Privacy risk
+ca-on-phipa-data-minimization,CA-ON,MANAGE-4.1,fully_satisfies,Post-deployment monitoring of retention
+ca-on-phipa-vendor-due-diligence,CA-ON,GAI-12,partially_satisfies,Value chain
+ca-on-phipa-vendor-due-diligence,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-vendor-due-diligence,CA-ON,GOVERN-6.1,fully_satisfies,Third-party policies
+ca-on-phipa-vendor-due-diligence,CA-ON,GOVERN-6.2,fully_satisfies,Contingency processes
+ca-on-phipa-vendor-due-diligence,CA-ON,MAP-4.1,fully_satisfies,Third-party legal risks
+ca-on-phipa-vendor-due-diligence,CA-ON,MAP-4.2,fully_satisfies,
+ca-on-phipa-vendor-due-diligence,CA-ON,MANAGE-3.1,fully_satisfies,Third-party risk monitoring
+ca-on-phipa-vendor-due-diligence,CA-ON,MANAGE-3.2,partially_satisfies,
+ca-on-phipa-breach-notification-60day,CA-ON,GAI-9,partially_satisfies,GenAI information security
+ca-on-phipa-breach-notification-60day,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-breach-notification-60day,CA-ON,GOVERN-4.3,fully_satisfies,Testing & incident sharing
+ca-on-phipa-breach-notification-60day,CA-ON,MANAGE-2.3,fully_satisfies,Superseded systems response
+ca-on-phipa-breach-notification-60day,CA-ON,MANAGE-4.1,fully_satisfies,
+ca-on-phipa-breach-notification-60day,CA-ON,MANAGE-4.3,fully_satisfies,Incidents communicated
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,GOVERN-2.1,fully_satisfies,Roles & responsibilities (physician verification)
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,GOVERN-2.3,fully_satisfies,Executive accountability
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,MAP-3.5,fully_satisfies,Human oversight
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,MEASURE-2.1,partially_satisfies,Test sets & metrics (error tracking)
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,MEASURE-3.3,fully_satisfies,Stakeholder feedback
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,MANAGE-4.3,fully_satisfies,
+ca-on-phipa-training-confidentiality,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-training-confidentiality,CA-ON,GOVERN-2.2,fully_satisfies,Workforce training is core control
+ca-on-phipa-training-confidentiality,CA-ON,GOVERN-3.1,partially_satisfies,
+ca-on-phipa-training-confidentiality,CA-ON,MAP-1.2,partially_satisfies,Interdisciplinary actors trained
