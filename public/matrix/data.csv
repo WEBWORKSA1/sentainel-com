@@ -340,3 +340,98 @@ ca-on-phipa-training-confidentiality,CA-ON,GOVERN-1.1,fully_satisfies,
 ca-on-phipa-training-confidentiality,CA-ON,GOVERN-2.2,fully_satisfies,Workforce training is core control
 ca-on-phipa-training-confidentiality,CA-ON,GOVERN-3.1,partially_satisfies,
 ca-on-phipa-training-confidentiality,CA-ON,MAP-1.2,partially_satisfies,Interdisciplinary actors trained
+ca-on-trustworthy-ai-ops-1-principles-adoption,CA-ON,GOVERN-1.1,fully_satisfies,Trustworthy AI Framework in scope
+ca-on-trustworthy-ai-ops-1-principles-adoption,CA-ON,GOVERN-1.2,fully_satisfies,Risk management policy commitments
+ca-on-trustworthy-ai-ops-1-principles-adoption,CA-ON,GOVERN-1.4,fully_satisfies,Risk management documented
+ca-on-trustworthy-ai-ops-1-principles-adoption,CA-ON,MAP-1.1,partially_satisfies,Context of use per principle
+ca-on-trustworthy-ai-ops-1-principles-adoption,CA-ON,MEASURE-2.8,partially_satisfies,Transparency principle
+ca-on-trustworthy-ai-ops-2-risk-management,CA-ON,GOVERN-1.4,fully_satisfies,AI risk management is NIST AI RMF
+ca-on-trustworthy-ai-ops-2-risk-management,CA-ON,MAP-1.1,fully_satisfies,Context of use
+ca-on-trustworthy-ai-ops-2-risk-management,CA-ON,MAP-2.1,fully_satisfies,Tasks and methods
+ca-on-trustworthy-ai-ops-2-risk-management,CA-ON,MAP-5.1,fully_satisfies,Likelihood and magnitude
+ca-on-trustworthy-ai-ops-2-risk-management,CA-ON,MAP-5.2,fully_satisfies,Risk assessment practices
+ca-on-trustworthy-ai-ops-2-risk-management,CA-ON,MEASURE-2.1,fully_satisfies,Test sets & metrics
+ca-on-trustworthy-ai-ops-2-risk-management,CA-ON,MEASURE-2.3,fully_satisfies,Performance evaluation
+ca-on-trustworthy-ai-ops-2-risk-management,CA-ON,MANAGE-1.3,fully_satisfies,Risk mitigation decisions
+ca-on-trustworthy-ai-ops-2-risk-management,CA-ON,MANAGE-2.2,fully_satisfies,Mechanisms sustain value
+ca-on-trustworthy-ai-ops-2-risk-management,CA-ON,MANAGE-4.1,fully_satisfies,Post-deployment monitoring
+ca-on-trustworthy-ai-ops-3-disclosure-reporting,CA-ON,GOVERN-1.1,fully_satisfies,Disclosure obligation tracked
+ca-on-trustworthy-ai-ops-3-disclosure-reporting,CA-ON,GOVERN-1.6,fully_satisfies,AI inventory feeds disclosure
+ca-on-trustworthy-ai-ops-3-disclosure-reporting,CA-ON,MEASURE-2.8,fully_satisfies,No AI in Secret - transparency
+ca-on-trustworthy-ai-ops-3-disclosure-reporting,CA-ON,MANAGE-4.1,fully_satisfies,Reporting cadence monitoring
+ca-on-trustworthy-ai-ops-4-accountability-roles,CA-ON,GOVERN-1.1,fully_satisfies,Roles documented
+ca-on-trustworthy-ai-ops-4-accountability-roles,CA-ON,GOVERN-2.1,fully_satisfies,Roles & responsibilities
+ca-on-trustworthy-ai-ops-4-accountability-roles,CA-ON,GOVERN-2.2,fully_satisfies,Workforce training
+ca-on-trustworthy-ai-ops-4-accountability-roles,CA-ON,GOVERN-2.3,fully_satisfies,Executive accountability
+ca-on-trustworthy-ai-ops-4-accountability-roles,CA-ON,GOVERN-4.1,fully_satisfies,Organizational practices
+ca-on-trustworthy-ai-ops-5-alignment-fippa-phipa,CA-ON,GOVERN-1.1,fully_satisfies,FIPPA/MFIPPA/PHIPA cross-referenced
+ca-on-trustworthy-ai-ops-5-alignment-fippa-phipa,CA-ON,GOVERN-4.3,fully_satisfies,Testing & incident sharing
+ca-on-trustworthy-ai-ops-5-alignment-fippa-phipa,CA-ON,MEASURE-2.7,fully_satisfies,Security & privacy baseline
+ca-on-trustworthy-ai-ops-5-alignment-fippa-phipa,CA-ON,MEASURE-2.10,fully_satisfies,Privacy risk evaluation
+ca-on-trustworthy-ai-ops-5-alignment-fippa-phipa,CA-ON,MANAGE-3.1,fully_satisfies,Vendor compliance chain
+ca-on-trustworthy-ai-ops-5-alignment-fippa-phipa,CA-ON,MANAGE-4.1,fully_satisfies,Post-deployment privacy alignment
+ca-on-trustworthy-ai-ops-6-biennial-review,CA-ON,GOVERN-1.5,fully_satisfies,Biennial review cadence
+ca-on-trustworthy-ai-ops-6-biennial-review,CA-ON,GOVERN-1.7,partially_satisfies,Decommissioning from review
+ca-on-trustworthy-ai-ops-6-biennial-review,CA-ON,MANAGE-2.2,partially_satisfies,Sustain value across cycles
+ca-on-ipc-ohrc-p1-valid-reliable,CA-ON,GOVERN-1.1,fully_satisfies,Validity/reliability documented
+ca-on-ipc-ohrc-p1-valid-reliable,CA-ON,GOVERN-4.1,fully_satisfies,Independent validation practices
+ca-on-ipc-ohrc-p1-valid-reliable,CA-ON,MAP-2.1,fully_satisfies,Validity baseline established
+ca-on-ipc-ohrc-p1-valid-reliable,CA-ON,MEASURE-2.1,fully_satisfies,Test sets and metrics
+ca-on-ipc-ohrc-p1-valid-reliable,CA-ON,MEASURE-2.3,fully_satisfies,Performance evaluation
+ca-on-ipc-ohrc-p1-valid-reliable,CA-ON,MEASURE-2.5,fully_satisfies,System properties documented
+ca-on-ipc-ohrc-p1-valid-reliable,CA-ON,MEASURE-2.11,partially_satisfies,Fairness supports validity across diverse communities
+ca-on-ipc-ohrc-p1-valid-reliable,CA-ON,MANAGE-4.1,fully_satisfies,Post-deployment monitoring
+ca-on-ipc-ohrc-p2-safe,CA-ON,GOVERN-1.1,fully_satisfies,Harm prevention documented
+ca-on-ipc-ohrc-p2-safe,CA-ON,GOVERN-1.7,fully_satisfies,Decommissioning procedures
+ca-on-ipc-ohrc-p2-safe,CA-ON,GAI-3,safe_harbor,GenAI dangerous content
+ca-on-ipc-ohrc-p2-safe,CA-ON,MAP-5.1,fully_satisfies,Likelihood/magnitude of harm
+ca-on-ipc-ohrc-p2-safe,CA-ON,MAP-5.2,fully_satisfies,Risk assessment practices
+ca-on-ipc-ohrc-p2-safe,CA-ON,MEASURE-2.6,fully_satisfies,AI safety eval
+ca-on-ipc-ohrc-p2-safe,CA-ON,MANAGE-1.3,fully_satisfies,Risk mitigation
+ca-on-ipc-ohrc-p2-safe,CA-ON,MANAGE-2.3,fully_satisfies,Superseded systems response
+ca-on-ipc-ohrc-p2-safe,CA-ON,MANAGE-2.4,fully_satisfies,Supersede deficient AI
+ca-on-ipc-ohrc-p2-safe,CA-ON,MANAGE-4.3,fully_satisfies,Incidents communicated
+ca-on-ipc-ohrc-p3-privacy-protective,CA-ON,GAI-4,safe_harbor,GenAI privacy
+ca-on-ipc-ohrc-p3-privacy-protective,CA-ON,GOVERN-1.1,fully_satisfies,Privacy law obligations documented
+ca-on-ipc-ohrc-p3-privacy-protective,CA-ON,GOVERN-1.2,fully_satisfies,Privacy-by-design commitments
+ca-on-ipc-ohrc-p3-privacy-protective,CA-ON,GOVERN-5.1,partially_satisfies,Data subject rights feedback
+ca-on-ipc-ohrc-p3-privacy-protective,CA-ON,MAP-1.6,fully_satisfies,Privacy-by-design in requirements
+ca-on-ipc-ohrc-p3-privacy-protective,CA-ON,MAP-3.5,fully_satisfies,Opt-out for high-risk ADM
+ca-on-ipc-ohrc-p3-privacy-protective,CA-ON,MAP-4.1,fully_satisfies,Data-sharing chain risks
+ca-on-ipc-ohrc-p3-privacy-protective,CA-ON,MEASURE-2.7,fully_satisfies,Security & privacy
+ca-on-ipc-ohrc-p3-privacy-protective,CA-ON,MEASURE-2.10,fully_satisfies,Privacy risk
+ca-on-ipc-ohrc-p3-privacy-protective,CA-ON,MANAGE-3.1,fully_satisfies,Vendor privacy chain
+ca-on-ipc-ohrc-p4-human-rights-affirming,CA-ON,GAI-6,safe_harbor,GenAI harmful bias
+ca-on-ipc-ohrc-p4-human-rights-affirming,CA-ON,GOVERN-1.1,fully_satisfies,Code + Charter obligations documented
+ca-on-ipc-ohrc-p4-human-rights-affirming,CA-ON,GOVERN-3.1,fully_satisfies,Diversity in risk management
+ca-on-ipc-ohrc-p4-human-rights-affirming,CA-ON,GOVERN-3.2,fully_satisfies,Equity-lens design decisions
+ca-on-ipc-ohrc-p4-human-rights-affirming,CA-ON,MAP-1.2,fully_satisfies,Disparate impact review
+ca-on-ipc-ohrc-p4-human-rights-affirming,CA-ON,MAP-5.1,fully_satisfies,Discriminatory impact magnitude
+ca-on-ipc-ohrc-p4-human-rights-affirming,CA-ON,MEASURE-2.11,fully_satisfies,Fairness & bias eval - core Code control
+ca-on-ipc-ohrc-p4-human-rights-affirming,CA-ON,MANAGE-1.3,fully_satisfies,Discriminatory risk mitigation
+ca-on-ipc-ohrc-p4-human-rights-affirming,CA-ON,MANAGE-2.4,fully_satisfies,Supersede discriminatory AI
+ca-on-ipc-ohrc-p5-transparent,CA-ON,GOVERN-1.1,fully_satisfies,Transparency requirements documented
+ca-on-ipc-ohrc-p5-transparent,CA-ON,GOVERN-1.4,fully_satisfies,Traceability foundation
+ca-on-ipc-ohrc-p5-transparent,CA-ON,GOVERN-1.6,fully_satisfies,AI inventory (visible)
+ca-on-ipc-ohrc-p5-transparent,CA-ON,MAP-2.2,fully_satisfies,Knowledge limits (understandable)
+ca-on-ipc-ohrc-p5-transparent,CA-ON,MEASURE-2.8,fully_satisfies,Transparency - direct match
+ca-on-ipc-ohrc-p5-transparent,CA-ON,MEASURE-2.9,fully_satisfies,Explainability - direct match
+ca-on-ipc-ohrc-p5-transparent,CA-ON,MEASURE-2.13,fully_satisfies,System instances tracked (traceable)
+ca-on-ipc-ohrc-p5-transparent,CA-ON,MEASURE-3.3,fully_satisfies,Stakeholder feedback on transparency
+ca-on-ipc-ohrc-p6-accountable-governance,CA-ON,GOVERN-1.1,fully_satisfies,Governance structure documented
+ca-on-ipc-ohrc-p6-accountable-governance,CA-ON,GOVERN-1.2,fully_satisfies,Risk management policy
+ca-on-ipc-ohrc-p6-accountable-governance,CA-ON,GOVERN-1.4,fully_satisfies,Risk management lifecycle
+ca-on-ipc-ohrc-p6-accountable-governance,CA-ON,GOVERN-1.5,fully_satisfies,Ongoing oversight
+ca-on-ipc-ohrc-p6-accountable-governance,CA-ON,GOVERN-2.1,fully_satisfies,Roles & responsibilities
+ca-on-ipc-ohrc-p6-accountable-governance,CA-ON,GOVERN-2.2,fully_satisfies,Workforce training
+ca-on-ipc-ohrc-p6-accountable-governance,CA-ON,GOVERN-2.3,fully_satisfies,Executive accountability
+ca-on-ipc-ohrc-p6-accountable-governance,CA-ON,MAP-3.5,fully_satisfies,Human-in-the-loop
+ca-on-ipc-ohrc-p6-accountable-governance,CA-ON,MEASURE-1.3,fully_satisfies,Independent assessment
+ca-on-ipc-ohrc-p6-accountable-governance,CA-ON,MANAGE-2.4,fully_satisfies,Pause/decommission authority
+ca-on-ipc-ohrc-p7-accountable-recourse-whistleblower,CA-ON,GOVERN-1.1,fully_satisfies,Recourse + whistleblower documented
+ca-on-ipc-ohrc-p7-accountable-recourse-whistleblower,CA-ON,GOVERN-5.1,fully_satisfies,Recourse mechanism
+ca-on-ipc-ohrc-p7-accountable-recourse-whistleblower,CA-ON,GOVERN-5.2,fully_satisfies,Whistleblower channel
+ca-on-ipc-ohrc-p7-accountable-recourse-whistleblower,CA-ON,MAP-3.5,fully_satisfies,Human oversight for challenges
+ca-on-ipc-ohrc-p7-accountable-recourse-whistleblower,CA-ON,MEASURE-2.8,fully_satisfies,Transparency for recourse
+ca-on-ipc-ohrc-p7-accountable-recourse-whistleblower,CA-ON,MEASURE-3.3,fully_satisfies,Stakeholder feedback
+ca-on-ipc-ohrc-p7-accountable-recourse-whistleblower,CA-ON,MANAGE-4.3,fully_satisfies,Incidents communicated to oversight
