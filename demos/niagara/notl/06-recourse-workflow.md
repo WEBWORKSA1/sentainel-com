@@ -1,148 +1,167 @@
-# Town of Niagara-on-the-Lake — Public-Facing AI Recourse Workflow
-## IPC-OHRC Joint Principle 7 Implementation · Cross-Institutional Edition
+# Recourse Workflow — Town of Niagara-on-the-Lake
+## Cross-Institutional AI-Decision Challenge Mechanism
 
-**Prepared by Sentainel Compliance for the Town of Niagara-on-the-Lake**
+**Prepared by Sentainel Compliance · Implementation-ready procedure for three MFIPPA institutions**
 **Date: May 2026**
 
 ---
 
-## Purpose
+## Why this exists
 
-IPC-OHRC Joint Principle 7 requires public-sector institutions to "establish a mechanism to receive and respond to privacy, transparency, or human rights questions or concerns... or to any challenges concerning how the AI system arrived at a decision or was used during a decision-making process."
+IPC-OHRC Joint Principle 7 (Accountable) requires institutions to establish recourse mechanisms for AI-related concerns. NOTL's tripled-scope IT department creates a challenge: residents, customers, library borrowers, and tourists may have AI-related concerns that span Town, Hydro, or Library jurisdiction without knowing which institution is responsible.
 
-NOTL's tripled-scope environment (Town + Library + Hydro under shared IT) means the recourse mechanism must route correctly to the institution responsible for the AI system at issue. This document is a publication-ready template.
-
----
-
-## Public-facing page (to be hosted on notl.com with mirrored content at library + hydro sites)
-
-### **"Concerns About AI Use by the Town, Library, or Hydro"**
-
-The Town of Niagara-on-the-Lake, the Niagara-on-the-Lake Public Library, and NOTL Hydro share IT infrastructure. We are committed to responsible use of artificial intelligence across all three institutions.
-
-If you have concerns about how AI has been used in a decision that affects you, this page explains your options.
+This workflow handles all three institutional pathways through a unified intake while preserving institutional accountability for resolution.
 
 ---
 
-### When this page applies
+## Scope
 
-This recourse workflow applies if you believe:
+This workflow handles four categories of concerns, with NOTL-specific institutional routing:
 
-- The Town, Library, or Hydro used AI in a decision affecting you (a service-delivery decision, a billing decision, an enforcement action, a permit or licence decision)
-- You used a chatbot, search assistant, or other AI feature on a Town, Library, or Hydro website and got information that concerned you
-- You suspect that smart-meter, outage-prediction, or other AI use by Hydro may have affected service to you
-- You suspect that AI used by the Library affected your borrowing experience or surfaced your reading patterns inappropriately
-- You believe AI use by any of the three institutions may discriminate against you on a Code-protected ground
+1. **Suspected false output from an AI system** — e.g., ALPR misread, library AI recommendation, smart meter inference
+2. **Suspected discriminatory AI use** — Human Rights Code grounds across any institutional context
+3. **Suspected undisclosed AI in communications** — Town, Hydro, or Library communications
+4. **General AI transparency questions** — across all three institutions
 
-This workflow does not replace the formal MFIPPA access and correction processes. If you want to formally access records or request correction of personal information, please use the FOI process at the appropriate institution.
+**NOTL-specific category 5:**
 
----
-
-### How to file a concern
-
-**Step 1:** Send an email to **ai-concerns@notl.com** (or mail to the AI Governance Lead, Town of Niagara-on-the-Lake, 1593 Four Mile Creek Road, P.O. Box 100, Virgil ON L0S 1T0) describing:
-
-- The decision, communication, or AI use that concerns you
-- Which institution you believe was involved (Town, Library, Hydro, or unsure)
-- The date or approximate date of the event
-- Your contact information
-- The outcome you are seeking
-
-**Step 2:** The cross-institutional AI Governance Lead acknowledges receipt within 5 business days and routes your concern to the responsible institution.
-
-**Step 3:** Within 30 days, the AI Governance Lead or institutional sub-lead provides a written response that:
-
-- Confirms or denies that AI was used in the decision or interaction
-- Identifies which institution was responsible
-- Explains what role AI played, if any
-- Identifies the responsible staff member
-- States what action, if any, is being taken in response
-- Informs you of your right to escalate to the IPC if you are not satisfied
-
-**Step 4:** If you are not satisfied, you can:
-
-- File a complaint with the IPC at ipc.on.ca/complaint
-- File a Human Rights Code complaint with the Ontario Human Rights Tribunal at hrto.ca
-- For Hydro-specific concerns, escalate to the Ontario Energy Board at oeb.ca
+5. **Cross-institutional AI concerns** — where a concern spans Town + Hydro + Library and the appropriate institutional responsibility is unclear
 
 ---
 
-### Specifically for Library concerns
+## Channel design
 
-Library patrons have additional confidentiality expectations under the Public Libraries Act and common-law borrower confidentiality. If your concern involves AI use that may have surfaced your borrowing history, reading preferences, or library interactions inappropriately, please note this in your email so the Library AI sub-lead can apply enhanced confidentiality procedures to the response.
+### Unified public-facing entry point
 
-### Specifically for Hydro concerns
+Add to notl.com: a single page at `/ai-concerns` (with mirrors on notlhydro.com and notlpubliclibrary.org). Single intake form for all three institutions. Intake includes:
 
-Hydro customers have additional protections under the Ontario Energy Board Act. If your concern involves AI use affecting smart meter data, outage prediction, billing decisions, or service delivery, please note this in your email so the Hydro AI sub-lead can apply utility-specific procedures to the response.
+- Name (optional)
+- Contact email or phone (optional)
+- Category (1–5 above)
+- Institution involved (dropdown: Town / Hydro / Library / Cross-institutional / Unknown)
+- AI system referenced (dropdown of cross-institutional public inventory + "unknown / not listed")
+- Description (free text)
+- Date of concern
+- Supporting documents (file upload)
 
----
+For international tourists who may not know institutional structure, the form has plain-language labels in multiple languages: English, French, and at minimum Spanish (significant US visitor population).
 
-### Privacy of recourse submissions
+### Backend routing
 
-Information you submit is collected under MFIPPA s. 28 and is used solely to investigate and respond to your concern. We do not use this information for any other purpose without your consent.
+Incoming concern routed by category and institution:
 
-If your concern involves the Library, additional confidentiality applies to your submission consistent with library borrower confidentiality expectations.
-
-If your concern involves Hydro, additional confidentiality applies consistent with OEB rules.
-
----
-
-### Public reporting
-
-The cross-institutional AI Governance Lead publishes an annual summary across all three institutions including:
-
-- Number of submissions by institution and category
-- Number of submissions resulting in changes to AI use
-- Number of submissions escalated to the IPC, OHRC, or OEB
-- Trends and lessons learned
-
-This report is published on notl.com with mirrored copies at the Library and Hydro sites, and presented to council, Library Board, and Hydro leadership at their respective first meetings of each calendar year.
-
----
-
-## Internal procedures (not for public publication)
-
-### Routing
-
-- ai-concerns@notl.com forwards to the cross-institutional AI Governance Lead inbox
-- The AI Governance Lead reviews and routes to the appropriate institutional sub-lead within 2 business days
-- Where the responsible institution is unclear, the AI Governance Lead investigates jointly with relevant sub-leads
+| Category | Town | Hydro | Library | Cross-institutional |
+|---|---|---|---|---|
+| 1 — False output | AI Gov Lead + system owner | Hydro AI sub-lead | Library AI sub-lead | AI Gov Lead (lead) + relevant sub-leads |
+| 2 — Discrimination | AI Gov Lead + DEI advisor | Hydro AI sub-lead | Library AI sub-lead + Library Board | AI Gov Lead leads investigation across all affected institutions |
+| 3 — Undisclosed AI | Town Clerk + Communications | Hydro Communications | Library Director | AI Gov Lead coordinates institutional disclosure |
+| 4 — Transparency | Communications | Hydro Communications | Library Communications | AI Gov Lead produces cross-institutional response |
+| 5 — Cross-institutional | AI Gov Lead | AI Gov Lead | AI Gov Lead | AI Gov Lead leads with all sub-leads consulted |
 
 ### Service-level commitments
 
-- Acknowledgement within 5 business days
-- Written response within 30 days
-- For complex cross-institutional concerns, the response may identify a longer investigation timeline with regular updates
+Same as other Niagara cities, with addition:
 
-### Documentation
+- **Cross-institutional concerns (Category 5)**: Initial substantive response 15 business days (extra time for coordination), full resolution 60 business days
+- **International visitor concerns**: Where the complainant is identified as a tourist, response includes translation if requested and information about home-jurisdiction recourse options
 
-- All submissions logged in a shared case management system with institutional access controls
-- Library submissions visible to Library sub-lead and the AI Governance Lead; not to Town or Hydro staff
-- Hydro submissions visible to Hydro sub-lead and the AI Governance Lead; not to Town or Library staff
-- This logging structure is documented in the Cross-Institutional MOU
+---
 
-### Coordination
+## Documentation requirements
 
-- If submission involves NRPS-operated AI (e.g., ALPR), forward to NRPS Privacy Officer with copy to the AI Governance Lead
-- If submission involves third-party vendor AI, coordinate with vendor's compliance contact
-- If submission involves the shared IT environment broadly (e.g., M365 Copilot), the AI Governance Lead investigates jointly with all three sub-leads
+For every recourse intake, the AI Governance Lead maintains:
+
+- Intake timestamp + unique ID
+- Institutional routing decision
+- Cross-institutional coordination log (if Category 5)
+- Investigation summary
+- Response to resident/visitor with timestamp
+- Resolution disposition
+- Action taken on AI system(s) or procedure(s)
+
+Quarterly aggregate published on all three institutional websites simultaneously.
+
+---
+
+## Library-specific considerations
+
+Public library borrower confidentiality has heightened common-law protection. The Library AI sub-lead is the primary owner of any AI concern involving library records. The cross-institutional AI Governance Lead is informed but does not have access to specific borrower record details unless the Library AI sub-lead confirms a specific cross-institutional violation has occurred.
+
+This preserves the library-confidentiality firewall while enabling coordinated governance.
+
+---
+
+## Hydro-specific considerations
+
+Utility customer information has both MFIPPA + Ontario Energy Board confidentiality protection. Smart meter data inference is the most granular personal information any of the three institutions handles. The Hydro AI sub-lead has primary ownership of any concern involving meter data.
+
+Where a concern involves cross-institutional inference (e.g., Town staff observing meter-derived occupancy patterns through Copilot), the AI Governance Lead leads investigation with both Hydro and Town sub-leads.
+
+---
+
+## International visitor considerations
+
+NOTL receives substantial international visitor traffic. Where a visitor files a concern:
+
+- Acknowledge in their language of preference if reasonable
+- Note that Ontario MFIPPA governs the institutions' AI use regardless of visitor home jurisdiction
+- Inform visitor of right to file with IPC even if they are not Ontario residents
+- For visitors from EU jurisdictions, acknowledge that GDPR may also apply to their home institutions and offer to coordinate cross-jurisdictional response
+- For visitors from US jurisdictions, acknowledge that state privacy laws may apply at home but Ontario MFIPPA governs the captured interaction
+
+---
+
+## Public reporting
+
+Quarterly the AI Governance Lead publishes aggregate summary on all three institutional websites:
+
+- Total concerns received
+- Breakdown by category and institution
+- Cross-institutional concerns specifically (Category 5)
+- International visitor concerns specifically
+- Substantiation rate
+- Average resolution time
+- Actions taken across institutions
+
+This triple-publication is part of NOTL's regional best-practice positioning.
 
 ---
 
 ## NIST AI RMF mapping
 
-| NIST control | Coverage by this workflow |
-|---|---|
-| GOVERN-5.1 | Stakeholder feedback collected (residents + patrons + customers) |
-| GOVERN-5.2 | Mechanism collects, manages feedback across three institutions |
-| MAP-3.5 | Human oversight for challenges |
-| MEASURE-2.8 | Transparency cross-institutional |
-| MEASURE-3.3 | Stakeholder feedback channels established |
-| MANAGE-4.3 | Incidents communicated to oversight bodies |
+- **GOVERN-5.1, GOVERN-5.2**: Stakeholder feedback channels across three institutions
+- **GOVERN-2.1**: Roles & responsibilities documented cross-institutionally
+- **MEASURE-3.3**: Stakeholder feedback
+- **MANAGE-4.3**: Incidents communicated externally including across institutional boundaries
 
 ---
 
-## Reviewer + sign-off
+## Approval pathway
 
-**Prepared by:** Sentainel Compliance Platform, May 2026
-**Intended reviewer:** Town of NOTL CAO + Clerk + AI Governance Lead + Library Board sub-lead + Hydro sub-lead
+Unique to NOTL: three institutional approvals required:
+
+1. Town CAO
+2. NOTL Hydro management
+3. NOTL Public Library Board
+
+Recommended sequence:
+
+1. Sentainel template adapted by AI Governance Lead
+2. Town CAO endorses
+3. NOTL Hydro management endorses
+4. Library Board adopts at next regular meeting
+5. Joint announcement on all three institutional websites
+
+Approval timeline: 60–90 days. Implementation timeline: 30 days after final approval.
+
+---
+
+## Technology requirements
+
+Minimal:
+
+- Single unified web form (hosted on notl.com, embedded on notlhydro.com and library site)
+- Dedicated email inbox
+- Shared Microsoft Lists tracking spreadsheet accessible to AI Governance Lead + three institutional sub-leads (with role-based access control)
+
+Sentainel Municipal Edition includes production-grade cross-institutional case management for this purpose.

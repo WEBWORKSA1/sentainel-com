@@ -1,142 +1,160 @@
-# Town of Niagara-on-the-Lake — Whistleblower Procedure for AI Non-Compliance
-## Cross-Institutional Edition
+# Whistleblower Procedure — Town of Niagara-on-the-Lake
+## Staff Reporting Across Three MFIPPA Institutions
 
-**Prepared by Sentainel Compliance for the Town of Niagara-on-the-Lake**
-**Date: May 2026**
+**Prepared by Sentainel Compliance · May 2026**
 
 ---
 
-## Purpose
+## Why this exists
 
-MFIPPA Bill 97 introduces whistleblower protection (effective January 1, 2027) for municipal employees who report breaches of MFIPPA. IPC-OHRC Joint Principle 7 requires institutions to enable safe whistleblowing. This applies to all three NOTL institutions — Town, Library, and Hydro — each independently.
+MFIPPA Bill 97 (effective January 1, 2027) includes whistleblower protection. IPC-OHRC Joint Principle 7 explicitly requires safe whistleblowing channels.
 
-This document provides a unified procedure honoring the institutional autonomy of all three while leveraging the shared AI Governance Lead structure.
+NOTL's tripled-scope IT department creates a specific whistleblower challenge: staff at the Town, NOTL Hydro, or NOTL Public Library may observe AI non-compliance in the shared infrastructure. The reporting channel must protect all three institutions' staff equally without exposing them to cross-institutional retaliation.
 
 ---
 
 ## Scope
 
-Applies to staff or contractors of:
+This procedure covers staff reports across all three institutions of:
 
-- Town of Niagara-on-the-Lake (all departments)
-- Niagara-on-the-Lake Public Library (all roles)
-- NOTL Hydro (all roles)
-- Any contracted service provider in a role that touches AI processing of information from any of the three institutions
-
-Covers concerns about:
-
-- AI systems used by any of the three institutions that may not comply with MFIPPA, MFIPPA Bill 97, IPC-OHRC Principles, Trustworthy AI Framework, or institutional policy
-- Staff misuse of AI tools (e.g., prohibited entry of MFIPPA-protected information into public AI services)
-- Vendor AI products that may not comply with applicable requirements
-- AI-related practices infringing on Code-protected rights
-- Cross-institutional AI data flows that may exceed lawful authority for collection
-- Library borrower confidentiality concerns related to AI
-- Hydro OEB-related AI concerns
+1. AI system non-compliance with MFIPPA, IPC-OHRC, or institutional policy
+2. Undisclosed AI use in any institutional communication or decision
+3. Discriminatory AI outputs observed in operational use
+4. Privacy breach risks from AI systems
+5. Vendor non-compliance
+6. **Cross-institutional data leakage** through shared AI infrastructure (NOTL-specific category)
+7. **Library borrower confidentiality violation** by AI (Library-specific category)
+8. **Smart meter data improper access** by AI (Hydro-specific category)
 
 ---
 
 ## Reporting channels
 
-The procedure provides **five reporting channels** with different levels of confidentiality and institutional context.
+### Channel 1: Internal direct report (within institution)
 
-### Channel 1 — Cross-institutional: AI Governance Lead
+Staff can report to:
 
-**When to use:** Any AI-related concern. Default channel.
+- Their direct manager within their employing institution
+- Their institution's AI sub-lead (Town / Hydro / Library)
+- The cross-institutional AI Governance Lead
+- Their institution's senior management (Town CAO, Hydro management, Library Director)
 
-**How to use:**
-- Email ai-governance-lead@notl.com
-- In-person meeting on request
+### Channel 2: Cross-institutional anonymous intake
 
-**Confidentiality:** Same as MFIPPA Privacy Officer communications. The AI Governance Lead may share the substance with appropriate institutional sub-leads + external counsel for response purposes, but reporter identity is protected.
+A single anonymous channel accessible from all three institutional intranets. Reports route to the cross-institutional AI Governance Lead with confidentiality preserved across institutional boundaries.
 
-### Channel 2 — Town-specific: Clerk's office
+- Dedicated email: `ai-whistleblower@notl.com` (mirrored at hydro and library)
+- Physical drop-box at Town Hall (anonymous paper reports)
+- Anonymous web form on each institutional intranet
 
-**When to use:** Town-specific concerns, or concerns the reporter prefers to escalate within the Town's structure
+### Channel 3: External oversight body referral
 
-### Channel 3 — Library-specific: Library Board sub-committee
+Staff are explicitly permitted to report externally to:
 
-**When to use:** Library-specific concerns including borrower confidentiality issues
+- Information and Privacy Commissioner of Ontario (IPC)
+- Ontario Human Rights Commission (OHRC)
+- Ontario Ombudsman
+- For library-specific concerns: Federation of Ontario Public Libraries or Ontario Library Service
+- For utility-specific concerns: Ontario Energy Board
 
-The Library Board has a sub-committee (or designates one specifically for this purpose) to receive Library AI compliance concerns. The sub-committee may consult the AI Governance Lead with the reporter's consent.
-
-### Channel 4 — Hydro-specific: Hydro leadership designate
-
-**When to use:** Hydro-specific concerns including OEB-related issues
-
-NOTL Hydro designates a senior staff member or board chair to receive Hydro AI compliance concerns. The designate may consult the AI Governance Lead with the reporter's consent.
-
-### Channel 5 — External: IPC + OHRC + OEB
-
-**When to use:** Concerns not adequately addressed internally, or concerns the reporter prefers to take directly to external regulators
-
-- IPC: ipc.on.ca/complaint
-- OHRC: hrto.ca
-- For Hydro-specific concerns: Ontario Energy Board at oeb.ca
+All three institutions acknowledge and protect this right.
 
 ---
 
-## Anti-retaliation commitment
+## Cross-institutional whistleblower protections
 
-All three institutions commit that no staff member who reports an AI compliance concern in good faith through any of the above channels will face retaliation in any of the forms described in Thorold 08-whistleblower-procedure.md § "Anti-retaliation commitment."
+NOTL's unique tripled-scope situation creates specific whistleblower considerations:
 
-This commitment is binding on management at all three institutions.
+**Concern: Cross-institutional retaliation.** A Library staff member reporting AI non-compliance affecting the Town might face indirect career consequences through the shared IT department. The procedure explicitly prohibits this.
 
----
+**Mitigation: Tri-institutional confidentiality commitment.** All three institutions (Town, NOTL Hydro, NOTL Public Library) commit jointly to anti-retaliation. Identity disclosure of anonymous reporters is prohibited even across institutional boundaries.
 
-## Small-municipality + tripled-scope protections
+**Concern: Library + Hydro specialized confidentiality.** Whistleblower reports may surface information protected by Library confidentiality or Ontario Energy Board confidentiality. Investigation must preserve those protections.
 
-NOTL's small size + tripled-scope arrangement creates unique whistleblower protection considerations:
-
-1. **Institution-specific anonymity is even more limited than in a single small municipality.** Staff at the Library may be identifiable by their role even if their concern is about the Town's AI use. The procedure compensates with strong institutional separation in record-keeping (Library sub-lead does not share concern identity with Town or Hydro staff).
-
-2. **External counsel intake** for cross-institutional concerns where the reporter is uncomfortable being identified to any internal channel.
-
-3. **Sequential investigation** so that the timing of any response does not identify the reporter (e.g., a policy change made several months after a report).
-
-4. **No-reprisal certification at hiring + annual** across all three institutions.
+**Mitigation: Specialized investigators.** Library-specific reports investigated by AI Governance Lead with Library Director consulted under confidentiality. Hydro-specific reports investigated by AI Governance Lead with Hydro management consulted under OEB-compatible protocols.
 
 ---
 
-## Response procedure
+## Investigation timelines
 
-See Thorold 08-whistleblower-procedure.md § "Response procedure" for the standard 6-step pattern.
-
-NOTL-specific cross-institutional additions:
-
-- **Step 1.5:** Cross-institutional routing. The AI Governance Lead determines whether the concern is institution-specific (Town, Library, or Hydro only) or cross-institutional, and routes accordingly.
-
-- **Step 2.5:** Library/Hydro-specific investigation procedures. Library borrower confidentiality and Hydro OEB obligations may require institution-specific investigation steps beyond what the AI Governance Lead can conduct unilaterally.
-
-- **Step 4.5:** Multi-institutional remediation. If remediation affects more than one institution (e.g., changes to the shared IT environment), the AI Governance Lead coordinates with all affected sub-leads.
-
-- **Step 6.5:** Cross-institutional annual reporting. The annual public summary covers all three institutions in a single document while preserving institution-specific confidentiality.
+| Action | Channel 1 | Channel 2 | Channel 3 |
+|---|---|---|---|
+| Acknowledge receipt | Same day | 3 business days | (External agency) |
+| Initial review | 5 business days | 10 business days | (External agency) |
+| Cross-institutional determination | 30 business days | 60 business days (cross-institutional coordination) | (External agency) |
+| Action taken | Communicated to reporter (if known) | Anonymous channel response | (External agency) |
 
 ---
 
-## Documentation
+## Documentation requirements
 
-The AI Governance Lead maintains a confidential cross-institutional log. Institutional sub-leads maintain institution-specific sub-logs that link to the cross-institutional log but are accessible only within their institution.
+For every report (excluding identifying information of anonymous reporters), the AI Governance Lead maintains:
 
-This structure is documented in the Cross-Institutional MOU.
+- Report timestamp + unique ID
+- Category of concern
+- Institution(s) affected
+- Investigation summary (with institutional confidentiality preserved)
+- Determination
+- Action taken
+- Date of resolution
+
+Log accessible only to AI Governance Lead. Aggregate statistics published quarterly on all three institutional websites.
+
+---
+
+## Anti-reprisal protection (tri-institutional)
+
+All three institutions jointly commit that **no staff member at the Town, NOTL Hydro, or NOTL Public Library will face disciplinary, employment, or assignment consequences as a result of a good-faith report under this procedure** — whether from their own employing institution or from either of the other two.
+
+This joint commitment is the foundational protection for the tripled-scope environment.
+
+---
+
+## Confidentiality protection
+
+Whistleblower reports involving cross-institutional concerns require careful confidentiality management. The AI Governance Lead handles cross-institutional reports under strict confidentiality, with institutional sub-leads briefed only on a need-to-know basis.
+
+Where a report involves Library borrower information, the Library AI sub-lead is the only person beyond the AI Governance Lead who reviews specific borrower details. Where a report involves Hydro customer information, the Hydro AI sub-lead is the only person beyond the AI Governance Lead who reviews specific customer details.
+
+---
+
+## Training requirement
+
+All staff across the three institutions receive annual AI whistleblower training covering:
+
+- The procedure's existence and channels
+- The tri-institutional anti-reprisal protection
+- Cross-institutional confidentiality protections
+- Institution-specific specialized concerns (library borrower confidentiality, utility customer protection)
+- The reportable categories
+
+For NOTL, training is delivered jointly across the three institutions to reinforce the tri-institutional protection.
+
+---
+
+## Interaction with collective agreements
+
+NOTL Hydro and the Public Library may have collective bargaining agreements distinct from the Town. The procedure operates in addition to, not in replacement of, applicable collective agreements. Each institution's HR confirms compatibility with their specific collective bargaining arrangement.
 
 ---
 
 ## NIST AI RMF mapping
 
-Same as Thorold 08-whistleblower-procedure.md § NIST mapping. Additionally:
-
-- GOVERN-6.1 (third-party shared infrastructure policies)
-- MANAGE-3.1 (cross-institutional risk monitoring)
-
----
-
-## Adoption
-
-This procedure is adopted by parallel resolutions at all three institutions: Town Council, Library Board, and NOTL Hydro board. The Cross-Institutional MOU references this procedure as the shared framework while preserving institutional autonomy.
+- **GOVERN-2.2**: Workforce training (tri-institutional)
+- **GOVERN-5.1, GOVERN-5.2**: Stakeholder feedback channels
+- **MEASURE-3.3**: Stakeholder feedback
+- **MANAGE-4.3**: Incidents communicated
 
 ---
 
-## Reviewer + sign-off
+## Approval pathway
 
-**Prepared by:** Sentainel Compliance Platform, May 2026
-**Intended reviewer:** Town of NOTL Council + CAO + Library Board + Hydro board + external counsel + HR (all three institutions)
+Three institutional approvals required:
+
+1. Town CAO + Town HR
+2. NOTL Hydro management + Hydro HR
+3. Library Board + Library HR
+
+Legal counsel review at each institution. Joint publication on all three institutional websites and intranets.
+
+Recommended timeline: 90 days from AI Governance Lead designation.

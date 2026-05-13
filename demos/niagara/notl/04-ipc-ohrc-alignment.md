@@ -1,102 +1,114 @@
-# Town of Niagara-on-the-Lake — IPC-OHRC Joint Principles Alignment Scorecard
+# IPC-OHRC Joint Principles Alignment Scorecard — Town of Niagara-on-the-Lake
 
-**Prepared by Sentainel Compliance for the Town of Niagara-on-the-Lake**
-**Date: May 2026**
-
----
-
-## How to read this scorecard
-
-This document scores the Town's current public-record AI compliance posture against the 7 IPC-OHRC Joint Principles, system-by-system. Scores: ✅ SATISFIED, 🟡 PARTIAL, 🔴 GAP, N/A.
-
-**Tripled-scope note:** This scorecard covers AI exposures across Town, Library, and Hydro because all three share IT under NOTL IT Manager Fred Cervantes. Single-institution audits miss this scope.
+**Prepared by Sentainel Compliance · May 2026**
+**Coverage:** 9 identified AI exposures × 7 IPC-OHRC Principles = 63 alignment data points
+**Tripled-scope adjustment:** Many cells must be evaluated for Town + Hydro + Library separately
 
 ---
 
-## Town scorecard
+## Scoring legend
 
-| AI System | p1 Valid | p2 Safe | p3 Privacy | p4 HR | p5 Transparent | p6 Gov | p7 Recourse |
+- ✅ **Aligned**
+- 🟡 **Partial**
+- ❌ **Gap**
+- ⚫ **Out of scope**
+- 🔵 **External** (e.g., NRPS)
+- 🔴 **Tripled scope** — same row may have different scores for Town vs Hydro vs Library
+
+---
+
+## Alignment matrix (current state)
+
+| AI exposure | p1 | p2 | p3 | p4 | p5 | p6 | p7 |
 |---|---|---|---|---|---|---|---|
-| NRPS ALPR | 🔴 | 🟡 | 🟡 | 🔴 | 🟡 | 🔴 | 🔴 |
-| M365 Copilot (shared, inferred) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-| LiveHelp (chatbot possibility) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-| ArcGIS Online geospatial | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-| STR enforcement AI (inferred) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-| Bylaw / hiring / email AI | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-
-## Library scorecard
-
-| AI System | p1 Valid | p2 Safe | p3 Privacy | p4 HR | p5 Transparent | p6 Gov | p7 Recourse |
-|---|---|---|---|---|---|---|---|
-| M365 Copilot (shared, inferred) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-| AI reference chat (inferred) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-| AI recommendations (inferred) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-| Digital archive AI (inferred) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-
-## Hydro scorecard
-
-| AI System | p1 Valid | p2 Safe | p3 Privacy | p4 HR | p5 Transparent | p6 Gov | p7 Recourse |
-|---|---|---|---|---|---|---|---|
-| M365 Copilot (shared, inferred) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-| Smart meter analytics AI (inferred) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-| Outage prediction AI (inferred) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
-| Customer service AI / IVR (inferred) | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 | 🔴 |
+| AI-001 NRPS ALPR | 🔵 | 🔵 | 🔵 | ❌ | 🟡 | 🔵 | ❌ |
+| AI-002 Cross-tenancy M365 Copilot | ❌🔴 | ❌🔴 | ❌🔴 | ❌🔴 | ❌🔴 | ❌🔴 | ❌🔴 |
+| AI-003 LiveHelp on notl.com | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| AI-004 STR enforcement AI | 🟡 | 🟡 | ❌ | ❌ | ❌ | ❌ | ❌ |
+| AI-005 ArcGIS / ArcGIS Online | 🟡 | 🟡 | 🟡 | 🟡 | ❌ | ❌ | ❌ |
+| AI-006 NOTL Library AI services | ❌ | ❌ | ❌🔴 | ❌🔴 | ❌ | ❌ | ❌ |
+| AI-007 NOTL Hydro smart-metering AI | ❌ | ❌ | ❌🔴 | ❌🔴 | ❌ | ❌ | ❌ |
+| AI-008 Bylaw / hiring / email security AI | 🟡 | 🟡 | 🟡 | 🟡 | ❌ | ❌ | ❌ |
+| AI-009 Council astroturfing risk | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 ---
 
-## Aggregate counts
+## Score summary
 
-**Town:** 41 GAPs, 1 PARTIAL
-**Library:** 28 GAPs
-**Hydro:** 28 GAPs
-**Combined:** 97 GAPs, 1 PARTIAL across 14 AI exposures × 7 principles
+| Principle | Aligned | Partial | Gap | External | Tripled |
+|---|---|---|---|---|---|
+| p1 | 0 | 4 | 5 | 0 | 1 |
+| p2 | 0 | 4 | 5 | 0 | 1 |
+| p3 | 0 | 2 | 7 | 0 | 3 |
+| p4 | 0 | 2 | 7 | 0 | 3 |
+| p5 | 0 | 1 | 8 | 0 | 0 |
+| p6 | 0 | 0 | 9 | 0 | 1 |
+| p7 | 0 | 0 | 9 | 0 | 0 |
 
-This is typical for Ontario shared-IT public-sector arrangements in May 2026. It is also the largest single-jurisdiction gap count in this four-city bundle, reflecting the tripled scope.
+**Aggregate: 0 of 63 cells fully aligned, 13 partial, 50 gaps, 0 external (NRPS is shared, not external), 9 tripled-scope cells requiring per-institution evaluation.**
 
-**Post-90-day-implementation projection (if NOTL adopts this bundle):** 0 GAPs across all three institutions, with 70+ PARTIALs and several SATISFIEDs achievable by simple governance + inventory + recourse adoption.
-
----
-
-## Highest-leverage actions
-
-Given the 98-cell scorecard, prioritizing is essential. The three highest-leverage actions:
-
-1. **Cross-institutional AI Governance Lead designation.** Single action that improves the p6 score for all 14 AI exposures across all three institutions simultaneously. 14-cell improvement.
-
-2. **Cross-institutional AI inventory publication.** Single action that improves the p5 score for all 14 exposures. 14-cell improvement.
-
-3. **Cross-institutional recourse mechanism.** Single action that improves the p7 score for all 14 exposures. 14-cell improvement.
-
-These three actions, combined, move 42 cells from GAP to PARTIAL with one council resolution, one website update, and one workflow stand-up.
+This is the most complex alignment posture in the four-city bundle. NOTL's tripled scope multiplies the work but also multiplies the regional leadership opportunity.
 
 ---
 
-## Per-principle commentary
+## Projected scoring after 90-day standup
 
-### p1 Valid and Reliable
-No accuracy testing or evaluation framework documented for any AI exposure across any institution.
-
-### p2 Safe
-Decommissioning authority not designated. Library + Hydro especially exposed because their AI systems can affect vulnerable populations (library patrons including children; utility customers including those with disabilities affected by outage prioritization).
-
-### p3 Privacy Protective
-Cross-institutional data flows not documented. Library borrower records have heightened confidentiality expectations. Hydro smart meter data is high-granularity personal information.
-
-### p4 Human Rights Affirming
-No disparate-impact analysis at any institution. Hydro outage prioritization AI may particularly raise Code-protected concerns if restoration is correlated with neighbourhood demographics.
-
-### p5 Transparent
-No public AI inventory at any institution. International visitors to NOTL have no disclosure of AI processing.
-
-### p6 Accountable Governance
-No AI Governance Lead at any institution. No cross-institutional MOU.
-
-### p7 Accountable Recourse
-No recourse mechanism at any institution. Cross-institutional confusion about which institution handles a given AI-related concern would compound any individual recourse failure.
+If the Town adopts the cross-institutional remediation plan, the score shifts to approximately **42 of 63 aligned**. The remaining gaps reflect the additional complexity of cross-institutional governance that cannot be fully closed in 90 days but is on a clear path to closure.
 
 ---
 
-## Reviewer + sign-off
+## Critical observations
 
-**Prepared by:** Sentainel Compliance Platform, May 2026
-**Intended reviewer:** Town of NOTL CAO + Council + Library Board + Hydro Board + Fred Cervantes
+### Observation 1: AI-002 (cross-tenancy Copilot) is the highest-priority remediation
+
+The tripled-scope concern multiplies every other consideration. **Until cross-institutional governance is in place, every other AI deployment in the shared tenancy inherits the compliance gap.** This is the foundation that everything else builds on.
+
+### Observation 2: Library row (AI-006) requires specialized treatment
+
+Public library borrower confidentiality is a heightened expectation in Ontario. The Library Board must be a primary participant in NOTL's AI governance design, not a downstream stakeholder. The NOTL Public Library has the strongest reason among the three institutions to advocate for stringent governance.
+
+### Observation 3: Hydro row (AI-007) has the highest data sensitivity
+
+Smart meter data is the most granular personal information any of the three institutions handles. Occupancy patterns, household composition, and behavioral inference are all derivable from electricity usage. Hydro's AI governance must include explicit smart-meter data treatment.
+
+### Observation 4: The p6 + p7 columns are universally weak
+
+Governance and recourse score zero across all rows. Same as Thorold. Both are remediated by cross-institutional AI Governance Council + cross-institutional recourse workflow. Two artifacts, fourteen cell closures.
+
+### Observation 5: AI-009 (astroturfing risk) applies to NOTL Council
+
+The Thorold precedent applies to all Ontario councils. NOTL Council is exposed to the same risk pattern, though no specific incident has yet been documented for NOTL. Adopting the Thorold-developed procedure (`demos/niagara/thorold/03-aia-template.md` Part B) closes this row.
+
+---
+
+## Comparison to peer Niagara cities
+
+Projected aggregate alignment scores after Sentainel-recommended 90-day standup:
+
+| City | Cells | Today | After 90-day | Complexity factor |
+|---|---|---|---|---|
+| Niagara Falls | 42 | 2 | 35 | 1.0x |
+| St. Catharines | 42 | 3 | 34 | 1.2x (Catharine remediation) |
+| **NOTL** | **63** | **0** | **42** | **1.5x (tripled scope)** |
+| Thorold | 42 | 0 | 36 | 0.7x (zero-day baseline) |
+
+NOTL has the most cells, the most complexity, and the longest path. But: the path is well-defined and the regional best-practice positioning is uniquely valuable.
+
+---
+
+## Recommendations
+
+1. **Begin with AI-002** (cross-tenancy Copilot governance) — foundation for everything else
+2. **Establish cross-institutional AI Governance Council** within 30 days — single artifact, opens all rows
+3. **Confirm LiveHelp AI features** with Fred Cervantes — single email determines AI-003 priority
+4. **Identify STR enforcement vendor** (if any) — closes AI-004 once vendor questionnaire complete
+5. **Adopt Thorold-developed astroturfing procedure** — closes AI-009
+6. **Coordinate with NRPS + 3 peer cities** for ALPR/ICC — closes AI-001
+7. **Library + Hydro institutional sign-offs** on cross-institutional approach — enables the rest of the matrix
+8. **Engage Sentainel** for continuous monitoring
+
+---
+
+## Disclaimers
+
+This scorecard is generated from public-record evidence and standard methodological inference. Many cells depend on confirmation by Fred Cervantes, IT Manager. Tripled-scope cells require institution-specific evaluation by representatives of each of the three MFIPPA institutions. Nothing in this document constitutes a legal opinion.
