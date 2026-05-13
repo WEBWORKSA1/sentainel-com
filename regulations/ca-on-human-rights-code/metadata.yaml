@@ -1,0 +1,59 @@
+---
+slug: ca-on-human-rights-code
+short_name: Ontario Human Rights Code
+long_name: Ontario Human Rights Code, R.S.O. 1990, c. H.19
+citation: R.S.O. 1990, c. H.19
+jurisdiction:
+  code: CA-ON
+  level: state_province
+  parent: CA-Federal
+status: in_force
+signed_date: 1990-01-01
+effective_date: 1990-01-01
+source_url: https://www.ontario.ca/laws/statute/90h19
+summary: |
+  The Ontario Human Rights Code prohibits discrimination in employment,
+  housing, services, contracts, and vocational associations on 17
+  protected grounds. The Code has PRIMACY over all other Ontario
+  statutes — all other Ontario laws must be aligned with the Code.
+
+  For AI: the Code is the practical exposure ceiling for discriminatory
+  AI outcomes. Section 9 prohibits indirect discrimination, capturing
+  AI tools that produce disparate impact even without intent. Damages
+  are UNCAPPED. Enforcement is through the Human Rights Tribunal of
+  Ontario (HRTO).
+scope_description: |
+  Applies to all persons, employers, service providers, housing
+  providers, and contracting parties in Ontario. Geography-based and
+  has primacy over other Ontario statutes.
+extraterritorial_reach: false
+safe_harbor_via: []
+notes: |
+  The Code has no statutory affirmative defense for AI. The bona fide
+  occupational requirement (BFOR) defense exists for employment but
+  is a high bar. Demonstrating substantial alignment with NIST AI RMF
+  is helpful evidence of good faith but not a complete defense.
+penalty_schedules:
+  - tier_name: general_damages_dignity
+    basis: per_violation
+    max_amount: null
+    currency: CAD
+    citation: Code s. 45.2
+    notes: |
+      Uncapped. Typical range $10K-$50K. Major awards have exceeded
+      $200K (e.g., O.P.T. v. Presteve Foods, 2015 HRTO 675: $150K
+      to two complainants).
+  - tier_name: lost_wages_opportunity
+    basis: per_violation
+    max_amount: null
+    currency: CAD
+    notes: Uncapped lost wages and lost opportunity damages
+  - tier_name: public_interest_remedies
+    basis: per_violation
+    notes: |
+      Mandatory policy changes, training requirements, ongoing
+      monitoring, public apology orders
+last_reviewed: 2026-05-13
+reviewer: web@sentainel.com
+extraction_method: claude-opus-4-7-2026-05-12 + manual review
+---
