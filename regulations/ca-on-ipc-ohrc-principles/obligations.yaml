@@ -1,0 +1,258 @@
+jurisdiction: CA-ON
+regulation_slug: ca-on-ipc-ohrc-principles
+regulation_name: IPC-OHRC Joint Principles for the Responsible Use of Artificial Intelligence
+short_name: IPC-OHRC AI Principles
+authority: Information and Privacy Commissioner of Ontario (IPC) + Ontario Human Rights Commission (OHRC)
+in_force_date: 2026-01-21
+status: in_force_regulatory_guidance
+applies_to:
+  - Ontario public sector (ministries, provincial agencies)
+  - Broader public sector (hospitals, universities, colleges)
+  - Municipalities and MFIPPA institutions (school boards, transit commissions, library boards, police service boards, conservation authorities, social services boards, planning boards)
+  - Effectively the entire FIPPA/MFIPPA/PHIPA-regulated landscape
+penalties: |
+  Soft-law guidance — not directly enforceable. However:
+  - IPC will "ground assessment" of AI systems on these principles when investigating FIPPA/MFIPPA/PHIPA complaints
+  - OHRC will use principles to evaluate Ontario Human Rights Code violations involving AI
+  - PHIPA AMPs ($50K individual / $500K organization) apply when health-sector AI breaches occur
+  - MFIPPA Bill 97 IPC binding orders apply when municipal AI breaches occur
+  - In practice: the principles are the standard of care; departure from them is evidence of breach
+canonical_url: https://www.ipc.on.ca/en/resources/principles-responsible-use-artificial-intelligence
+ohrc_url: https://www.ohrc.on.ca/en/principles-responsible-use-artificial-intelligence
+pdf_url: https://www.ohrc.on.ca/sites/default/files/2026-OHRC-IPC%20joint%20principles%20for%20responsible%20use%20of%20AI.pdf
+reviewer: web@sentainel.com
+last_updated: 2026-05-13
+notes: |
+  Published Jan 21, 2026 by IPC + OHRC jointly. Second collaboration of these two bodies on AI governance
+  (first was a 2023 joint statement). Framed at IPC Privacy Day event (Jan 28, 2026) as "the framework
+  providing the certainty organizations need to innovate confidently while maintaining public trust."
+
+  CRITICAL POSITIONING: Although these are "recommendations rather than enforceable legal requirements,"
+  the IPC and OHRC have stated these principles will "ground our assessment of organizations' adoption
+  of AI systems." Translation: when an IPC investigation begins, alignment with these principles is the
+  defense; departure from them is prima facie evidence of breach.
+
+  Document adopts EDSTA Bill 194 definition of "artificial intelligence system" (also aligned with OECD)
+  — applies to ANY ML/AI including SPAM filters, chatbots, generative AI, foundational LLMs, computer
+  vision, automated decision systems.
+
+  6 interconnected principles of equal importance, each with operational sub-requirements. Lifecycle
+  approach: design/data/modeling → verification/validation → deployment → operation/monitoring →
+  decommissioning. Each lifecycle stage must be assessed against the principles.
+
+  MUNICIPAL ENFORCEMENT PATHWAY: Most municipalities are MFIPPA institutions. MFIPPA Bill 97 (already
+  in repo) creates IPC binding orders. When a municipal AI deployment triggers any privacy/human rights
+  complaint, IPC will evaluate against THESE principles. Sentainel Municipal Edition must demonstrate
+  alignment with all 7 principle areas.
+
+obligations:
+
+  - id: ca-on-ipc-ohrc-p1-valid-reliable
+    section: IPC-OHRC Principles § "Valid and Reliable"
+    title: AI systems must demonstrate validity and reliability against independent testing standards
+    summary: |
+      AI systems must meet independent testing standards and be shown via objective evidence to fulfill
+      intended requirements. Validity + reliability assessments must occur prior to deployment and
+      regularly throughout lifecycle to confirm continued accuracy under varied operating conditions,
+      especially for Ontario's diverse communities.
+    operative_text: |
+      "AI systems must exhibit valid, reliable and accurate outputs for the purpose(s) for which they
+      are designed, used, or implemented... An AI system, therefore, should pass validity and reliability
+      assessments prior to being deployed and be regularly assessed throughout its lifecycle."
+    confidence: 0.94
+    ambiguity_notes: |
+      "Independent testing standards" not specified. NIST AI RMF MEASURE-2.1/2.3 + algorithmic impact
+      assessments are the implicit baseline. For municipal AI, expect IPC to defer to vendor
+      certifications + internal evaluation reports as minimum evidence.
+
+  - id: ca-on-ipc-ohrc-p2-safe
+    section: IPC-OHRC Principles § "Safe"
+    title: AI must be developed and governed to prevent harm
+    summary: |
+      AI systems must prevent harm or unintended harmful outcomes that infringe human rights, including
+      privacy and non-discrimination. Must consider impacts on human life, physical/mental health,
+      economic security, and environment. New uses require comprehensive assessment. Unsafe AI must be
+      temporarily or permanently decommissioned, with review of impacts.
+    operative_text: |
+      "AI must be developed, acquired, adopted and governed to prevent harm or unintended harmful
+      outcomes that infringe upon human rights, including the right to privacy and non-discrimination...
+      AI systems should be temporarily or permanently turned off or decommissioned when they become
+      unsafe, and any negative impacts to individuals and groups must be reviewed accordingly."
+    confidence: 0.94
+    ambiguity_notes: |
+      "Unsafe" threshold not quantified. Decision authority for decommissioning must be a designated
+      person (per Accountable principle). For municipal AI, this maps to designated AI Governance Lead
+      with stop-deployment authority — same shape as PHIPA s. 13 governance role.
+
+  - id: ca-on-ipc-ohrc-p3-privacy-protective
+    section: IPC-OHRC Principles § "Privacy Protective"
+    title: Privacy-by-design with lawful authority + data minimization
+    summary: |
+      AI must use privacy-by-design. Requires clear lawful authority for data collection/processing/
+      retention/use. Must comply with FIPPA/MFIPPA/PHIPA/PIPEDA. Use of personal information limited
+      to intended purpose. Privacy-enhancing technologies (de-identification, synthetic data) required
+      where feasible. Individuals must be informed when personal data is used in AI, with right of
+      review for low-risk and right of opt-out for high-risk automated decisions.
+    operative_text: |
+      "AI should be developed using a privacy-by-design approach. Developers, providers, or users of
+      AI systems should take proactive measures to protect the privacy and security of personal
+      information and support the right of access to information from the very outset... Individuals
+      should be provided with at least a right of review for automated decision processes that do not
+      involve high risk, and the choice of opting out of high-risk automated decision processes that
+      can materially impact an individual's well-being in preference of a human decision maker."
+    confidence: 0.95
+    ambiguity_notes: |
+      "High-risk" vs "low-risk" automated decision threshold not defined in this document; expect
+      EDSTA regulations to set the boundary. For now, default to Quebec Law 25 s. 12.1 standard
+      (decisions producing legal/significant effects) as conservative interpretation.
+
+  - id: ca-on-ipc-ohrc-p4-human-rights-affirming
+    section: IPC-OHRC Principles § "Human Rights Affirming"
+    title: Active anti-discrimination + Charter rights protection
+    summary: |
+      AI must not infringe substantive equality rights under the Ontario Human Rights Code. Institutions
+      must proactively identify and address systemic discrimination in AI design and deployment.
+      Training data adjustments required to mitigate inherent bias. Cannot use AI in a uniform way
+      with diverse groups (causes adverse impact discrimination). Government use also subject to
+      Canadian Charter — cannot target social movements or subject marginalized communities to
+      excessive surveillance.
+    operative_text: |
+      "Human rights are inalienable, and protections must be built into the design of AI systems and
+      procedures. Institutions using AI systems must prevent and remedy discrimination effectively
+      and ensure that benefits from the use of AI are universal and free from discrimination... avoid
+      the uniform use of AI systems with diverse groups. Such a use, though seemingly neutral, may
+      actually result in adverse impact discrimination."
+    confidence: 0.95
+    ambiguity_notes: |
+      Most enforceable principle via OHRC + Ontario Human Rights Tribunal pathway. Discrimination
+      remedies include orders + damages. Municipal AI use cases at highest risk: police service AI,
+      transit fare evasion AI, social services eligibility AI. Strongest sales pitch for those
+      municipal departments.
+
+  - id: ca-on-ipc-ohrc-p5-transparent
+    section: IPC-OHRC Principles § "Transparent"
+    title: AI systems must be visible, understandable, traceable, and explainable
+    summary: |
+      Four sub-requirements: (1) VISIBLE — public account of system operation across lifecycle,
+      including PIAs, AIAs, plain-language documentation, source disclosure, notification when
+      interacting with AI; (2) UNDERSTANDABLE — institutions can explain how the technology operates
+      and why errors occur; (3) EXPLAINABLE — describe process (how) and rationale (why) for outputs
+      in audience-appropriate language; (4) TRACEABLE — comprehensive record of model details,
+      training data, monitoring metrics.
+    operative_text: |
+      "Institutions that develop, provide and use AI must ensure that these AI systems are visible,
+      understandable, traceable and explainable to others... institutions must notify individuals
+      when they are interacting with an AI system and when any information presented to them has
+      been generated by AI systems."
+    confidence: 0.94
+    ambiguity_notes: |
+      Most documentation-heavy principle. Maps directly to MEASURE-2.8 + MEASURE-2.9 (transparency
+      + explainability) and forms the backbone of Sentainel Documentation Layer pitch. Municipal
+      AI chatbot disclosure requirements (e.g. 311 chatbots) are unambiguous compliance triggers.
+
+  - id: ca-on-ipc-ohrc-p6-accountable-governance
+    section: IPC-OHRC Principles § "Accountable" (governance structure)
+    title: Robust internal governance with human-in-the-loop oversight
+    summary: |
+      Institutions must implement governance structure with clearly defined roles, responsibilities,
+      and oversight procedures. Must include human-in-the-loop and real-time intervention capability.
+      Upfront risk assessments (privacy + human rights impact assessments, AIAs) required. Must
+      designate a person responsible for AI oversight with authority to pause or decommission systems.
+      Document design and application decisions; meaningful notice to affected groups with right to
+      challenge decisions and seek recourse.
+    operative_text: |
+      "Institutions should implement a robust internal governance structure with clearly defined roles
+      responsibilities and oversight procedures, including a human-in-the-loop approach, to ensure
+      accountability throughout the entire lifecycle of their AI systems... Institutions should
+      designate a person or persons responsible for overseeing the development, deployment, and/or
+      use of an AI system, and for pausing or decommissioning an AI system that produces unsafe
+      outputs."
+    confidence: 0.95
+    ambiguity_notes: |
+      Twins with Trustworthy AI Framework ops-4 (designated accountability roles). Municipal AI
+      governance committee charter is the direct artifact. Sentainel platform must support
+      role-based access + audit trail for pause/decommission decisions.
+
+  - id: ca-on-ipc-ohrc-p7-accountable-recourse-whistleblower
+    section: IPC-OHRC Principles § "Accountable" (recourse + whistleblower)
+    title: External recourse mechanism + safe whistleblower protection + oversight body review
+    summary: |
+      Must establish mechanism to receive and respond to privacy/transparency/human rights questions,
+      FOI requests, and challenges to AI decisions. Must be prepared to explain AI to independent
+      oversight body upon request and undertake remedial actions. Members must have safe whistleblowing
+      protection to report AI non-compliance without reprisal. Institutions subject to review by
+      independent oversight body with enforcement authority.
+    operative_text: |
+      "Institutions must establish a mechanism to receive and respond to privacy, transparency, or
+      human rights questions or concerns, as well as freedom of information requests, or to any
+      challenges concerning how the AI system arrived at a decision or was used during a decision-
+      making process... Members of institutions should be empowered through safe whistleblowing
+      protections to report instances where an AI system does not comply with legal, technical, or
+      policy requirements."
+    confidence: 0.93
+    ambiguity_notes: |
+      Whistleblower protection parallels MFIPPA Bill 97 s. 41.1.1. Independent oversight body is
+      IPC + OHRC themselves. For municipalities, the recourse mechanism likely lives at the Clerk's
+      office or in a designated MFIPPA Privacy Officer.
+
+municipal_application_notes: |
+  These 7 obligations are the most operationally specific AI compliance requirements applicable to
+  Ontario municipalities today. While framed as "guidance," the IPC and OHRC have explicit enforcement
+  pathways via MFIPPA breach orders and OHRC discrimination complaints respectively.
+
+  TOP MUNICIPAL AI USE CASES + IPC-OHRC OBLIGATIONS:
+
+  1. 311 / customer-service chatbots
+     → p5-transparent (notify users they're interacting with AI)
+     → p3-privacy-protective (data minimization, lawful authority)
+     → p7-accountable-recourse (mechanism to challenge AI responses)
+
+  2. Hiring AI / employee screening
+     → p4-human-rights-affirming (anti-discrimination, no zip-code proxies)
+     → p1-valid-reliable (validation against diverse populations)
+     → p6-accountable-governance (human-in-the-loop hiring decisions)
+
+  3. Bylaw enforcement / parking AI / traffic camera AI
+     → p4-human-rights-affirming (Charter concerns + targeting marginalized groups)
+     → p2-safe (decommission if biased)
+     → p5-transparent (public disclosure of AI use)
+
+  4. Social services eligibility AI
+     → p3-privacy-protective (PHIPA + MFIPPA + Code intersection)
+     → p4-human-rights-affirming (no discrimination on prohibited grounds)
+     → p7-accountable (right to challenge automated denial)
+
+  5. Predictive analytics for service delivery (waste, water, snow removal)
+     → p1-valid-reliable (data quality, periodic re-validation)
+     → p5-transparent (public AI inventory disclosure)
+     → p6-accountable-governance (designated AI Governance Lead)
+
+  SENTAINEL MUNICIPAL EDITION ($1,499/MO) MUST DELIVER:
+  - AI inventory with per-use-case principle mapping
+  - PIA + AIA generation per AI system
+  - Notification language templates (chatbot disclosure, automated decision notice)
+  - Recourse workflow (FOI integration + IPC complaint preparation)
+  - Whistleblower channel + escalation procedure
+  - Audit log of pause/decommission decisions
+  - Annual report template for council disclosure
+
+cross_references:
+  - related_regulation: ca-on-mfippa
+    relationship: |
+      Most direct binding — MFIPPA Bill 97 PIA, safeguards, breach reporting, IPC binding orders
+      become the enforcement teeth for IPC-OHRC AI Principles when AI causes MFIPPA breach
+  - related_regulation: ca-on-human-rights-code
+    relationship: |
+      p4-human-rights-affirming directly invokes Code grounds. OHRC + HRTO are the enforcement venue.
+  - related_regulation: ca-on-trustworthy-ai-framework
+    relationship: |
+      IPC + OHRC sent letter to Cabinet Secretary on Jan 21, 2026 explaining how IPC-OHRC Principles
+      align with OPS AI Directive. Principles "complement and further specify" the Directive.
+  - related_regulation: ca-on-bill-194-edsta
+    relationship: |
+      Principles adopt EDSTA AI definition. When EDSTA AI provisions are proclaimed, these principles
+      will likely become the operational interpretation of "responsible AI use" in s. 7 regulations.
+  - related_regulation: ca-on-phipa-ai-scribe
+    relationship: |
+      Healthcare AI must satisfy both IPC-OHRC Principles AND PHIPA AI Scribe Guidance. PHIPA AMPs
+      ($50K/$500K) apply when health-sector AI breaches the principles.
