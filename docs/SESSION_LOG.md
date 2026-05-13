@@ -28,8 +28,8 @@ This file is the authoritative record of what's in the repo, when it landed, and
 | `cross-references/mappings/nist-to-us-tx-traiga.yaml` | ✅ | 12 obligations mapped, with implementation priority tiers |
 | `cross-references/mappings/nist-to-ca-qc-law-25.yaml` | ✅ | 17 obligations mapped, with Quebec-specific gaps called out |
 | `cross-references/mappings/nist-to-ca-on-stack.yaml` | ✅ | 7 Ontario obligations mapped (Bill 149 + Code + MFIPPA) |
-| `cross-references/viz/index.html` | ✅ | **Customer-facing interactive visualization** — scope calculator, full obligation×control grid, insights cards |
-| `cross-references/viz/README.md` | ✅ | Viz documentation + deployment notes |
+| `cross-references/viz/index.html` | ✅ **v1.1** | Customer-facing interactive viz: URL state (`?juris=`), Copy Link, Print/PDF, postMessage iframe resize |
+| `cross-references/viz/README.md` | ✅ **v1.1** | Viz documentation: query params, print stylesheet, iframe embed protocol |
 
 ### Infrastructure
 
@@ -120,7 +120,17 @@ Some assets live outside the repo and should not be assumed to be deployed:
 
 ## Session-by-session changelog
 
-### 2026-05-13 (late morning — viz build)
+### 2026-05-13 (afternoon — viz v1.1)
+- Added query-param state hydration: `?juris=US-TX,CA-QC` pre-selects jurisdictions on load
+- Group codes (`US-TX`, `CA-QC`, `CA-ON`) and specific codes (`us-tx-traiga`, etc.) both supported
+- URL auto-updates via `history.replaceState` on every toggle — every state is permalink-able
+- Added "Copy link" button (nav + inline in picker) using Clipboard API with fallback
+- Added "Print / PDF" button + `@media print` stylesheet that inverts to light mode, hides interactive chrome, flows the matrix at natural height, includes a dynamic header with current selection summary
+- Added iframe resize protocol via `postMessage({ type: 'sentainel-resize', height })` posted on load, toggle, filter change, window resize, and a 1-second post-init delay
+- Updated `cross-references/viz/README.md` with full documentation of all three features including parent-side iframe embed example
+- Bumped version string to v1.1 in nav and footer
+
+### 2026-05-13 (late morning — viz v1.0 build)
 - Built customer-facing interactive matrix visualization at `cross-references/viz/index.html`
 - Self-contained 50KB HTML with embedded data — no build step, no dependencies
 - Sections: hero stats / scope calculator with cost differential / full obligation×control grid with tooltips / strategic insights
@@ -129,7 +139,7 @@ Some assets live outside the repo and should not be assumed to be deployed:
 - Visual QA via Playwright screenshots — verified hero, calculator, savings panel, matrix-all, matrix-Quebec, tooltip rendering
 - Added `cross-references/viz/README.md` with deployment notes
 
-### 2026-05-13 (this session, late morning)
+### 2026-05-13 (morning)
 - Pushed Quebec Law 25 final batch (17 obligations + metadata + changelog + notes)
 - Pushed full cross-references suite: README, NIST controls catalog, coverage matrix CSV, 3 NIST mapping YAMLs
 - Rewrote root `README.md` to reflect current state
@@ -146,14 +156,14 @@ Some assets live outside the repo and should not be assumed to be deployed:
 
 ## Recommended next session priorities
 
-1. **Deploy the viz** — `cross-references/viz/index.html` is ready to ship. Options:
-   - GitHub Pages on this repo (instant, free, gets a public sentainel-com.github.io URL)
-   - Netlify drop (drag-and-drop, gets a *.netlify.app URL in 30 seconds)
-   - Vercel (similar)
-   - Or embed in the marketing site after rebrand
+1. **Deploy the viz** — `cross-references/viz/index.html` v1.1 is ready to ship. Options:
+   - **Netlify drop** (recommended) — drag the file onto netlify.com/drop, get a `*.netlify.app` URL in 30 seconds. Pair domain to it if you want sentainel-matrix.com or similar
+   - **Vercel** — `vercel deploy cross-references/viz` from CLI
+   - **Cloudflare Pages / S3** — same drop, same result
+   - **GitHub Pages** — only if you make the repo public (currently private)
 2. **Rebrand marketing site** — `/home/claude/sentinel-site/index.html` still uses old "Sentinel" name; 20-minute fix
 3. **Postgres schema migrations** — land in `etl/migrations/` so the ETL is actually runnable
-4. **Illinois HRA AI extraction** — adds another US state jurisdiction, ~9 obligations expected
+4. **Illinois HRA AI extraction** — adds another US state jurisdiction, ~9 obligations expected. Pairs naturally with Ontario Bill 149 as an "AI hiring compliance" sub-vertical
 5. **Ontario stack completion** — Bill 194 (EDSTA), PHIPA + AI Scribe, Trustworthy AI Framework to fully complete Ontario coverage
 6. **California SB 942 + AB 2013** — significant market size add
 7. **AMO outreach email** — drafted but never sent; Lindsay Jones at ljones@amo.on.ca for municipal phase 3
