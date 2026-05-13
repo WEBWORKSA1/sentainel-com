@@ -247,3 +247,96 @@ us-il-aivia-s30-dceo-demographic-reporting,US-IL,MEASURE-2.1,fully_satisfies,Tes
 us-il-aivia-s30-dceo-demographic-reporting,US-IL,MEASURE-2.3,fully_satisfies,Performance evaluation
 us-il-aivia-s30-dceo-demographic-reporting,US-IL,MEASURE-2.11,fully_satisfies,Fairness & bias
 us-il-aivia-s30-dceo-demographic-reporting,US-IL,MANAGE-4.1,fully_satisfies,Post-deployment monitoring
+ca-on-bill-194-edsta-s5-2-public-information,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-2-public-information,CA-ON,GOVERN-1.6,fully_satisfies,AI inventory feeds public disclosure
+ca-on-bill-194-edsta-s5-2-public-information,CA-ON,MEASURE-2.8,fully_satisfies,Transparency is the core control
+ca-on-bill-194-edsta-s5-2-public-information,CA-ON,MANAGE-4.1,partially_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.2,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.3,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.4,fully_satisfies,Risk management documented
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.5,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.6,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-1.7,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-2.1,fully_satisfies,Roles & responsibilities
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-2.2,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-2.3,fully_satisfies,
+ca-on-bill-194-edsta-s5-3-accountability-framework,CA-ON,GOVERN-4.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,GOVERN-1.4,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MAP-5.1,fully_satisfies,Likelihood & magnitude of impact
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MAP-5.2,fully_satisfies,Risk assessment practices
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MANAGE-1.3,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MANAGE-2.2,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MANAGE-4.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-4-risk-management,CA-ON,MANAGE-4.3,fully_satisfies,
+ca-on-bill-194-edsta-s5-5-purpose-limitation,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-5-purpose-limitation,CA-ON,MAP-1.1,fully_satisfies,Context of use
+ca-on-bill-194-edsta-s5-5-purpose-limitation,CA-ON,MAP-2.1,fully_satisfies,Tasks and methods
+ca-on-bill-194-edsta-s5-5-purpose-limitation,CA-ON,MAP-3.3,partially_satisfies,
+ca-on-bill-194-edsta-s5-6-prohibited-uses,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s5-6-prohibited-uses,CA-ON,GOVERN-1.6,fully_satisfies,AI inventory cross-referenced against prohibition list
+ca-on-bill-194-edsta-s5-6-prohibited-uses,CA-ON,MAP-1.1,partially_satisfies,
+ca-on-bill-194-edsta-s5-6-prohibited-uses,CA-ON,MANAGE-2.4,fully_satisfies,Supersede deficient AI
+ca-on-bill-194-edsta-s6-2-a-specific-use-disclosure,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s6-2-a-specific-use-disclosure,CA-ON,MEASURE-2.8,fully_satisfies,Transparency
+ca-on-bill-194-edsta-s6-2-a-specific-use-disclosure,CA-ON,MEASURE-2.9,fully_satisfies,Explainability
+ca-on-bill-194-edsta-s6-2-a-specific-use-disclosure,CA-ON,MEASURE-3.3,partially_satisfies,
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,GOVERN-2.1,fully_satisfies,Roles & responsibilities
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,GOVERN-2.3,fully_satisfies,Executive accountability
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,MAP-3.5,fully_satisfies,Human oversight
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,MEASURE-3.3,fully_satisfies,Stakeholder feedback channels
+ca-on-bill-194-edsta-s6-2-b-human-oversight,CA-ON,MANAGE-4.3,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-1.2,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-1.4,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-1.5,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-2.1,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,GOVERN-2.3,fully_satisfies,
+ca-on-phipa-ai-governance-committee,CA-ON,MANAGE-2.4,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MAP-1.1,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MAP-1.5,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MAP-3.1,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MAP-3.2,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MAP-5.1,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MEASURE-2.7,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MEASURE-2.10,fully_satisfies,
+ca-on-phipa-pia-pre-deployment,CA-ON,MANAGE-1.3,fully_satisfies,
+ca-on-phipa-express-patient-consent,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-express-patient-consent,CA-ON,GOVERN-5.1,fully_satisfies,
+ca-on-phipa-express-patient-consent,CA-ON,MAP-2.2,partially_satisfies,Knowledge limits explanation in consent
+ca-on-phipa-express-patient-consent,CA-ON,MEASURE-2.8,fully_satisfies,Transparency
+ca-on-phipa-express-patient-consent,CA-ON,MEASURE-2.9,fully_satisfies,Explainability
+ca-on-phipa-express-patient-consent,CA-ON,MEASURE-3.3,fully_satisfies,Stakeholder feedback (consent + opt-out)
+ca-on-phipa-data-minimization,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-data-minimization,CA-ON,GOVERN-1.7,fully_satisfies,Decommissioning + disposal
+ca-on-phipa-data-minimization,CA-ON,MEASURE-2.7,fully_satisfies,Security & privacy
+ca-on-phipa-data-minimization,CA-ON,MEASURE-2.10,fully_satisfies,Privacy risk
+ca-on-phipa-data-minimization,CA-ON,MANAGE-4.1,fully_satisfies,Post-deployment monitoring of retention
+ca-on-phipa-vendor-due-diligence,CA-ON,GAI-12,partially_satisfies,Value chain
+ca-on-phipa-vendor-due-diligence,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-vendor-due-diligence,CA-ON,GOVERN-6.1,fully_satisfies,Third-party policies
+ca-on-phipa-vendor-due-diligence,CA-ON,GOVERN-6.2,fully_satisfies,Contingency processes
+ca-on-phipa-vendor-due-diligence,CA-ON,MAP-4.1,fully_satisfies,Third-party legal risks
+ca-on-phipa-vendor-due-diligence,CA-ON,MAP-4.2,fully_satisfies,
+ca-on-phipa-vendor-due-diligence,CA-ON,MANAGE-3.1,fully_satisfies,Third-party risk monitoring
+ca-on-phipa-vendor-due-diligence,CA-ON,MANAGE-3.2,partially_satisfies,
+ca-on-phipa-breach-notification-60day,CA-ON,GAI-9,partially_satisfies,GenAI information security
+ca-on-phipa-breach-notification-60day,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-breach-notification-60day,CA-ON,GOVERN-4.3,fully_satisfies,Testing & incident sharing
+ca-on-phipa-breach-notification-60day,CA-ON,MANAGE-2.3,fully_satisfies,Superseded systems response
+ca-on-phipa-breach-notification-60day,CA-ON,MANAGE-4.1,fully_satisfies,
+ca-on-phipa-breach-notification-60day,CA-ON,MANAGE-4.3,fully_satisfies,Incidents communicated
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,GOVERN-2.1,fully_satisfies,Roles & responsibilities (physician verification)
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,GOVERN-2.3,fully_satisfies,Executive accountability
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,MAP-3.5,fully_satisfies,Human oversight
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,MEASURE-2.1,partially_satisfies,Test sets & metrics (error tracking)
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,MEASURE-3.3,fully_satisfies,Stakeholder feedback
+ca-on-phipa-human-oversight-clinical-accountability,CA-ON,MANAGE-4.3,fully_satisfies,
+ca-on-phipa-training-confidentiality,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-phipa-training-confidentiality,CA-ON,GOVERN-2.2,fully_satisfies,Workforce training is core control
+ca-on-phipa-training-confidentiality,CA-ON,GOVERN-3.1,partially_satisfies,
+ca-on-phipa-training-confidentiality,CA-ON,MAP-1.2,partially_satisfies,Interdisciplinary actors trained
