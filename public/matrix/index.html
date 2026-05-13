@@ -293,7 +293,7 @@ if(initQ){
   document.getElementById('searchInput').value=initQ;
 }
 
-fetch('data.csv').then(r=>{
+fetch('/matrix/data.csv').then(r=>{
   if(!r.ok)throw new Error('HTTP '+r.status);
   return r.text();
 }).then(text=>{
