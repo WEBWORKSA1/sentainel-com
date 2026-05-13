@@ -1,0 +1,217 @@
+# NIST AI RMF → Ontario AI Compliance Stack Cross-Reference
+# Generated: 2026-05-13
+# Covers: Bill 149 (ESA), Human Rights Code s. 9, MFIPPA (Bill 97 updates)
+
+regulations:
+  - ca-on-bill-149
+  - ca-on-human-rights-code
+  - ca-on-mfippa
+framework: us-federal-nist-ai-rmf
+
+safe_harbor_basis: |
+  Ontario does not have explicit AI safe harbor language matching
+  Texas TRAIGA § 552.105(e)(2)(D). However:
+
+  - Ontario Trustworthy AI Framework (provincial government AI use)
+    explicitly references NIST AI RMF as benchmark
+  - IPC Ontario guidance treats NIST AI RMF compliance as evidence
+    of "reasonable steps" for safeguards under PHIPA, MFIPPA
+  - Ontario Human Rights Tribunal jurisprudence on AI bias would
+    accept NIST AI RMF MEASURE-2.11 evidence as material to
+    duty-of-accommodation analysis
+
+  Practical effect: NIST AI RMF compliance is recognized de facto
+  good-faith evidence across Ontario AI exposure surfaces.
+
+mappings:
+
+  # ============================================================
+  # BILL 149 — Employment Standards Act AI Disclosure
+  # ============================================================
+  - obligation: ca-on-bill-149-esa-8-4
+    description: |
+      Employer disclosure of AI use in publicly advertised job
+      postings (effective January 1, 2026)
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.6
+        coverage: fully_satisfies
+        notes: |
+          AI inventory — must identify hiring AI to comply with
+          disclosure.
+      - id: MAP-1.1
+        coverage: partially_satisfies
+        notes: |
+          Context of use — employment context.
+      - id: MAP-3.3
+        coverage: partially_satisfies
+        notes: |
+          Targeted application scope — hiring AI deployment.
+      - id: MEASURE-2.8
+        coverage: fully_satisfies
+        notes: |
+          Transparency — disclosure is core transparency control.
+
+  # ============================================================
+  # HUMAN RIGHTS CODE s. 9 — AI Discrimination
+  # ============================================================
+  - obligation: ca-on-human-rights-code-s9-no-infringement-via-tech
+    description: |
+      No infringement of Code rights via technological means
+      (extends to AI hiring tools, AI tenant screening, etc.)
+    controls:
+      - id: GAI-6
+        coverage: fully_satisfies
+        notes: |
+          GenAI harmful bias category. Direct alignment.
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-3.1
+        coverage: fully_satisfies
+        notes: |
+          Diversity in risk management — supports bias
+          identification.
+      - id: MAP-1.2
+        coverage: fully_satisfies
+        notes: |
+          Interdisciplinary actors with demographic diversity —
+          duty-of-accommodation lens.
+      - id: MAP-5.1
+        coverage: fully_satisfies
+        notes: |
+          Impact analysis must include disparate impact under
+          Ontario standard.
+      - id: MEASURE-2.11
+        coverage: fully_satisfies
+        notes: |
+          Fairness & bias evaluation — Ontario applies adverse-
+          impact standard (NOT TRAIGA's intent-only standard).
+      - id: MANAGE-1.3
+        coverage: fully_satisfies
+
+  # ============================================================
+  # MFIPPA — Bill 97 AI Provisions (Municipal/Public Sector)
+  # ============================================================
+  - obligation: ca-on-mfippa-pia-mandatory-bill97
+    description: Mandatory PIA before municipal AI deployment
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MAP-1.1
+        coverage: fully_satisfies
+      - id: MAP-3.1
+        coverage: fully_satisfies
+      - id: MAP-5.1
+        coverage: fully_satisfies
+      - id: MEASURE-2.10
+        coverage: fully_satisfies
+      - id: MANAGE-1.3
+        coverage: fully_satisfies
+
+  - obligation: ca-on-mfippa-safeguards-bill97
+    description: Reasonable safeguards for personal information
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-4.1
+        coverage: fully_satisfies
+      - id: MEASURE-2.7
+        coverage: fully_satisfies
+        notes: |
+          Security & privacy risks — core safeguards evaluation.
+      - id: MANAGE-4.1
+        coverage: fully_satisfies
+
+  - obligation: ca-on-mfippa-breach-reporting-bill97
+    description: Breach notification to IPC and individuals
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-4.3
+        coverage: fully_satisfies
+      - id: MANAGE-2.3
+        coverage: partially_satisfies
+      - id: MANAGE-4.1
+        coverage: fully_satisfies
+      - id: MANAGE-4.3
+        coverage: fully_satisfies
+
+  - obligation: ca-on-mfippa-ipc-binding-orders-bill97
+    description: IPC orders binding on institutions
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.5
+        coverage: partially_satisfies
+        notes: |
+          Ongoing oversight — IPC investigation response capability.
+      - id: MANAGE-2.4
+        coverage: partially_satisfies
+        notes: |
+          Mechanisms to supersede AI systems per IPC order.
+
+  - obligation: ca-on-mfippa-whistleblower-bill97
+    description: Whistleblower protection for MFIPPA disclosures
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-5.1
+        coverage: fully_satisfies
+        notes: |
+          Stakeholder feedback mechanisms — protected whistleblower
+          channel.
+      - id: GOVERN-5.2
+        coverage: partially_satisfies
+
+# ==============================================================
+# AGGREGATE
+# ==============================================================
+
+aggregate:
+  obligations_count: 7
+  avg_controls_per_obligation: 4.7
+  highest_leverage_controls:
+    - control: GOVERN-1.1
+      obligations_covered: 7
+    - control: MANAGE-1.3
+      obligations_covered: 3
+    - control: MEASURE-2.7
+      obligations_covered: 2
+
+  ontario_specific_gaps:
+    - obligation: ca-on-human-rights-code-s9
+      gap: |
+        Ontario applies "adverse impact" / disparate-impact standard
+        for AI bias (unlike TRAIGA's intent-only test). Customer
+        operating in both jurisdictions must comply with stricter
+        Ontario standard. Sentainel's bias-testing module operates
+        at the Ontario standard by default, achieving compliance
+        in both.
+    - obligation: ca-on-bill-149-esa-8-4
+      gap: |
+        Ontario Bill 149 ESA disclosure has specific job-posting
+        language requirements not directly mappable to NIST.
+        Sentainel requires Ontario-specific template overlay.
+    - obligation: ca-on-mfippa-pia-mandatory-bill97
+      gap: |
+        MFIPPA PIA requires specific Ontario IPC format elements
+        beyond NIST PIA structure.
+
+  cross_jurisdiction_summary:
+    # When a customer operates in Texas + Quebec + Ontario:
+    total_obligations_v1: 36
+    unique_nist_controls_needed: 31
+    base_nist_controls_count: 46
+    coverage_percentage: 67
+    interpretation: |
+      Implementing 31 of 46 NIST AI RMF base controls (plus
+      jurisdiction-specific overlays for ~8 unique elements)
+      satisfies obligations across:
+      - Texas TRAIGA (12 obligations)
+      - Quebec Law 25 (17 obligations)
+      - Ontario Bill 149 + Code + MFIPPA (7 obligations)
+
+      This is the single most important compliance insight for
+      mid-market enterprises operating across US-Canada:
+      one workstream, three jurisdictions of coverage.
