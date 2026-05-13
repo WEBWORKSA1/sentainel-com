@@ -1,1 +1,316 @@
-PLACEHOLDER_VIZ
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentainel Compliance Matrix · 59 obligations × NIST AI RMF</title>
+<meta name="description" content="Interactive visualization of 59 atomic AI regulatory obligations across Texas, Quebec, Ontario, and Illinois — each mapped to NIST AI RMF controls. The Sentainel safe-harbor evidence package.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14110F;--ink-soft:#2A2622;--ink-fade:#6B635B;--ink-ghost:#B5ADA3;--paper:#F4F1EB;--paper-warm:#EFE9DF;--paper-cool:#FAF8F3;--rule:#1F1A16;--accent:#B0301C;--accent-soft:#D54B2E;--gold:#8B7339;--moss:#4D5A3C;--blue:#2E5C8A;--display:'Fraunces',serif;--serif:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1480px;margin:0 auto;padding:0 32px}
+@media(max-width:768px){.wrap{padding:0 16px}}
+.nav{border-bottom:1px solid var(--rule);background:var(--paper);padding:16px 0;position:sticky;top:0;z-index:50}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-0.02em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand::before{content:'';width:12px;height:12px;background:var(--accent);border-radius:2px;transform:rotate(45deg)}
+.nav-meta{font-family:var(--mono);font-size:11px;color:var(--ink-fade);text-transform:uppercase;letter-spacing:0.08em}
+.nav-meta strong{color:var(--accent);font-weight:600}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.nav-btn{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink);text-decoration:none;padding:8px 14px;border:1px solid var(--rule);border-radius:2px;cursor:pointer;background:var(--paper);transition:all 0.2s}
+.nav-btn:hover{background:var(--ink);color:var(--paper)}
+.hero{padding:48px 0 32px;border-bottom:1px solid var(--rule)}
+.tag{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.tag::before{content:'';width:32px;height:1px;background:var(--accent)}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(36px,5vw,64px);line-height:1.0;letter-spacing:-0.02em;color:var(--ink);margin-bottom:20px;max-width:24ch}
+h1 em{font-style:italic;color:var(--accent)}
+.deck{font-family:var(--serif);font-size:18px;line-height:1.5;color:var(--ink-soft);max-width:64ch;margin-bottom:32px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:24px}
+.stat{background:var(--paper);padding:20px 16px;text-align:center}
+.stat-num{font-family:var(--display);font-size:36px;font-weight:600;color:var(--accent);line-height:1}
+.stat-label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-fade);margin-top:6px}
+@media(max-width:768px){.stats{grid-template-columns:repeat(2,1fr)}}
+.controls{padding:24px 0;background:var(--paper-warm);border-bottom:1px solid var(--rule)}
+.controls-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.juris-filters{display:flex;gap:8px;flex-wrap:wrap}
+.juris-btn{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;padding:8px 14px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer;border-radius:2px;transition:all 0.15s}
+.juris-btn:hover{background:var(--ink);color:var(--paper)}
+.juris-btn.active{background:var(--ink);color:var(--paper)}
+.juris-btn.active.us-tx{background:#8B2D1C;border-color:#8B2D1C}
+.juris-btn.active.ca-qc{background:#1E4D7B;border-color:#1E4D7B}
+.juris-btn.active.ca-on{background:#4D5A3C;border-color:#4D5A3C}
+.juris-btn.active.us-il{background:#7A6225;border-color:#7A6225}
+.search-input{flex:1;min-width:240px;padding:10px 14px;border:1px solid var(--rule);font-family:var(--serif);font-size:14px;background:var(--paper)}
+.matrix-section{padding:32px 0 64px}
+.matrix-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.matrix-title{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink)}
+.matrix-count{font-family:var(--mono);font-size:12px;color:var(--ink-fade)}
+.matrix-count strong{color:var(--accent);font-weight:600}
+.matrix-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--paper)}
+.matrix-table th{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-fade);padding:12px 10px;text-align:left;border-bottom:1px solid var(--rule);background:var(--paper-warm);position:sticky;top:73px}
+.matrix-table td{padding:10px;border-bottom:1px dashed rgba(31,26,22,0.1);vertical-align:top;font-family:var(--serif);color:var(--ink-soft)}
+.matrix-table tr:hover td{background:var(--paper-cool)}
+.juris-pill{display:inline-block;font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:0.06em;padding:2px 6px;border-radius:2px;color:var(--paper);white-space:nowrap}
+.juris-pill.us-tx{background:#8B2D1C}
+.juris-pill.ca-qc{background:#1E4D7B}
+.juris-pill.ca-on{background:#4D5A3C}
+.juris-pill.us-il{background:#7A6225}
+.obl-slug{font-family:var(--mono);font-size:11px;color:var(--ink)}
+.control-id{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--accent)}
+.coverage{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.05em;padding:3px 8px;border-radius:2px;display:inline-block;white-space:nowrap}
+.coverage.fully_satisfies{background:#E5F3E1;color:#2C5B1F;border:1px solid #B5D9A5}
+.coverage.partially_satisfies{background:#FFF4D4;color:#7A5C00;border:1px solid #E8C870}
+.coverage.supports{background:#E5EEF7;color:#1E4D7B;border:1px solid #A8C4DD}
+.coverage.safe_harbor{background:#FCE5E0;color:#8B2D1C;border:1px solid #E8A899}
+.note{font-style:italic;font-size:12px;color:var(--ink-fade)}
+.empty{padding:48px;text-align:center;color:var(--ink-fade);font-style:italic}
+.loading{padding:48px;text-align:center;font-family:var(--mono);font-size:13px;color:var(--ink-fade)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;padding:16px;background:var(--paper-cool);border:1px solid var(--rule)}
+.legend-item{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--ink-soft)}
+.footer{background:var(--ink);color:var(--paper);padding:48px 0 24px;margin-top:64px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+.footer h4{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-soft);margin-bottom:12px}
+.footer p,.footer a{color:rgba(244,241,235,0.7);font-size:14px;line-height:1.6;text-decoration:none}
+.footer a:hover{color:var(--paper)}
+.colophon{border-top:1px solid rgba(244,241,235,0.15);padding-top:20px;margin-top:32px;font-family:var(--mono);font-size:11px;color:rgba(244,241,235,0.5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media print{.nav,.controls,.footer,.nav-actions{display:none}.matrix-table th{position:static}body{background:white}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="/" class="brand">Sentainel</a>
+      <div class="nav-meta">Compliance Matrix · <strong>v1.3</strong> · 59 obligations · 9 regulations · 4 jurisdictions</div>
+      <div class="nav-actions">
+        <button class="nav-btn" id="copyLinkBtn">Copy Link</button>
+        <button class="nav-btn" onclick="window.print()">Print / PDF</button>
+        <a href="/" class="nav-btn">← Home</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="tag">The NIST AI RMF Safe-Harbor Matrix</div>
+    <h1>Every obligation, <em>mapped to a control.</em></h1>
+    <p class="deck">Sentainel maps 59 atomic regulatory obligations across Texas TRAIGA, Quebec Law 25, Ontario (Bill 149, PHIPA AI, EDSTA, MFIPPA, Human Rights Code), and Illinois (HRA AI, AIVIA) to NIST AI Risk Management Framework controls. 341 obligation×control mappings. The evidence package your auditor asks for.</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">59</div><div class="stat-label">Obligations</div></div>
+      <div class="stat"><div class="stat-num">9</div><div class="stat-label">Regulations</div></div>
+      <div class="stat"><div class="stat-num">58</div><div class="stat-label">NIST Controls</div></div>
+      <div class="stat"><div class="stat-num">341</div><div class="stat-label">Mappings</div></div>
+      <div class="stat"><div class="stat-num">$25M</div><div class="stat-label">Max Exposure</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="controls">
+  <div class="wrap">
+    <div class="controls-row">
+      <div class="juris-filters">
+        <button class="juris-btn active" data-juris="ALL">All Jurisdictions</button>
+        <button class="juris-btn" data-juris="US-TX">Texas TRAIGA</button>
+        <button class="juris-btn" data-juris="CA-QC">Québec Law 25</button>
+        <button class="juris-btn" data-juris="CA-ON">Ontario Stack</button>
+        <button class="juris-btn" data-juris="US-IL">Illinois Stack</button>
+      </div>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search obligation, control, or note…">
+    </div>
+    <div class="legend">
+      <div class="legend-item"><span class="coverage fully_satisfies">Fully Satisfies</span> Control directly addresses the obligation</div>
+      <div class="legend-item"><span class="coverage partially_satisfies">Partially Satisfies</span> Control covers part of the obligation</div>
+      <div class="legend-item"><span class="coverage supports">Supports</span> Control contributes evidence</div>
+      <div class="legend-item"><span class="coverage safe_harbor">Safe Harbor</span> NIST AI RMF safe-harbor alignment</div>
+    </div>
+  </div>
+</section>
+
+<section class="matrix-section">
+  <div class="wrap">
+    <div class="matrix-header">
+      <div class="matrix-title">Obligation × Control Mappings</div>
+      <div class="matrix-count">Showing <strong id="rowCount">…</strong> mappings</div>
+    </div>
+    <div id="tableContainer">
+      <div class="loading">Loading matrix data…</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Sentainel</h4>
+        <p>AI compliance infrastructure for mid-market companies. The regulatory database of legal record, mapped to NIST AI RMF safe-harbor controls. Built in Montréal — for North America.</p>
+      </div>
+      <div>
+        <h4>Coverage</h4>
+        <p>
+          Texas TRAIGA (12)<br>
+          Québec Law 25 (17)<br>
+          Ontario Stack (22)<br>
+          Illinois Stack (8)
+        </p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <p>
+          <a href="/">← Marketing site</a><br>
+          <a href="mailto:web@sentainel.com">web@sentainel.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© 2026 Sentainel Compliance, Inc.</span>
+      <span>Matrix v1.3 · 341 mappings</span>
+      <span>Filed from Montréal, QC</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const JURIS_LABELS={'US-TX':'TX','CA-QC':'QC','CA-ON':'ON','US-IL':'IL'};
+let allRows=[];let activeJuris='ALL';let searchTerm='';
+
+function prettyObl(slug){
+  return slug
+    .replace(/^us-tx-traiga-/,'TRAIGA ')
+    .replace(/^ca-qc-law-25-/,'Law 25 ')
+    .replace(/^ca-on-bill-149-/,'Bill 149 ')
+    .replace(/^ca-on-bill-194-edsta-/,'EDSTA ')
+    .replace(/^ca-on-phipa-/,'PHIPA ')
+    .replace(/^ca-on-mfippa-/,'MFIPPA ')
+    .replace(/^ca-on-human-rights-code-/,'HR Code ')
+    .replace(/^us-il-hra-ai-/,'IL HRA ')
+    .replace(/^us-il-aivia-/,'AIVIA ')
+    .replace(/-/g,' ');
+}
+
+function parseCSV(text){
+  const lines=text.trim().split(/\r?\n/);
+  const headers=lines[0].split(',');
+  return lines.slice(1).map(line=>{
+    const parts=[];let cur='';let inQ=false;
+    for(let i=0;i<line.length;i++){
+      const c=line[i];
+      if(c==='"'){inQ=!inQ;continue}
+      if(c===','&&!inQ){parts.push(cur);cur='';continue}
+      cur+=c;
+    }
+    parts.push(cur);
+    const row={};
+    headers.forEach((h,i)=>{row[h.trim()]=(parts[i]||'').trim()});
+    return row;
+  });
+}
+
+function render(){
+  const filtered=allRows.filter(r=>{
+    if(activeJuris!=='ALL'&&r.jurisdiction!==activeJuris)return false;
+    if(searchTerm){
+      const s=searchTerm.toLowerCase();
+      return (r.obligation_slug+' '+r.nist_control_id+' '+r.notes).toLowerCase().includes(s);
+    }
+    return true;
+  });
+  document.getElementById('rowCount').textContent=filtered.length;
+  const container=document.getElementById('tableContainer');
+  if(filtered.length===0){
+    container.innerHTML='<div class="empty">No mappings match your filters. Try clearing the search or selecting a different jurisdiction.</div>';
+    return;
+  }
+  let html='<table class="matrix-table"><thead><tr><th>Jurisdiction</th><th>Obligation</th><th>NIST Control</th><th>Coverage</th><th>Notes</th></tr></thead><tbody>';
+  filtered.forEach(r=>{
+    const jClass=r.jurisdiction.toLowerCase();
+    html+='<tr>';
+    html+='<td><span class="juris-pill '+jClass+'">'+(JURIS_LABELS[r.jurisdiction]||r.jurisdiction)+'</span></td>';
+    html+='<td><span class="obl-slug">'+prettyObl(r.obligation_slug)+'</span></td>';
+    html+='<td><span class="control-id">'+r.nist_control_id+'</span></td>';
+    html+='<td><span class="coverage '+r.coverage_level+'">'+r.coverage_level.replace(/_/g,' ')+'</span></td>';
+    html+='<td><span class="note">'+(r.notes||'—')+'</span></td>';
+    html+='</tr>';
+  });
+  html+='</tbody></table>';
+  container.innerHTML=html;
+}
+
+function updateURL(){
+  const params=new URLSearchParams();
+  if(activeJuris!=='ALL')params.set('juris',activeJuris);
+  if(searchTerm)params.set('q',searchTerm);
+  const qs=params.toString();
+  history.replaceState(null,'',qs?'?'+qs:location.pathname);
+}
+
+document.querySelectorAll('.juris-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.juris-btn').forEach(b=>{
+      b.classList.remove('active','us-tx','ca-qc','ca-on','us-il');
+    });
+    btn.classList.add('active');
+    activeJuris=btn.dataset.juris;
+    if(activeJuris!=='ALL')btn.classList.add(activeJuris.toLowerCase());
+    updateURL();render();
+  });
+});
+
+document.getElementById('searchInput').addEventListener('input',e=>{
+  searchTerm=e.target.value;updateURL();render();
+});
+
+document.getElementById('copyLinkBtn').addEventListener('click',()=>{
+  navigator.clipboard.writeText(location.href).then(()=>{
+    const btn=document.getElementById('copyLinkBtn');
+    const orig=btn.textContent;btn.textContent='Copied ✓';
+    setTimeout(()=>btn.textContent=orig,1500);
+  });
+});
+
+const params=new URLSearchParams(location.search);
+const initJuris=params.get('juris');
+const initQ=params.get('q');
+if(initJuris&&['US-TX','CA-QC','CA-ON','US-IL'].includes(initJuris)){
+  activeJuris=initJuris;
+  document.querySelectorAll('.juris-btn').forEach(b=>{
+    b.classList.remove('active');
+    if(b.dataset.juris===initJuris){
+      b.classList.add('active',initJuris.toLowerCase());
+    }
+  });
+}
+if(initQ){
+  searchTerm=initQ;
+  document.getElementById('searchInput').value=initQ;
+}
+
+fetch('data.csv').then(r=>{
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  return r.text();
+}).then(text=>{
+  allRows=parseCSV(text);
+  render();
+}).catch(err=>{
+  document.getElementById('tableContainer').innerHTML='<div class="empty">Could not load matrix data: '+err.message+'<br><br>If you are viewing this locally, the matrix needs to be served via HTTP (Vercel will handle this automatically).</div>';
+});
+
+function postHeight(){
+  if(window.parent!==window){
+    window.parent.postMessage({type:'sentainel-matrix-height',height:document.documentElement.scrollHeight},'*');
+  }
+}
+window.addEventListener('load',postHeight);
+setTimeout(postHeight,1000);
+</script>
+
+</body>
+</html>
