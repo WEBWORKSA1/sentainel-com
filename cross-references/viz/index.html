@@ -47,7 +47,7 @@
   }
   .nav-inner {
     max-width: 1400px; margin: 0 auto; padding: 16px 32px;
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
   }
   .logo { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
   .logo span { color: var(--accent); }
@@ -55,6 +55,23 @@
     font-family: var(--mono); font-size: 11px; color: var(--text-muted);
     letter-spacing: 0.04em; text-transform: uppercase;
   }
+  .nav-actions { display: flex; gap: 8px; align-items: center; }
+  .nav-btn {
+    background: transparent; border: 1px solid var(--border-bright); color: var(--text-dim);
+    padding: 8px 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.15s;
+  }
+  .nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .nav-btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
+  .nav-btn.primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: var(--bg); }
+  .copied-flash {
+    position: fixed; top: 80px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: var(--bg); padding: 12px 24px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em;
+    text-transform: uppercase; font-weight: 600; z-index: 200;
+    opacity: 0; transition: opacity 0.2s; pointer-events: none;
+  }
+  .copied-flash.visible { opacity: 1; }
   .hero { max-width: 1400px; margin: 0 auto; padding: 96px 32px 64px; position: relative; }
   .eyebrow {
     font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
@@ -103,7 +120,18 @@
   .picker-label {
     font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
     text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
   }
+  .picker-share {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .picker-share button {
+    background: transparent; border: none; color: var(--accent); cursor: pointer;
+    font-family: inherit; font-size: inherit; letter-spacing: inherit;
+    text-transform: inherit; padding: 0 0 0 8px;
+  }
+  .picker-share button:hover { text-decoration: underline; }
   .juris-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
   .juris {
     background: var(--bg-card); border: 1px solid var(--border); padding: 20px;
@@ -258,21 +286,119 @@
     color: var(--text-dim); font-family: var(--body); font-size: 11px;
     margin-top: 6px; text-transform: none; letter-spacing: 0;
   }
+  .print-header { display: none; }
+
   @media (max-width: 900px) {
     .section-head { grid-template-columns: 1fr; gap: 24px; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .result { grid-template-columns: 1fr; }
     .insights { grid-template-columns: 1fr; }
-    .nav-inner { padding: 16px 20px; }
+    .nav-inner { padding: 16px 20px; flex-wrap: wrap; }
+    .nav-actions { width: 100%; justify-content: flex-end; }
     .hero { padding: 64px 20px 48px; }
     section { padding: 64px 20px; }
   }
+
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .hero > * { animation: fadeUp 0.7s ease-out backwards; }
   .hero .eyebrow { animation-delay: 0.05s; }
   .hero h1 { animation-delay: 0.15s; }
   .hero .hero-sub { animation-delay: 0.3s; }
   .hero .stats { animation-delay: 0.45s; }
+
+  /* ===================================================
+     PRINT STYLES — clean light-mode PDF/paper output
+     Invoked by Cmd/Ctrl+P or the "Print / PDF" nav button.
+     =================================================== */
+  @media print {
+    @page { size: A4 portrait; margin: 18mm 14mm; }
+
+    /* Light palette for print */
+    :root {
+      --bg: #ffffff; --bg-elev: #f7f7f3; --bg-card: #ffffff;
+      --border: #d8d4c8; --border-bright: #b8b3a4;
+      --text: #1a1c1a; --text-dim: #4d4d47; --text-muted: #76736b;
+      --accent: #5b6d00; --accent-deep: #3d4900;
+      --safe-harbor: #b8c97a; --full: #c4d97a; --partial: #d4dcb8; --support: #e8e6dd;
+    }
+    body { background: #fff !important; color: #1a1c1a !important; font-size: 11pt; }
+    body::before { display: none !important; }
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+
+    /* Hide interactive chrome */
+    .nav, .nav-actions, .nav-btn, .picker-share, .matrix-controls > div:last-child,
+    .filter-btn, #tooltip, .copied-flash, footer .nav-meta { display: none !important; }
+
+    /* Print-only header at top of every printed page */
+    .print-header {
+      display: block !important;
+      padding-bottom: 14pt; margin-bottom: 18pt;
+      border-bottom: 1.5pt solid #1a1c1a;
+    }
+    .print-header h1 {
+      font-family: var(--display); font-size: 22pt; font-weight: 600;
+      letter-spacing: -0.02em; margin-bottom: 6pt;
+    }
+    .print-header .print-meta {
+      font-family: var(--mono); font-size: 8pt; color: #76736b;
+      text-transform: uppercase; letter-spacing: 0.15em;
+    }
+    .print-header .print-meta span { color: #5b6d00; font-weight: 700; }
+
+    /* Reset to flow layout */
+    .hero { padding: 0 0 24pt 0; max-width: 100%; }
+    .hero h1 { font-size: 24pt; max-width: 100%; }
+    .hero-sub { font-size: 12pt; max-width: 100%; }
+    section { padding: 18pt 0; max-width: 100%; page-break-inside: avoid; }
+    .stats, .result, .insights {
+      gap: 0; border: 1pt solid #1a1c1a; background: none;
+    }
+    .stat, .result-pane, .insight {
+      background: #fff !important; border: 1pt solid #d8d4c8;
+      padding: 12pt 14pt; page-break-inside: avoid;
+    }
+    .stat-val, .big-number { font-size: 28pt; color: #1a1c1a !important; }
+    .big-number.accent { color: #5b6d00 !important; }
+    .picker {
+      background: #fff !important; border: 1pt solid #d8d4c8; padding: 14pt;
+      page-break-inside: avoid;
+    }
+    .juris {
+      background: #fff !important; border: 1pt solid #d8d4c8;
+      page-break-inside: avoid;
+    }
+    .juris.active { border: 1.5pt solid #5b6d00; background: #f7faec !important; }
+    .section-head { grid-template-columns: 1fr; gap: 8pt; margin-bottom: 18pt; }
+    .section-head h2 { font-size: 18pt; color: #1a1c1a !important; }
+    .section-head h2 em { color: #5b6d00 !important; }
+
+    /* Force matrix to print at natural height — no scroll container in PDF */
+    .matrix-scroll { max-height: none !important; overflow: visible !important; }
+    .matrix-wrapper { border: 1pt solid #1a1c1a; page-break-inside: auto; }
+    table.matrix { font-size: 7pt; }
+    table.matrix thead th { height: 70pt; min-width: 18pt; font-size: 6pt; background: #f7f7f3 !important; color: #1a1c1a !important; }
+    table.matrix thead th.corner, table.matrix tbody th {
+      min-width: 140pt; max-width: 140pt; padding: 4pt 8pt;
+      background: #f7f7f3 !important; color: #1a1c1a !important;
+    }
+    table.matrix tbody th .jcode { color: #76736b !important; }
+    .cell { width: 16pt; height: 16pt; }
+    .cell.full { background: #c4d97a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cell.partial { background: #d4dcb8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cell.support { background: #cfccbf !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cell.safe { background: #b8c97a !important; box-shadow: inset 0 0 0 1.5pt #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .insight p, .result-explain { color: #4d4d47 !important; }
+    .insight blockquote { color: #76736b !important; border-left-color: #5b6d00 !important; }
+    .ctrl-id { color: #5b6d00 !important; }
+
+    /* Print footer */
+    footer {
+      border-top: 1pt solid #1a1c1a; margin-top: 18pt; padding: 12pt 0 0 0;
+      font-size: 8pt; color: #76736b;
+    }
+    footer a { color: #76736b !important; }
+  }
 </style>
 </head>
 <body>
@@ -280,9 +406,21 @@
 <nav class="nav">
   <div class="nav-inner">
     <div class="logo">SENTAIN<span>EL</span></div>
-    <div class="nav-meta">v1.0 — 36 obligations · 3 jurisdictions live</div>
+    <div class="nav-meta">v1.1 — 36 obligations · 3 jurisdictions live</div>
+    <div class="nav-actions">
+      <button class="nav-btn" id="copyLinkBtn" title="Copy a shareable link with your current selection">Copy link</button>
+      <button class="nav-btn primary" id="printBtn" title="Print to PDF or paper">Print / PDF</button>
+    </div>
   </div>
 </nav>
+
+<div class="copied-flash" id="copiedFlash">Link copied</div>
+
+<!-- Print-only summary header (hidden on screen) -->
+<div class="print-header">
+  <h1>Sentainel — AI Compliance Matrix</h1>
+  <div class="print-meta" id="printMeta">Generated <span id="printDate"></span></div>
+</div>
 
 <header class="hero">
   <div class="eyebrow">NIST AI RMF Cross-Reference Matrix</div>
@@ -309,7 +447,10 @@
   </div>
 
   <div class="picker">
-    <div class="picker-label">Active jurisdictions — toggle to include</div>
+    <div class="picker-label">
+      <span>Active jurisdictions — toggle to include</span>
+      <span class="picker-share">Share this view: <button id="copyLinkInline">copy link →</button></span>
+    </div>
     <div class="juris-grid" id="jurisGrid"></div>
   </div>
 
@@ -390,7 +531,7 @@
 <footer>
   <div>Sentainel · sentainel.com · webworksa1@gmail.com</div>
   <div>Source data: <a href="https://github.com/WEBWORKSA1/sentainel-com">github.com/WEBWORKSA1/sentainel-com</a></div>
-  <div>v1.0 · 2026-05-13</div>
+  <div>v1.1 · 2026-05-13</div>
 </footer>
 
 <div id="tooltip"></div>
@@ -687,6 +828,92 @@ const ROWS = parseCSV(COVERAGE_DATA);
 
 const state = { active: new Set() };
 
+// =================================================
+// URL STATE — read on load, write on every toggle
+// =================================================
+// Query format: ?juris=US-TX,CA-QC,CA-ON  (group codes — preferred for shareable links)
+//            or ?juris=us-tx-traiga,ca-qc-law-25  (specific codes — for fine-grained selection)
+// Group codes expand to all jurisdictions in that group. Mixing is supported.
+// If absent, all jurisdictions are selected by default.
+
+function jurisFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const raw = params.get('juris');
+  if (!raw) return null; // signal: caller should default-select-all
+  const tokens = raw.split(',').map(t => t.trim()).filter(Boolean);
+  if (!tokens.length) return new Set();
+  const resolved = new Set();
+  tokens.forEach(tok => {
+    const upper = tok.toUpperCase();
+    // Group-code match (US-TX, CA-QC, CA-ON)
+    const inGroup = JURISDICTIONS.filter(j => j.group === upper);
+    if (inGroup.length) {
+      inGroup.forEach(j => resolved.add(j.code));
+    } else {
+      // Specific-code match (case-insensitive)
+      const lower = tok.toLowerCase();
+      const specific = JURISDICTIONS.find(j => j.code === lower);
+      if (specific) resolved.add(specific.code);
+    }
+  });
+  return resolved;
+}
+
+function urlFromJuris() {
+  // Encode as group codes when entire group is selected (cleaner share link),
+  // otherwise list specific codes.
+  if (!state.active.size) return '';
+  const active = Array.from(state.active);
+  const groupCounts = {};
+  JURISDICTIONS.forEach(j => { groupCounts[j.group] = (groupCounts[j.group] || 0) + 1; });
+  const activeByGroup = {};
+  active.forEach(code => {
+    const j = JURISDICTIONS.find(x => x.code === code);
+    if (!j) return;
+    activeByGroup[j.group] = (activeByGroup[j.group] || 0) + 1;
+  });
+  const tokens = [];
+  const usedGroups = new Set();
+  Object.keys(activeByGroup).forEach(group => {
+    if (activeByGroup[group] === groupCounts[group]) {
+      // Whole group selected — use group code
+      tokens.push(group);
+      usedGroups.add(group);
+    }
+  });
+  // For partially-selected groups, list specific codes
+  active.forEach(code => {
+    const j = JURISDICTIONS.find(x => x.code === code);
+    if (j && !usedGroups.has(j.group)) tokens.push(code);
+  });
+  return tokens.join(',');
+}
+
+function syncUrl() {
+  const juris = urlFromJuris();
+  const url = new URL(window.location.href);
+  if (juris) url.searchParams.set('juris', juris);
+  else url.searchParams.delete('juris');
+  window.history.replaceState({}, '', url.toString());
+}
+
+// =================================================
+// IFRAME RESIZE — post height to parent on every change
+// =================================================
+// Contract: parent listens for window 'message' events of shape
+//   { type: 'sentainel-resize', height: <pixels> }
+// and sets iframe.style.height = `${height}px`.
+// Falls back gracefully when not in an iframe.
+
+function postHeight() {
+  if (window.parent === window) return; // not in an iframe
+  const height = document.documentElement.scrollHeight;
+  window.parent.postMessage({ type: 'sentainel-resize', height }, '*');
+}
+
+// =================================================
+// RENDER
+// =================================================
 function renderJurisGrid() {
   const grid = document.getElementById('jurisGrid');
   grid.innerHTML = '';
@@ -705,6 +932,8 @@ function renderJurisGrid() {
       else state.active.add(j.code);
       renderJurisGrid();
       renderResult();
+      syncUrl();
+      postHeight();
     };
     grid.appendChild(btn);
   });
@@ -773,6 +1002,13 @@ function renderResult() {
 
   directCost.textContent = `$${(lowCost/1000).toFixed(0)}K – $${(highCost/1000).toFixed(0)}K`;
   sentainelCost.textContent = `$${(sentainelAnnual/1000).toFixed(0)}K`;
+
+  // Update print-only header with current selection summary
+  const printMeta = document.getElementById('printMeta');
+  if (printMeta) {
+    const jNames = activeJurs.map(j => j.name).join(' · ');
+    printMeta.innerHTML = `Generated <span>${new Date().toISOString().split('T')[0]}</span> · ${uniqueObls.size} obligations · ${needed} NIST controls cover ${coveragePct}% · ${jNames}`;
+  }
 }
 
 const matrixFilter = { jur: 'all' };
@@ -866,18 +1102,67 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.classList.add('active');
     matrixFilter.jur = btn.dataset.filter;
     renderMatrix();
+    postHeight();
   });
 });
+
+// =================================================
+// COPY LINK + PRINT actions
+// =================================================
+function flashCopied() {
+  const flash = document.getElementById('copiedFlash');
+  flash.classList.add('visible');
+  setTimeout(() => flash.classList.remove('visible'), 1400);
+}
+
+function copyShareLink() {
+  syncUrl(); // make sure URL is current
+  const url = window.location.href;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(flashCopied, () => fallbackCopy(url));
+  } else {
+    fallbackCopy(url);
+  }
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed'; ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); flashCopied(); } catch (e) { /* swallow */ }
+  document.body.removeChild(ta);
+}
+
+document.getElementById('copyLinkBtn').addEventListener('click', copyShareLink);
+document.getElementById('copyLinkInline').addEventListener('click', copyShareLink);
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+// =================================================
+// INIT
+// =================================================
+// Set the print-date placeholder (renderResult also updates this)
+document.getElementById('printDate').textContent = new Date().toISOString().split('T')[0];
+
+// Resolve initial selection from URL, or default to all
+const fromUrl = jurisFromUrl();
+if (fromUrl === null) {
+  // No ?juris= param → select all by default
+  JURISDICTIONS.forEach(j => state.active.add(j.code));
+} else {
+  state.active = fromUrl;
+}
 
 renderJurisGrid();
 renderResult();
 renderMatrix();
 
-setTimeout(() => {
-  JURISDICTIONS.forEach(j => state.active.add(j.code));
-  renderJurisGrid();
-  renderResult();
-}, 300);
+// Post height on initial render and on window resize
+window.addEventListener('load', () => { postHeight(); });
+window.addEventListener('resize', () => { postHeight(); });
+// Final settle after fonts load
+setTimeout(postHeight, 1000);
 </script>
 
 </body>
