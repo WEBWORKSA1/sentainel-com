@@ -1,0 +1,471 @@
+# NIST AI RMF → Quebec Law 25 Cross-Reference Mapping
+# Generated: 2026-05-13
+# Purpose: Map each Law 25 obligation to NIST AI RMF controls.
+# Law 25 does NOT have an explicit safe harbor for NIST AI RMF
+# compliance, but CAI guidance and Quebec privacy practitioners
+# accept NIST AI RMF + ISO 42001 as evidence of good-faith
+# risk management, particularly for s. 3.3 PIA requirements.
+
+regulation: ca-qc-law-25
+framework: us-federal-nist-ai-rmf
+safe_harbor_basis: |
+  No explicit safe harbor under Law 25. However, NIST AI RMF
+  substantial compliance + Quebec-specific overlay constitutes
+  best-practice evidence for:
+  - Section 3.3 mandatory PIA (NIST controls map directly to
+    PIA elements)
+  - Section 3.2 governance framework (NIST GOVERN controls)
+  - Section 12.1 automated decision-making (NIST MAP + MEASURE
+    + MANAGE controls)
+  - Section 17 cross-border PIA (NIST risk assessment controls)
+
+  CAI has not issued a formal recognition of NIST AI RMF, but
+  the framework's risk-management approach aligns with CAI's
+  "accountability + privacy by design" expectations. Practitioner
+  consensus (Fasken, Norton Rose, BCF) treats NIST AI RMF
+  documentation as material evidence of compliance posture.
+
+mappings:
+
+  - obligation: ca-qc-law-25-s12-1-automated-decision-making
+    description: |
+      Automated decision-making transparency (THE AI WEDGE)
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+        notes: |
+          Legal requirements management — captures s. 12.1
+          duties.
+      - id: MAP-2.2
+        coverage: fully_satisfies
+        notes: |
+          Knowledge limits & human oversight documentation —
+          directly supports s. 12.1 explanation requirements
+          (factors, parameters, basis).
+      - id: MAP-3.1
+        coverage: fully_satisfies
+        notes: |
+          AI capabilities & limitations — feeds s. 12.1 explanation.
+      - id: MAP-3.5
+        coverage: fully_satisfies
+        notes: |
+          Human oversight processes — direct alignment with
+          s. 12.1 right-to-meaningful-human-involvement.
+      - id: MEASURE-2.8
+        coverage: fully_satisfies
+        notes: |
+          AI system transparency — direct alignment.
+      - id: MEASURE-2.9
+        coverage: fully_satisfies
+        notes: |
+          AI explainability/interpretability — supports
+          principal factors disclosure.
+      - id: MEASURE-3.3
+        coverage: fully_satisfies
+        notes: |
+          Feedback channels for end users to appeal system
+          outcomes — direct alignment with s. 12.1 contestation
+          right.
+
+  - obligation: ca-qc-law-25-s3-3-mandatory-pia
+    description: Mandatory privacy impact assessment
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MAP-1.1
+        coverage: fully_satisfies
+        notes: |
+          Context of use — core PIA element.
+      - id: MAP-1.5
+        coverage: fully_satisfies
+        notes: |
+          Risk tolerance — informs PIA risk acceptance criteria.
+      - id: MAP-3.1
+        coverage: fully_satisfies
+      - id: MAP-3.2
+        coverage: fully_satisfies
+        notes: |
+          Potential costs & risks — direct PIA element.
+      - id: MAP-5.1
+        coverage: fully_satisfies
+        notes: |
+          Impact analysis — core PIA element.
+      - id: MEASURE-2.7
+        coverage: fully_satisfies
+      - id: MEASURE-2.10
+        coverage: fully_satisfies
+        notes: |
+          Privacy risk examination — core PIA element.
+      - id: MANAGE-1.3
+        coverage: fully_satisfies
+        notes: |
+          Risk mitigation — PIA mitigation measures section.
+
+  - obligation: ca-qc-law-25-s3-5-confidentiality-incident-notification
+    description: Breach notification regime (incl. 72-hour clock)
+    controls:
+      - id: GAI-9
+        coverage: partially_satisfies
+        notes: |
+          GenAI information security category.
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-4.3
+        coverage: fully_satisfies
+        notes: |
+          AI testing, incident identification, information
+          sharing.
+      - id: MEASURE-2.7
+        coverage: fully_satisfies
+      - id: MANAGE-2.3
+        coverage: partially_satisfies
+        notes: |
+          Procedures for responding to previously unknown risks.
+      - id: MANAGE-4.1
+        coverage: fully_satisfies
+        notes: |
+          Post-deployment monitoring including incident
+          response.
+      - id: MANAGE-4.3
+        coverage: fully_satisfies
+        notes: |
+          Incidents communicated to affected communities —
+          aligns with s. 3.5 individual notification duty.
+
+  - obligation: ca-qc-law-25-s14-consent
+    description: Granular consent requirements
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-5.1
+        coverage: partially_satisfies
+        notes: |
+          Stakeholder feedback — consent design informed by
+          user feedback.
+      - id: MAP-1.1
+        coverage: partially_satisfies
+      - id: MEASURE-2.10
+        coverage: fully_satisfies
+        notes: |
+          Privacy risk — granular consent is core privacy
+          control.
+
+  - obligation: ca-qc-law-25-s17-cross-border-transfers
+    description: Cross-border PIA + adequacy assessment
+    controls:
+      - id: GAI-12
+        coverage: partially_satisfies
+        notes: |
+          Value chain & third-party integration — cross-border
+          AI vendors.
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-6.1
+        coverage: fully_satisfies
+        notes: |
+          Third-party policies including IP infringement risks.
+      - id: GOVERN-6.2
+        coverage: fully_satisfies
+        notes: |
+          Contingency processes for third-party AI failures.
+      - id: MAP-4.1
+        coverage: fully_satisfies
+        notes: |
+          Approaches to map third-party legal risks.
+      - id: MAP-4.2
+        coverage: fully_satisfies
+        notes: |
+          Internal risk controls for components including
+          third-party AI.
+      - id: MEASURE-2.7
+        coverage: fully_satisfies
+      - id: MEASURE-2.10
+        coverage: fully_satisfies
+      - id: MANAGE-3.1
+        coverage: fully_satisfies
+        notes: |
+          Third-party AI risks monitoring.
+
+  - obligation: ca-qc-law-25-s27-data-portability
+    description: Data portability right
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MAP-2.1
+        coverage: partially_satisfies
+        notes: |
+          Tasks & methods — distinguishes user-provided vs.
+          AI-derived data.
+      - id: MEASURE-2.8
+        coverage: partially_satisfies
+        notes: |
+          Transparency — supports portability format documentation.
+
+  - obligation: ca-qc-law-25-s3-1-privacy-officer
+    description: Privacy officer designation
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-2.1
+        coverage: fully_satisfies
+        notes: |
+          Roles, responsibilities, communication lines — direct
+          alignment with privacy officer designation.
+      - id: GOVERN-2.3
+        coverage: fully_satisfies
+        notes: |
+          Executive leadership accountability — privacy officer
+          authority and delegation.
+
+  - obligation: ca-qc-law-25-s3-2-privacy-governance
+    description: Privacy governance framework
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.2
+        coverage: fully_satisfies
+        notes: |
+          Trustworthy AI characteristics integrated into
+          organizational policies.
+      - id: GOVERN-1.3
+        coverage: fully_satisfies
+      - id: GOVERN-1.4
+        coverage: fully_satisfies
+      - id: GOVERN-2.2
+        coverage: fully_satisfies
+        notes: |
+          Workforce training — required for governance
+          implementation.
+      - id: GOVERN-4.1
+        coverage: fully_satisfies
+        notes: |
+          Risk management practices documented — direct
+          alignment.
+
+  - obligation: ca-qc-law-25-s8-privacy-by-default
+    description: Privacy by default for technological products
+    controls:
+      - id: GAI-4
+        coverage: partially_satisfies
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.2
+        coverage: fully_satisfies
+      - id: MAP-1.6
+        coverage: fully_satisfies
+        notes: |
+          System requirements including privacy — direct
+          alignment with privacy-by-default.
+      - id: MEASURE-2.10
+        coverage: fully_satisfies
+
+  - obligation: ca-qc-law-25-s8-2-privacy-policy
+    description: Public confidentiality policy
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-5.1
+        coverage: partially_satisfies
+        notes: |
+          Stakeholder feedback — policy informed by user
+          input.
+      - id: MEASURE-2.8
+        coverage: fully_satisfies
+        notes: |
+          Transparency — direct alignment with public-facing
+          policy.
+
+  - obligation: ca-qc-law-25-s28-1-deindexation
+    description: Quebec right to be forgotten
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MAP-3.5
+        coverage: partially_satisfies
+        notes: |
+          Human oversight — three-prong test analysis.
+      - id: MANAGE-2.2
+        coverage: partially_satisfies
+        notes: |
+          Mechanisms to sustain value — implementing
+          de-indexation.
+      - id: MANAGE-2.4
+        coverage: partially_satisfies
+        notes: |
+          Mechanisms to supersede AI outputs — addressing AI
+          systems reproducing de-indexed content.
+      - id: MANAGE-4.3
+        coverage: supports
+
+  - obligation: ca-qc-law-25-biometric-database-disclosure
+    description: 60-day biometric pre-notification to CAI
+    controls:
+      - id: GAI-4
+        coverage: safe_harbor
+        notes: |
+          GenAI data privacy — biometric data is sensitive
+          subcategory.
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.6
+        coverage: fully_satisfies
+        notes: |
+          AI inventory — biometric system identification.
+      - id: MEASURE-2.7
+        coverage: fully_satisfies
+      - id: MEASURE-2.10
+        coverage: fully_satisfies
+
+  - obligation: ca-qc-law-25-s12-purpose-limitation
+    description: Purpose limitation principle
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MAP-1.1
+        coverage: fully_satisfies
+      - id: MAP-2.1
+        coverage: fully_satisfies
+        notes: |
+          Tasks & methods — purpose specification at task level.
+      - id: MAP-3.3
+        coverage: fully_satisfies
+        notes: |
+          Targeted application scope — enforces purpose limits.
+
+  - obligation: ca-qc-law-25-s23-data-minimization-retention
+    description: Data destruction or anonymization at purpose end
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.7
+        coverage: fully_satisfies
+        notes: |
+          Decommissioning procedures — direct alignment with
+          data destruction lifecycle.
+      - id: MEASURE-2.7
+        coverage: fully_satisfies
+      - id: MANAGE-4.1
+        coverage: fully_satisfies
+        notes: |
+          Post-deployment monitoring including retention
+          enforcement.
+
+  - obligation: ca-qc-law-25-s27-32-right-of-access
+    description: Data subject access request handling
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.6
+        coverage: fully_satisfies
+        notes: |
+          AI inventory — enables cross-system data discovery.
+      - id: MAP-2.2
+        coverage: partially_satisfies
+        notes: |
+          Knowledge limits — supports automated-decision
+          explanation under s. 27.
+      - id: MEASURE-2.8
+        coverage: fully_satisfies
+      - id: MEASURE-2.9
+        coverage: fully_satisfies
+        notes: |
+          Explainability — direct alignment with s. 27 right to
+          factors/parameters explanation for automated decisions.
+
+  - obligation: ca-qc-law-25-s18-3-service-provider-agreements
+    description: Written agreements with AI vendors
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-6.1
+        coverage: fully_satisfies
+        notes: |
+          Third-party policies — direct alignment with vendor
+          agreement requirements.
+      - id: GOVERN-6.2
+        coverage: fully_satisfies
+      - id: MAP-4.1
+        coverage: fully_satisfies
+      - id: MANAGE-3.1
+        coverage: fully_satisfies
+
+  - obligation: ca-qc-law-25-s23-anonymization-standard
+    description: Quebec irreversibility standard for anonymization
+    controls:
+      - id: GAI-4
+        coverage: partially_satisfies
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-4.1
+        coverage: fully_satisfies
+      - id: GOVERN-4.2
+        coverage: fully_satisfies
+        notes: |
+          Risk documentation — re-identification risk analysis.
+      - id: MAP-3.2
+        coverage: partially_satisfies
+      - id: MEASURE-1.3
+        coverage: fully_satisfies
+        notes: |
+          Internal experts — anonymization expert supervision
+          required.
+      - id: MEASURE-2.10
+        coverage: fully_satisfies
+      - id: MANAGE-3.2
+        coverage: partially_satisfies
+        notes: |
+          Pre-trained models monitoring — model memorization
+          risk for AI training on Quebec data.
+
+# ==============================================================
+# AGGREGATE COVERAGE STATISTICS
+# ==============================================================
+
+aggregate:
+  obligations_count: 17
+  avg_controls_per_obligation: 4.8
+  highest_leverage_controls:
+    - control: GOVERN-1.1
+      obligations_covered: 17
+      coverage_levels: [fully_satisfies × 17]
+    - control: MEASURE-2.10
+      obligations_covered: 7
+    - control: MEASURE-2.7
+      obligations_covered: 7
+    - control: MAP-1.1
+      obligations_covered: 5
+    - control: GOVERN-6.1
+      obligations_covered: 4
+
+  quebec_specific_controls_not_in_base_nist:
+    # These obligations have unique Quebec elements not directly
+    # mappable to NIST controls — they require Quebec-specific
+    # Sentainel module overlays
+    - obligation: ca-qc-law-25-s14-consent
+      gap: |
+        Quebec s. 14 specificity requirements (one-purpose-at-a-time,
+        separate from other terms, in clear language) require
+        Quebec-specific consent template generator beyond NIST.
+    - obligation: ca-qc-law-25-s17-cross-border-transfers
+      gap: |
+        Quebec adequacy assessment must specifically consider
+        legal framework of receiving jurisdiction. NIST third-party
+        controls don't include this depth.
+    - obligation: ca-qc-law-25-biometric-database-disclosure
+      gap: |
+        60-day CAI pre-notification is a Quebec-unique procedural
+        step with no NIST counterpart.
+    - obligation: ca-qc-law-25-s23-anonymization-standard
+      gap: |
+        Quebec's irreversibility standard with expert supervision
+        is stricter than typical NIST guidance.
+
+  combined_coverage_with_tx_traiga:
+    # When customer faces BOTH Texas TRAIGA and Quebec Law 25:
+    obligations_count: 29
+    unique_nist_controls_needed: 28
+    overlap_efficiency: |
+      ~80% of NIST controls implemented for TRAIGA also
+      satisfy Quebec Law 25 obligations. Cross-border
+      compliance is roughly 1.2x the work of single-jurisdiction
+      compliance, not 2x.

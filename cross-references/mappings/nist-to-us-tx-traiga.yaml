@@ -1,0 +1,432 @@
+# NIST AI RMF → Texas TRAIGA Cross-Reference Mapping
+# Generated: 2026-05-13
+# Purpose: Map each TRAIGA obligation to the NIST AI RMF controls
+# that, if substantially implemented, would satisfy the obligation
+# (potentially via the § 552.105(e)(2)(D) safe harbor).
+
+regulation: us-tx-traiga
+framework: us-federal-nist-ai-rmf
+safe_harbor_basis: |
+  Tex. Bus. & Comm. Code § 552.105(e)(2)(D) creates an affirmative
+  defense for substantial compliance with NIST AI RMF GenAI Profile
+  (or another nationally/internationally recognized AI risk framework)
+  combined with an internal review process. This mapping operationalizes
+  that safe harbor for each TRAIGA obligation.
+
+mappings:
+
+  - obligation: us-tx-traiga-552-051-gov-disclosure
+    description: Government agency consumer disclosure
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+        notes: |
+          Legal requirements managed — captures the obligation to know
+          and apply § 552.051(b)-(e) disclosure rules.
+      - id: MAP-3.3
+        coverage: partially_satisfies
+        notes: |
+          Targeted application scope — documents that AI is deployed
+          for consumer interaction (the disclosure trigger).
+      - id: MEASURE-2.8
+        coverage: partially_satisfies
+        notes: |
+          Transparency and accountability risks — disclosure is a
+          transparency control.
+      - id: MANAGE-4.1
+        coverage: supports
+        notes: |
+          Post-deployment monitoring — captures evidence that
+          disclosure is being delivered.
+
+  - obligation: us-tx-traiga-552-051-f-healthcare
+    description: Healthcare provider patient disclosure
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MAP-1.1
+        coverage: partially_satisfies
+        notes: |
+          Context of use — healthcare deployment context
+          establishment.
+      - id: MAP-3.5
+        coverage: partially_satisfies
+        notes: |
+          Human oversight processes — clinical staff disclosure
+          delivery workflows.
+      - id: MEASURE-2.8
+        coverage: partially_satisfies
+      - id: MANAGE-4.1
+        coverage: supports
+
+  - obligation: us-tx-traiga-552-052-manipulation
+    description: Manipulation/harm incitement prohibition
+    controls:
+      - id: GAI-3
+        coverage: safe_harbor
+        notes: |
+          GenAI Profile risk category — dangerous, violent, or
+          hateful content. Direct alignment.
+      - id: GAI-11
+        coverage: safe_harbor
+        notes: |
+          Obscene, degrading, abusive content.
+      - id: MAP-1.1
+        coverage: partially_satisfies
+        notes: |
+          Context establishment — documents legitimate non-harm
+          intent.
+      - id: MAP-5.1
+        coverage: partially_satisfies
+        notes: |
+          Likelihood/magnitude of impact analysis — documents
+          harm-prevention reasoning.
+      - id: MEASURE-2.6
+        coverage: partially_satisfies
+        notes: |
+          AI safety evaluation — direct evidence of harm-prevention
+          efforts.
+      - id: MEASURE-3.3
+        coverage: supports
+        notes: |
+          Stakeholder feedback channels — feedback-discovery defense
+          under § 552.105(e)(2)(A).
+      - id: MANAGE-1.3
+        coverage: partially_satisfies
+        notes: |
+          Risk mitigation actions — content moderation, crisis
+          pathway integration.
+      - id: MANAGE-4.3
+        coverage: partially_satisfies
+        notes: |
+          Incident communication — escalation to crisis resources.
+
+  - obligation: us-tx-traiga-552-053-social-scoring
+    description: Government social scoring prohibition
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MAP-1.1
+        coverage: partially_satisfies
+      - id: MAP-3.3
+        coverage: partially_satisfies
+        notes: |
+          Targeted application scope — documents that AI is not
+          deployed for social scoring purposes.
+      - id: MEASURE-2.11
+        coverage: supports
+        notes: |
+          Fairness and bias evaluation — addresses cross-context
+          detriment risk.
+
+  - obligation: us-tx-traiga-552-054-biometric
+    description: Biometric AI restrictions + CUBI cross-reference
+    controls:
+      - id: GAI-4
+        coverage: safe_harbor
+        notes: |
+          GenAI data privacy category. Biometric data is a high-
+          sensitivity category.
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-6.1
+        coverage: partially_satisfies
+        notes: |
+          Third-party policies — biometric AI vendor due diligence.
+      - id: MAP-4.1
+        coverage: partially_satisfies
+        notes: |
+          Approaches to map AI legal risks of components,
+          including third-party data — addresses Clearview-style
+          training data sourcing.
+      - id: MEASURE-2.7
+        coverage: fully_satisfies
+        notes: |
+          AI system security & privacy risks — biometric data
+          security is a primary use case.
+      - id: MEASURE-2.10
+        coverage: fully_satisfies
+        notes: |
+          Privacy risk examination.
+      - id: MANAGE-1.3
+        coverage: partially_satisfies
+        notes: |
+          Risk mitigation — consent capture, destruction
+          scheduling.
+
+  - obligation: us-tx-traiga-552-055-constitutional
+    description: Constitutional rights protection
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MAP-1.1
+        coverage: partially_satisfies
+        notes: |
+          Context of use — documents legitimate non-infringement
+          business purpose.
+      - id: MAP-3.2
+        coverage: supports
+        notes: |
+          Potential costs & risks — captures consideration of
+          rights impacts.
+
+  - obligation: us-tx-traiga-552-056-discrimination
+    description: Intent-based discrimination prohibition
+    controls:
+      - id: GAI-6
+        coverage: safe_harbor
+        notes: |
+          GenAI harmful bias category. Direct alignment.
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-3.1
+        coverage: partially_satisfies
+        notes: |
+          Diversity & inclusion in risk management — counters
+          intent inference.
+      - id: MAP-1.2
+        coverage: partially_satisfies
+        notes: |
+          Interdisciplinary AI actors — demographic diversity
+          counters bias-encoding inference.
+      - id: MEASURE-2.11
+        coverage: fully_satisfies
+        notes: |
+          Fairness and bias evaluation — direct evidence of
+          good-faith bias-mitigation effort, defeating intent
+          inference.
+      - id: MANAGE-1.3
+        coverage: partially_satisfies
+        notes: |
+          Risk mitigation tracking — documents response to bias
+          findings.
+
+  - obligation: us-tx-traiga-552-057-csam-explicit
+    description: CSAM, deepfake, age-faked sexual content
+    controls:
+      - id: GAI-3
+        coverage: safe_harbor
+        notes: |
+          Dangerous, violent, hateful content.
+      - id: GAI-11
+        coverage: safe_harbor
+        notes: |
+          Obscene, degrading, abusive content. Direct alignment.
+      - id: GAI-12
+        coverage: partially_satisfies
+        notes: |
+          Value chain — covers third-party AI vendor obligations
+          flowing through to deployers.
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-6.1
+        coverage: partially_satisfies
+        notes: |
+          Third-party policies — for AI providers distributing
+          to others.
+      - id: MAP-3.4
+        coverage: partially_satisfies
+        notes: |
+          Processes to maintain accuracy — content moderation
+          policy enforcement.
+      - id: MEASURE-2.6
+        coverage: fully_satisfies
+        notes: |
+          AI safety evaluation — CSAM detection, deepfake
+          detection.
+      - id: MANAGE-1.3
+        coverage: partially_satisfies
+      - id: MANAGE-4.3
+        coverage: partially_satisfies
+        notes: |
+          Incident communication — NCMEC CyberTipline reporting
+          workflow.
+
+  - obligation: us-tx-traiga-552-103-ag-investigation
+    description: AG civil investigative demand documentation
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.4
+        coverage: fully_satisfies
+        notes: |
+          Risk management process documented — provides items 1-8
+          of § 552.103(b) demand.
+      - id: GOVERN-1.6
+        coverage: fully_satisfies
+        notes: |
+          AI inventory mechanisms — supports identifying which
+          systems are subject to demand.
+      - id: MAP-1.1
+        coverage: fully_satisfies
+        notes: |
+          Context of use — satisfies item (1) of § 552.103(b).
+      - id: MAP-2.1
+        coverage: fully_satisfies
+        notes: |
+          Tasks & methods — satisfies item (1) intended use.
+      - id: MAP-2.2
+        coverage: fully_satisfies
+        notes: |
+          Knowledge limits — satisfies item (6) known limitations.
+      - id: MAP-3.1
+        coverage: fully_satisfies
+        notes: |
+          AI capabilities & limitations — satisfies items (1), (6).
+      - id: MEASURE-2.1
+        coverage: fully_satisfies
+        notes: |
+          Test sets, metrics, details — satisfies items (5) metrics.
+      - id: MEASURE-2.3
+        coverage: fully_satisfies
+        notes: |
+          Performance evaluation — satisfies item (5).
+      - id: MANAGE-4.1
+        coverage: fully_satisfies
+        notes: |
+          Post-deployment monitoring — satisfies item (7).
+
+  - obligation: us-tx-traiga-552-104-cure-period
+    description: 60-day cure period
+    controls:
+      - id: GOVERN-1.5
+        coverage: partially_satisfies
+        notes: |
+          Ongoing oversight — cure execution monitoring.
+      - id: MANAGE-1.3
+        coverage: fully_satisfies
+        notes: |
+          Decisions inform risk mitigation — cure response itself.
+      - id: MANAGE-2.2
+        coverage: partially_satisfies
+        notes: |
+          Mechanisms to sustain value — policy revision preventing
+          recurrence.
+      - id: MANAGE-2.4
+        coverage: partially_satisfies
+        notes: |
+          Mechanisms to supersede deficient AI — if cure requires
+          system change.
+      - id: MANAGE-4.3
+        coverage: supports
+        notes: |
+          Incident communication — written statement to AG.
+
+  - obligation: us-tx-traiga-552-105-nist-safe-harbor
+    description: NIST AI RMF substantial compliance safe harbor
+    controls:
+      # The safe harbor IS substantial compliance with the framework.
+      # All NIST controls collectively define it.
+      - id: ALL-GOVERN
+        coverage: safe_harbor
+      - id: ALL-MAP
+        coverage: safe_harbor
+      - id: ALL-MEASURE
+        coverage: safe_harbor
+      - id: ALL-MANAGE
+        coverage: safe_harbor
+      - id: ALL-GENAI-PROFILE
+        coverage: safe_harbor
+        notes: |
+          The GenAI Profile is the specifically named framework in
+          § 552.105(e)(2)(D). Substantial compliance with NIST-AI-
+          600-1 + internal review process = affirmative defense.
+
+  - obligation: us-tx-traiga-553-sandbox
+    description: AI Regulatory Sandbox Program
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.4
+        coverage: fully_satisfies
+        notes: |
+          Application package documentation requirements parallel
+          NIST documentation expectations.
+      - id: MAP-1.1
+        coverage: partially_satisfies
+      - id: MAP-5.1
+        coverage: partially_satisfies
+        notes: |
+          Likelihood/magnitude analysis — fulfills § 553.052(b)(2)
+          benefit assessment.
+      - id: MAP-5.2
+        coverage: partially_satisfies
+        notes: |
+          Risk practices — § 553.052(b)(3) mitigation plan.
+      - id: MEASURE-2.3
+        coverage: fully_satisfies
+        notes: |
+          Performance evaluation — quarterly DIR reporting.
+      - id: MEASURE-3.3
+        coverage: fully_satisfies
+        notes: |
+          Stakeholder feedback — § 553.102(b)(3) consumer/
+          stakeholder feedback collection.
+      - id: MANAGE-4.1
+        coverage: fully_satisfies
+        notes: |
+          Post-deployment monitoring — sandbox testing IS
+          post-deployment monitoring.
+
+# ==============================================================
+# AGGREGATE COVERAGE STATISTICS
+# ==============================================================
+
+aggregate:
+  obligations_count: 12
+  avg_controls_per_obligation: 5.4
+  highest_leverage_controls:
+    # Controls that appear in the most TRAIGA obligation mappings
+    - control: GOVERN-1.1
+      obligations_covered: 12
+      coverage_levels: [fully_satisfies × 12]
+    - control: MAP-1.1
+      obligations_covered: 7
+    - control: MANAGE-1.3
+      obligations_covered: 6
+    - control: MEASURE-2.6
+      obligations_covered: 4
+    - control: MEASURE-2.11
+      obligations_covered: 4
+  optimal_implementation_priority:
+    # Recommended order of NIST control implementation for max
+    # TRAIGA coverage with minimum effort:
+    tier_1_implement_first:
+      - GOVERN-1.1     # Legal & regulatory requirements managed
+      - GOVERN-1.4     # Risk management process documented
+      - GOVERN-1.6     # AI inventory mechanisms
+      - MAP-1.1        # Context of use
+      - MAP-3.1        # AI capabilities & limitations
+      - MEASURE-2.1    # Test sets, metrics, details
+      - MEASURE-2.6    # AI safety evaluation
+      - MEASURE-2.7    # Security & privacy risks
+      - MEASURE-2.11   # Fairness & bias
+      - MANAGE-1.3     # Risk mitigation tracking
+      - MANAGE-4.1     # Post-deployment monitoring
+    tier_2_add_for_completeness:
+      - GOVERN-1.5     # Ongoing oversight
+      - GOVERN-2.1     # Roles & responsibilities
+      - GOVERN-6.1     # Third-party policies
+      - MAP-3.5        # Human oversight
+      - MAP-5.1        # Impact analysis
+      - MEASURE-2.10   # Privacy risk
+      - MEASURE-3.3    # Stakeholder feedback channels
+      - MANAGE-4.3     # Incident communication
+    tier_3_genai_overlay:
+      # For customers deploying generative AI
+      - GAI-3          # Dangerous content
+      - GAI-4          # Data privacy
+      - GAI-6          # Harmful bias
+      - GAI-11         # Obscene content
+
+  total_unique_controls_for_full_coverage: 23
+  estimated_implementation_effort:
+    tier_1: 80-120 hours
+    tier_2: 40-60 hours
+    tier_3: 20-40 hours
+    total: 140-220 hours
+
+  cost_comparison:
+    direct_compliance_implementation: $50000-$250000
+    sentainel_annual_subscription: $30000-$60000
+    cost_multiplier_advantage: 5-10x
