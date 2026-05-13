@@ -28,6 +28,8 @@ This file is the authoritative record of what's in the repo, when it landed, and
 | `cross-references/mappings/nist-to-us-tx-traiga.yaml` | ✅ | 12 obligations mapped, with implementation priority tiers |
 | `cross-references/mappings/nist-to-ca-qc-law-25.yaml` | ✅ | 17 obligations mapped, with Quebec-specific gaps called out |
 | `cross-references/mappings/nist-to-ca-on-stack.yaml` | ✅ | 7 Ontario obligations mapped (Bill 149 + Code + MFIPPA) |
+| `cross-references/viz/index.html` | ✅ | **Customer-facing interactive visualization** — scope calculator, full obligation×control grid, insights cards |
+| `cross-references/viz/README.md` | ✅ | Viz documentation + deployment notes |
 
 ### Infrastructure
 
@@ -36,6 +38,7 @@ This file is the authoritative record of what's in the repo, when it landed, and
 | `README.md` | ✅ Reflects current state (updated 2026-05-13) |
 | `docs/METHODOLOGY.md` | ✅ |
 | `docs/ONTARIO_STACK.md` | ✅ |
+| `docs/SESSION_LOG.md` | ✅ |
 | `etl/load.py` | ✅ |
 | `etl/requirements.txt` | ✅ |
 | `.gitignore` | ✅ |
@@ -117,6 +120,15 @@ Some assets live outside the repo and should not be assumed to be deployed:
 
 ## Session-by-session changelog
 
+### 2026-05-13 (late morning — viz build)
+- Built customer-facing interactive matrix visualization at `cross-references/viz/index.html`
+- Self-contained 50KB HTML with embedded data — no build step, no dependencies
+- Sections: hero stats / scope calculator with cost differential / full obligation×control grid with tooltips / strategic insights
+- Aesthetic: dark mode, Fraunces display + JetBrains Mono data + Inter body, lime accent used sparingly
+- Auto-selects all jurisdictions on load → "36 obligations, 5 controls cover 97%, $190K-$465K direct vs $60K Sentainel"
+- Visual QA via Playwright screenshots — verified hero, calculator, savings panel, matrix-all, matrix-Quebec, tooltip rendering
+- Added `cross-references/viz/README.md` with deployment notes
+
 ### 2026-05-13 (this session, late morning)
 - Pushed Quebec Law 25 final batch (17 obligations + metadata + changelog + notes)
 - Pushed full cross-references suite: README, NIST controls catalog, coverage matrix CSV, 3 NIST mapping YAMLs
@@ -134,7 +146,11 @@ Some assets live outside the repo and should not be assumed to be deployed:
 
 ## Recommended next session priorities
 
-1. **Build the cross-reference visualization** — the matrix data is ready (`coverage-matrix.csv` is a 195-row flat file); a single interactive HTML artifact showing customer-facing "implement these 10 controls → satisfy 85% of obligations across X jurisdictions" is the most marketable next asset
+1. **Deploy the viz** — `cross-references/viz/index.html` is ready to ship. Options:
+   - GitHub Pages on this repo (instant, free, gets a public sentainel-com.github.io URL)
+   - Netlify drop (drag-and-drop, gets a *.netlify.app URL in 30 seconds)
+   - Vercel (similar)
+   - Or embed in the marketing site after rebrand
 2. **Rebrand marketing site** — `/home/claude/sentinel-site/index.html` still uses old "Sentinel" name; 20-minute fix
 3. **Postgres schema migrations** — land in `etl/migrations/` so the ETL is actually runnable
 4. **Illinois HRA AI extraction** — adds another US state jurisdiction, ~9 obligations expected
