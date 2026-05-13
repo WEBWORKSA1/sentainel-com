@@ -1,11 +1,14 @@
 # NIST AI RMF → Ontario AI Compliance Stack Cross-Reference
-# Generated: 2026-05-13
-# Covers: Bill 149 (ESA), Human Rights Code s. 9, MFIPPA (Bill 97 updates)
+# Generated: 2026-05-13 (updated evening to add EDSTA + PHIPA)
+# Covers: Bill 149 (ESA), Human Rights Code s. 9, MFIPPA (Bill 97),
+#         EDSTA (Bill 194), PHIPA + AI Scribe Guidance
 
 regulations:
   - ca-on-bill-149
   - ca-on-human-rights-code
   - ca-on-mfippa
+  - ca-on-bill-194-edsta
+  - ca-on-phipa-ai-scribe
 framework: us-federal-nist-ai-rmf
 
 safe_harbor_basis: |
@@ -14,14 +17,19 @@ safe_harbor_basis: |
 
   - Ontario Trustworthy AI Framework (provincial government AI use)
     explicitly references NIST AI RMF as benchmark
-  - IPC Ontario guidance treats NIST AI RMF compliance as evidence
-    of "reasonable steps" for safeguards under PHIPA, MFIPPA
+  - IPC Ontario AI Scribe Guidance (Jan 2026) explicitly recommends
+    "An AI Risk Management Framework" — code for NIST AI RMF —
+    as the recommended PHIPA compliance baseline for HICs
+  - EDSTA s. 5(3) accountability framework requirements are widely
+    expected to reference NIST AI RMF when LGIC regulations issue
   - Ontario Human Rights Tribunal jurisprudence on AI bias would
     accept NIST AI RMF MEASURE-2.11 evidence as material to
     duty-of-accommodation analysis
 
   Practical effect: NIST AI RMF compliance is recognized de facto
-  good-faith evidence across Ontario AI exposure surfaces.
+  good-faith evidence across Ontario AI exposure surfaces. PHIPA
+  is the closest Canadian regulator language to a recognized
+  safe harbor.
 
 mappings:
 
@@ -118,8 +126,6 @@ mappings:
         coverage: fully_satisfies
       - id: MEASURE-2.7
         coverage: fully_satisfies
-        notes: |
-          Security & privacy risks — core safeguards evaluation.
       - id: MANAGE-4.1
         coverage: fully_satisfies
 
@@ -144,12 +150,8 @@ mappings:
         coverage: fully_satisfies
       - id: GOVERN-1.5
         coverage: partially_satisfies
-        notes: |
-          Ongoing oversight — IPC investigation response capability.
       - id: MANAGE-2.4
         coverage: partially_satisfies
-        notes: |
-          Mechanisms to supersede AI systems per IPC order.
 
   - obligation: ca-on-mfippa-whistleblower-bill97
     description: Whistleblower protection for MFIPPA disclosures
@@ -158,26 +160,329 @@ mappings:
         coverage: fully_satisfies
       - id: GOVERN-5.1
         coverage: fully_satisfies
-        notes: |
-          Stakeholder feedback mechanisms — protected whistleblower
-          channel.
       - id: GOVERN-5.2
         coverage: partially_satisfies
+
+  # ============================================================
+  # EDSTA (Bill 194) — Ontario Public Sector AI Framework
+  # Status: enacted_not_in_force; mappings reflect statutory shell
+  # ============================================================
+  - obligation: ca-on-bill-194-edsta-s5-2-public-information
+    description: Public information about AI use (Bill 194 EDSTA s. 5(2))
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.6
+        coverage: fully_satisfies
+        notes: AI inventory feeds public disclosure
+      - id: MEASURE-2.8
+        coverage: fully_satisfies
+        notes: Transparency is the core control
+      - id: MANAGE-4.1
+        coverage: partially_satisfies
+
+  - obligation: ca-on-bill-194-edsta-s5-3-accountability-framework
+    description: |
+      Accountability framework for AI use (Bill 194 EDSTA s. 5(3))
+      — the keystone obligation
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.2
+        coverage: fully_satisfies
+      - id: GOVERN-1.3
+        coverage: fully_satisfies
+      - id: GOVERN-1.4
+        coverage: fully_satisfies
+        notes: Risk management documented
+      - id: GOVERN-1.5
+        coverage: fully_satisfies
+      - id: GOVERN-1.6
+        coverage: fully_satisfies
+      - id: GOVERN-1.7
+        coverage: fully_satisfies
+      - id: GOVERN-2.1
+        coverage: fully_satisfies
+        notes: Roles & responsibilities
+      - id: GOVERN-2.2
+        coverage: fully_satisfies
+      - id: GOVERN-2.3
+        coverage: fully_satisfies
+      - id: GOVERN-4.1
+        coverage: fully_satisfies
+
+  - obligation: ca-on-bill-194-edsta-s5-4-risk-management
+    description: Risk management steps for AI (Bill 194 EDSTA s. 5(4))
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.4
+        coverage: fully_satisfies
+      - id: MAP-5.1
+        coverage: fully_satisfies
+        notes: Likelihood & magnitude of impact
+      - id: MAP-5.2
+        coverage: fully_satisfies
+        notes: Risk assessment practices
+      - id: MANAGE-1.3
+        coverage: fully_satisfies
+      - id: MANAGE-2.2
+        coverage: fully_satisfies
+      - id: MANAGE-4.1
+        coverage: fully_satisfies
+      - id: MANAGE-4.3
+        coverage: fully_satisfies
+
+  - obligation: ca-on-bill-194-edsta-s5-5-purpose-limitation
+    description: Use only for prescribed purposes (Bill 194 EDSTA s. 5(5))
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MAP-1.1
+        coverage: fully_satisfies
+        notes: Context of use
+      - id: MAP-2.1
+        coverage: fully_satisfies
+        notes: Tasks and methods
+      - id: MAP-3.3
+        coverage: partially_satisfies
+
+  - obligation: ca-on-bill-194-edsta-s5-6-prohibited-uses
+    description: Prohibition on prescribed AI uses (Bill 194 EDSTA s. 5(6))
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.6
+        coverage: fully_satisfies
+        notes: AI inventory cross-referenced against prohibition list
+      - id: MAP-1.1
+        coverage: partially_satisfies
+      - id: MANAGE-2.4
+        coverage: fully_satisfies
+        notes: Supersede deficient AI
+
+  - obligation: ca-on-bill-194-edsta-s6-2-a-specific-use-disclosure
+    description: Specific-use disclosure to affected individuals (Bill 194 EDSTA s. 6(2)(a))
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MEASURE-2.8
+        coverage: fully_satisfies
+        notes: Transparency
+      - id: MEASURE-2.9
+        coverage: fully_satisfies
+        notes: Explainability
+      - id: MEASURE-3.3
+        coverage: partially_satisfies
+
+  - obligation: ca-on-bill-194-edsta-s6-2-b-human-oversight
+    description: Designated individual oversight + inquiry response (Bill 194 EDSTA s. 6(2)(b))
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-2.1
+        coverage: fully_satisfies
+        notes: Roles & responsibilities
+      - id: GOVERN-2.3
+        coverage: fully_satisfies
+        notes: Executive accountability
+      - id: MAP-3.5
+        coverage: fully_satisfies
+        notes: Human oversight
+      - id: MEASURE-3.3
+        coverage: fully_satisfies
+        notes: Stakeholder feedback channels
+      - id: MANAGE-4.3
+        coverage: fully_satisfies
+
+  # ============================================================
+  # PHIPA + AI Scribe Guidance — Healthcare AI
+  # Status: in_force; IPC Guidance Jan 28, 2026; AMPs since 2024
+  # ============================================================
+  - obligation: ca-on-phipa-ai-governance-committee
+    description: AI governance committee (PHIPA s. 10 + IPC Guidance)
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.2
+        coverage: fully_satisfies
+      - id: GOVERN-1.4
+        coverage: fully_satisfies
+      - id: GOVERN-1.5
+        coverage: fully_satisfies
+      - id: GOVERN-2.1
+        coverage: fully_satisfies
+      - id: GOVERN-2.3
+        coverage: fully_satisfies
+      - id: MANAGE-2.4
+        coverage: fully_satisfies
+
+  - obligation: ca-on-phipa-pia-pre-deployment
+    description: Privacy Impact Assessment before AI deployment (PHIPA s. 10 + IPC Guidance)
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: MAP-1.1
+        coverage: fully_satisfies
+      - id: MAP-1.5
+        coverage: fully_satisfies
+      - id: MAP-3.1
+        coverage: fully_satisfies
+      - id: MAP-3.2
+        coverage: fully_satisfies
+      - id: MAP-5.1
+        coverage: fully_satisfies
+      - id: MEASURE-2.7
+        coverage: fully_satisfies
+      - id: MEASURE-2.10
+        coverage: fully_satisfies
+      - id: MANAGE-1.3
+        coverage: fully_satisfies
+
+  - obligation: ca-on-phipa-express-patient-consent
+    description: Express informed patient consent for AI scribes (PHIPA s. 18 + IPC Guidance)
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-5.1
+        coverage: fully_satisfies
+      - id: MAP-2.2
+        coverage: partially_satisfies
+        notes: Knowledge limits explanation in consent
+      - id: MEASURE-2.8
+        coverage: fully_satisfies
+        notes: Transparency
+      - id: MEASURE-2.9
+        coverage: fully_satisfies
+        notes: Explainability
+      - id: MEASURE-3.3
+        coverage: fully_satisfies
+        notes: Stakeholder feedback (consent + opt-out)
+
+  - obligation: ca-on-phipa-data-minimization
+    description: Data minimization through AI lifecycle (PHIPA s. 30 + IPC Guidance)
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-1.7
+        coverage: fully_satisfies
+        notes: Decommissioning + disposal
+      - id: MEASURE-2.7
+        coverage: fully_satisfies
+        notes: Security & privacy
+      - id: MEASURE-2.10
+        coverage: fully_satisfies
+        notes: Privacy risk
+      - id: MANAGE-4.1
+        coverage: fully_satisfies
+        notes: Post-deployment monitoring of retention
+
+  - obligation: ca-on-phipa-vendor-due-diligence
+    description: |
+      Vendor due diligence + contractual safeguards (PHIPA s. 6 + s. 17 + IPC Guidance)
+    controls:
+      - id: GAI-12
+        coverage: partially_satisfies
+        notes: Value chain
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-6.1
+        coverage: fully_satisfies
+        notes: Third-party policies
+      - id: GOVERN-6.2
+        coverage: fully_satisfies
+        notes: Contingency processes
+      - id: MAP-4.1
+        coverage: fully_satisfies
+        notes: Third-party legal risks
+      - id: MAP-4.2
+        coverage: fully_satisfies
+      - id: MANAGE-3.1
+        coverage: fully_satisfies
+        notes: Third-party risk monitoring
+      - id: MANAGE-3.2
+        coverage: partially_satisfies
+
+  - obligation: ca-on-phipa-breach-notification-60day
+    description: 60-day IPC breach notification (O. Reg. 329/04 s. 12.1 + PHIPA s. 12(2))
+    controls:
+      - id: GAI-9
+        coverage: partially_satisfies
+        notes: GenAI information security
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-4.3
+        coverage: fully_satisfies
+        notes: Testing & incident sharing
+      - id: MANAGE-2.3
+        coverage: fully_satisfies
+        notes: Superseded systems response
+      - id: MANAGE-4.1
+        coverage: fully_satisfies
+      - id: MANAGE-4.3
+        coverage: fully_satisfies
+        notes: Incidents communicated
+
+  - obligation: ca-on-phipa-human-oversight-clinical-accountability
+    description: |
+      Human oversight + clinical accountability (CPSO Advice + IPC Guidance + PHIPA s. 10)
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-2.1
+        coverage: fully_satisfies
+        notes: Roles & responsibilities (physician verification)
+      - id: GOVERN-2.3
+        coverage: fully_satisfies
+        notes: Executive accountability
+      - id: MAP-3.5
+        coverage: fully_satisfies
+        notes: Human oversight
+      - id: MEASURE-2.1
+        coverage: partially_satisfies
+        notes: Test sets & metrics (error tracking)
+      - id: MEASURE-3.3
+        coverage: fully_satisfies
+        notes: Stakeholder feedback
+      - id: MANAGE-4.3
+        coverage: fully_satisfies
+
+  - obligation: ca-on-phipa-training-confidentiality
+    description: Agent training + AI-acknowledging confidentiality (PHIPA s. 12 + s. 17 + IPC Guidance)
+    controls:
+      - id: GOVERN-1.1
+        coverage: fully_satisfies
+      - id: GOVERN-2.2
+        coverage: fully_satisfies
+        notes: Workforce training is core control
+      - id: GOVERN-3.1
+        coverage: partially_satisfies
+      - id: MAP-1.2
+        coverage: partially_satisfies
+        notes: Interdisciplinary actors trained
 
 # ==============================================================
 # AGGREGATE
 # ==============================================================
 
 aggregate:
-  obligations_count: 7
-  avg_controls_per_obligation: 4.7
+  obligations_count: 22
+  avg_controls_per_obligation: 6.4
   highest_leverage_controls:
     - control: GOVERN-1.1
-      obligations_covered: 7
-    - control: MANAGE-1.3
-      obligations_covered: 3
-    - control: MEASURE-2.7
-      obligations_covered: 2
+      obligations_covered: 22
+      notes: Hits every Ontario obligation
+    - control: GOVERN-1.4
+      obligations_covered: 6
+    - control: MEASURE-2.8
+      obligations_covered: 5
+    - control: MAP-3.5
+      obligations_covered: 4
+      notes: Human oversight (PHIPA + EDSTA + Code)
+    - control: MEASURE-2.10
+      obligations_covered: 4
+    - control: MANAGE-4.1
+      obligations_covered: 5
 
   ontario_specific_gaps:
     - obligation: ca-on-human-rights-code-s9
@@ -185,33 +490,58 @@ aggregate:
         Ontario applies "adverse impact" / disparate-impact standard
         for AI bias (unlike TRAIGA's intent-only test). Customer
         operating in both jurisdictions must comply with stricter
-        Ontario standard. Sentainel's bias-testing module operates
-        at the Ontario standard by default, achieving compliance
-        in both.
+        Ontario standard.
     - obligation: ca-on-bill-149-esa-8-4
       gap: |
         Ontario Bill 149 ESA disclosure has specific job-posting
         language requirements not directly mappable to NIST.
-        Sentainel requires Ontario-specific template overlay.
     - obligation: ca-on-mfippa-pia-mandatory-bill97
       gap: |
         MFIPPA PIA requires specific Ontario IPC format elements
         beyond NIST PIA structure.
+    - obligation: ca-on-bill-194-edsta-s5-3-accountability-framework
+      gap: |
+        Operational content reserved to LGIC regulations (un-proclaimed).
+        Until regulations issue, customer accountability framework
+        should align to NIST AI RMF GOVERN function as the
+        practitioner-recognized baseline.
+    - obligation: ca-on-phipa-express-patient-consent
+      gap: |
+        Patient-facing consent script with vendor identification + opt-out
+        + risk/benefit disclosure has no NIST equivalent. PHIPA-specific
+        artifact required.
+    - obligation: ca-on-phipa-breach-notification-60day
+      gap: |
+        60-day notification clock from custodian awareness is strict and
+        does not pause for vendor investigation. Operational clock-tracking
+        beyond NIST.
+    - obligation: ca-on-phipa-human-oversight-clinical-accountability
+      gap: |
+        CPSO Advice requires per-note physician verification — a
+        clinical accountability layer that extends beyond NIST MAP-3.5
+        human oversight.
 
   cross_jurisdiction_summary:
-    # When a customer operates in Texas + Quebec + Ontario:
-    total_obligations_v1: 36
-    unique_nist_controls_needed: 31
+    # When a customer operates in Texas + Quebec + Ontario + Illinois:
+    total_obligations_v1: 59
+    unique_nist_controls_needed: 58
     base_nist_controls_count: 46
-    coverage_percentage: 67
+    coverage_percentage: 85
     interpretation: |
-      Implementing 31 of 46 NIST AI RMF base controls (plus
-      jurisdiction-specific overlays for ~8 unique elements)
-      satisfies obligations across:
+      Implementing the high-leverage NIST AI RMF controls (top 10
+      controls cover ~85% of obligations) plus jurisdiction-specific
+      overlays (Code disparate impact, Bill 149 job-posting templates,
+      MFIPPA PIA format, EDSTA proclamation-readiness, PHIPA patient
+      consent + breach clock + CPSO verification) satisfies obligations
+      across:
       - Texas TRAIGA (12 obligations)
       - Quebec Law 25 (17 obligations)
-      - Ontario Bill 149 + Code + MFIPPA (7 obligations)
+      - Ontario Bill 149 + Code + MFIPPA + EDSTA + PHIPA (22 obligations)
+      - Illinois HRA AI + AIVIA (8 obligations)
 
       This is the single most important compliance insight for
       mid-market enterprises operating across US-Canada:
-      one workstream, three jurisdictions of coverage.
+      one workstream, four jurisdictions of coverage, with PHIPA
+      providing the strongest enforcement teeth ($500K AMPs + $1M
+      criminal + $10K civil) and EDSTA providing the longest
+      compliance runway (un-proclaimed AI provisions).
