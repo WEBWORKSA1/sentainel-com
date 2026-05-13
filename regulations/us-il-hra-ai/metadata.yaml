@@ -1,0 +1,263 @@
+---
+slug: us-il-hra-ai
+short_name: Illinois HRA AI Amendments
+long_name: |
+  Illinois Human Rights Act AI Amendments — Public Act 103-804
+  (HB 3773, 103rd Gen. Assemb. 2024); amends 775 ILCS 5/2-101 and
+  775 ILCS 5/2-102 to add definitions of "artificial intelligence"
+  and "generative artificial intelligence" (s. 2-101(M)-(N)) and
+  to make AI-driven employment discrimination plus failure to
+  notify employees of AI use a civil rights violation (s. 2-102(L)).
+citation: |
+  775 ILCS 5/2-101(M)-(N); 775 ILCS 5/2-102(L), as added by
+  Public Act 103-804, eff. January 1, 2026.
+jurisdiction:
+  code: US-IL
+  level: state_province
+  parent: US-Federal
+status: in_force
+status_notes: |
+  HB 3773 was signed by Governor Pritzker on August 9, 2024 and
+  took effect on January 1, 2026 (now in force as of this
+  extraction). The Illinois Department of Human Rights (IDHR) is
+  empowered to adopt implementing rules — including, but not
+  limited to, rules on the circumstances and conditions that
+  require notice, the time period for providing notice, and the
+  means for providing notice. As of May 2026, IDHR final rules are
+  pending; proposed rules issued in late 2025 are in public-comment
+  digestion. Employers are subject to the statutory text in the
+  interim.
+signed_date: 2024-08-09
+effective_date: 2026-01-01
+sunset_date: null
+source_url: https://www.ilga.gov/legislation/103/HB/PDF/10300HB3773lv.pdf
+statute_url: https://www.ilga.gov/Documents/legislation/ilcs/documents/077500050K2-102.htm
+public_act: 103-804
+companion_legislation:
+  - us-il-aivia              # AI Video Interview Act (820 ILCS 42)
+  - us-il-bipa               # Biometric Information Privacy Act (740 ILCS 14)
+  - us-federal-nist-ai-rmf
+  - us-tx-traiga             # parallel AI-employment regulation
+  - ca-on-bill-149           # parallel AI-employment regulation (job postings)
+summary: |
+  HB 3773 is Illinois's first AI-specific civil rights law. It
+  imposes two related but distinct duties on employers:
+
+  1. SUBSTANTIVE PROHIBITION (s. 2-102(L)(1)): employers may not
+     use AI that has the effect of subjecting employees to
+     discrimination on the basis of protected classes, and may not
+     use zip codes as a proxy for protected classes. The phrase
+     "has the effect" is critical — Illinois reaches DISPARATE
+     IMPACT, not just intent. This is the operationally significant
+     gap between Illinois and Texas TRAIGA (which requires intent
+     under s. 552.056(c)).
+
+  2. PROCEDURAL DUTY (s. 2-102(L)(2)): employers must notify
+     employees when AI is used for the covered employment decisions.
+     The statute does not specify the form, content, or timing of
+     notice — those terms are delegated to IDHR rulemaking.
+
+  Scope of covered employment decisions (s. 2-102(L)(1)):
+    - recruitment
+    - hiring
+    - promotion
+    - renewal of employment
+    - selection for training or apprenticeship
+    - discharge
+    - discipline
+    - tenure
+    - terms, privileges, or conditions of employment
+
+  Protected classes (per s. 2-101 incorporation): race, color,
+  religion, national origin, ancestry, age, sex, marital status,
+  order of protection status, disability, military status, sexual
+  orientation, pregnancy, unfavorable discharge from military
+  service, citizenship status, work authorization status, family
+  responsibilities, reproductive health decisions.
+
+  Strategic significance for Sentainel: Illinois closes the
+  "TRAIGA loophole" for hiring AI. A national employer that
+  built a Texas-compliant hiring tool (intent-based, narrow harm
+  set) faces strict-liability-style disparate-impact exposure the
+  moment a Chicago applicant interacts with it. Sentainel's
+  classification engine must flag deployments that span IL and
+  TX since the compliance posture diverges.
+
+  This regulation pairs cleanly with Ontario Bill 149 (AI hiring
+  job-posting disclosure) and AIVIA (Illinois video-interview AI
+  consent) to anchor an "AI hiring compliance" sub-vertical.
+scope_description: |
+  HRA AI applies to: any "employer," "employment agency," or
+  "labor organization" as defined in 775 ILCS 5/2-101(A)-(C).
+  "Employer" includes any person employing 15 or more employees
+  within Illinois during 20 or more calendar weeks within the
+  calendar year (s. 2-101(B)(1)(a)) — and any person employing
+  one or more employees when a complainant alleges sexual
+  harassment or pregnancy discrimination (s. 2-101(B)(1)(d)).
+  State and local government employers are also covered
+  (s. 2-101(B)(1)(b)).
+
+  Notably broader than TRAIGA on small employers: the 15-employee
+  threshold means almost all national employers with Illinois
+  staff are in scope.
+
+  Definition of AI is broad and tracks NIST AI 100-1 conceptually
+  (s. 2-101(M)): "a machine-based system that, for explicit or
+  implicit objectives, infers, from the input it receives, how to
+  generate outputs such as predictions, content, recommendations,
+  or decisions that can influence physical or virtual
+  environments. Artificial intelligence includes generative
+  artificial intelligence."
+
+  Generative AI is separately defined (s. 2-101(N)) and covers
+  text, image, multimedia, and other simulated-human-produced
+  outputs.
+
+  Position-based scope: the statute uses "employees" and
+  "employer," not "Illinois residents." Practical effect: a
+  Chicago-based employee of a Delaware company falls under HRA AI;
+  a Texas resident telecommuting for an Illinois-headquartered
+  employer is governed by Illinois law via the employer's nexus.
+extraterritorial_reach: false
+extraterritorial_notes: |
+  The IHRA generally applies to the employment relationship of
+  Illinois-based workers regardless of where the employer is
+  headquartered. HRA AI inherits this framing. It does not
+  explicitly reach extraterritorially the way TRAIGA § 551.002 or
+  Quebec Law 25 do — but in practice, almost any employer that
+  has Illinois-based employees (the typical situation) is reached.
+
+  No protected-effects reach beyond employment relationships.
+  Illinois residents who are merely consumers of AI products are
+  not covered by HRA AI (they may be covered by other Illinois
+  laws such as BIPA for biometric data).
+safe_harbor_via:
+  - us-federal-nist-ai-rmf       # practitioner-recognized, not statutory
+  - eu-iso-iec-42001             # practitioner-recognized, not statutory
+safe_harbor_notes: |
+  HRA AI contains NO explicit statutory safe harbor. Unlike TRAIGA
+  § 552.105(e)(2)(D), Illinois did not write NIST AI RMF compliance
+  into the statute as an affirmative defense.
+
+  HOWEVER, the legal community treats NIST AI RMF substantial
+  compliance as good-faith evidence in IDHR investigations and
+  defensive litigation. Specifically:
+
+  - IDHR rulemaking is expected (and proposed rules suggest) to
+    cite NIST AI RMF as a benchmark for "reasonable" AI use
+  - Disparate-impact defense in IHRA cases historically allows
+    "business necessity" justification; rigorous fairness testing
+    aligned with NIST MEASURE-2.11 strengthens that defense
+  - Illinois courts have not yet adjudicated an HRA AI case;
+    early defendants who can show NIST AI RMF documentation will
+    set persuasive precedent
+
+  Sentainel positioning: package this as "Illinois doesn't grant
+  you the safe harbor — but if you have the same NIST documentation
+  you'd need for Texas, you have the strongest available defense
+  for an Illinois case too." This is the cross-jurisdiction value
+  the matrix communicates.
+notes: |
+  - HRA AI is a CIVIL RIGHTS VIOLATION, not a standalone AI
+    statute. This routes enforcement through the Illinois
+    Department of Human Rights complaint process (775 ILCS 5/7A)
+    rather than a new agency.
+
+  - Disparate impact under HRA AI: the statutory phrase "has the
+    effect of subjecting employees to discrimination" is
+    materially different from TRAIGA's intent-based standard
+    (Tex. Bus. & Comm. Code § 552.056(c): "Disparate impact is
+    not sufficient by itself to demonstrate an intent to
+    discriminate"). Illinois plaintiffs can build a case on
+    statistical disparities alone. This is a major exposure
+    differential customers need to model.
+
+  - Zip code proxy prohibition: a notable example of Illinois
+    going further than federal law. Title VII jurisprudence allows
+    facially neutral criteria that have disparate impact unless
+    plaintiff makes a prima facie case; HRA AI specifically
+    forbids zip codes outright when used as a proxy. This forces
+    deployer-side feature audits.
+
+  - Notice content is undefined: the statute requires notice but
+    doesn't specify what the notice must say, in what form, or
+    when. This is the biggest interpretive gap. IDHR rulemaking
+    will fill it. Sentainel should generate notice-template
+    drafts that satisfy the most likely IDHR rules and revise
+    upon publication.
+
+  - 1-year+ enforcement statute of limitations: 2 years to file
+    a charge with IDHR (recently extended from 300 days per
+    775 ILCS 5/7A-102(A)(1)).
+
+  - The Illinois Automated Decision Tools Act (HB 5116) is
+    pending; it would impose impact-assessment duties on
+    "deployers." Track separately — not enacted as of
+    May 2026, but high probability of passage in 2027 session.
+
+  - Companion exposure: Illinois employers running AI-based hiring
+    tools face concurrent exposure under HRA AI, AIVIA (if video
+    interviews), and BIPA (if biometric data including facial
+    geometry from video). The three statutes layer: HRA AI for
+    discrimination, AIVIA for procedure and consent, BIPA for
+    biometric collection. BIPA carries a private right of action
+    with $1,000–$5,000 per violation, the most aggressive damages
+    regime in this stack.
+
+  - Enforcement is not yet active: IDHR has issued proposed rules
+    but has not closed the rulemaking. First enforcement cases
+    likely Q3–Q4 2026.
+penalty_schedules:
+  - tier_name: civil_rights_violation
+    basis: per_violation
+    min_amount: null
+    max_amount: null
+    currency: USD
+    citation: 775 ILCS 5/8A-104
+    notes: |
+      As a civil rights violation under the IHRA, remedies are
+      determined by the Illinois Human Rights Commission and may
+      include: cease-and-desist orders; back pay; restoration of
+      membership, position, or seniority; reinstatement;
+      compensatory damages; attorney's fees; and the actual costs
+      of the complainant. No statutory cap. Punitive damages are
+      generally not available under the IHRA itself but federal
+      Title VII concurrent claims may carry them.
+  - tier_name: aggravated_violation
+    basis: per_violation
+    min_amount: 0
+    max_amount: 100000
+    currency: USD
+    citation: 775 ILCS 5/8A-104(F)
+    notes: |
+      Where the violation is found to be willful or in retaliation,
+      the Commission may impose an additional civil penalty up to
+      $100,000 against the respondent.
+  - tier_name: attorney_fees_costs
+    basis: actual
+    citation: 775 ILCS 5/8A-104(G)
+    notes: |
+      Prevailing complainants may recover reasonable attorney's
+      fees and costs from respondent. Respondents who prevail
+      generally do not recover unless complaint is frivolous.
+private_right_of_action: true
+private_right_of_action_notes: |
+  Indirectly yes — through the IHRA complaint mechanism. A charge
+  is filed with IDHR; if IDHR finds substantial evidence the
+  matter goes to the Illinois Human Rights Commission OR (more
+  commonly post-2021 amendments) the complainant may elect to
+  proceed in circuit court (775 ILCS 5/7A-102(C-1)).
+
+  This is procedurally different from a direct private right of
+  action but functionally equivalent — Illinois employees can sue
+  their employers under HRA AI through the Commission or in court.
+
+  CRITICAL: BIPA (a companion statute) has a DIRECT private right
+  of action with statutory damages ($1,000 / $5,000 per
+  violation). Employers using AI hiring tools that involve any
+  biometric processing face concurrent BIPA exposure with
+  meaningfully larger damages than HRA AI alone.
+last_reviewed: 2026-05-13
+reviewer: web@sentainel.com
+extraction_method: claude-opus-4-7-2026-05-13 + direct statute review (ILGA source) + Jones Day, Seyfarth, Duane Morris commentary cross-check
+---
