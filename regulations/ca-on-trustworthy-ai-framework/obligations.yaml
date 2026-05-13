@@ -1,0 +1,161 @@
+jurisdiction: CA-ON
+regulation_slug: ca-on-trustworthy-ai-framework
+regulation_name: Ontario's Trustworthy AI Framework + Responsible Use of AI Directive
+short_name: Trustworthy AI Framework
+authority: Management Board of Cabinet (under Management Board of Cabinet Act); Ministry of Public and Business Service Delivery and Procurement (MPBSDP)
+in_force_date: 2024-12-01
+status: in_force_provincial_directive
+applies_to:
+  - All Government of Ontario ministries (direct)
+  - All provincial agencies (direct)
+  - Municipalities (indirect — published as model; IPC/OHRC have signalled use as benchmark in MFIPPA/PHIPA assessments)
+  - Broader public sector via IPC-OHRC Joint Principles alignment (Jan 2026)
+penalties: No direct penalties (Management Board Directive). Non-compliance escalated through MBC governance. Indirect penalties via FIPPA/MFIPPA breach orders and IPC binding orders when AI failure causes privacy breach.
+canonical_url: https://www.ontario.ca/page/responsible-use-artificial-intelligence-directive
+framework_url: https://www.ontario.ca/page/ontarios-trustworthy-artificial-intelligence-ai-framework
+reviewer: web@sentainel.com
+last_updated: 2026-05-13
+notes: |
+  The Responsible Use of AI Directive is the operational arm of the Trustworthy AI Framework. The Framework
+  is grounded in 3 strategic priorities: (1) No AI in secret, (2) AI use that Ontarians can trust, (3) AI
+  that serves all the people of Ontario.
+
+  The Directive applies DIRECTLY only to Ontario ministries and provincial agencies, but is published as
+  "a model for other organizations across Ontario seeking to adopt their own internal AI policies and
+  guidelines" — explicitly inviting municipal adoption.
+
+  CRITICAL FOR MUNICIPAL SALES: While not legally binding on municipalities, the IPC has explicitly stated
+  the Trustworthy AI Framework + IPC-OHRC Principles "ground our assessment of organizations' adoption of
+  AI systems." For municipalities under MFIPPA, alignment with this Directive is the de facto safe harbor
+  posture before an IPC investigation.
+
+  The Directive uses the OECD AI system definition (aligned with EDSTA Bill 194). Same definition runs
+  through IPC-OHRC Principles, EDSTA, and the OPS Directive — creating regulatory coherence across the
+  Ontario AI stack.
+
+obligations:
+
+  - id: ca-on-trustworthy-ai-ops-1-principles-adoption
+    section: OPS Directive § 2 + Trustworthy AI Framework 6 Principles
+    title: Adopt and operationalize the 6 Principles for Responsible Use of AI
+    summary: |
+      Ministries and provincial agencies must align AI policy, procurement, and deployment with the 6
+      Principles: (1) Transparent and explainable, (2) Good and fair, (3) Safe, (4) Accountable and
+      responsible, (5) Human-centric, (6) Sensible and appropriate.
+    operative_text: |
+      "Ontario's Trustworthy AI Framework establishes 6 Principles for Responsible use of AI to support
+      decision-making when considering the use of AI systems. These complement the Canadian federal
+      principles and can be used as a model for other organizations across Ontario seeking to adopt their
+      own internal AI policies and guidelines."
+    confidence: 0.95
+    ambiguity_notes: |
+      Specific compliance assessment criteria are deferred to operational policies under § 4 of the
+      Directive (MPBSDP authority). Municipalities adopting voluntarily must define their own assessment
+      cadence.
+
+  - id: ca-on-trustworthy-ai-ops-2-risk-management
+    section: OPS Directive § 3 (AI risk management)
+    title: AI risk management before use of any AI system
+    summary: |
+      Ministries and agencies must engage in AI risk management when seeking to use AI systems as part
+      of the development or delivery of a policy, program, or service. Risk management must cover the
+      full AI lifecycle (planning, data, model build, validation, deployment, operations, monitoring).
+    operative_text: |
+      "Requires ministries and provincial agencies to engage in AI risk management when seeking to use
+      AI systems as part of the development or delivery of a policy, program, or service."
+      Lifecycle phases: planning and design; collecting and processing data; building and using the
+      model; verifying and validating; deployment; operating and monitoring.
+    confidence: 0.94
+    ambiguity_notes: |
+      "Risk management" methodology is not specified. NIST AI RMF MAP-MEASURE-MANAGE alignment is the
+      de facto control. Operational policies expected from MPBSDP not yet published as of May 2026.
+
+  - id: ca-on-trustworthy-ai-ops-3-disclosure-reporting
+    section: OPS Directive § 5 (Disclosure and reporting)
+    title: Mandatory AI use disclosure + reporting
+    summary: |
+      Ministries and agencies must disclose AI use to MPBSDP and report on AI deployment to support the
+      "No AI in secret" principle. Includes maintenance of an AI inventory.
+    operative_text: |
+      "Establishes requirements for ministries and agencies to disclose and report on AI use."
+      Framework strategic priority 1: "No AI in secret: We will provide a clear understanding of how
+      and when AI is being used."
+    confidence: 0.93
+    ambiguity_notes: |
+      Reporting cadence and template not in public materials. MPBSDP "operational policies" deferred.
+      Inventory completeness standard not specified.
+
+  - id: ca-on-trustworthy-ai-ops-4-accountability-roles
+    section: OPS Directive § 4 (Roles and responsibilities)
+    title: Designated AI accountability roles for officials
+    summary: |
+      Each ministry/agency must establish roles and responsibilities for officials within the public
+      service who oversee AI risk management, disclosure, and compliance with the Directive.
+    operative_text: |
+      "Establishes roles and responsibilities for officials within the public service."
+      "Develop and maintain strategic policy, as well as operational policies, standards, guidelines
+      and best practices governing responsible use of AI and data pursuant to this Directive."
+    confidence: 0.94
+    ambiguity_notes: |
+      Specific role titles (e.g. Chief AI Officer, AI Risk Lead) not mandated. Each ministry has
+      discretion. For municipal adoption, this likely maps to MFIPPA Privacy Officer or new AI
+      Governance Lead.
+
+  - id: ca-on-trustworthy-ai-ops-5-alignment-fippa-phipa
+    section: OPS Directive § 4 (Alignment with privacy law)
+    title: Mandatory alignment with FIPPA + PHIPA + freedom-of-information requirements
+    summary: |
+      AI use must be aligned with data privacy protection and freedom of information requirements,
+      including FIPPA (and by extension MFIPPA for municipal entities) and PHIPA. AI cannot be used
+      to circumvent existing privacy law obligations.
+    operative_text: |
+      "Ensure alignment between AI use and data privacy protection and freedom of information
+      requirements and policies, including the Freedom of Information and Protection of Privacy Act
+      and the Personal Health Information Protection Act."
+    confidence: 0.95
+    ambiguity_notes: |
+      Strongest enforcement hook: even though the Directive itself has no penalties, FIPPA/MFIPPA/PHIPA
+      breach orders are real. AI use that triggers a privacy breach is escalated through the IPC, where
+      the Directive becomes the standard of care.
+
+  - id: ca-on-trustworthy-ai-ops-6-biennial-review
+    section: OPS Directive § 4 (Review cadence)
+    title: Biennial Directive review and update
+    summary: |
+      Mandatory review of the Directive and supporting material at least every two years, with
+      recommendations for changes. Ensures AI governance keeps pace with technology.
+    operative_text: |
+      "Conduct reviews of the Directive and supporting material, every two years at a minimum, and
+      recommend any changes."
+    confidence: 0.93
+    ambiguity_notes: |
+      First review due Dec 2026 (two years from Dec 1, 2024 effective date). Public disclosure of
+      review results not explicitly required but consistent with "No AI in secret" priority.
+
+municipal_application_notes: |
+  Although the Directive does not legally bind Ontario's 444 municipalities, the strategic position is:
+
+  1. **Voluntary adoption is the IPC's expectation.** The framework is published as the model for
+     "other organizations across Ontario." IPC + OHRC have explicitly said it grounds their assessment
+     of any AI system under FIPPA/MFIPPA scrutiny.
+
+  2. **Adoption is operationally compatible with MFIPPA.** The Directive's 6 principles map directly to
+     MFIPPA Bill 97 amendments (PIA, safeguards, breach reporting, transparency).
+
+  3. **When EDSTA AI provisions are proclaimed, this becomes hard law.** Bill 194's regulation-making
+     authority will almost certainly codify these 6 principles. Municipalities that adopt voluntarily
+     now have a 12-24 month compliance head start.
+
+  4. **Sentainel Municipal Edition opportunity:** $1,499/month tier targeting the ~140 Ontario
+     municipalities >10K population. Bundle: MFIPPA Bill 97 + Trustworthy AI Framework + IPC-OHRC
+     Principles alignment + EDSTA proclamation-readiness.
+
+cross_references:
+  - related_regulation: ca-on-mfippa
+    relationship: Directive § 4 explicitly anchors AI use to FIPPA/MFIPPA compliance
+  - related_regulation: ca-on-ipc-ohrc-principles
+    relationship: IPC-OHRC Principles (Jan 2026) explicitly complement and extend the Directive
+  - related_regulation: ca-on-bill-194-edsta
+    relationship: EDSTA AI provisions (un-proclaimed) will likely codify Directive principles in regulation
+  - related_regulation: ca-on-phipa-ai-scribe
+    relationship: Health-sector AI use must satisfy both Directive and PHIPA AMP regime
