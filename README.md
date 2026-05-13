@@ -8,7 +8,7 @@ This repository is the regulatory content engine for Sentainel.com. It contains 
 
 **👉 [`cross-references/viz/index.html`](cross-references/viz/index.html)** — interactive customer-facing matrix visualization. Open the file in any browser. No build step, no dependencies. Drop on Netlify/Vercel/S3 to deploy.
 
-The viz tells the entire Sentainel story in three panels: a scope calculator showing obligations × NIST controls × cost differential, a full hover-tooltip-enabled obligation × control grid, and three strategic insights cards. At default (all jurisdictions active) it lands on **36 obligations, 5 NIST controls cover 97%, $190K–$465K direct legal vs. $60K Sentainel.**
+The viz tells the entire Sentainel story in three panels: a scope calculator showing obligations × NIST controls × cost differential, a full hover-tooltip-enabled obligation × control grid, and three strategic insights cards. At default (all jurisdictions active) it lands on **44 obligations, 4 jurisdictions, 58 NIST controls, with a 5–10× cost differential vs direct legal spend.**
 
 ## Why This Repo Exists
 
@@ -25,29 +25,31 @@ This regulatory database is our **moat**. Every obligation here was extracted by
 | **Ontario Bill 149 (ESA)** | ✅ Initial | 1 | 0.95 |
 | **Ontario Human Rights Code** | ✅ Initial | 1 | 0.94 |
 | **Ontario MFIPPA (Bill 97)** | ✅ Complete | 5 | 0.93 |
-| **NIST AI RMF Cross-Reference Matrix** | ✅ Complete | 36 obligations × 31 controls | — |
-| **Customer-facing Viz** | ✅ Complete | `cross-references/viz/index.html` | — |
+| **Illinois HRA AI (HB 3773)** | ✅ Complete | 4 | 0.94 |
+| **Illinois AIVIA (820 ILCS 42)** | ✅ Complete | 4 | 0.94 |
+| **NIST AI RMF Cross-Reference Matrix** | ✅ Complete | 44 obligations × 58 controls | — |
+| **Customer-facing Viz** | ✅ v1.2 | `cross-references/viz/index.html` | — |
+| **Postgres schema** | ✅ Complete | 10 migrations 0001–0010 | — |
 | Ontario Bill 194 / EDSTA | ⬜ Pending | ~7 (target) | — |
 | Ontario PHIPA + AI Scribe Guidance | ⬜ Pending | ~8 (target) | — |
 | Ontario Trustworthy AI Framework | ⬜ Pending | ~6 (target) | — |
 | Colorado SB 26-189 | ⏸️ Deferred until rulemaking | ~20 (target) | — |
-| Illinois HRA AI | ⬜ Pending | ~9 (target) | — |
 | California SB 942 + AB 2013 | ⬜ Pending | ~11 (target) | — |
 | EU AI Act (high-risk overlay) | ⬜ Pending | ~30 (target) | — |
 
-**Current totals:** 36 atomic obligations live across 5 regulations, 195-row coverage matrix in `cross-references/coverage-matrix.csv`, full NIST AI RMF control catalog (46 base + 12 GenAI Profile) in `cross-references/nist-controls.yaml`.
+**Current totals:** 44 atomic obligations live across 7 regulations and 4 jurisdictions, 248-row coverage matrix in `cross-references/coverage-matrix.csv`, 58 unique NIST controls referenced (out of 46 base + 12 GenAI Profile catalogued in `cross-references/nist-controls.yaml`).
 
 ## The Strategic Anchor: NIST AI RMF Safe Harbor
 
-Texas TRAIGA § 552.105(e)(2)(D) creates an affirmative defense for substantial compliance with NIST AI RMF GenAI Profile + an internal review process. Sentainel operationalizes this safe harbor and extends it: a customer implementing the same set of NIST controls satisfies obligations across Texas, Quebec, Ontario, Colorado (when rulemaking completes), Illinois, and California simultaneously.
+Texas TRAIGA § 552.105(e)(2)(D) creates an affirmative defense for substantial compliance with NIST AI RMF GenAI Profile + an internal review process. Sentainel operationalizes this safe harbor and extends it: a customer implementing the same set of NIST controls satisfies obligations across Texas, Quebec, Ontario, Illinois, Colorado (when rulemaking completes), and California simultaneously.
 
 **The numbers:**
 
-- Implementing 5 high-leverage NIST controls satisfies ~97% of V1 obligations
-- Implementing 10 controls covers nearly all jurisdictional overlap
+- Implementing 10 high-leverage NIST controls satisfies ~85% of V1 obligations across all four jurisdictions
+- `GOVERN-1.1` (Legal & regulatory requirements managed) alone hits 44 / 44 obligations
 - Direct compliance implementation cost: $50K–$250K per jurisdiction
 - Sentainel annual subscription: $30K–$60K for all V1 jurisdictions
-- Customer economics: 5–10x cost differential
+- Customer economics: 5–10× cost differential
 
 See `cross-references/README.md` for the full matrix narrative and `cross-references/viz/index.html` for the interactive demo.
 
@@ -60,19 +62,26 @@ sentainel-com/
 │   ├── ca-qc-law-25/                 # Quebec Law 25 (17 obligations)
 │   ├── ca-on-bill-149/               # Ontario Working for Workers Four Act (ESA)
 │   ├── ca-on-human-rights-code/      # Ontario Human Rights Code (AI-relevant sections)
-│   └── ca-on-mfippa/                 # Ontario MFIPPA (as amended by Bill 97)
+│   ├── ca-on-mfippa/                 # Ontario MFIPPA (as amended by Bill 97)
+│   ├── us-il-hra-ai/                 # Illinois HRA AI Amendments (HB 3773, PA 103-804)
+│   └── us-il-aivia/                  # Illinois AI Video Interview Act (820 ILCS 42)
 ├── cross-references/                 # NIST AI RMF cross-reference matrix (THE product anchor)
 │   ├── README.md                     # Matrix narrative + high-leverage controls
 │   ├── nist-controls.yaml            # Full NIST AI RMF control catalog (46 + 12 GenAI)
-│   ├── coverage-matrix.csv           # Flattened analytics: 195 obligation×control rows
+│   ├── coverage-matrix.csv           # Flattened analytics: 248 obligation×control rows
 │   ├── mappings/                     # Per-jurisdiction NIST mappings
 │   │   ├── nist-to-us-tx-traiga.yaml
 │   │   ├── nist-to-ca-qc-law-25.yaml
-│   │   └── nist-to-ca-on-stack.yaml
+│   │   ├── nist-to-ca-on-stack.yaml
+│   │   └── nist-to-us-il-stack.yaml
 │   └── viz/                          # Customer-facing visualization
-│       ├── index.html                # Self-contained interactive matrix
+│       ├── index.html                # Self-contained interactive matrix (v1.2)
 │       └── README.md                 # Deployment notes
 ├── etl/                              # Python loaders → Postgres
+│   ├── load.py                       # Obligation upserter
+│   ├── migrate.py                    # Schema migration runner
+│   ├── requirements.txt
+│   └── migrations/                   # 10 idempotent SQL migrations (0001–0010)
 └── docs/
     ├── METHODOLOGY.md
     ├── ONTARIO_STACK.md
@@ -121,6 +130,20 @@ NIST mappings (`cross-references/mappings/*.yaml`) tag each obligation→control
 - **safe_harbor** — specifically named in the regulation as an affirmative defense
 
 The flattened CSV (`coverage-matrix.csv`) is the input for analytics, customer onboarding diff tools, the Sentainel scoring engine, and the embedded data source for `viz/index.html`.
+
+## Postgres schema
+
+Ten idempotent migrations land the full database schema:
+
+```bash
+export SENTAINEL_DB_URL=postgresql://user:pass@host:5432/sentainel
+cd etl
+pip install -r requirements.txt
+python migrate.py --status      # see what's applied
+python migrate.py               # apply pending migrations
+```
+
+The schema includes regulatory content tables (jurisdictions, regulations, articles, obligations, penalties), framework cross-references (NIST AI RMF, ISO 42001, safe harbors), customer state (organizations, AI deployments, control implementations, evidence artifacts, compliance gaps), an append-only audit log with cryptographic chaining, and six convenience views for the API. See `etl/migrations/README.md` for the full schema map.
 
 ## ETL into Postgres
 
