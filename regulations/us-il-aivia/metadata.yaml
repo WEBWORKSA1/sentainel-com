@@ -1,0 +1,186 @@
+---
+slug: us-il-aivia
+short_name: Illinois AIVIA
+long_name: |
+  Illinois Artificial Intelligence Video Interview Act (820 ILCS
+  42/1 et seq.), enacted as Public Act 101-260, eff. January 1,
+  2020; amended by Public Act 102-47 (HB 0053) eff. January 1,
+  2022 to add demographic reporting obligations for sole-AI
+  filtering employers.
+citation: |
+  820 ILCS 42/1 to 42/30, as enacted by Public Act 101-260,
+  eff. January 1, 2020 and amended by Public Act 102-47,
+  eff. January 1, 2022.
+jurisdiction:
+  code: US-IL
+  level: state_province
+  parent: US-Federal
+status: in_force
+status_notes: |
+  AIVIA has been in force since January 1, 2020 — the longest-
+  enforced AI-specific employment statute in the U.S. Section 30
+  added by P.A. 102-47 took effect January 1, 2022 and requires
+  sole-AI filtering employers to report demographic data to the
+  Illinois Department of Commerce and Economic Opportunity
+  (DCEO) for racial-bias analysis.
+signed_date: 2019-08-09
+effective_date: 2020-01-01
+amended_effective_date: 2022-01-01
+sunset_date: null
+source_url: https://www.ilga.gov/legislation/publicacts/101/101-0260.htm
+statute_url: https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015&ChapterID=68
+companion_legislation:
+  - us-il-hra-ai            # the broader 2026 AI employment statute
+  - us-il-bipa              # Biometric Information Privacy Act (740 ILCS 14)
+  - us-federal-nist-ai-rmf
+summary: |
+  AIVIA was the first U.S. state statute specifically regulating
+  AI in employment. It applies narrowly to employers who:
+
+  (a) ask applicants to submit video interviews for positions
+      based in Illinois, AND
+  (b) use AI analysis of the submitted videos.
+
+  Where both conditions are met, AIVIA imposes a three-part
+  procedural duty BEFORE the interview:
+
+  1. NOTICE (s. 5(1)): notify each applicant that AI may be
+     used to analyze the video and evaluate fitness for the
+     position
+  2. EXPLANATION (s. 5(2)): provide information about how the AI
+     works and what general types of characteristics it uses
+  3. CONSENT (s. 5(3)): obtain the applicant's consent to be
+     evaluated by the AI program
+
+  An employer "may not use artificial intelligence to evaluate
+  applicants who have not consented" (s. 5, closing sentence).
+
+  Two further duties:
+
+  - SHARING LIMITATION (s. 10): an employer may not share
+    applicant videos except with persons whose expertise or
+    technology is necessary to evaluate the applicant
+  - DESTRUCTION ON REQUEST (s. 15): upon applicant request, the
+    employer must delete all copies of the video — including
+    backups and copies held by third parties — within 30 days
+
+  A reporting duty (s. 30, added 2022) applies only to employers
+  who rely SOLELY on AI to decide whether an applicant proceeds
+  to an in-person interview. Those employers must annually
+  report demographic data to DCEO for racial-bias analysis.
+
+  Strategic significance for Sentainel: AIVIA gives the platform
+  a five-year regulatory pedigree to point to in sales
+  conversations. Customers using video-interview AI tools (HireVue,
+  Modern Hire, etc.) have been in scope since 2020 and likely
+  do not have rigorous compliance documentation. Quick-win
+  audit opportunity.
+scope_description: |
+  Scope is narrow but important:
+
+  - APPLIES TO: any employer that (a) asks applicants for a
+    POSITION BASED IN ILLINOIS to record video interviews, AND
+    (b) uses AI analysis of the submitted video. Both conditions
+    required.
+
+  - DOES NOT APPLY TO: in-person interviews, video interviews
+    without AI analysis, audio-only AI analysis, AI analysis
+    of resumes or written materials.
+
+  - "Artificial intelligence" is not defined in AIVIA itself.
+    Practitioner consensus reads it broadly to include any
+    automated analytical system that produces evaluative output
+    about the applicant — including modern LLM-based interview
+    scorers, sentiment/affect detectors, and traditional ML
+    classifiers.
+
+  - The 2026 HRA AI amendments did NOT amend AIVIA's definition.
+    Employers should use the broader HRA AI definition
+    (775 ILCS 5/2-101(M)) as the prudent floor when assessing
+    AIVIA scope.
+extraterritorial_reach: false
+extraterritorial_notes: |
+  Scope is position-location-based: AIVIA reaches employers
+  hiring for "positions based in Illinois" regardless of where
+  the employer is headquartered or where the applicant resides.
+
+  A California employer interviewing a Texas applicant for an
+  Illinois-based remote position with AI video analysis is in
+  scope.
+
+  Conversely, an Illinois employer using AI video analysis to
+  hire for a remote position based in California is OUT of
+  AIVIA scope. Position location, not employer location,
+  controls.
+safe_harbor_via: []
+safe_harbor_notes: |
+  AIVIA has no statutory safe harbor. Compliance is binary:
+  either notice/explanation/consent were obtained pre-interview,
+  or they were not.
+
+  Documentation is the practical defense. Sentainel's evidence
+  repository for AIVIA captures:
+  - Notice template versioning
+  - Per-applicant delivery + consent log
+  - Explanation document and version
+  - Consent storage with timestamp and applicant identifier
+  - Video destruction logs (for s. 15 deletion requests)
+notes: |
+  - AIVIA has had relatively little reported litigation since
+    2020 enactment. This is partly because the statute lacks
+    a clear private right of action — IDHR enforces civil
+    rights provisions of the IHRA; AIVIA's enforcement
+    mechanism is less crisp.
+  - The Illinois Attorney General has authority to enforce
+    consumer-protection style violations; whether AIVIA
+    violations qualify is unsettled.
+  - PRACTICAL ENFORCEMENT VECTOR: tort-style claims may flow
+    through BIPA (if facial biometrics are extracted from the
+    video) and through HRA AI (effective 2026) for
+    discrimination-effect claims. AIVIA itself rarely the
+    primary cause of action but typically part of a stack.
+  - 2022 demographic reporting amendment (s. 30) has had low
+    visible compliance. DCEO has not issued enforcement
+    statistics publicly. Sole-AI-filtering employers in scope
+    should retroactively address.
+  - INTERSECTION WITH HRA AI (2026): AIVIA's three-part
+    notice/explanation/consent procedure for video-interview AI
+    is more detailed than HRA AI's generic notice requirement.
+    For video-interview AI, the AIVIA procedure satisfies
+    HRA AI notice. For NON-video AI hiring tools, HRA AI's new
+    notice requirement applies and AIVIA does not.
+  - INTERSECTION WITH BIPA: if the AI extracts facial geometry
+    or other biometric identifiers from the video, BIPA's
+    consent and disclosure requirements ALSO apply concurrently.
+    BIPA's private right of action carries $1,000–$5,000 per
+    violation — by far the largest exposure in the stack.
+penalty_schedules:
+  - tier_name: civil_rights_remedy_via_ihra
+    basis: per_violation
+    min_amount: null
+    max_amount: null
+    currency: USD
+    citation: 820 ILCS 42 (incorporates IHRA enforcement)
+    notes: |
+      AIVIA is enforced as a civil rights matter through IDHR.
+      Same remedies framework as HRA AI: back pay, compensatory
+      damages, attorney's fees. No clear statutory maximum.
+  - tier_name: ag_consumer_protection
+    basis: per_violation
+    min_amount: null
+    max_amount: null
+    currency: USD
+    notes: |
+      Possible parallel exposure under Illinois Consumer Fraud
+      Act if AIVIA violation involves deceptive practices,
+      though enforcement under this theory is untested.
+private_right_of_action: true
+private_right_of_action_notes: |
+  Functionally yes via IHRA charging mechanism (parallel to
+  HRA AI). AIVIA itself does not contain an express private right
+  of action equivalent to BIPA's. Plaintiffs typically pair AIVIA
+  claims with BIPA (if biometric data) for damages.
+last_reviewed: 2026-05-13
+reviewer: web@sentainel.com
+extraction_method: claude-opus-4-7-2026-05-13 + direct statute review (ILGA + Justia)
+---
