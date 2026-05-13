@@ -4,7 +4,7 @@ Self-contained, single-file HTML rendering of `../coverage-matrix.csv` as an int
 
 ## What it does
 
-1. **Hero stats** — 36 obligations, 58 NIST controls, $25M penalty ceiling, 0.93 avg confidence
+1. **Hero stats** — 59 obligations across 9 regulations, 58 NIST controls (46 base + 12 GenAI Profile), $25M penalty ceiling, 0.93 avg confidence
 2. **Scope calculator** — customer toggles jurisdictions; the page computes:
    - Total atomic obligations in scope
    - Minimum NIST control set covering ≥85% of those obligations
@@ -13,6 +13,18 @@ Self-contained, single-file HTML rendering of `../coverage-matrix.csv` as an int
 4. **Strategic insights** — three short value-prop cards aligned to the customer's decision journey
 5. **Shareable links** — selected jurisdictions are encoded in the URL (`?juris=US-TX,CA-QC`), so a Texas+Quebec-focused prospect gets a pre-configured view
 6. **Print / PDF** — `Print / PDF` button (top-right) opens the browser print dialog with a clean light-mode stylesheet, dynamic header showing the current selection, and a flowed matrix with no scroll container
+
+## Jurisdictions currently mapped
+
+- **Texas TRAIGA** (HB 149) — 12 obligations
+- **Quebec Law 25** (P-39.1) — 17 obligations
+- **Ontario Bill 149** (ESA) — 1 obligation
+- **Ontario Human Rights Code** (s. 9) — 1 obligation
+- **Ontario MFIPPA** (Bill 97) — 5 obligations
+- **Ontario EDSTA** (Bill 194 — AI provisions un-proclaimed) — 7 obligations
+- **Ontario PHIPA + AI Scribe Guidance** (IPC Jan 2026) — 8 obligations
+- **Illinois HRA AI** (HB 3773) — 4 obligations
+- **Illinois AIVIA** (820 ILCS 42) — 4 obligations
 
 ## How to use it
 
@@ -25,23 +37,28 @@ Self-contained, single-file HTML rendering of `../coverage-matrix.csv` as an int
 The viz reads the `juris` query param on load and pre-selects jurisdictions:
 
 ```
-?juris=US-TX,CA-QC           # Texas + Quebec (group codes)
-?juris=US-TX                 # Texas only
-?juris=CA-ON                 # All three Ontario regulations
-?juris=ca-on-bill-149        # One specific Ontario regulation
-?juris=US-TX,ca-on-mfippa    # Mix groups + specific codes
+?juris=US-TX,CA-QC                      # Texas + Quebec (group codes)
+?juris=US-TX                            # Texas only
+?juris=CA-ON                            # All five Ontario regulations
+?juris=ca-on-bill-149                   # One specific Ontario regulation
+?juris=ca-on-phipa-ai-scribe            # Health-sector pre-select for AI scribe prospects
+?juris=US-TX,ca-on-mfippa               # Mix groups + specific codes
 ```
 
 **How it works:**
 
-- Group codes (`US-TX`, `CA-QC`, `CA-ON`) — preferred for sales links. Expand to all jurisdictions in that group.
-- Specific jurisdiction codes (`us-tx-traiga`, `ca-qc-law-25`, `ca-on-bill-149`, `ca-on-human-rights-code`, `ca-on-mfippa`) — for fine-grained pre-selection
+- Group codes (`US-TX`, `CA-QC`, `CA-ON`, `US-IL`) — preferred for sales links. Expand to all jurisdictions in that group.
+- Specific jurisdiction codes (`us-tx-traiga`, `ca-qc-law-25`, `ca-on-bill-149`, `ca-on-human-rights-code`, `ca-on-mfippa`, `ca-on-bill-194-edsta`, `ca-on-phipa-ai-scribe`, `us-il-hra-ai`, `us-il-aivia`) — for fine-grained pre-selection
 - Case-insensitive: `?juris=us-tx,ca-qc` works the same as `?juris=US-TX,CA-QC`
 - Unknown tokens silently ignored
 - URL auto-updates on every toggle so the address bar is always shareable
 - Missing param → defaults to all jurisdictions selected
 
-**Sales use case:** prospect at a Texas-based SaaS that also operates in Montreal? Send them `https://your-host/?juris=US-TX,CA-QC` and the page opens already showing their exposure (29 obligations, 5 controls cover 93%).
+**Sales use cases:**
+
+- Texas-based SaaS that also operates in Montreal? `?juris=US-TX,CA-QC` opens with their exposure pre-loaded.
+- Hospital evaluating an AI scribe vendor? `?juris=ca-on-phipa-ai-scribe` opens with the 8-obligation playbook front-and-center.
+- Ontario municipality preparing for Bill 97 in force date? `?juris=ca-on-mfippa` shows MFIPPA-specific load.
 
 The "Copy link" button in the nav (and inline link inside the picker) copies the current URL to clipboard via the Clipboard API.
 
@@ -56,7 +73,7 @@ Click the `Print / PDF` button in the nav, or hit Cmd/Ctrl+P. The print styleshe
 - Forces print-color-adjust on cell swatches so coverage colors actually appear in the PDF
 - Uses A4 portrait with 18mm × 14mm margins
 
-The print stylesheet is wrapped in `@media print` so it has zero impact on screen rendering. Browsers also let users choose paper size and landscape orientation from the print dialog — landscape is usually better for the matrix section if it spans many controls.
+The print stylesheet is wrapped in `@media print` so it has zero impact on screen rendering. Browsers also let users choose paper size and landscape orientation from the print dialog — landscape is usually better for the matrix section now that it spans 58 columns.
 
 ## Embedding in the marketing site
 
@@ -75,7 +92,7 @@ The viz posts its scroll height to its parent window via `postMessage` on load, 
 <iframe
   src="https://your-host/cross-references/viz/?juris=US-TX,CA-QC"
   id="sentainel-viz"
-  style="width:100%; min-height:3200px; border:0; display:block;"
+  style="width:100%; min-height:3600px; border:0; display:block;"
   scrolling="no"
 ></iframe>
 
@@ -90,7 +107,7 @@ The viz posts its scroll height to its parent window via `postMessage` on load, 
 </script>
 ```
 
-**Fallback:** if the parent never wires up the listener, `min-height: 3200px` covers the full page on desktop with all jurisdictions selected. The user just won't get the automatic resize when they toggle jurisdictions or when the window resizes.
+**Fallback:** if the parent never wires up the listener, `min-height: 3600px` covers the full page on desktop with all jurisdictions selected. The user just won't get the automatic resize when they toggle jurisdictions or when the window resizes.
 
 The viz also detects when it's not in an iframe (`window.parent === window`) and skips posting, so there's no console noise when opened standalone.
 
@@ -108,5 +125,7 @@ The CSV is embedded directly in the HTML at build time. When `coverage-matrix.cs
 
 ## Version history
 
+- **v1.3** (2026-05-13) — Ontario stack expansion: adds EDSTA Bill 194 (7 obligations) and PHIPA + AI Scribe Guidance (8 obligations). Hero stats updated to 59 obligations / 9 regulations / 4 jurisdictions. `prettyObl` adds `EDSTA` / `PHIPA` slug prefixes. JURISDICTIONS array adds two CA-ON entries. Full 341-row coverage matrix embedded.
+- **v1.2** (2026-05-13) — Illinois extraction: adds HRA AI (4 obligations) and AIVIA (4 obligations). Adds US-IL filter button. Hero stats updated to 44 obligations / 7 regulations.
 - **v1.1** (2026-05-13) — URL state hydration via `?juris=`, Copy Link / Print PDF buttons, print stylesheet, postMessage iframe resize protocol
 - **v1.0** (2026-05-13) — initial release: hero + scope calculator + full matrix + insights
