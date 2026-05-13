@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sentainel — Cross-Jurisdiction AI Compliance Matrix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0d0c;
+    --bg-elev: #131614;
+    --bg-card: #181c1a;
+    --border: #262b28;
+    --border-bright: #3a413d;
+    --text: #f0ebe0;
+    --text-dim: #a4a098;
+    --text-muted: #6b6862;
+    --accent: #d9ff00;
+    --accent-deep: #9bb500;
+    --safe-harbor: #d9ff00;
+    --full: #c4d97a;
+    --partial: #8a9665;
+    --support: #5a5e54;
+    --danger: #ff5547;
+    --display: 'Fraunces', Georgia, serif;
+    --body: 'Inter', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text); font-family: var(--body);
+    font-size: 15px; line-height: 1.5;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none;
+    opacity: 0.04; z-index: 100;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11, 13, 12, 0.85); backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1400px; margin: 0 auto; padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  .nav-meta {
+    font-family: var(--mono); font-size: 11px; color: var(--text-muted);
+    letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .hero { max-width: 1400px; margin: 0 auto; padding: 96px 32px 64px; position: relative; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 32px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--accent); }
+  .hero h1 {
+    font-family: var(--display); font-weight: 300;
+    font-size: clamp(40px, 6vw, 88px); line-height: 0.95; letter-spacing: -0.03em;
+    max-width: 18ch; margin-bottom: 32px;
+  }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .hero-sub {
+    font-size: 19px; line-height: 1.55; color: var(--text-dim);
+    max-width: 60ch; margin-bottom: 56px;
+  }
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border); margin-top: 64px;
+  }
+  .stat { background: var(--bg); padding: 28px 24px; position: relative; }
+  .stat-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px;
+  }
+  .stat-val {
+    font-family: var(--display); font-weight: 400; font-size: 56px;
+    line-height: 1; letter-spacing: -0.04em;
+  }
+  .stat-val .unit { font-size: 18px; color: var(--text-dim); margin-left: 6px; }
+  .stat-sub { font-size: 12px; color: var(--text-muted); margin-top: 12px; }
+  section { max-width: 1400px; margin: 0 auto; padding: 96px 32px; }
+  .section-head { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; margin-bottom: 56px; }
+  .section-head h2 {
+    font-family: var(--display); font-weight: 300;
+    font-size: clamp(28px, 3.6vw, 48px); line-height: 1.05; letter-spacing: -0.02em;
+  }
+  .section-head h2 em { font-style: italic; color: var(--accent); }
+  .section-head p { font-size: 16px; line-height: 1.6; color: var(--text-dim); max-width: 56ch; }
+  .section-num {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    color: var(--text-muted); text-transform: uppercase; margin-bottom: 16px;
+  }
+  .picker { background: var(--bg-elev); border: 1px solid var(--border); padding: 40px; margin-bottom: 56px; }
+  .picker-label {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px;
+  }
+  .juris-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .juris {
+    background: var(--bg-card); border: 1px solid var(--border); padding: 20px;
+    cursor: pointer; transition: all 0.18s ease; text-align: left;
+    color: var(--text); font-family: var(--body); position: relative; overflow: hidden;
+  }
+  .juris:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+  .juris.active { border-color: var(--accent); background: rgba(217, 255, 0, 0.06); }
+  .juris.active .juris-code { color: var(--accent); }
+  .juris-code {
+    font-family: var(--mono); font-size: 10px; color: var(--text-muted);
+    letter-spacing: 0.12em; margin-bottom: 8px;
+  }
+  .juris-name {
+    font-family: var(--display); font-weight: 400; font-size: 19px;
+    line-height: 1.15; margin-bottom: 8px; letter-spacing: -0.01em;
+  }
+  .juris-count { font-family: var(--mono); font-size: 11px; color: var(--text-dim); }
+  .juris-count strong { color: var(--text); font-weight: 700; }
+  .result {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+  }
+  .result-pane { background: var(--bg); padding: 40px; }
+  .result-pane h3 {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; font-weight: 500;
+  }
+  .big-number {
+    font-family: var(--display); font-weight: 300; font-size: 96px;
+    line-height: 0.9; letter-spacing: -0.04em; margin-bottom: 16px;
+  }
+  .big-number .unit { font-size: 24px; color: var(--text-dim); margin-left: 8px; font-weight: 400; }
+  .big-number.accent { color: var(--accent); }
+  .result-explain { font-size: 14px; line-height: 1.6; color: var(--text-dim); max-width: 42ch; }
+  .savings {
+    margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .savings-item .lbl {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;
+  }
+  .savings-item .val { font-family: var(--mono); font-size: 18px; color: var(--text); font-weight: 500; }
+  .savings-item.strike .val { color: var(--text-muted); text-decoration: line-through; }
+  .ctrl-list { list-style: none; display: flex; flex-direction: column; }
+  .ctrl-item {
+    display: grid; grid-template-columns: 80px 1fr auto; gap: 16px;
+    padding: 14px 0; border-bottom: 1px solid var(--border); align-items: center;
+  }
+  .ctrl-item:last-child { border-bottom: none; }
+  .ctrl-id { font-family: var(--mono); font-size: 11px; color: var(--accent); font-weight: 500; }
+  .ctrl-title { font-size: 13px; color: var(--text); }
+  .ctrl-hits { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+  .ctrl-hits strong { color: var(--text); }
+  .matrix-wrapper { background: var(--bg-elev); border: 1px solid var(--border); overflow: hidden; }
+  .matrix-controls {
+    padding: 24px 32px; border-bottom: 1px solid var(--border);
+    display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
+    font-family: var(--mono); font-size: 11px; color: var(--text-muted);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .legend { display: flex; gap: 18px; align-items: center; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-swatch { width: 12px; height: 12px; border-radius: 2px; }
+  .filter-btn {
+    background: transparent; border: 1px solid var(--border-bright); color: var(--text-dim);
+    padding: 6px 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+  .filter-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .matrix-scroll { overflow: auto; max-height: 720px; }
+  table.matrix { border-collapse: collapse; width: 100%; font-family: var(--mono); font-size: 10px; }
+  table.matrix th, table.matrix td {
+    border: 1px solid var(--border); padding: 0; text-align: center; vertical-align: middle;
+  }
+  table.matrix thead th {
+    position: sticky; top: 0; z-index: 5; background: var(--bg-card);
+    color: var(--text-muted); font-weight: 500; padding: 8px 4px;
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    min-width: 22px; height: 110px; letter-spacing: 0.04em; font-size: 9px; white-space: nowrap;
+  }
+  table.matrix thead th.corner {
+    writing-mode: horizontal-tb; transform: none; text-align: left;
+    padding: 12px 16px; height: 110px; min-width: 280px;
+    position: sticky; left: 0; z-index: 10; background: var(--bg-card);
+  }
+  table.matrix thead th.group {
+    writing-mode: horizontal-tb; transform: none; background: var(--bg-elev);
+    height: auto; padding: 6px 8px; text-align: center; color: var(--accent);
+    font-size: 9px; letter-spacing: 0.15em; font-weight: 600;
+  }
+  table.matrix tbody th {
+    text-align: left; padding: 8px 14px; background: var(--bg-card);
+    position: sticky; left: 0; z-index: 4; color: var(--text);
+    font-weight: 400; font-family: var(--body); font-size: 11px;
+    min-width: 280px; max-width: 280px; border-right: 1px solid var(--border-bright);
+  }
+  table.matrix tbody th .jcode {
+    font-family: var(--mono); font-size: 9px; color: var(--text-muted);
+    letter-spacing: 0.1em; margin-bottom: 2px;
+  }
+  table.matrix tbody tr:hover th { background: #1d211e; }
+  table.matrix tbody tr:hover td { background: #16191760; }
+  .cell { width: 22px; height: 22px; cursor: pointer; transition: outline 0.1s; }
+  .cell.full { background: var(--full); }
+  .cell.partial { background: var(--partial); }
+  .cell.support { background: var(--support); }
+  .cell.safe { background: var(--safe-harbor); box-shadow: inset 0 0 0 2px var(--bg); }
+  .cell:hover { outline: 2px solid var(--accent); outline-offset: -2px; z-index: 3; position: relative; }
+  .insights {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+  }
+  .insight { background: var(--bg); padding: 36px; }
+  .insight-num {
+    font-family: var(--display); font-weight: 300; font-size: 14px;
+    color: var(--accent); margin-bottom: 16px; font-style: italic;
+  }
+  .insight h4 {
+    font-family: var(--display); font-weight: 400; font-size: 22px;
+    line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.01em;
+  }
+  .insight p { font-size: 14px; line-height: 1.6; color: var(--text-dim); }
+  .insight blockquote {
+    font-family: var(--mono); font-size: 11px; color: var(--text-muted);
+    margin-top: 16px; padding-left: 12px; border-left: 2px solid var(--accent);
+  }
+  footer {
+    border-top: 1px solid var(--border); margin-top: 96px; padding: 48px 32px;
+    max-width: 1400px; margin-left: auto; margin-right: auto;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+    font-family: var(--mono); font-size: 11px; color: var(--text-muted);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  footer a { color: var(--text-dim); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  #tooltip {
+    position: fixed; background: var(--bg-elev); border: 1px solid var(--accent);
+    padding: 12px 14px; font-family: var(--mono); font-size: 11px;
+    pointer-events: none; z-index: 1000; max-width: 320px; opacity: 0;
+    transition: opacity 0.1s; box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+  #tooltip.visible { opacity: 1; }
+  #tooltip .tt-obl { color: var(--text); font-weight: 500; margin-bottom: 4px; }
+  #tooltip .tt-ctrl { color: var(--accent); margin-bottom: 6px; }
+  #tooltip .tt-cov {
+    color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; font-size: 9px;
+  }
+  #tooltip .tt-note {
+    color: var(--text-dim); font-family: var(--body); font-size: 11px;
+    margin-top: 6px; text-transform: none; letter-spacing: 0;
+  }
+  @media (max-width: 900px) {
+    .section-head { grid-template-columns: 1fr; gap: 24px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .result { grid-template-columns: 1fr; }
+    .insights { grid-template-columns: 1fr; }
+    .nav-inner { padding: 16px 20px; }
+    .hero { padding: 64px 20px 48px; }
+    section { padding: 64px 20px; }
+  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero > * { animation: fadeUp 0.7s ease-out backwards; }
+  .hero .eyebrow { animation-delay: 0.05s; }
+  .hero h1 { animation-delay: 0.15s; }
+  .hero .hero-sub { animation-delay: 0.3s; }
+  .hero .stats { animation-delay: 0.45s; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo">SENTAIN<span>EL</span></div>
+    <div class="nav-meta">v1.0 — 36 obligations · 3 jurisdictions live</div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">NIST AI RMF Cross-Reference Matrix</div>
+  <h1>One workstream.<br><em>Three jurisdictions</em> of coverage.</h1>
+  <p class="hero-sub">
+    Every atomic obligation across Texas, Quebec, and Ontario AI law, mapped to the
+    NIST AI Risk Management Framework. Implement once, defend everywhere — anchored
+    in Texas TRAIGA § 552.105(e)(2)(D) safe harbor.
+  </p>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-label">Obligations</div><div class="stat-val">36</div><div class="stat-sub">across 5 regulations</div></div>
+    <div class="stat"><div class="stat-label">NIST Controls</div><div class="stat-val">58</div><div class="stat-sub">46 base + 12 GenAI Profile</div></div>
+    <div class="stat"><div class="stat-label">Penalty Exposure</div><div class="stat-val">$25<span class="unit">M</span></div><div class="stat-sub">Quebec ceiling, 4% worldwide turnover</div></div>
+    <div class="stat"><div class="stat-label">Avg Confidence</div><div class="stat-val">0.93</div><div class="stat-sub">manual review + Opus 4.7</div></div>
+  </div>
+</header>
+
+<section id="calculator">
+  <div class="section-num">01 / SCOPE CALCULATOR</div>
+  <div class="section-head">
+    <h2>Select your <em>exposure</em>.</h2>
+    <p>Tap any combination of jurisdictions where you deploy AI or hold personal data. The calculator shows your atomic obligation count and the minimum NIST control set that covers them.</p>
+  </div>
+
+  <div class="picker">
+    <div class="picker-label">Active jurisdictions — toggle to include</div>
+    <div class="juris-grid" id="jurisGrid"></div>
+  </div>
+
+  <div class="result">
+    <div class="result-pane">
+      <h3>Obligations in scope</h3>
+      <div class="big-number" id="oblCount">—</div>
+      <p class="result-explain" id="oblExplain">Select at least one jurisdiction above.</p>
+      <div class="savings">
+        <div class="savings-item strike"><div class="lbl">Direct legal spend</div><div class="val" id="directCost">—</div></div>
+        <div class="savings-item"><div class="lbl">Sentainel annual</div><div class="val" id="sentainelCost">—</div></div>
+      </div>
+    </div>
+    <div class="result-pane">
+      <h3>NIST controls required</h3>
+      <div class="big-number accent" id="ctrlCount">—</div>
+      <p class="result-explain" id="ctrlExplain">Coverage emerges once you select jurisdictions.</p>
+      <ul class="ctrl-list" id="topControls"></ul>
+    </div>
+  </div>
+</section>
+
+<section id="matrix-section">
+  <div class="section-num">02 / FULL MATRIX</div>
+  <div class="section-head">
+    <h2>The <em>complete</em> obligation × control grid.</h2>
+    <p>Each row is one atomic obligation; each column is one NIST AI RMF control. Cells show coverage level. Hover any cell for citation and implementation note. This is the data structure powering Sentainel's onboarding engine.</p>
+  </div>
+
+  <div class="matrix-wrapper">
+    <div class="matrix-controls">
+      <div class="legend">
+        <div class="legend-item"><div class="legend-swatch" style="background:var(--safe-harbor);box-shadow:inset 0 0 0 2px var(--bg-elev);"></div>safe harbor</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:var(--full);"></div>fully satisfies</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:var(--partial);"></div>partially</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:var(--support);"></div>supports</div>
+      </div>
+      <div style="margin-left:auto; display:flex; gap:8px;">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="US-TX">Texas</button>
+        <button class="filter-btn" data-filter="CA-QC">Quebec</button>
+        <button class="filter-btn" data-filter="CA-ON">Ontario</button>
+      </div>
+    </div>
+    <div class="matrix-scroll" id="matrixScroll"></div>
+  </div>
+</section>
+
+<section id="insights-section">
+  <div class="section-num">03 / WHY THIS MATTERS</div>
+  <div class="section-head">
+    <h2>The <em>operating insight</em> for mid-market AI compliance.</h2>
+    <p>Compliance vendors sell jurisdiction-by-jurisdiction. Sentainel sells the cross-reference. Three things follow from that.</p>
+  </div>
+
+  <div class="insights">
+    <div class="insight">
+      <div class="insight-num">i.</div>
+      <h4>One control set, many shields.</h4>
+      <p>Implementing 10 high-leverage NIST controls satisfies roughly 85% of obligations across V1 jurisdictions. The remaining 15% are jurisdiction-specific overlays — Quebec's biometric pre-notification, Ontario's ESA job-posting language, Texas's sandbox application package.</p>
+      <blockquote>GOVERN-1.1 alone hits 36 / 36 obligations.</blockquote>
+    </div>
+    <div class="insight">
+      <div class="insight-num">ii.</div>
+      <h4>Statutory safe harbor, not vibes.</h4>
+      <p>Texas TRAIGA § 552.105(e)(2)(D) creates an explicit affirmative defense for substantial compliance with NIST AI RMF GenAI Profile plus internal review. Colorado, Illinois, and Quebec practitioner guidance treat the same framework as good-faith evidence.</p>
+      <blockquote>"Substantial compliance with NIST AI 600-1" — Tex. Bus. & Comm. § 552.105(e)(2)(D)</blockquote>
+    </div>
+    <div class="insight">
+      <div class="insight-num">iii.</div>
+      <h4>Economics close the deal.</h4>
+      <p>Direct compliance implementation by outside counsel and consultants: $50K–$250K per jurisdiction. Sentainel: $30K–$60K covering all three plus monitoring, evidence repository, and audit defense. The 5–10× cost differential is the sales argument.</p>
+      <blockquote>Customer onboarding: hours, not months.</blockquote>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>Sentainel · sentainel.com · webworksa1@gmail.com</div>
+  <div>Source data: <a href="https://github.com/WEBWORKSA1/sentainel-com">github.com/WEBWORKSA1/sentainel-com</a></div>
+  <div>v1.0 · 2026-05-13</div>
+</footer>
+
+<div id="tooltip"></div>
+
+<script>
+const COVERAGE_DATA = `obligation_slug,jurisdiction,nist_control_id,coverage_level,notes
+us-tx-traiga-552-051-gov-disclosure,US-TX,GOVERN-1.1,fully_satisfies,Legal & regulatory requirements managed
+us-tx-traiga-552-051-gov-disclosure,US-TX,MAP-3.3,partially_satisfies,Targeted application scope
+us-tx-traiga-552-051-gov-disclosure,US-TX,MEASURE-2.8,partially_satisfies,Transparency and accountability
+us-tx-traiga-552-051-gov-disclosure,US-TX,MANAGE-4.1,supports,Post-deployment monitoring
+us-tx-traiga-552-051-f-healthcare,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-051-f-healthcare,US-TX,MAP-1.1,partially_satisfies,Healthcare context
+us-tx-traiga-552-051-f-healthcare,US-TX,MAP-3.5,partially_satisfies,Human oversight workflow
+us-tx-traiga-552-051-f-healthcare,US-TX,MEASURE-2.8,partially_satisfies,
+us-tx-traiga-552-051-f-healthcare,US-TX,MANAGE-4.1,supports,
+us-tx-traiga-552-052-manipulation,US-TX,GAI-3,safe_harbor,GenAI dangerous content
+us-tx-traiga-552-052-manipulation,US-TX,GAI-11,safe_harbor,GenAI obscene content
+us-tx-traiga-552-052-manipulation,US-TX,MAP-1.1,partially_satisfies,
+us-tx-traiga-552-052-manipulation,US-TX,MAP-5.1,partially_satisfies,Harm impact analysis
+us-tx-traiga-552-052-manipulation,US-TX,MEASURE-2.6,partially_satisfies,AI safety eval
+us-tx-traiga-552-052-manipulation,US-TX,MEASURE-3.3,supports,Feedback discovery defense
+us-tx-traiga-552-052-manipulation,US-TX,MANAGE-1.3,partially_satisfies,Risk mitigation
+us-tx-traiga-552-052-manipulation,US-TX,MANAGE-4.3,partially_satisfies,Crisis pathway
+us-tx-traiga-552-053-social-scoring,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-053-social-scoring,US-TX,MAP-1.1,partially_satisfies,
+us-tx-traiga-552-053-social-scoring,US-TX,MAP-3.3,partially_satisfies,
+us-tx-traiga-552-053-social-scoring,US-TX,MEASURE-2.11,supports,Fairness & bias
+us-tx-traiga-552-054-biometric,US-TX,GAI-4,safe_harbor,Biometric data privacy
+us-tx-traiga-552-054-biometric,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-054-biometric,US-TX,GOVERN-6.1,partially_satisfies,Third-party policies
+us-tx-traiga-552-054-biometric,US-TX,MAP-4.1,partially_satisfies,Training data legal risks
+us-tx-traiga-552-054-biometric,US-TX,MEASURE-2.7,fully_satisfies,
+us-tx-traiga-552-054-biometric,US-TX,MEASURE-2.10,fully_satisfies,Privacy risk
+us-tx-traiga-552-054-biometric,US-TX,MANAGE-1.3,partially_satisfies,
+us-tx-traiga-552-055-constitutional,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-055-constitutional,US-TX,MAP-1.1,partially_satisfies,Legitimate purpose
+us-tx-traiga-552-055-constitutional,US-TX,MAP-3.2,supports,
+us-tx-traiga-552-056-discrimination,US-TX,GAI-6,safe_harbor,GenAI harmful bias
+us-tx-traiga-552-056-discrimination,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-056-discrimination,US-TX,GOVERN-3.1,partially_satisfies,Diversity in risk mgmt
+us-tx-traiga-552-056-discrimination,US-TX,MAP-1.2,partially_satisfies,Interdisciplinary actors
+us-tx-traiga-552-056-discrimination,US-TX,MEASURE-2.11,fully_satisfies,Fairness & bias eval
+us-tx-traiga-552-056-discrimination,US-TX,MANAGE-1.3,partially_satisfies,
+us-tx-traiga-552-057-csam-explicit,US-TX,GAI-3,safe_harbor,
+us-tx-traiga-552-057-csam-explicit,US-TX,GAI-11,safe_harbor,
+us-tx-traiga-552-057-csam-explicit,US-TX,GAI-12,partially_satisfies,Value chain
+us-tx-traiga-552-057-csam-explicit,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-057-csam-explicit,US-TX,GOVERN-6.1,partially_satisfies,
+us-tx-traiga-552-057-csam-explicit,US-TX,MAP-3.4,partially_satisfies,Content moderation
+us-tx-traiga-552-057-csam-explicit,US-TX,MEASURE-2.6,fully_satisfies,CSAM/deepfake detection
+us-tx-traiga-552-057-csam-explicit,US-TX,MANAGE-1.3,partially_satisfies,
+us-tx-traiga-552-057-csam-explicit,US-TX,MANAGE-4.3,partially_satisfies,NCMEC reporting
+us-tx-traiga-552-103-ag-investigation,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,GOVERN-1.4,fully_satisfies,Documented process
+us-tx-traiga-552-103-ag-investigation,US-TX,GOVERN-1.6,fully_satisfies,AI inventory
+us-tx-traiga-552-103-ag-investigation,US-TX,MAP-1.1,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,MAP-2.1,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,MAP-2.2,fully_satisfies,Knowledge limits
+us-tx-traiga-552-103-ag-investigation,US-TX,MAP-3.1,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,MEASURE-2.1,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,MEASURE-2.3,fully_satisfies,
+us-tx-traiga-552-103-ag-investigation,US-TX,MANAGE-4.1,fully_satisfies,
+us-tx-traiga-552-104-cure-period,US-TX,GOVERN-1.5,partially_satisfies,
+us-tx-traiga-552-104-cure-period,US-TX,MANAGE-1.3,fully_satisfies,Cure response
+us-tx-traiga-552-104-cure-period,US-TX,MANAGE-2.2,partially_satisfies,Policy revisions
+us-tx-traiga-552-104-cure-period,US-TX,MANAGE-2.4,partially_satisfies,System supersession
+us-tx-traiga-552-104-cure-period,US-TX,MANAGE-4.3,supports,Written statement
+us-tx-traiga-552-105-nist-safe-harbor,US-TX,ALL-GENAI-PROFILE,safe_harbor,Direct statutory anchor
+us-tx-traiga-553-sandbox,US-TX,GOVERN-1.1,fully_satisfies,
+us-tx-traiga-553-sandbox,US-TX,GOVERN-1.4,fully_satisfies,
+us-tx-traiga-553-sandbox,US-TX,MAP-1.1,partially_satisfies,
+us-tx-traiga-553-sandbox,US-TX,MAP-5.1,partially_satisfies,Benefit assessment
+us-tx-traiga-553-sandbox,US-TX,MAP-5.2,partially_satisfies,Mitigation plan
+us-tx-traiga-553-sandbox,US-TX,MEASURE-2.3,fully_satisfies,Quarterly metrics
+us-tx-traiga-553-sandbox,US-TX,MEASURE-3.3,fully_satisfies,Stakeholder feedback
+us-tx-traiga-553-sandbox,US-TX,MANAGE-4.1,fully_satisfies,
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MAP-2.2,fully_satisfies,Explanation requirements
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MAP-3.1,fully_satisfies,
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MAP-3.5,fully_satisfies,Human oversight right
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MEASURE-2.8,fully_satisfies,
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MEASURE-2.9,fully_satisfies,Explainability
+ca-qc-law-25-s12-1-automated-decision-making,CA-QC,MEASURE-3.3,fully_satisfies,Contestation right
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MAP-1.1,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MAP-1.5,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MAP-3.1,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MAP-3.2,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MAP-5.1,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MEASURE-2.7,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s3-3-mandatory-pia,CA-QC,MANAGE-1.3,fully_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,GAI-9,partially_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,GOVERN-4.3,fully_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,MEASURE-2.7,fully_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,MANAGE-2.3,partially_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,MANAGE-4.1,fully_satisfies,
+ca-qc-law-25-s3-5-confidentiality-incident-notification,CA-QC,MANAGE-4.3,fully_satisfies,Individual notification
+ca-qc-law-25-s14-consent,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s14-consent,CA-QC,GOVERN-5.1,partially_satisfies,
+ca-qc-law-25-s14-consent,CA-QC,MAP-1.1,partially_satisfies,
+ca-qc-law-25-s14-consent,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,GAI-12,partially_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,GOVERN-6.1,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,GOVERN-6.2,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,MAP-4.1,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,MAP-4.2,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,MEASURE-2.7,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s17-cross-border-transfers,CA-QC,MANAGE-3.1,fully_satisfies,
+ca-qc-law-25-s27-data-portability,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s27-data-portability,CA-QC,MAP-2.1,partially_satisfies,
+ca-qc-law-25-s27-data-portability,CA-QC,MEASURE-2.8,partially_satisfies,
+ca-qc-law-25-s3-1-privacy-officer,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s3-1-privacy-officer,CA-QC,GOVERN-2.1,fully_satisfies,
+ca-qc-law-25-s3-1-privacy-officer,CA-QC,GOVERN-2.3,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-1.2,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-1.3,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-1.4,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-2.2,fully_satisfies,
+ca-qc-law-25-s3-2-privacy-governance,CA-QC,GOVERN-4.1,fully_satisfies,
+ca-qc-law-25-s8-privacy-by-default,CA-QC,GAI-4,partially_satisfies,
+ca-qc-law-25-s8-privacy-by-default,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s8-privacy-by-default,CA-QC,GOVERN-1.2,fully_satisfies,
+ca-qc-law-25-s8-privacy-by-default,CA-QC,MAP-1.6,fully_satisfies,
+ca-qc-law-25-s8-privacy-by-default,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s8-2-privacy-policy,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s8-2-privacy-policy,CA-QC,GOVERN-5.1,partially_satisfies,
+ca-qc-law-25-s8-2-privacy-policy,CA-QC,MEASURE-2.8,fully_satisfies,
+ca-qc-law-25-s28-1-deindexation,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s28-1-deindexation,CA-QC,MAP-3.5,partially_satisfies,
+ca-qc-law-25-s28-1-deindexation,CA-QC,MANAGE-2.2,partially_satisfies,
+ca-qc-law-25-s28-1-deindexation,CA-QC,MANAGE-2.4,partially_satisfies,
+ca-qc-law-25-s28-1-deindexation,CA-QC,MANAGE-4.3,supports,
+ca-qc-law-25-biometric-database-disclosure,CA-QC,GAI-4,safe_harbor,
+ca-qc-law-25-biometric-database-disclosure,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-biometric-database-disclosure,CA-QC,GOVERN-1.6,fully_satisfies,
+ca-qc-law-25-biometric-database-disclosure,CA-QC,MEASURE-2.7,fully_satisfies,
+ca-qc-law-25-biometric-database-disclosure,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s12-purpose-limitation,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s12-purpose-limitation,CA-QC,MAP-1.1,fully_satisfies,
+ca-qc-law-25-s12-purpose-limitation,CA-QC,MAP-2.1,fully_satisfies,
+ca-qc-law-25-s12-purpose-limitation,CA-QC,MAP-3.3,fully_satisfies,
+ca-qc-law-25-s23-data-minimization-retention,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s23-data-minimization-retention,CA-QC,GOVERN-1.7,fully_satisfies,Decommissioning
+ca-qc-law-25-s23-data-minimization-retention,CA-QC,MEASURE-2.7,fully_satisfies,
+ca-qc-law-25-s23-data-minimization-retention,CA-QC,MANAGE-4.1,fully_satisfies,
+ca-qc-law-25-s27-32-right-of-access,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s27-32-right-of-access,CA-QC,GOVERN-1.6,fully_satisfies,
+ca-qc-law-25-s27-32-right-of-access,CA-QC,MAP-2.2,partially_satisfies,
+ca-qc-law-25-s27-32-right-of-access,CA-QC,MEASURE-2.8,fully_satisfies,
+ca-qc-law-25-s27-32-right-of-access,CA-QC,MEASURE-2.9,fully_satisfies,
+ca-qc-law-25-s18-3-service-provider-agreements,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s18-3-service-provider-agreements,CA-QC,GOVERN-6.1,fully_satisfies,
+ca-qc-law-25-s18-3-service-provider-agreements,CA-QC,GOVERN-6.2,fully_satisfies,
+ca-qc-law-25-s18-3-service-provider-agreements,CA-QC,MAP-4.1,fully_satisfies,
+ca-qc-law-25-s18-3-service-provider-agreements,CA-QC,MANAGE-3.1,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,GAI-4,partially_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,GOVERN-1.1,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,GOVERN-4.1,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,GOVERN-4.2,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,MAP-3.2,partially_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,MEASURE-1.3,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,MEASURE-2.10,fully_satisfies,
+ca-qc-law-25-s23-anonymization-standard,CA-QC,MANAGE-3.2,partially_satisfies,
+ca-on-bill-149-esa-8-4,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-bill-149-esa-8-4,CA-ON,GOVERN-1.6,fully_satisfies,
+ca-on-bill-149-esa-8-4,CA-ON,MAP-1.1,partially_satisfies,
+ca-on-bill-149-esa-8-4,CA-ON,MAP-3.3,partially_satisfies,
+ca-on-bill-149-esa-8-4,CA-ON,MEASURE-2.8,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,GAI-6,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,GOVERN-3.1,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,MAP-1.2,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,MAP-5.1,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,MEASURE-2.11,fully_satisfies,
+ca-on-human-rights-code-s9-no-infringement-via-tech,CA-ON,MANAGE-1.3,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,MAP-1.1,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,MAP-3.1,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,MAP-5.1,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,MEASURE-2.10,fully_satisfies,
+ca-on-mfippa-pia-mandatory-bill97,CA-ON,MANAGE-1.3,fully_satisfies,
+ca-on-mfippa-safeguards-bill97,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-mfippa-safeguards-bill97,CA-ON,GOVERN-4.1,fully_satisfies,
+ca-on-mfippa-safeguards-bill97,CA-ON,MEASURE-2.7,fully_satisfies,
+ca-on-mfippa-safeguards-bill97,CA-ON,MANAGE-4.1,fully_satisfies,
+ca-on-mfippa-breach-reporting-bill97,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-mfippa-breach-reporting-bill97,CA-ON,GOVERN-4.3,fully_satisfies,
+ca-on-mfippa-breach-reporting-bill97,CA-ON,MANAGE-2.3,partially_satisfies,
+ca-on-mfippa-breach-reporting-bill97,CA-ON,MANAGE-4.1,fully_satisfies,
+ca-on-mfippa-breach-reporting-bill97,CA-ON,MANAGE-4.3,fully_satisfies,
+ca-on-mfippa-ipc-binding-orders-bill97,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-mfippa-ipc-binding-orders-bill97,CA-ON,GOVERN-1.5,partially_satisfies,
+ca-on-mfippa-ipc-binding-orders-bill97,CA-ON,MANAGE-2.4,partially_satisfies,
+ca-on-mfippa-whistleblower-bill97,CA-ON,GOVERN-1.1,fully_satisfies,
+ca-on-mfippa-whistleblower-bill97,CA-ON,GOVERN-5.1,fully_satisfies,
+ca-on-mfippa-whistleblower-bill97,CA-ON,GOVERN-5.2,partially_satisfies,`;
+
+const JURISDICTIONS = [
+  { code: 'us-tx-traiga',   group: 'US-TX',  name: 'Texas TRAIGA',        sub: 'HB 149 · in force Jan 1, 2026', cost: [50000, 120000] },
+  { code: 'ca-qc-law-25',   group: 'CA-QC',  name: 'Quebec Law 25',       sub: 'P-39.1 · in force Sep 2024',     cost: [60000, 150000] },
+  { code: 'ca-on-bill-149', group: 'CA-ON',  name: 'Ontario Bill 149',    sub: 'ESA · in force Jan 1, 2026',     cost: [20000, 45000] },
+  { code: 'ca-on-human-rights-code', group: 'CA-ON', name: 'Ontario Human Rights Code', sub: 's. 9 · ongoing',     cost: [25000, 60000] },
+  { code: 'ca-on-mfippa',   group: 'CA-ON',  name: 'Ontario MFIPPA',      sub: 'Bill 97 · in force 2026–2027',   cost: [35000, 90000] },
+];
+
+const CONTROL_TITLES = {
+  'GOVERN-1.1': 'Legal & regulatory requirements managed',
+  'GOVERN-1.2': 'Trustworthy AI integrated',
+  'GOVERN-1.3': 'Risk management processes appropriate',
+  'GOVERN-1.4': 'Risk management documented',
+  'GOVERN-1.5': 'Ongoing oversight',
+  'GOVERN-1.6': 'AI inventory mechanisms',
+  'GOVERN-1.7': 'Decommissioning procedures',
+  'GOVERN-2.1': 'Roles & responsibilities',
+  'GOVERN-2.2': 'Workforce training',
+  'GOVERN-2.3': 'Executive accountability',
+  'GOVERN-3.1': 'Diversity in risk management',
+  'GOVERN-4.1': 'Risk practices documented',
+  'GOVERN-4.2': 'Teams document risks',
+  'GOVERN-4.3': 'Testing & incident sharing',
+  'GOVERN-5.1': 'Stakeholder feedback',
+  'GOVERN-5.2': 'Periodic feedback evaluation',
+  'GOVERN-6.1': 'Third-party policies',
+  'GOVERN-6.2': 'Contingency processes',
+  'MAP-1.1':   'Context of use',
+  'MAP-1.2':   'Interdisciplinary actors',
+  'MAP-1.5':   'Risk tolerance',
+  'MAP-1.6':   'System requirements',
+  'MAP-2.1':   'Tasks & methods',
+  'MAP-2.2':   'Knowledge limits',
+  'MAP-3.1':   'AI capabilities & limitations',
+  'MAP-3.2':   'Potential costs & risks',
+  'MAP-3.3':   'Targeted application scope',
+  'MAP-3.4':   'Accuracy processes',
+  'MAP-3.5':   'Human oversight',
+  'MAP-4.1':   'Map third-party legal risks',
+  'MAP-4.2':   'Internal risk controls',
+  'MAP-5.1':   'Likelihood & magnitude of impact',
+  'MAP-5.2':   'Risk assessment practices',
+  'MEASURE-1.3': 'Internal experts',
+  'MEASURE-2.1': 'Test sets & metrics',
+  'MEASURE-2.3': 'Performance evaluation',
+  'MEASURE-2.6': 'AI safety evaluation',
+  'MEASURE-2.7': 'Security & privacy risks',
+  'MEASURE-2.8': 'Transparency',
+  'MEASURE-2.9': 'Explainability',
+  'MEASURE-2.10': 'Privacy risk',
+  'MEASURE-2.11': 'Fairness & bias',
+  'MEASURE-3.3': 'Stakeholder feedback channels',
+  'MANAGE-1.3': 'Decisions inform mitigation',
+  'MANAGE-2.2': 'Mechanisms sustain value',
+  'MANAGE-2.3': 'Superseded systems response',
+  'MANAGE-2.4': 'Supersede deficient AI',
+  'MANAGE-3.1': 'Third-party risk monitoring',
+  'MANAGE-3.2': 'Pre-trained model monitoring',
+  'MANAGE-4.1': 'Post-deployment monitoring',
+  'MANAGE-4.3': 'Incidents communicated',
+  'GAI-3':  'GenAI dangerous content',
+  'GAI-4':  'GenAI data privacy',
+  'GAI-6':  'GenAI harmful bias',
+  'GAI-9':  'GenAI information security',
+  'GAI-11': 'GenAI obscene content',
+  'GAI-12': 'GenAI value chain',
+  'ALL-GENAI-PROFILE': 'Full NIST GenAI Profile',
+};
+
+function prettyObl(slug) {
+  return slug
+    .replace('us-tx-traiga-', '§ ')
+    .replace('ca-qc-law-25-', 'Law 25 ')
+    .replace('ca-on-bill-149-', 'ESA ')
+    .replace('ca-on-human-rights-code-', 'Code ')
+    .replace('ca-on-mfippa-', 'MFIPPA ')
+    .replace(/-/g, ' ');
+}
+
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const header = lines[0].split(',');
+  return lines.slice(1).map(line => {
+    const parts = line.split(',');
+    const row = {};
+    header.forEach((h, i) => row[h] = (parts[i] || '').trim());
+    return row;
+  });
+}
+
+const ROWS = parseCSV(COVERAGE_DATA);
+
+const state = { active: new Set() };
+
+function renderJurisGrid() {
+  const grid = document.getElementById('jurisGrid');
+  grid.innerHTML = '';
+  JURISDICTIONS.forEach(j => {
+    const count = new Set(ROWS.filter(r => r.obligation_slug.startsWith(j.code)).map(r => r.obligation_slug)).size;
+    const btn = document.createElement('button');
+    btn.className = 'juris' + (state.active.has(j.code) ? ' active' : '');
+    btn.dataset.code = j.code;
+    btn.innerHTML = `
+      <div class="juris-code">${j.group} · ${j.sub}</div>
+      <div class="juris-name">${j.name}</div>
+      <div class="juris-count"><strong>${count}</strong> atomic obligations</div>
+    `;
+    btn.onclick = () => {
+      if (state.active.has(j.code)) state.active.delete(j.code);
+      else state.active.add(j.code);
+      renderJurisGrid();
+      renderResult();
+    };
+    grid.appendChild(btn);
+  });
+}
+
+function renderResult() {
+  const active = Array.from(state.active);
+  const oblCount = document.getElementById('oblCount');
+  const oblExplain = document.getElementById('oblExplain');
+  const ctrlCount = document.getElementById('ctrlCount');
+  const ctrlExplain = document.getElementById('ctrlExplain');
+  const topControls = document.getElementById('topControls');
+  const directCost = document.getElementById('directCost');
+  const sentainelCost = document.getElementById('sentainelCost');
+
+  if (!active.length) {
+    oblCount.innerHTML = '—';
+    oblExplain.textContent = 'Select at least one jurisdiction above.';
+    ctrlCount.innerHTML = '—';
+    ctrlExplain.textContent = 'Coverage emerges once you select jurisdictions.';
+    topControls.innerHTML = '';
+    directCost.textContent = '—';
+    sentainelCost.textContent = '—';
+    return;
+  }
+
+  const matching = ROWS.filter(r => active.some(a => r.obligation_slug.startsWith(a)));
+  const uniqueObls = new Set(matching.map(r => r.obligation_slug));
+  const uniqueCtrls = new Set(matching.map(r => r.nist_control_id));
+
+  const ctrlHits = {};
+  matching.forEach(r => { ctrlHits[r.nist_control_id] = (ctrlHits[r.nist_control_id] || 0) + 1; });
+  const sorted = Object.entries(ctrlHits).sort((a, b) => b[1] - a[1]);
+  const topN = sorted.slice(0, 10);
+
+  const activeJurs = JURISDICTIONS.filter(j => active.includes(j.code));
+  const lowCost = activeJurs.reduce((s, j) => s + j.cost[0], 0);
+  const highCost = activeJurs.reduce((s, j) => s + j.cost[1], 0);
+  const sentainelAnnual = active.length === 1 ? 30000 : active.length <= 3 ? 48000 : 60000;
+
+  oblCount.innerHTML = `${uniqueObls.size}<span class="unit">obligations</span>`;
+  oblExplain.textContent = `Across ${active.length} jurisdiction${active.length>1?'s':''}, requiring ${uniqueCtrls.size} unique NIST controls if you implement everything. The high-leverage subset is smaller.`;
+
+  const MIN_SHOWN = 5;
+  let covered = new Set();
+  let needed = 0;
+  let hitThreshold = false;
+  for (const [cid, _] of sorted) {
+    matching.filter(r => r.nist_control_id === cid).forEach(r => covered.add(r.obligation_slug));
+    needed++;
+    if (!hitThreshold && covered.size / uniqueObls.size >= 0.85) hitThreshold = true;
+    if (hitThreshold && needed >= MIN_SHOWN) break;
+  }
+  const coveragePct = Math.round(covered.size / uniqueObls.size * 100);
+
+  ctrlCount.innerHTML = `${needed}<span class="unit">controls</span>`;
+  ctrlExplain.textContent = `Implementing the top ${needed} NIST controls covers ${coveragePct}% of obligations in your scope. The remaining gap is jurisdiction-specific overlays — Quebec biometric pre-notification, Ontario ESA job-posting language, Texas sandbox application package.`;
+
+  topControls.innerHTML = topN.slice(0, needed).map(([cid, hits]) => `
+    <li class="ctrl-item">
+      <span class="ctrl-id">${cid}</span>
+      <span class="ctrl-title">${CONTROL_TITLES[cid] || cid}</span>
+      <span class="ctrl-hits"><strong>${hits}</strong> ${hits === 1 ? 'hit' : 'hits'}</span>
+    </li>
+  `).join('');
+
+  directCost.textContent = `$${(lowCost/1000).toFixed(0)}K – $${(highCost/1000).toFixed(0)}K`;
+  sentainelCost.textContent = `$${(sentainelAnnual/1000).toFixed(0)}K`;
+}
+
+const matrixFilter = { jur: 'all' };
+
+function renderMatrix() {
+  const filter = matrixFilter.jur;
+  const filtered = filter === 'all' ? ROWS : ROWS.filter(r => r.jurisdiction === filter);
+
+  const allCtrlIds = [...new Set(filtered.map(r => r.nist_control_id))];
+  const ctrlOrder = (id) => {
+    const groups = { 'GOVERN': 0, 'MAP': 1, 'MEASURE': 2, 'MANAGE': 3, 'GAI': 4, 'ALL': 5 };
+    const prefix = id.split('-')[0];
+    const num = parseFloat(id.split('-').slice(1).join('.')) || 0;
+    return (groups[prefix] ?? 9) * 1000 + num;
+  };
+  allCtrlIds.sort((a, b) => ctrlOrder(a) - ctrlOrder(b));
+
+  const allObls = [...new Set(filtered.map(r => r.obligation_slug))];
+
+  const groupOf = id => {
+    const p = id.split('-')[0];
+    if (p === 'GAI' || p === 'ALL') return 'GenAI';
+    return p;
+  };
+  const groupCounts = {};
+  allCtrlIds.forEach(id => { const g = groupOf(id); groupCounts[g] = (groupCounts[g] || 0) + 1; });
+
+  const lookup = {};
+  filtered.forEach(r => { lookup[`${r.obligation_slug}|${r.nist_control_id}`] = r; });
+
+  let headHTML = '<tr><th class="corner" rowspan="2">Obligation ↓ &nbsp;&nbsp;Control →</th>';
+  const groupOrder = ['GOVERN', 'MAP', 'MEASURE', 'MANAGE', 'GenAI'];
+  groupOrder.forEach(g => {
+    if (groupCounts[g]) headHTML += `<th class="group" colspan="${groupCounts[g]}">${g}</th>`;
+  });
+  headHTML += '</tr><tr>';
+  allCtrlIds.forEach(id => { headHTML += `<th>${id}</th>`; });
+  headHTML += '</tr>';
+
+  let bodyHTML = '';
+  allObls.forEach(obl => {
+    const jur = filtered.find(r => r.obligation_slug === obl).jurisdiction;
+    bodyHTML += `<tr><th><div class="jcode">${jur}</div>${prettyObl(obl)}</th>`;
+    allCtrlIds.forEach(cid => {
+      const hit = lookup[`${obl}|${cid}`];
+      if (hit) {
+        const cls = hit.coverage_level === 'fully_satisfies' ? 'full'
+                  : hit.coverage_level === 'partially_satisfies' ? 'partial'
+                  : hit.coverage_level === 'safe_harbor' ? 'safe'
+                  : 'support';
+        bodyHTML += `<td><div class="cell ${cls}" data-obl="${prettyObl(obl)}" data-ctrl="${cid}" data-cov="${hit.coverage_level}" data-note="${hit.notes || ''}"></div></td>`;
+      } else {
+        bodyHTML += '<td></td>';
+      }
+    });
+    bodyHTML += '</tr>';
+  });
+
+  document.getElementById('matrixScroll').innerHTML = `
+    <table class="matrix">
+      <thead>${headHTML}</thead>
+      <tbody>${bodyHTML}</tbody>
+    </table>
+  `;
+
+  const tt = document.getElementById('tooltip');
+  document.querySelectorAll('.cell').forEach(cell => {
+    cell.addEventListener('mouseenter', (e) => {
+      const d = e.target.dataset;
+      tt.innerHTML = `
+        <div class="tt-obl">${d.obl}</div>
+        <div class="tt-ctrl">${d.ctrl} — ${CONTROL_TITLES[d.ctrl] || ''}</div>
+        <div class="tt-cov">${d.cov.replace(/_/g, ' ')}</div>
+        ${d.note ? `<div class="tt-note">${d.note}</div>` : ''}
+      `;
+      tt.classList.add('visible');
+    });
+    cell.addEventListener('mousemove', (e) => {
+      const x = Math.min(e.clientX + 14, window.innerWidth - 340);
+      const y = Math.min(e.clientY + 14, window.innerHeight - 120);
+      tt.style.left = x + 'px';
+      tt.style.top = y + 'px';
+    });
+    cell.addEventListener('mouseleave', () => tt.classList.remove('visible'));
+  });
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    matrixFilter.jur = btn.dataset.filter;
+    renderMatrix();
+  });
+});
+
+renderJurisGrid();
+renderResult();
+renderMatrix();
+
+setTimeout(() => {
+  JURISDICTIONS.forEach(j => state.active.add(j.code));
+  renderJurisGrid();
+  renderResult();
+}, 300);
+</script>
+
+</body>
+</html>
