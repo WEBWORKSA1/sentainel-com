@@ -1,0 +1,274 @@
+---
+slug: ca-on-bill-194-edsta
+short_name: Ontario EDSTA (Bill 194)
+long_name: |
+  Enhancing Digital Security and Trust Act, 2024 — enacted by
+  Strengthening Cyber Security and Building Trust in the Public
+  Sector Act, 2024 (S.O. 2024, c. 24, Sched. 1)
+citation: S.O. 2024, c. 24, Sched. 1
+jurisdiction:
+  code: CA-ON
+  level: state_province
+  parent: CA-Federal
+status: enacted_not_in_force
+status_notes: |
+  Bill 194 received Royal Assent on November 25, 2024. The EDSTA
+  (Schedule 1) and most amendments to FIPPA (Schedule 2) come into
+  force on a day to be named by proclamation of the Lieutenant
+  Governor (s. 17 EDSTA; respective FIPPA provisions).
+
+  As of May 2026, the EDSTA AI provisions (sections 5, 6, 7, 8)
+  remain UN-PROCLAIMED and dependent on Lieutenant Governor in
+  Council regulations specifying:
+  - which public sector entities are within scope (s. 7(a))
+  - which "circumstances" trigger the AI obligations (s. 7(b))
+  - the form/content of accountability frameworks (s. 7(d))
+  - prescribed risk management steps (s. 7(e))
+  - prescribed prohibited AI uses (s. 7(g))
+  - technical standards (s. 8)
+
+  Some FIPPA Schedule 2 amendments came into force January 29, 2025
+  (whistleblower protections). The mandatory PIA and breach
+  notification provisions came into force July 1, 2025.
+
+  Sentainel positions EDSTA as a "horizon" obligation: customers
+  in the Ontario public sector or selling into it should begin
+  preparing accountability frameworks aligned with NIST AI RMF
+  governance functions now, since the statutory shell is in place
+  and regulations could be proclaimed with minimal notice.
+signed_date: 2024-11-25
+royal_assent_date: 2024-11-25
+proclamation_date: null
+fippa_schedule2_partial_force_date: 2025-01-29
+fippa_schedule2_pia_breach_force_date: 2025-07-01
+edsta_proclamation_date: null
+sunset_date: null
+source_url: https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-194
+statute_url: https://www.ontario.ca/laws/statute/24e24
+companion_legislation:
+  - ca-on-fippa
+  - ca-on-mfippa
+  - ca-on-human-rights-code
+  - ca-on-phipa
+  - ca-on-bill-149
+  - us-federal-nist-ai-rmf
+summary: |
+  EDSTA is Canada's first AI-specific statutory framework for the
+  public sector. It applies to "public sector entities" — defined
+  in s. 1(1) as FIPPA institutions (except the Legislative
+  Assembly), MFIPPA institutions, children's aid societies, and
+  school boards.
+
+  The EDSTA AI provisions (sections 5–8) impose four operational
+  duties on prescribed public sector entities using AI systems in
+  prescribed circumstances:
+
+  1. PUBLIC INFORMATION (s. 5(2)): provide information to the
+     public about the entity's use of the AI system, in the manner
+     prescribed by regulation.
+
+  2. ACCOUNTABILITY FRAMEWORK (s. 5(3)): develop and implement an
+     accountability framework respecting the entity's use of AI,
+     with form and content prescribed by regulation.
+
+  3. RISK MANAGEMENT (s. 5(4)): take prescribed steps to manage
+     risks associated with AI use, which may include reporting
+     and record-keeping.
+
+  4. HUMAN OVERSIGHT (s. 6(2)(b)(i)): in prescribed circumstances,
+     ensure that an individual exercises oversight of the AI use
+     and provides additional information on inquiry.
+
+  Plus two negative duties:
+  - PROHIBITED USES (s. 5(6)): not use AI in any manner prohibited
+    by regulation.
+  - SPECIFIED-PURPOSE USE (s. 5(5)): use AI only for purposes
+    prescribed by regulation.
+
+  AI is defined in s. 1(1)(a) using the OECD/NIST-aligned
+  formulation: "a machine-based system that, for explicit or
+  implicit objectives, infers from the input it receives in order
+  to generate outputs such as predictions, content, recommendations
+  or decisions that can influence physical or virtual environments."
+  Para (b) reserves expansion by regulation.
+
+  Use of AI by public sector entities is broadly construed under
+  s. 1(2) to include publicly-available systems, procured systems,
+  and systems developed by third parties on behalf of the entity.
+  This third-party-flow construction is operationally significant:
+  it forces vendor due diligence into the accountability framework.
+
+  EDSTA also (Schedule 1 sections 9–11) enables regulation of
+  digital information relating to individuals under age 18 by
+  children's aid societies and school boards — Canada's first
+  statutory minor-AI framework.
+
+  Schedule 2 amendments to FIPPA add: mandatory written PIAs
+  before personal information collection (s. 38(3)), mandatory
+  breach notification to the IPC and affected individuals where
+  there is a "real risk of significant harm" (s. 40.1), explicit
+  safeguard duties (s. 40(5)), IPC investigation power over
+  information practices (s. 49.0.1), and whistleblower protection
+  (s. 57.1).
+scope_description: |
+  EDSTA s. 1(1) "public sector entity":
+  - FIPPA institutions per s. 2(1) of FIPPA, excluding the
+    Legislative Assembly of Ontario
+  - MFIPPA institutions per s. 2(1) of MFIPPA
+  - Children's aid societies per the Child, Youth and Family
+    Services Act, 2017
+  - School boards per the Education Act
+
+  This is the broadest possible reach across Ontario's public
+  sector: ~600 provincial institutions, ~444 municipal
+  institutions, ~49 children's aid societies, ~72 school boards.
+  Hospitals and provincial health agencies are captured via FIPPA
+  inclusion.
+
+  The AI obligations (s. 5, s. 6) apply only when:
+  (a) the entity is "prescribed" by regulation for that section, AND
+  (b) the AI use occurs in "prescribed circumstances."
+
+  Until regulations issue, the obligations are dormant.
+
+  Use of AI is construed broadly per s. 1(2): includes use of
+  publicly available systems (e.g., ChatGPT), systems procured
+  by the entity, and systems developed by third parties on the
+  entity's behalf. This is critical for vendor flow-down.
+extraterritorial_reach: false
+extraterritorial_notes: |
+  EDSTA itself applies only to Ontario public sector entities.
+  However, vendor flow-down via accountability framework
+  requirements (s. 5(3)) will reach private-sector AI vendors
+  contracting with Ontario public bodies, regardless of vendor
+  jurisdiction. A US AI SaaS vendor selling into the Ontario
+  public service must satisfy contractual obligations derived
+  from EDSTA even though EDSTA does not directly bind the vendor.
+
+  EDSTA s. 12 expressly disclaims a private law duty of care.
+  Customer-side litigation must proceed under other causes of
+  action (Code, negligence, breach of contract).
+safe_harbor_via:
+  - us-federal-nist-ai-rmf       # practitioner-recognized, not statutory
+  - eu-iso-iec-42001             # practitioner-recognized, not statutory
+safe_harbor_notes: |
+  EDSTA contains NO explicit statutory safe harbor. The s. 12
+  disclaimer of private law duty of care is the closest the Act
+  comes — it limits civil liability but does not provide an
+  affirmative defense.
+
+  Practitioner positioning, particularly through the Trustworthy
+  AI Framework guidance from the Ontario Cyber Security Centre of
+  Excellence and the eventual EDSTA regulations, is widely
+  expected to reference NIST AI RMF as the de facto accountability
+  framework standard. Entities that align their s. 5(3)
+  accountability framework with NIST AI RMF GOVERN function
+  controls will be best positioned for whatever regulations
+  ultimately prescribe.
+
+  Sentainel positioning: "Build your s. 5(3) accountability
+  framework around NIST AI RMF GOVERN-1.1 through GOVERN-6.2.
+  When the regulations are proclaimed, you'll be ready in days,
+  not months."
+notes: |
+  - EDSTA is "regulation-empty" at the statutory level. Every
+    operational requirement is reserved to s. 7 LGIC regulations
+    or s. 8 Minister technical standards. This means:
+    (a) the act is a horizon obligation, not an active one
+    (b) entities have wide latitude in choosing their
+        accountability framework structure
+    (c) compliance posture is "be ready" rather than "be done"
+
+  - The AI definition in s. 1(1)(a) is NEAR-IDENTICAL to:
+    - NIST AI 100-1 (with minor wording variations)
+    - Illinois HRA AI s. 2-101(M)
+    - Quebec Law 25 contextual definition
+    - EU AI Act art. 3(1)
+    This convergence is a strong signal that NIST AI RMF
+    cross-mapping will be definitive once Ontario regulations
+    issue.
+
+  - The "use" definition in s. 1(2) reaching publicly-available
+    AI, procured AI, and third-party-developed AI is critical
+    for the vendor risk surface. A public servant using ChatGPT
+    to draft a memo is captured. So is a procured SaaS tool.
+    Sentainel inventory must capture all three modalities.
+
+  - Children's aid societies and school boards face DUAL
+    EDSTA exposure: the public-sector AI obligations under s. 5–6
+    AND the minor-information regulations under s. 9–11.
+    Operationally these collapse to a single accountability
+    framework that handles both.
+
+  - FIPPA s. 38(3) mandatory PIA aligns with the parallel MFIPPA
+    Bill 97 amendments. Provincial entities under FIPPA face
+    this from July 1, 2025; municipal entities under MFIPPA from
+    January 1, 2027.
+
+  - FIPPA s. 40.1 RROSH breach notification threshold matches
+    Quebec Law 25 (s. 3.5) and federal PIPEDA. Threshold factors
+    in s. 40.1(7) typically include sensitivity, probability of
+    misuse, and harm severity.
+
+  - The eventual EDSTA regulations are widely expected (per
+    Fasken, BLG, Dentons commentary) to reference the Ontario
+    Trustworthy AI Framework as the technical standard for s. 5(3)
+    accountability frameworks. The framework explicitly cites
+    NIST AI RMF as a foundational reference.
+
+  - Sentainel's Ontario public-sector go-to-market: lead with
+    Municipal Edition ($1,499/mo) for MFIPPA institutions, sell
+    Operations tier ($2,499/mo) for FIPPA institutions + EDSTA
+    readiness, upsell Continuous tier ($4,999/mo) when
+    regulations proclaim.
+penalty_schedules:
+  - tier_name: no_direct_penalty
+    basis: license_action
+    citation: EDSTA s. 12 + s. 13
+    notes: |
+      EDSTA s. 12 expressly disclaims private law duty of care:
+      "Nothing in the Strengthening Cyber Security and Building
+      Trust in the Public Sector Act, 2024, this Act or any
+      regulation made or directive issued under this Act
+      establishes a private law duty of care owing to any person."
+
+      EDSTA s. 13 further provides: "Failure to comply with this
+      Act or any regulation made or directive issued under this
+      Act does not affect the validity of any policy, Act,
+      regulation, directive, instrument or decision."
+
+      Combined, the statute creates a regulatory-compliance
+      obligation without statutory private remedy. Enforcement
+      will operate through Minister oversight, accountability
+      framework reporting (when prescribed), and inter-government
+      directive compliance. Parallel exposure under the Code
+      (uncapped damages) and FIPPA (IPC orders) remains intact.
+  - tier_name: fippa_ipc_orders
+    basis: license_action
+    citation: FIPPA s. 49.0.1 (added by Bill 194 Sched. 2)
+    notes: |
+      The Information and Privacy Commissioner of Ontario gains
+      authority under new FIPPA s. 49.0.1 to conduct reviews of
+      institution information practices. Combined with the IPC's
+      pre-existing order-making powers under FIPPA Part IV, the
+      IPC can issue binding orders requiring institutions to
+      cease practices, alter policies, or notify affected
+      individuals.
+private_right_of_action: false
+private_right_of_action_notes: |
+  EDSTA s. 12 explicitly disclaims any private law duty of care.
+  However, complainants are NOT precluded from suing under:
+  - The Ontario Human Rights Code (uncapped damages for
+    discriminatory AI outcomes — Code primacy)
+  - Negligence (independent of EDSTA)
+  - Breach of contract (private parties)
+  - FIPPA s. 49.0.1 / IPC complaint mechanism (administrative,
+    not strictly private)
+
+  Practical effect: EDSTA shields public sector entities from
+  EDSTA-derived tort claims, but they remain exposed to all
+  ordinary causes of action plus IPC orders.
+last_reviewed: 2026-05-13
+reviewer: web@sentainel.com
+extraction_method: claude-opus-4-7-2026-05-13 + direct statute review (ola.org primary source) + Fasken, BLG, Dentons, McCarthy Tetrault commentary cross-check
+---
