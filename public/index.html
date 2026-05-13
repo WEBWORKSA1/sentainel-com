@@ -4,40 +4,446 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sentainel — AI Compliance Infrastructure for Mid-Market Companies</title>
-<meta name="description" content="An AI compliance operating system that discovers every AI system in your company, classifies regulatory risk, generates audit-ready evidence, and monitors continuously. Built for the Colorado AI Act, Texas TRAIGA, EU AI Act, Quebec Law 25, and Ontario Bill 149.">
+<meta name="description" content="An AI compliance operating system that discovers every AI system in your company, classifies regulatory risk, generates audit-ready evidence, and monitors continuously. Built for Texas TRAIGA, Quebec Law 25, Ontario Bill 149, Illinois HRA, and the EU AI Act.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink:        #14110F;
-    --ink-soft:   #2A2622;
-    --ink-fade:   #6B635B;
-    --ink-ghost:  #B5ADA3;
-    --paper:      #F4F1EB;
-    --paper-warm: #EFE9DF;
-    --paper-cool: #FAF8F3;
-    --rule:       #1F1A16;
-    --accent:     #B0301C;
-    --accent-soft:#D54B2E;
-    --gold:       #8B7339;
-    --moss:       #4D5A3C;
-    --shadow:     0 1px 0 rgba(20,17,15,0.06), 0 24px 60px -32px rgba(20,17,15,0.18);
-    --display:    'Fraunces', 'Times New Roman', serif;
-    --serif:      'Newsreader', Georgia, serif;
-    --mono:       'JetBrains Mono', 'Menlo', monospace;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
-  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.06 0 0 0 0 0.05 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); opacity: 0.5; pointer-events: none; z-index: 1; mix-blend-mode: multiply; }
-  .wrap { max-width: 1320px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 2; }
-  @media (max-width: 768px) { .wrap { padding: 0 24px; } }
-  /* PLACEHOLDER: full original CSS + body content must be restored before Vercel deploy. This file currently contains a minimal stub; the 54KB original is staged at /mnt/user-data/outputs/sentainel-site.html and must be re-pushed via a different mechanism. */
+:root{--ink:#14110F;--ink-soft:#2A2622;--ink-fade:#6B635B;--paper:#F4F1EB;--paper-warm:#EFE9DF;--paper-cool:#FAF8F3;--rule:#1F1A16;--accent:#B0301C;--accent-soft:#D54B2E;--gold:#8B7339;--display:'Fraunces',serif;--serif:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1280px;margin:0 auto;padding:0 48px;position:relative;z-index:2}
+@media(max-width:768px){.wrap{padding:0 24px}}
+.masthead{border-bottom:1px solid var(--rule);background:var(--paper);position:sticky;top:0;z-index:100}
+.masthead-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.wordmark{font-family:var(--display);font-weight:700;font-size:28px;letter-spacing:-0.02em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
+.wordmark::before{content:'';width:14px;height:14px;background:var(--accent);border-radius:2px;transform:rotate(45deg)}
+.nav{display:flex;gap:32px;align-items:center}
+.nav a{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);text-decoration:none;transition:color 0.2s}
+.nav a:hover{color:var(--accent)}
+.nav-cta{background:var(--ink);color:var(--paper)!important;padding:10px 18px;border-radius:2px}
+.nav-cta:hover{background:var(--accent)!important}
+@media(max-width:768px){.nav a:not(.nav-cta){display:none}}
+.dateline{border-bottom:1px solid var(--rule);padding:10px 0;background:var(--paper-warm)}
+.dateline-inner{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-fade)}
+.dateline-inner span:nth-child(2){color:var(--accent);font-weight:600}
+.hero{padding:80px 0 100px;border-bottom:1px solid var(--rule)}
+.hero-tag{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);margin-bottom:32px;display:flex;align-items:center;gap:12px}
+.hero-tag::before{content:'';width:32px;height:1px;background:var(--accent)}
+h1.hero-title{font-family:var(--display);font-weight:500;font-size:clamp(48px,7vw,96px);line-height:0.95;letter-spacing:-0.03em;color:var(--ink);max-width:14ch;margin-bottom:40px}
+h1.hero-title em{font-style:italic;font-weight:400;color:var(--accent)}
+.hero-deck{font-family:var(--serif);font-size:clamp(19px,1.5vw,22px);line-height:1.5;color:var(--ink-soft);max-width:58ch;margin-bottom:48px}
+.hero-deck strong{font-weight:600;color:var(--ink);background:linear-gradient(transparent 62%,rgba(176,48,28,0.18) 62%,rgba(176,48,28,0.18) 92%,transparent 92%);padding:0 2px}
+.hero-cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--ink);color:var(--paper);padding:16px 32px;border:none;font-family:var(--mono);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;cursor:pointer;transition:all 0.2s;border-radius:2px;display:inline-flex;align-items:center;gap:12px}
+.btn-primary:hover{background:var(--accent);transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.btn-secondary{background:transparent;color:var(--ink);padding:16px 32px;border:1px solid var(--rule);font-family:var(--mono);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;cursor:pointer;transition:all 0.2s;border-radius:2px}
+.btn-secondary:hover{background:var(--ink);color:var(--paper)}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.stat{background:var(--paper);padding:32px 24px;text-align:center}
+.stat-num{font-family:var(--display);font-size:48px;font-weight:600;color:var(--accent);line-height:1}
+.stat-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-fade);margin-top:8px}
+@media(max-width:768px){.stats-bar{grid-template-columns:repeat(2,1fr)}}
+.section{padding:100px 0;border-bottom:1px solid var(--rule)}
+.section-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.section-label::before{content:'';width:32px;height:1px;background:var(--accent)}
+.section-title{font-family:var(--display);font-weight:500;font-size:clamp(36px,4vw,56px);line-height:1.1;letter-spacing:-0.02em;color:var(--ink);max-width:24ch;margin-bottom:24px}
+.section-deck{font-family:var(--serif);font-size:19px;line-height:1.55;color:var(--ink-soft);max-width:62ch;margin-bottom:56px}
+.threat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+@media(max-width:900px){.threat-grid{grid-template-columns:1fr}}
+.threat-card{border:1px solid var(--rule);background:var(--paper-cool);padding:32px;position:relative}
+.threat-card .juris{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:12px}
+.threat-card h3{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);margin-bottom:12px}
+.threat-card .fine{font-family:var(--mono);font-size:13px;color:var(--ink-soft);margin-bottom:8px}
+.threat-card .date{font-family:var(--mono);font-size:12px;color:var(--ink-fade)}
+.product-stack{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+@media(max-width:900px){.product-stack{grid-template-columns:1fr}}
+.layer{background:var(--paper-cool);border:1px solid var(--rule);padding:36px 28px;position:relative}
+.layer-num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.1em;margin-bottom:16px}
+.layer h3{font-family:var(--display);font-size:24px;color:var(--ink);margin-bottom:16px;font-weight:600}
+.layer p{color:var(--ink-soft);font-size:16px;line-height:1.55;margin-bottom:16px}
+.layer ul{list-style:none;padding:0}
+.layer ul li{font-family:var(--mono);font-size:12px;color:var(--ink-soft);padding:6px 0;border-bottom:1px dashed rgba(31,26,22,0.15)}
+.layer ul li:last-child{border-bottom:none}
+.layer ul li::before{content:'→ ';color:var(--accent)}
+.moat{background:var(--ink);color:var(--paper);padding:100px 0}
+.moat .section-label{color:var(--accent-soft)}
+.moat .section-title{color:var(--paper);max-width:30ch}
+.moat .section-deck{color:rgba(244,241,235,0.85)}
+.moat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px;margin-top:48px}
+@media(max-width:900px){.moat-grid{grid-template-columns:1fr}}
+.moat-point h4{font-family:var(--display);font-size:24px;color:var(--paper);margin-bottom:12px;font-weight:600}
+.moat-point p{color:rgba(244,241,235,0.75);font-size:16px;line-height:1.55}
+.cta-matrix{background:var(--accent);color:var(--paper);padding:32px 36px;margin-top:48px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.cta-matrix h4{font-family:var(--display);font-size:22px;font-weight:600;margin-bottom:8px}
+.cta-matrix p{color:rgba(244,241,235,0.9);font-size:15px}
+.cta-matrix a{background:var(--paper);color:var(--ink);padding:14px 28px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;border-radius:2px;font-weight:500}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr}}
+.price-card{border:1px solid var(--rule);background:var(--paper-cool);padding:36px 28px;position:relative}
+.price-card.featured{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.price-card.featured .price-name,.price-card.featured .price-tagline,.price-card.featured .price-feature{color:var(--paper)}
+.price-card.featured .price-suffix{color:rgba(244,241,235,0.6)}
+.price-name{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.price-tagline{font-family:var(--mono);font-size:11px;color:var(--ink-fade);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:32px}
+.price-amount-row{display:flex;align-items:baseline;gap:6px;margin-bottom:32px}
+.price-amount{font-family:var(--display);font-size:56px;font-weight:600;color:var(--accent);line-height:1}
+.price-card.featured .price-amount{color:var(--paper)}
+.price-suffix{font-family:var(--mono);font-size:13px;color:var(--ink-fade)}
+.price-features{list-style:none;padding:0;margin-bottom:32px}
+.price-feature{font-family:var(--serif);font-size:15px;color:var(--ink-soft);padding:10px 0;border-bottom:1px dashed rgba(31,26,22,0.1)}
+.price-feature::before{content:'✓ ';color:var(--accent);font-weight:600}
+.price-card.featured .price-feature::before{color:var(--accent-soft)}
+.btn-card{display:block;text-align:center;background:var(--ink);color:var(--paper);padding:14px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;border-radius:2px}
+.price-card.featured .btn-card{background:var(--accent);color:var(--paper)}
+.btn-card:hover{background:var(--accent)}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-top:48px;border:1px solid var(--rule)}
+@media(max-width:900px){.timeline{grid-template-columns:repeat(2,1fr)}}
+.timeline-month{background:var(--paper);padding:28px 24px}
+.month-tag{font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px}
+.timeline-month h3{font-family:var(--display);font-size:18px;color:var(--ink);font-weight:600;margin-bottom:8px}
+.timeline-month p{font-size:14px;color:var(--ink-soft);line-height:1.5}
+.signup{padding:80px 0;background:var(--paper-cool);border-bottom:1px solid var(--rule)}
+.signup-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+@media(max-width:900px){.signup-grid{grid-template-columns:1fr;gap:32px}}
+.signup-form{display:flex;gap:0;border:1px solid var(--rule)}
+.signup-form input{flex:1;padding:18px 20px;border:none;font-family:var(--serif);font-size:16px;background:var(--paper);color:var(--ink)}
+.signup-form input:focus{outline:none;background:var(--paper-warm)}
+.signup-form button{background:var(--ink);color:var(--paper);border:none;padding:18px 28px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer}
+.signup-form button:hover{background:var(--accent)}
+.fine{font-family:var(--mono);font-size:11px;color:var(--ink-fade);margin-top:14px}
+.footer{background:var(--ink);color:var(--paper);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+.footer-brand .wordmark{color:var(--paper)}
+.footer-tagline{color:rgba(244,241,235,0.6);font-size:14px;line-height:1.55;margin-top:16px;max-width:32ch}
+.footer h4{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-soft);margin-bottom:16px}
+.footer ul{list-style:none}
+.footer ul li{margin-bottom:8px}
+.footer ul li a{color:rgba(244,241,235,0.7);text-decoration:none;font-size:14px}
+.footer ul li a:hover{color:var(--paper)}
+.colophon{border-top:1px solid rgba(244,241,235,0.15);padding-top:24px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:rgba(244,241,235,0.5);flex-wrap:wrap;gap:16px}
 </style>
 </head>
 <body>
-<header class="masthead"><div class="wrap"><div class="masthead-inner"><a href="#" class="wordmark">Sentainel</a><nav class="nav"><a href="#product">Product</a><a href="#pricing">Pricing</a><a href="#signup" class="nav-cta">Get Access</a></nav></div></div></header>
-<main><section class="hero"><div class="wrap"><h1 class="hero-title">Stub deploy — content restoration in progress.</h1><p>This page is a placeholder while the full 54KB marketing site is being correctly pushed. Do not promote this URL.</p></div></section></main>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead-inner">
+      <a href="/" class="wordmark">Sentainel</a>
+      <nav class="nav">
+        <a href="#product">Product</a>
+        <a href="#threat">Regulations</a>
+        <a href="/matrix">Matrix</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#signup" class="nav-cta">Get Access</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="dateline">
+  <div class="wrap">
+    <div class="dateline-inner">
+      <span>Vol. 01 · Issue 01</span>
+      <span>● Building in public</span>
+      <span>Montréal · QC · CA</span>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-tag">AI Compliance Infrastructure</div>
+    <h1 class="hero-title">Audit-ready <em>by default.</em></h1>
+    <p class="hero-deck">Sentainel discovers every AI system in your company, classifies it against <strong>59 atomic regulatory obligations</strong> across Texas, Quebec, Ontario, and Illinois, generates the documentation regulators ask for, and monitors continuously. Built for mid-market companies that can't afford a $250K Credo AI seat.</p>
+    <div class="hero-cta-row">
+      <a href="#signup" class="btn-primary">Request Pilot →</a>
+      <a href="/matrix" class="btn-secondary">View Compliance Matrix</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">59</div><div class="stat-label">Atomic Obligations</div></div>
+  <div class="stat"><div class="stat-num">9</div><div class="stat-label">Regulations Mapped</div></div>
+  <div class="stat"><div class="stat-num">4</div><div class="stat-label">Jurisdictions</div></div>
+  <div class="stat"><div class="stat-num">$25M</div><div class="stat-label">Max Exposure / Violation</div></div>
+</div>
+
+<section class="section" id="threat">
+  <div class="wrap">
+    <div class="section-label">The Threat</div>
+    <h2 class="section-title">The compliance clock has already started.</h2>
+    <p class="section-deck">If your company uses AI for hiring, customer scoring, employee monitoring, or patient care — you're already subject to laws that took effect in 2026. Most mid-market companies don't know.</p>
+    <div class="threat-grid">
+      <div class="threat-card">
+        <div class="juris">Texas · USA</div>
+        <h3>TRAIGA</h3>
+        <div class="fine">$10K–$200K per violation</div>
+        <div class="date">In force: January 1, 2026</div>
+      </div>
+      <div class="threat-card">
+        <div class="juris">Québec · Canada</div>
+        <h3>Law 25</h3>
+        <div class="fine">CAD $25M / 4% worldwide turnover</div>
+        <div class="date">All phases in force since Sept 2024</div>
+      </div>
+      <div class="threat-card">
+        <div class="juris">Ontario · Canada</div>
+        <h3>Bill 149 · PHIPA AI · EDSTA</h3>
+        <div class="fine">$1.5M corporate · $500K healthcare</div>
+        <div class="date">In force: January 1, 2026</div>
+      </div>
+      <div class="threat-card">
+        <div class="juris">Illinois · USA</div>
+        <h3>HRA AI · AIVIA</h3>
+        <div class="fine">Civil rights remedies + $100K aggravated</div>
+        <div class="date">In force: January 1, 2026</div>
+      </div>
+      <div class="threat-card">
+        <div class="juris">European Union</div>
+        <h3>EU AI Act (high-risk)</h3>
+        <div class="fine">€35M / 7% worldwide turnover</div>
+        <div class="date">Enforcement: August 2, 2026</div>
+      </div>
+      <div class="threat-card">
+        <div class="juris">Colorado · USA</div>
+        <h3>SB 26-189 (deferred)</h3>
+        <div class="fine">TBD pending rulemaking</div>
+        <div class="date">Effective: January 1, 2027</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="product">
+  <div class="wrap">
+    <div class="section-label">The Product</div>
+    <h2 class="section-title">Three layers. One operating system.</h2>
+    <p class="section-deck">Sentainel is built like an iceberg — you see the dashboard, your auditors see the proof, regulators see the evidence trail. Built on Claude Opus, Postgres, and a hash-chained audit log.</p>
+    <div class="product-stack">
+      <div class="layer">
+        <div class="layer-num">Layer 01</div>
+        <h3>Discovery</h3>
+        <p>Map every AI system in your company — including the ones IT doesn't know about. Shadow AI is 80% of mid-market exposure.</p>
+        <ul>
+          <li>OAuth scanners (Google · Microsoft · Okta)</li>
+          <li>Network DNS scanner</li>
+          <li>Browser extension audit</li>
+          <li>SaaS inventory reconciliation</li>
+        </ul>
+      </div>
+      <div class="layer">
+        <div class="layer-num">Layer 02</div>
+        <h3>Classification & Documentation</h3>
+        <p>Claude-powered classifier maps each AI system to atomic obligations and generates the documentation regulators ask for.</p>
+        <ul>
+          <li>Impact assessments (auto-generated)</li>
+          <li>Consumer notices</li>
+          <li>NIST AI RMF safe-harbor mapping</li>
+          <li>Vendor questionnaire automation</li>
+        </ul>
+      </div>
+      <div class="layer">
+        <div class="layer-num">Layer 03</div>
+        <h3>Runtime Monitoring</h3>
+        <p>A drop-in inline proxy with hash-chained audit log, policy engine, and discrimination monitor. Compatible with OpenAI, Anthropic, Bedrock.</p>
+        <ul>
+          <li>Go-based inline LLM proxy</li>
+          <li>Policy engine with allow/deny rules</li>
+          <li>Algorithmic discrimination monitor</li>
+          <li>90-day notification clock automation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="moat" id="moat">
+  <div class="wrap">
+    <div class="section-label">The Moat</div>
+    <h2 class="section-title">The NIST AI RMF safe-harbor matrix.</h2>
+    <p class="section-deck">Every Sentainel obligation maps to NIST AI RMF controls. When your auditor asks "how do we know you complied?" — you hand them the matrix. 341 obligation×control mappings across 9 regulations.</p>
+    <div class="moat-grid">
+      <div class="moat-point">
+        <h4>Atomic granularity, not framework hand-waving.</h4>
+        <p>Competitors stop at "GDPR Article 22." Sentainel maps every operative clause — quoted, dated, confidence-scored. That's the difference between a slide and a defense.</p>
+      </div>
+      <div class="moat-point">
+        <h4>Multi-jurisdiction by design.</h4>
+        <p>One product, four jurisdictions, nine regulations, 59 obligations. TXAIMS does Texas only. CO-AIMS does Colorado only. Augure does Quebec only. Sentainel does all of them.</p>
+      </div>
+      <div class="moat-point">
+        <h4>NIST safe-harbor evidence.</h4>
+        <p>Both Texas TRAIGA and Ontario's IPC AI Scribe Guidance recognize NIST AI RMF alignment as a defense. The Sentainel matrix is your pre-built evidence package.</p>
+      </div>
+      <div class="moat-point">
+        <h4>Built in the open, in public.</h4>
+        <p>Our regulatory database is a public repo. Every obligation peer-reviewed, every confidence score logged, every change in a public changelog. Auditors trust transparency.</p>
+      </div>
+    </div>
+    <div class="cta-matrix">
+      <div>
+        <h4>Explore the Compliance Matrix →</h4>
+        <p>Interactive viz of 59 obligations across 9 regulations, mapped to 58 NIST AI RMF controls.</p>
+      </div>
+      <a href="/matrix">Open Matrix</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Mid-market budgets, enterprise capability.</h2>
+    <p class="section-deck">Sentainel costs a fraction of what Credo AI or Holistic AI charge enterprise. No annual commitments at the entry tier. Cancel any time.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-name">Discovery</div>
+        <div class="price-tagline">Map your exposure. Free forever.</div>
+        <div class="price-amount-row"><span class="price-amount">$0</span><span class="price-suffix">/forever</span></div>
+        <ul class="price-features">
+          <li class="price-feature">SaaS AI inventory scan</li>
+          <li class="price-feature">Single-jurisdiction classification</li>
+          <li class="price-feature">PDF exposure report</li>
+          <li class="price-feature">Weekly Regulatory Briefing</li>
+          <li class="price-feature">Up to 250 employees</li>
+        </ul>
+        <a href="#signup" class="btn-card">Start Free Scan</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-name">Operations</div>
+        <div class="price-tagline">For 250–1,000 employees.</div>
+        <div class="price-amount-row"><span class="price-amount">$2,499</span><span class="price-suffix">/month</span></div>
+        <ul class="price-features">
+          <li class="price-feature">Everything in Discovery</li>
+          <li class="price-feature">Multi-jurisdiction classification</li>
+          <li class="price-feature">Auto-generated compliance artifacts</li>
+          <li class="price-feature">Vendor questionnaire automation</li>
+          <li class="price-feature">NIST AI RMF safe-harbor mapping</li>
+          <li class="price-feature">Inline LLM proxy (10M tokens/mo)</li>
+          <li class="price-feature">SSO &amp; SCIM included</li>
+        </ul>
+        <a href="#signup" class="btn-card">Request Pilot</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Continuous</div>
+        <div class="price-tagline">For 1,000–2,000 employees.</div>
+        <div class="price-amount-row"><span class="price-amount">$4,999</span><span class="price-suffix">/month</span></div>
+        <ul class="price-features">
+          <li class="price-feature">Everything in Operations</li>
+          <li class="price-feature">Algorithmic discrimination monitor</li>
+          <li class="price-feature">Incident response workflow</li>
+          <li class="price-feature">90-day notification automation</li>
+          <li class="price-feature">Custom regulatory mapping</li>
+          <li class="price-feature">Inline LLM proxy (50M tokens/mo)</li>
+          <li class="price-feature">Dedicated success contact</li>
+        </ul>
+        <a href="#signup" class="btn-card">Request Pilot</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-label">The Road Ahead</div>
+    <h2 class="section-title">An 8-month build, in public.</h2>
+    <p class="section-deck">Sentainel is being built in the open, inside out. Each month publishes its work as a deliverable in the Weekly Briefing — and as code in our public regulatory database.</p>
+    <div class="timeline">
+      <div class="timeline-month"><div class="month-tag">May 2026</div><h3>Regulatory Content Engine</h3><p>Atomic obligation extraction for all jurisdictions. The database of legal record.</p></div>
+      <div class="timeline-month"><div class="month-tag">Jun 2026</div><h3>Classification Engine</h3><p>Claude-powered classifier with eval harness and confidence gating.</p></div>
+      <div class="timeline-month"><div class="month-tag">Jul 2026</div><h3>Discovery Layer</h3><p>OAuth scanners. Network DNS scanner. Browser extension.</p></div>
+      <div class="timeline-month"><div class="month-tag">Aug 2026</div><h3>Documentation Layer</h3><p>Auto-generated impact assessments, consumer notices, vendor questionnaires.</p></div>
+      <div class="timeline-month"><div class="month-tag">Sep 2026</div><h3>Runtime Proxy</h3><p>Go service, hash-chained audit log, policy engine.</p></div>
+      <div class="timeline-month"><div class="month-tag">Oct 2026</div><h3>Monitoring &amp; IR</h3><p>Discrimination monitor, incident workflow, regulator-notification automation.</p></div>
+      <div class="timeline-month"><div class="month-tag">Nov 2026</div><h3>Platform &amp; Hardening</h3><p>SSO/SCIM, billing, admin, pen-test, SOC 2 readiness.</p></div>
+      <div class="timeline-month"><div class="month-tag">Dec 2026</div><h3>Public Launch</h3><p>GA. First 25 pilot customers onboarded.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="signup" id="signup">
+  <div class="wrap">
+    <div class="signup-grid">
+      <div>
+        <div class="section-label">Early Access</div>
+        <h2 class="section-title" style="font-size:40px;">The first 25 design partners get founding pricing locked for 24 months.</h2>
+      </div>
+      <div>
+        <form class="signup-form" onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('button').innerText='You are on the list ✓';">
+          <input type="email" placeholder="you@company.com" required>
+          <button type="submit">Get Access</button>
+        </form>
+        <p class="fine">We will also send you the Weekly Regulatory Briefing — concise, expert-curated, and a thousand times less boring than reading the Federal Register yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="signup" id="briefing" style="background:var(--paper-warm)">
+  <div class="wrap">
+    <div class="signup-grid">
+      <div>
+        <div class="section-label">Weekly Briefing</div>
+        <h2 class="section-title" style="font-size:40px;">The compliance newsletter that doesn't waste your morning.</h2>
+        <p style="font-family:var(--serif);font-size:17px;color:var(--ink-soft);margin-top:24px;max-width:50ch">Every Tuesday: what changed in US and Canadian AI regulation, who got fined, what to do about it. Written for compliance officers and CTOs. No vendor pitches, no fluff.</p>
+      </div>
+      <div>
+        <form class="signup-form" onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('button').innerText='Subscribed ✓';">
+          <input type="email" placeholder="you@company.com" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="fine">Issue 01 ships next Tuesday. Unsubscribe anytime — we make it one click.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="wordmark">Sentainel</a>
+        <p class="footer-tagline">AI compliance infrastructure for mid-market companies. Built in Montréal — for North America.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#product">How it works</a></li>
+          <li><a href="#moat">Safe harbor</a></li>
+          <li><a href="/matrix">Matrix</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Regulations</h4>
+        <ul>
+          <li><a href="#threat">Texas TRAIGA</a></li>
+          <li><a href="#threat">Quebec Law 25</a></li>
+          <li><a href="#threat">Ontario Bill 149</a></li>
+          <li><a href="#threat">Illinois HRA</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#briefing">Weekly Briefing</a></li>
+          <li><a href="#">Manifesto</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="mailto:web@sentainel.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© 2026 Sentainel Compliance, Inc.</span>
+      <span>Set in Fraunces, Newsreader &amp; JetBrains Mono</span>
+      <span>Filed from Montréal, QC</span>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
