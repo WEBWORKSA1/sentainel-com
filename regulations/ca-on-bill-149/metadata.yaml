@@ -1,0 +1,73 @@
+---
+slug: ca-on-bill-149
+short_name: Ontario Bill 149 (WfW Four Act)
+long_name: |
+  Working for Workers Four Act, 2024 (Bill 149) amendments to the
+  Employment Standards Act, 2000, with companion regulations
+citation: |
+  S.O. 2024, c. 3, Schedule 2 (amending ESA, 2000);
+  O. Reg. 476/24 (Rules and Exemptions re Job Postings)
+jurisdiction:
+  code: CA-ON
+  level: state_province
+  parent: CA-Federal
+status: in_force
+signed_date: 2024-03-21
+effective_date: 2026-01-01
+enforcement_date: 2026-01-01
+sunset_date: null
+source_url: https://www.ola.org/en/legislative-business/bills/parliament-43/session-1/bill-149
+companion_legislation:
+  - bill-190-working-for-workers-five-act-2024
+  - bill-30-working-for-workers-seven-act-2025
+  - o-reg-476-24
+summary: |
+  Ontario's Bill 149 (Working for Workers Four Act, 2024) introduces
+  Part III.1 to the Employment Standards Act, 2000, creating new
+  obligations for publicly advertised job postings. AI-specific
+  requirements: mandatory disclosure when AI is used to screen,
+  assess, or select applicants. Disclosure-based regime; no
+  affirmative defense mechanism. Stacks with Ontario Human Rights
+  Code for discrimination exposure.
+scope_description: |
+  Applies to employers with 25 or more employees in Ontario on the
+  day a publicly advertised job posting is made. Geography-based:
+  applies to any employer hiring for positions in Ontario, regardless
+  of where the employer is headquartered.
+extraterritorial_reach: true
+extraterritorial_notes: |
+  Applies to non-Ontario employers (including US companies) hiring
+  for Ontario-based positions.
+safe_harbor_via: []
+notes: |
+  Ontario has NO statutory affirmative defense for AI compliance,
+  unlike Texas TRAIGA's NIST safe harbor. The Bill is disclosure-
+  based, not risk-based. However, demonstrated alignment with NIST
+  AI RMF / ISO 42001 still helps defend against parallel Human
+  Rights Code complaints (which carry the real discrimination teeth
+  in Ontario).
+penalty_schedules:
+  - tier_name: individual_violation
+    basis: per_violation
+    max_amount: 100000
+    currency: CAD
+    citation: ESA s. 132 (max fine — individuals)
+  - tier_name: corporation_first_offense
+    basis: per_violation
+    max_amount: 500000
+    currency: CAD
+    citation: ESA s. 132
+  - tier_name: corporation_subsequent_offense
+    basis: per_violation
+    max_amount: 1500000
+    currency: CAD
+    citation: ESA s. 132
+  - tier_name: notice_of_contravention
+    basis: tiered
+    max_amount: 15000
+    currency: CAD
+    citation: O. Reg. 289/01
+last_reviewed: 2026-05-13
+reviewer: web@sentainel.com
+extraction_method: claude-opus-4-7-2026-05-12 + manual review
+---
