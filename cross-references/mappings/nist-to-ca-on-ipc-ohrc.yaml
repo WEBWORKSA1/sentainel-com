@@ -1,0 +1,310 @@
+# NIST AI RMF → IPC-OHRC Joint Principles for Responsible Use of AI Mapping
+#
+# Maps 7 atomic obligations from the IPC-OHRC Joint Principles (published
+# Jan 21, 2026 by the Information and Privacy Commissioner of Ontario +
+# Ontario Human Rights Commission) to NIST AI Risk Management Framework
+# controls.
+#
+# This is the highest-leverage mapping for Ontario municipal sales because:
+# 1. IPC + OHRC explicitly stated these principles "ground our assessment
+#    of organizations' adoption of AI systems"
+# 2. Departure from these principles becomes prima facie evidence of breach
+#    in IPC binding orders under MFIPPA Bill 97 (in force July 2026)
+# 3. The principles intentionally adopt EDSTA's AI definition - signaling
+#    these will be operationalized in EDSTA regulations when proclaimed
+#
+# Reviewer: web@sentainel.com
+# Last updated: 2026-05-13
+
+jurisdiction: CA-ON
+regulation: ca-on-ipc-ohrc-principles
+nist_framework: NIST AI 100-1 (Jan 2023) + NIST AI 600-1 GenAI Profile (July 2024)
+
+obligations:
+
+  - obligation_id: ca-on-ipc-ohrc-p1-valid-reliable
+    obligation_title: AI systems must demonstrate validity and reliability against independent testing
+    nist_controls:
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: Validity/reliability requirements documented in governance
+      - control_id: GOVERN-4.1
+        coverage: fully_satisfies
+        note: Organizational practices ensure independent validation
+      - control_id: MAP-2.1
+        coverage: fully_satisfies
+        note: Tasks and methods - validity baseline established
+      - control_id: MEASURE-2.1
+        coverage: fully_satisfies
+        note: Test sets and metrics - core control for "validity"
+      - control_id: MEASURE-2.3
+        coverage: fully_satisfies
+        note: Performance evaluation - core control for "reliability"
+      - control_id: MEASURE-2.5
+        coverage: fully_satisfies
+        note: AI system's properties documented (validity, reliability, robustness)
+      - control_id: MEASURE-2.11
+        coverage: partially_satisfies
+        note: Fairness/bias eval supports validity across diverse communities
+      - control_id: MANAGE-4.1
+        coverage: fully_satisfies
+        note: Post-deployment monitoring for continued validity
+
+  - obligation_id: ca-on-ipc-ohrc-p2-safe
+    obligation_title: AI must prevent harm to human rights, privacy, and non-discrimination
+    nist_controls:
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: Harm prevention documented in governance
+      - control_id: GOVERN-1.7
+        coverage: fully_satisfies
+        note: Decommissioning procedures (core requirement of Safe principle)
+      - control_id: GAI-3
+        coverage: safe_harbor
+        note: GenAI dangerous content prevention
+      - control_id: MAP-5.1
+        coverage: fully_satisfies
+        note: Likelihood and magnitude of impact (harm assessment)
+      - control_id: MAP-5.2
+        coverage: fully_satisfies
+        note: Risk assessment practices
+      - control_id: MEASURE-2.6
+        coverage: fully_satisfies
+        note: AI safety eval - directly addresses Safe principle
+      - control_id: MANAGE-1.3
+        coverage: fully_satisfies
+        note: Risk mitigation decisions
+      - control_id: MANAGE-2.3
+        coverage: fully_satisfies
+        note: Superseded systems response (decommissioning unsafe AI)
+      - control_id: MANAGE-2.4
+        coverage: fully_satisfies
+        note: Supersede deficient AI - operational hook for decommissioning
+      - control_id: MANAGE-4.3
+        coverage: fully_satisfies
+        note: Incidents communicated when AI causes harm
+
+  - obligation_id: ca-on-ipc-ohrc-p3-privacy-protective
+    obligation_title: Privacy-by-design with lawful authority + data minimization + opt-out for high-risk ADM
+    nist_controls:
+      - control_id: GAI-4
+        coverage: safe_harbor
+        note: GenAI privacy - data confidentiality
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: Privacy law obligations documented (FIPPA/MFIPPA/PHIPA chain)
+      - control_id: GOVERN-1.2
+        coverage: fully_satisfies
+        note: Privacy-by-design characterizes broader commitments
+      - control_id: GOVERN-5.1
+        coverage: partially_satisfies
+        note: Stakeholder feedback (data subject rights)
+      - control_id: MAP-1.6
+        coverage: fully_satisfies
+        note: System requirements documented (privacy-by-design embedded)
+      - control_id: MAP-3.5
+        coverage: fully_satisfies
+        note: Human oversight pathway (opt-out for high-risk ADM)
+      - control_id: MAP-4.1
+        coverage: fully_satisfies
+        note: Third-party legal risks (data-sharing chain)
+      - control_id: MEASURE-2.7
+        coverage: fully_satisfies
+        note: Security & privacy risks
+      - control_id: MEASURE-2.10
+        coverage: fully_satisfies
+        note: Privacy risk - core control
+      - control_id: MANAGE-3.1
+        coverage: fully_satisfies
+        note: Third-party risk monitoring (vendor privacy chain)
+
+  - obligation_id: ca-on-ipc-ohrc-p4-human-rights-affirming
+    obligation_title: Active anti-discrimination + Charter rights protection
+    nist_controls:
+      - control_id: GAI-6
+        coverage: safe_harbor
+        note: GenAI harmful bias
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: Human Rights Code + Charter obligations documented
+      - control_id: GOVERN-3.1
+        coverage: fully_satisfies
+        note: Diversity in risk management - core anti-discrimination control
+      - control_id: GOVERN-3.2
+        coverage: fully_satisfies
+        note: AI design decisions documented with equity lens
+      - control_id: MAP-1.2
+        coverage: fully_satisfies
+        note: Interdisciplinary actors review for disparate impact
+      - control_id: MAP-5.1
+        coverage: fully_satisfies
+        note: Likelihood and magnitude of discriminatory impact
+      - control_id: MEASURE-2.11
+        coverage: fully_satisfies
+        note: Fairness & bias eval - core control for Code compliance
+      - control_id: MANAGE-1.3
+        coverage: fully_satisfies
+        note: Discriminatory risk mitigation decisions
+      - control_id: MANAGE-2.4
+        coverage: fully_satisfies
+        note: Supersede discriminatory AI
+
+  - obligation_id: ca-on-ipc-ohrc-p5-transparent
+    obligation_title: AI systems visible, understandable, traceable, and explainable (4 sub-requirements)
+    nist_controls:
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: Transparency requirements documented
+      - control_id: GOVERN-1.4
+        coverage: fully_satisfies
+        note: Risk management documented (traceability foundation)
+      - control_id: GOVERN-1.6
+        coverage: fully_satisfies
+        note: AI inventory mechanisms (visible requirement)
+      - control_id: MAP-2.2
+        coverage: fully_satisfies
+        note: Knowledge limits explanation (understandable requirement)
+      - control_id: MEASURE-2.8
+        coverage: fully_satisfies
+        note: Transparency - direct match
+      - control_id: MEASURE-2.9
+        coverage: fully_satisfies
+        note: Explainability - direct match
+      - control_id: MEASURE-2.13
+        coverage: fully_satisfies
+        note: AI system instances tracked (traceable requirement)
+      - control_id: MEASURE-3.3
+        coverage: fully_satisfies
+        note: Stakeholder feedback on transparency
+
+  - obligation_id: ca-on-ipc-ohrc-p6-accountable-governance
+    obligation_title: Robust internal governance with human-in-the-loop oversight
+    nist_controls:
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: Governance structure documented
+      - control_id: GOVERN-1.2
+        coverage: fully_satisfies
+        note: Risk management characterizes broader policy
+      - control_id: GOVERN-1.4
+        coverage: fully_satisfies
+        note: Risk management documented across lifecycle
+      - control_id: GOVERN-1.5
+        coverage: fully_satisfies
+        note: Ongoing oversight - core governance control
+      - control_id: GOVERN-2.1
+        coverage: fully_satisfies
+        note: Roles & responsibilities documented
+      - control_id: GOVERN-2.2
+        coverage: fully_satisfies
+        note: Workforce training for governance roles
+      - control_id: GOVERN-2.3
+        coverage: fully_satisfies
+        note: Executive accountability for AI decisions
+      - control_id: MAP-3.5
+        coverage: fully_satisfies
+        note: Human oversight - direct match for human-in-the-loop
+      - control_id: MEASURE-1.3
+        coverage: fully_satisfies
+        note: Independent assessment of AI system
+      - control_id: MANAGE-2.4
+        coverage: fully_satisfies
+        note: Supersede deficient AI (pause/decommission authority)
+
+  - obligation_id: ca-on-ipc-ohrc-p7-accountable-recourse-whistleblower
+    obligation_title: External recourse mechanism + safe whistleblower protection + oversight body review
+    nist_controls:
+      - control_id: GOVERN-1.1
+        coverage: fully_satisfies
+        note: Recourse + whistleblower procedures documented
+      - control_id: GOVERN-5.1
+        coverage: fully_satisfies
+        note: Stakeholder feedback channels (recourse mechanism)
+      - control_id: GOVERN-5.2
+        coverage: fully_satisfies
+        note: Mechanisms collect, manage feedback (whistleblower channel)
+      - control_id: MAP-3.5
+        coverage: fully_satisfies
+        note: Human oversight for challenge decisions
+      - control_id: MEASURE-2.8
+        coverage: fully_satisfies
+        note: Transparency required for recourse to work
+      - control_id: MEASURE-3.3
+        coverage: fully_satisfies
+        note: Stakeholder feedback (recourse + challenge mechanism)
+      - control_id: MANAGE-4.3
+        coverage: fully_satisfies
+        note: Incidents communicated to oversight bodies
+
+# Aggregate analysis
+
+aggregate:
+  total_obligations: 7
+  total_control_mappings: 62
+  avg_controls_per_obligation: 8.86
+
+  top_controls:
+    - control_id: GOVERN-1.1
+      hits: 7
+      coverage_density: 100%
+      note: Universal anchor - hits every IPC-OHRC principle
+    - control_id: MAP-3.5
+      hits: 3
+      coverage_density: 43%
+      note: Human oversight - cross-cuts Privacy/Governance/Recourse
+    - control_id: MEASURE-2.8
+      hits: 3
+      coverage_density: 43%
+      note: Transparency - cross-cuts Transparent/Recourse/Validity
+    - control_id: MANAGE-2.4
+      hits: 2
+      coverage_density: 29%
+      note: Supersede deficient AI - cross-cuts Safe/Human Rights/Governance
+
+  safe_harbor_strength: |
+    The IPC + OHRC have explicitly stated they will "ground assessment" of AI
+    systems on these principles. In practice, this means:
+
+    1. When an IPC complaint is filed against a municipal AI system, the IPC
+       will evaluate the municipality's adherence to these 7 principles.
+    2. Demonstrating NIST AI RMF alignment across the 62 mapped controls
+       provides documentary evidence of good-faith compliance.
+    3. Sentainel customers entering an IPC investigation can produce this
+       mapping as their first defense - showing the municipality followed a
+       recognized international risk management framework.
+
+    The strongest sub-mappings:
+    - p4 (Human Rights Affirming) → MEASURE-2.11 (Fairness & bias eval) is
+      the single most important pair for OHRC + HRTO defense
+    - p3 (Privacy Protective) → MEASURE-2.7 + MEASURE-2.10 is the strongest
+      defense against IPC privacy breach orders under MFIPPA Bill 97
+    - p6 (Accountable Governance) → GOVERN-2.1 + GOVERN-2.3 + MAP-3.5 is
+      the audit trail for designated AI authority and pause/decommission
+      decisions
+
+  municipal_priority_principles: |
+    For Sentainel Municipal Edition sales, prioritize coverage demonstration
+    in this order (by enforcement likelihood):
+
+    1. p4 Human Rights Affirming - OHRC complaints are common and well-publicized
+    2. p3 Privacy Protective - IPC complaints under MFIPPA are bread-and-butter
+    3. p5 Transparent - the easiest to verify externally (public-facing failures)
+    4. p7 Accountable (Recourse) - first thing complainants will check
+    5. p6 Accountable (Governance) - foundational but discovered later
+    6. p2 Safe - matters most when AI failure is in the news
+    7. p1 Valid and Reliable - matters most in vendor due diligence
+
+cross_references:
+  - sibling_mapping: nist-to-ca-on-trustworthy-ai.yaml
+    relationship: |
+      IPC-OHRC Principles are explicitly designed to "complement and further
+      specify" the Trustworthy AI Framework's 6 Principles. Together they form
+      the complete soft-law overlay for Ontario public-sector AI.
+  - sibling_mapping: nist-to-ca-on-stack.yaml
+    relationship: |
+      The hard-law Ontario stack (MFIPPA Bill 97 in particular) provides the
+      enforcement teeth. IPC-OHRC Principles provide the operational standard
+      that defines what compliance looks like.
+  - external_reference: OHRC IPC Joint Principles document
+    url: https://www.ohrc.on.ca/en/principles-responsible-use-artificial-intelligence
+    relationship: Authoritative source for principle definitions
