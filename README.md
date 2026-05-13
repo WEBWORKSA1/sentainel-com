@@ -8,7 +8,7 @@ This repository is the regulatory content engine for Sentainel.com. It contains 
 
 **👉 [`cross-references/viz/index.html`](cross-references/viz/index.html)** — interactive customer-facing matrix visualization. Open the file in any browser. No build step, no dependencies. Drop on Netlify/Vercel/S3 to deploy.
 
-The viz tells the entire Sentainel story in three panels: a scope calculator showing obligations × NIST controls × cost differential, a full hover-tooltip-enabled obligation × control grid, and three strategic insights cards. At default (all jurisdictions active) it lands on **44 obligations, 4 jurisdictions, 58 NIST controls, with a 5–10× cost differential vs direct legal spend.**
+The viz tells the entire Sentainel story in three panels: a scope calculator showing obligations × NIST controls × cost differential, a full hover-tooltip-enabled obligation × control grid, and three strategic insights cards. At default (all jurisdictions active) it lands on **59 obligations, 4 jurisdictions, 58+ NIST controls, with a 5–10× cost differential vs direct legal spend.**
 
 ## Why This Repo Exists
 
@@ -27,29 +27,32 @@ This regulatory database is our **moat**. Every obligation here was extracted by
 | **Ontario MFIPPA (Bill 97)** | ✅ Complete | 5 | 0.93 |
 | **Illinois HRA AI (HB 3773)** | ✅ Complete | 4 | 0.94 |
 | **Illinois AIVIA (820 ILCS 42)** | ✅ Complete | 4 | 0.94 |
-| **NIST AI RMF Cross-Reference Matrix** | ✅ Complete | 44 obligations × 58 controls | — |
-| **Customer-facing Viz** | ✅ v1.2 | `cross-references/viz/index.html` | — |
+| **Ontario EDSTA (Bill 194)** | ✅ Complete | 7 | 0.90 |
+| **Ontario PHIPA + AI Scribe Guidance** | ✅ Complete | 8 | 0.94 |
+| **NIST AI RMF Cross-Reference Matrix** | 🟡 Refresh pending | 44 obligations × 58 controls (matrix) / 59 obligations live | — |
+| **Customer-facing Viz** | 🟡 v1.2 (Ontario stack pending re-embed) | `cross-references/viz/index.html` | — |
 | **Postgres schema** | ✅ Complete | 10 migrations 0001–0010 | — |
-| Ontario Bill 194 / EDSTA | ⬜ Pending | ~7 (target) | — |
-| Ontario PHIPA + AI Scribe Guidance | ⬜ Pending | ~8 (target) | — |
 | Ontario Trustworthy AI Framework | ⬜ Pending | ~6 (target) | — |
 | Colorado SB 26-189 | ⏸️ Deferred until rulemaking | ~20 (target) | — |
 | California SB 942 + AB 2013 | ⬜ Pending | ~11 (target) | — |
 | EU AI Act (high-risk overlay) | ⬜ Pending | ~30 (target) | — |
+| Illinois BIPA (biometric overlay) | ⬜ Pending | ~5 (target) | — |
 
-**Current totals:** 44 atomic obligations live across 7 regulations and 4 jurisdictions, 248-row coverage matrix in `cross-references/coverage-matrix.csv`, 58 unique NIST controls referenced (out of 46 base + 12 GenAI Profile catalogued in `cross-references/nist-controls.yaml`).
+**Current totals:** 59 atomic obligations live across 9 regulations and 4 jurisdictions. Coverage matrix at `cross-references/coverage-matrix.csv` covers the first 44 obligations (248 rows); the 15 new Ontario obligations (EDSTA 7 + PHIPA 8) are awaiting matrix and viz refresh.
 
 ## The Strategic Anchor: NIST AI RMF Safe Harbor
 
-Texas TRAIGA § 552.105(e)(2)(D) creates an affirmative defense for substantial compliance with NIST AI RMF GenAI Profile + an internal review process. Sentainel operationalizes this safe harbor and extends it: a customer implementing the same set of NIST controls satisfies obligations across Texas, Quebec, Ontario, Illinois, Colorado (when rulemaking completes), and California simultaneously.
+Texas TRAIGA § 552.105(e)(2)(D) creates an affirmative defense for substantial compliance with NIST AI RMF GenAI Profile + an internal review process. Sentainel operationalizes this safe harbor and extends it: a customer implementing the same set of NIST controls satisfies obligations across Texas, Quebec, Ontario (Bill 149, Code, MFIPPA, EDSTA, PHIPA), Illinois, Colorado (when rulemaking completes), and California simultaneously.
 
 **The numbers:**
 
 - Implementing 10 high-leverage NIST controls satisfies ~85% of V1 obligations across all four jurisdictions
-- `GOVERN-1.1` (Legal & regulatory requirements managed) alone hits 44 / 44 obligations
+- `GOVERN-1.1` (Legal & regulatory requirements managed) alone hits 59 / 59 obligations
 - Direct compliance implementation cost: $50K–$250K per jurisdiction
 - Sentainel annual subscription: $30K–$60K for all V1 jurisdictions
 - Customer economics: 5–10× cost differential
+
+For Ontario healthcare AI specifically: PHIPA enforcement is no longer hypothetical. AMPs up to $500K under s. 61.1 (in force Jan 2024), criminal prosecution to $1M under s. 72, civil action to $10K mental anguish under s. 65. The Sentainel value prop for HICs deploying AI scribes: $30K–$70K of direct legal review compressed into $30K–$60K annual subscription with continuous monitoring.
 
 See `cross-references/README.md` for the full matrix narrative and `cross-references/viz/index.html` for the interactive demo.
 
@@ -63,16 +66,18 @@ sentainel-com/
 │   ├── ca-on-bill-149/               # Ontario Working for Workers Four Act (ESA)
 │   ├── ca-on-human-rights-code/      # Ontario Human Rights Code (AI-relevant sections)
 │   ├── ca-on-mfippa/                 # Ontario MFIPPA (as amended by Bill 97)
+│   ├── ca-on-bill-194-edsta/         # Ontario EDSTA Bill 194 (7 obligations, enacted not in force)
+│   ├── ca-on-phipa-ai-scribe/        # Ontario PHIPA + IPC AI Scribe Guidance + CPSO Advice (8 obligations)
 │   ├── us-il-hra-ai/                 # Illinois HRA AI Amendments (HB 3773, PA 103-804)
 │   └── us-il-aivia/                  # Illinois AI Video Interview Act (820 ILCS 42)
 ├── cross-references/                 # NIST AI RMF cross-reference matrix (THE product anchor)
 │   ├── README.md                     # Matrix narrative + high-leverage controls
 │   ├── nist-controls.yaml            # Full NIST AI RMF control catalog (46 + 12 GenAI)
-│   ├── coverage-matrix.csv           # Flattened analytics: 248 obligation×control rows
+│   ├── coverage-matrix.csv           # Flattened analytics: 248 obligation×control rows (Ontario EDSTA + PHIPA pending)
 │   ├── mappings/                     # Per-jurisdiction NIST mappings
 │   │   ├── nist-to-us-tx-traiga.yaml
 │   │   ├── nist-to-ca-qc-law-25.yaml
-│   │   ├── nist-to-ca-on-stack.yaml
+│   │   ├── nist-to-ca-on-stack.yaml  # Bill 149 + Code + MFIPPA (EDSTA + PHIPA pending)
 │   │   └── nist-to-us-il-stack.yaml
 │   └── viz/                          # Customer-facing visualization
 │       ├── index.html                # Self-contained interactive matrix (v1.2)
@@ -106,7 +111,7 @@ Every obligation is a markdown file with YAML frontmatter:
 - `slug` — globally unique identifier
 - `regulation_id` — parent regulation slug
 - `article_number` — formal citation
-- `obligation_type` — DISCLOSE | PROHIBIT | DOCUMENT | IMPLEMENT_CONTROL | NOTIFY_AUTHORITY | RETAIN_RECORDS | REPORT
+- `obligation_type` — DISCLOSE | PROHIBIT | DOCUMENT | IMPLEMENT_CONTROL | NOTIFY_AUTHORITY | RETAIN_RECORDS | REPORT | DESIGNATE_ROLE
 - `actors` — who the obligation applies to
 - `required_action` — verbatim or near-verbatim statutory language
 - `plain_language_summary` — Grade 8 readable explanation
