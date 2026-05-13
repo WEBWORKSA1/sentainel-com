@@ -1,95 +1,166 @@
-# Town of Thorold — Privacy Impact Assessment
-## Niagara Regional Police Service Axon In-Car Camera + ALPR (System AI-002)
+# Privacy Impact Assessment — Town of Thorold
+## Shared Niagara Regional Police Service Axon ICC + ALPR System
 
-**Prepared by Sentainel Compliance for the Town of Thorold**
-**MFIPPA Bill 97 + IPC-OHRC Principles aligned · NIST AI RMF mapped**
+**Prepared by Sentainel Compliance · MFIPPA Bill 97 aligned**
 **Date: May 2026**
+**Note:** This PIA template is shared across all four Niagara cities. The NRPS ALPR/ICC system processes information of residents and visitors in all NRPS jurisdictions including Thorold. The full reference PIA is at `demos/niagara/niagara-falls/02-pia-template.md`.
 
 ---
 
-## 1. System overview
+## 1. Why this PIA exists
 
-**System name:** Axon In-Car Camera (ICC) + Automatic License Plate Recognition (ALPR)
+MFIPPA Bill 97 amendments require a Privacy Impact Assessment for any AI system that processes personal information. The amendments are in force July 1, 2026 (PIA, safeguards, breach reporting) and January 1, 2027 (IPC binding orders, whistleblower protection).
 
-**System owner:** Niagara Regional Police Service (NRPS)
-**System category:** Cross-municipal shared service — affects all NRPS jurisdictions including Thorold
-**Vendor:** Axon Enterprise Inc.
-**Deployment status:** Production
-**Source of system description:** https://www.niagarapolice.ca/what-we-do/road-safety/in-car-camera-and-automatic-licence-plate-recognition/
-
-**Thorold-specific scope:** The Town of Thorold relies entirely on NRPS for policing services. All ALPR activity within Thorold municipal boundaries is governed by NRPS policy and procedure. The Town has no separate ALPR system.
+Thorold residents are subject to Niagara Regional Police Service Axon In-Car Camera and Automatic License Plate Recognition technology. NRPS public disclosure addresses MFIPPA at the regional level but does not contain a Thorold-specific PIA. **This document is the Thorold-side PIA, providing the municipal record that MFIPPA Bill 97 requires the Town to maintain.**
 
 ---
 
-## 2. Personal information collected
+## 2. System description
 
-Identical to the shared ALPR template (see Niagara Falls 02-pia-template.md § 2). For Thorold specifically:
+See `demos/niagara/niagara-falls/02-pia-template.md` Section 2 for full system description. In summary:
 
-- ALPR scans occur on NRPS patrol vehicles operating within Thorold
-- Thorold roadway video is captured continuously by ICC during patrol presence
-- Hot-list matches involving Thorold residents are routed through standard NRPS dispatch
-
----
-
-## 3. MFIPPA Bill 97 PIA requirements (effective July 1, 2026)
-
-### 3.1 Lawful authority for collection
-
-ALPR processing is authorized under the Police Services Act and MFIPPA s. 28(2). The Town of Thorold relies on NRPS as its police service provider; Thorold's compliance posture is derivative.
-
-**Gap identified:** The Town of Thorold has no published statement of its own delegation to NRPS for ALPR processing. Given Thorold's smaller administrative capacity than its peer cities, the gap is more acute — the Town does not have a dedicated MFIPPA Privacy Officer in the same way that Niagara Falls or St. Catharines does.
-
-### 3.2 Purpose limitation, safeguards, data subject rights
-
-See Niagara Falls 02-pia-template.md § 3.2–3.4 for the shared NRPS analysis.
-
-**Thorold-specific concern:** Because Thorold has smaller staff capacity, the Town is at higher risk of being unprepared for an FOI or IPC inquiry related to NRPS ALPR activity within Thorold boundaries. The mitigation is a shared inter-municipal protocol with NRPS + the three peer cities.
+- **Vendor:** Axon Enterprise, Inc.
+- **Products:** Axon In-Car Camera (ICC), Axon Automatic License Plate Recognition (ALPR)
+- **Operator:** Niagara Regional Police Service
+- **Coverage:** All NRPS jurisdictions including Thorold
+- **Personal information captured:** Vehicle license plates, time, GPS location, vehicle images, occasionally driver/pedestrian images
+- **AI components:** Automated character recognition; hot-list matching against police databases; potentially behavioral analytics
 
 ---
 
-## 4. IPC-OHRC Joint Principles alignment
+## 3. Thorold-specific context
 
-See Niagara Falls 02-pia-template.md § 4. All seven principles apply identically.
+Thorold residents and visitors are captured by NRPS ALPR/ICC deployment in three contexts particularly relevant to the Town:
 
-**Thorold-specific concern under p4 Human Rights Affirming:** Thorold has a notable Welsh-Canadian, Italian-Canadian, and (more recently) Filipino-Canadian community concentration. Any disparate-impact analysis of ALPR deployments in Thorold must be sensitive to community-specific patterns that the shared NRPS analysis may aggregate-out.
+1. **Highway 406 corridor** — high-volume vehicle traffic through Thorold's central spine, generating large quantities of plate-capture data
+2. **Welland Canal corridor** — international border-adjacent traffic with cross-border data flow implications
+3. **Brock University periphery** — student population creates concentrated, repeating data capture pattern
 
----
-
-## 5. NIST AI RMF mapping
-
-See Niagara Falls 02-pia-template.md § 5. The same 13 NIST controls apply to Thorold via NRPS.
+These contexts create Thorold-specific MFIPPA s. 32 (purpose limitation) concerns that are not addressed in the NRPS-level disclosure.
 
 ---
 
-## 6. Risk assessment
+## 4. Personal information collected (per MFIPPA s. 28)
 
-Thorold-specific risks:
-
-1. **Small-municipality unpreparedness risk.** If an IPC inquiry begins about NRPS ALPR activity in Thorold, the Town has less in-house capacity to respond than its larger peers. This is precisely what the Sentainel platform is designed to mitigate.
-
-2. **Shared-service blind-spot risk.** Because ALPR is operated by NRPS, Thorold administrators may believe they have no MFIPPA exposure on this system. MFIPPA Bill 97 applies to the municipality regardless of which service provider operates the AI.
-
-3. **Coordinating-municipality opportunity.** Thorold can lead by being the first of the four cities to publicly affirm a coordinated MFIPPA Bill 97 PIA with NRPS + peers. Reputational benefit + best-practice positioning.
-
----
-
-## 7. Mitigation plan
-
-| Action | Owner | Deadline | Artifact |
-|---|---|---|---|
-| Publish AI inventory entry on thorold.ca | CAO + Clerk | 30 days | This document |
-| Designate MFIPPA Privacy Officer + AI Governance Lead | CAO | 60 days | Governance designation |
-| Coordinate with NRPS + 3 peer cities for joint PIA | Clerk | 90 days | Shared PIA template |
-| Publish quarterly accuracy report (NRPS-led) | NRPS + Town | 120 days | Reporting template |
-| Run disparate-impact analysis (NRPS-led, joint) | NRPS + external auditor | 180 days | Methodology |
-| Establish AI recourse mechanism | Clerk + NRPS | 180 days | 06-recourse-workflow.md |
+| Element | Collection method | Lawful authority |
+|---|---|---|
+| Vehicle license plate | Automated optical character recognition | MFIPPA s. 28(2) — lawful authority of NRPS |
+| Vehicle image (full plate context) | Automated camera capture | MFIPPA s. 28(2) |
+| Geolocation of capture | Automatic | MFIPPA s. 28(2) |
+| Time of capture | Automatic | MFIPPA s. 28(2) |
+| Sometimes driver / passenger image | Automatic (where camera angle captures) | MFIPPA s. 28(2) — but raises s. 32 purpose limitation concerns |
 
 ---
 
-## 8. Reviewer + sign-off
+## 5. Specific risks identified
 
-**Prepared by:** Sentainel Compliance Platform, May 2026
-**Drawn from:** NRPS public disclosure + MFIPPA Bill 97 + IPC-OHRC Joint Principles + NIST AI RMF
-**Intended reviewer:** Town of Thorold CAO + Clerk
+### Risk 5.1 — Purpose limitation under MFIPPA s. 32
 
-This PIA is a draft template generated by the Sentainel platform from public-record evidence. The Town should engage NRPS, Axon, and counsel to complete validated answers and obtain official sign-off.
+Where ALPR captures driver or passenger images incidentally, the secondary use of that image data is not clearly limited to the original ALPR purpose. NRPS retains this data; Thorold residents have no clear municipal-level recourse.
+
+**Severity:** Medium
+**Mitigation:** Coordinated PIA across NRPS + four Niagara cities clarifying secondary-use limitations
+
+### Risk 5.2 — Cross-border data flow (Welland Canal proximity)
+
+NRPS shares data with cross-border law enforcement systems. Thorold's location adjacent to the US border creates direct exposure to US-Canada law enforcement information sharing agreements that may not satisfy MFIPPA cross-border transfer standards.
+
+**Severity:** Medium-High
+**Mitigation:** Confirm with NRPS what US data-sharing applies and document MFIPPA compliance posture
+
+### Risk 5.3 — Brock University periphery surveillance
+
+Dense student population creates repeated capture patterns that constitute a de facto surveillance gradient. Students from racialized or international backgrounds are disproportionately represented in the Brock community. IPC-OHRC p4 (Human Rights Affirming) requires disparate-impact analysis.
+
+**Severity:** Medium
+**Mitigation:** Disparate impact study of NRPS ALPR deployment patterns near Brock; remediation if patterns are inequitable
+
+### Risk 5.4 — Hot-list false positives
+
+ALPR systems generate false-positive hot-list matches. A Thorold resident wrongly flagged faces direct law enforcement consequences with no AI-specific recourse mechanism.
+
+**Severity:** Medium
+**Mitigation:** Town-level recourse workflow (`06-recourse-workflow.md`) provides a residents-facing complaint channel that supplements NRPS-internal review
+
+---
+
+## 6. Safeguards required under MFIPPA Bill 97
+
+| Safeguard category | Current state | Required by July 1, 2026 |
+|---|---|---|
+| Technical (encryption, access control) | NRPS-managed | Confirm NRPS standards in writing |
+| Administrative (training, policy) | NRPS-managed | Town-side acknowledgment policy required |
+| Physical (premises security) | NRPS-managed | Out of scope |
+| Logical (audit trails, retention) | NRPS-managed | Confirm retention periods in writing |
+
+---
+
+## 7. Breach reporting (MFIPPA Bill 97 effective July 1, 2026)
+
+If NRPS experiences a breach affecting Thorold residents' ALPR data, the Town must:
+
+- Receive notice from NRPS within established service-level commitment
+- Notify affected Thorold residents per MFIPPA Bill 97 requirements
+- Report to the IPC within mandatory window
+- Document the breach in the Town's MFIPPA Bill 97 breach register
+
+**Action required:** Town must establish written breach-notification SLA with NRPS before July 1, 2026.
+
+---
+
+## 8. Recommended coordinated action
+
+All four Niagara cities share this exposure. Sentainel recommends:
+
+1. **Joint Niagara Regional MFIPPA Bill 97 PIA on NRPS ALPR/ICC** — reduces per-city legal cost, harmonizes Town-side positions
+2. **Standing inter-municipal AI coordination protocol** — see `demos/niagara/niagara-falls/07-ipc-complaint-prep.md`
+3. **Annual NRPS attestation** to all four Niagara cities confirming continued MFIPPA Bill 97 compliance
+
+For Thorold specifically, given the smaller administrative capacity, joining a coordinated PIA is significantly more efficient than producing a standalone PIA.
+
+---
+
+## 9. Lawful authority assessment
+
+NRPS operates ALPR/ICC under multiple statutory authorities including the Police Services Act and the Criminal Code. MFIPPA s. 28(2) requires collection to be authorized by statute and necessary for the proper administration of a lawfully authorized activity.
+
+For the Town of Thorold's purposes, MFIPPA-side lawful authority is satisfied at the NRPS level. The Town's role is to ensure:
+
+- MFIPPA Bill 97 PIA documentation exists for residents to access on request
+- Breach notification flow is in place
+- IPC-OHRC Principles alignment is documented at the Town level
+- Resident recourse mechanism is available for AI-specific concerns
+
+---
+
+## 10. NIST AI RMF mapping
+
+See `cross-references/coverage-matrix.csv` for full mapping. Key controls:
+
+- **GOVERN-1.1**: Legal & regulatory requirements managed
+- **GOVERN-4.3**: Testing & incident sharing across regional cities
+- **MEASURE-2.7**: Security & privacy risks documented
+- **MEASURE-2.10**: Privacy risk evaluation
+- **MEASURE-2.11**: Fairness & bias eval (Brock periphery disparate-impact concern)
+- **MANAGE-3.1**: Third-party risk monitoring (NRPS as Town's vendor in PIA terms)
+
+---
+
+## 11. Approval pathway
+
+This PIA template is **not** a final PIA. It is a starting point for the Town's MFIPPA Privacy Officer (typically the Town Clerk in a municipality of Thorold's size) to formalize before July 1, 2026.
+
+**Recommended approval pathway:**
+
+1. Town Clerk reviews and adapts this template
+2. Town legal counsel reviews lawful authority assessment
+3. CAO approves
+4. Filed in Town's MFIPPA records
+5. Submitted to NRPS as part of regional coordination
+6. Made available to residents on request under MFIPPA s. 36
+
+---
+
+## 12. Disclaimers
+
+This PIA is a template generated by the Sentainel platform from public-record evidence. The Town should retain Ontario MFIPPA counsel for any specific legal question. Nothing in this document constitutes a legal opinion.

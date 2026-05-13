@@ -1,162 +1,192 @@
 # Town of Thorold — Algorithmic Impact Assessment
-## Generative AI Staff Use + Council Astroturfing Resilience (System AI-001 + AI-004)
+## Generative AI in Staff Work + Council Astroturfing Response
 
-**Prepared by Sentainel Compliance for the Town of Thorold**
-**IPC-OHRC Joint Principles aligned · NIST AI RMF mapped**
+**Prepared by Sentainel Compliance · IPC-OHRC Joint Principles aligned · Trustworthy AI Framework mapped**
 **Date: May 2026**
 
 ---
 
-## 1. Why this AIA covers two systems together
+## 1. Systems under assessment
 
-Most AIAs cover a single AI system. This one covers two related exposures because both are present in Thorold and both are characterized by **informal, unmanaged AI use** rather than a procured AI platform:
+Thorold's AIA addresses two distinct AI exposure categories:
 
-- **AI-001:** External AI-generated communication targeting council (the 2024–2025 astroturfing precedent)
-- **AI-004:** Internal staff generative AI use (informal, no policy, near-universal pattern)
+**Category A: Staff use of consumer-tier generative AI** (the universal exposure pattern in Ontario municipalities in May 2026)
 
-Both are addressed at the policy + procedure level, not at a vendor-platform level. The same governance framework covers both.
+**Category B: External AI-driven communication campaigns targeting Council** (the documented 2024–2025 incident pattern)
 
----
-
-## 2. System characterization
-
-### AI-001 external context
-
-- **System type:** External adversarial AI (chatbots used by third parties to generate mass communication)
-- **Personal information processed:** Council members' email addresses + names (public information, but processed at scale)
-- **Decision affected:** Council deliberation + voting
-- **Public-record incident:** April 2026 Canada's National Observer documentation of 2024–2025 campaign
-
-### AI-004 internal context
-
-- **System type:** General-purpose generative AI (ChatGPT, Claude, Microsoft 365 Copilot, etc.)
-- **Personal information processed:** Variable — staff may paste resident info, internal correspondence, draft reports into prompts
-- **Decision affected:** Variable — reports, memos, communications, policy research
-- **Current governance:** None publicly documented
+These are treated separately because the obligation profiles differ — Category A is about staff governance, Category B is about institutional defence.
 
 ---
 
-## 3. IPC-OHRC Joint Principles scoring
+## 2. Why this AIA exists
 
-| Principle | AI-001 (External) | AI-004 (Internal Staff) | Combined Action |
-|---|---|---|---|
-| **p1 Valid and Reliable** | N/A (adversarial) | UNMANAGED — no accuracy expectations set | Staff policy + verification procedure |
-| **p2 Safe** | INCIDENT ON RECORD | UNMANAGED | Both addressed by hardened council procedure + staff policy |
-| **p3 Privacy Protective** | N/A | HIGH RISK — staff likely pasting MFIPPA-protected data into public AI services | Staff policy must prohibit MFIPPA data in public AI services |
-| **p4 Human Rights Affirming** | INDIRECT — campaign affected climate policy outcomes | UNMANAGED — AI summaries can encode bias | Staff training + procedure |
-| **p5 Transparent** | NOT YET — Town has not publicly disclosed the 2024–2025 incident's nature | NOT YET — no public statement on staff GenAI use | Public council statement + AI inventory entry |
-| **p6 Accountable Governance** | NONE — no incident response policy | NONE — no designated AI Governance Lead | Designate AI Governance Lead |
-| **p7 Accountable Recourse** | NONE — no mechanism for residents to flag suspected synthetic campaigns | NONE — no mechanism for resident challenge of AI-influenced decisions | 06-recourse-workflow.md |
+The IPC-OHRC Joint Principles require an upfront risk assessment for AI systems institutions use **or are exposed to**. The 2024–2025 incident establishes that Thorold Council was the subject of an AI-driven communication campaign. The Town has a documented exposure to AI-driven harms whether or not the Town itself deploys AI.
+
+This is the first known municipal AIA in Ontario to address both internal AI use **and** external AI-driven harms in a single document. The structure may serve as a template for other Ontario municipalities.
 
 ---
 
-## 4. Risk assessment
+## Part A: Staff Generative AI Use
 
-### Probability + impact (Thorold-specific)
+### A.1 Current state
 
-**Repeat astroturfing attack on council:** HIGH probability over the next 24 months. Attack pattern is now public, replication cost is near-zero, and Thorold is a known successful target. Impact: high — council legitimacy + policy capture.
+The Town does not have a published policy on staff use of generative AI tools. Based on universal Ontario municipal patterns in May 2026, it is statistically near-certain that some Thorold staff use ChatGPT, Claude, Copilot, or similar tools for:
 
-**Staff GenAI policy violation (e.g., resident PII pasted into ChatGPT):** MEDIUM-HIGH probability over the next 12 months given the absence of policy. Impact: medium — MFIPPA breach reporting + potential IPC investigation.
+- Drafting reports, memos, and resident communications
+- Summarizing meeting minutes and council packages
+- Research support for policy work
+- Generating responses to general inquiries
 
-**Combined reputational risk:** HIGH. Thorold is small enough that a single incident generates province-wide municipal-sector coverage.
+This is informal, ungovern, and creates Category A exposure under IPC-OHRC + MFIPPA.
 
----
+### A.2 Principle-by-principle scoring (Category A)
 
-## 5. Mitigation — The Council Astroturfing Response Procedure (Thorold-specific addendum)
-
-This is the unique component of Thorold's AIA. It does not appear in any other Ontario municipal compliance document publicly available as of May 2026.
-
-### 5.1 Signals that distinguish synthetic communication campaigns
-
-Indicators that an inbound communication wave to council includes AI-generated email:
-
-- **Volume anomaly:** Sudden 10× or greater increase in resident emails on a single issue within 72 hours
-- **Linguistic uniformity:** Multiple emails using near-identical phrasings, sentence structures, or argument sequences with minor randomization
-- **Sender heterogeneity but argument homogeneity:** Emails appear to come from many different residents but all argue the same talking points in the same order
-- **Out-of-jurisdiction senders:** Emails from sender addresses outside Thorold or even outside Ontario (legitimate resident input is overwhelmingly local)
-- **Failure to engage with prior council discussion:** AI-generated emails typically argue against the policy as if the council has not yet considered the points raised in prior meetings
-- **Citation patterns:** Emails citing distant or non-existent authorities, or repeated minor factual errors that suggest hallucinated content
-- **Email envelope metadata:** SPF/DKIM/DMARC failures, sender domains less than 90 days old, or other technical fingerprints (consult IT Director for analysis)
-
-### 5.2 Procedure when signals are detected
-
-1. **Clerk's office triage:** Clerk flags communications matching three or more signals for IT Director review
-2. **IT Director technical review:** Sample 20–30 of the suspected synthetic communications and perform basic email-header analysis
-3. **Communication to council:** If technical review confirms synthetic origin, Clerk informs council in writing before the relevant vote, and the communication is read into the record of the meeting
-4. **Public council statement:** If signals are confirmed, the Mayor or designated council representative issues a public statement before the vote acknowledging the synthetic campaign and the Town's awareness
-5. **Decision-making procedure:** The council's deliberation proceeds based on the policy merits, with synthetic communication explicitly identified as such in the meeting record
-6. **Documentation:** Clerk preserves the communication batch (anonymized as required by MFIPPA) for future IPC + OHRC investigation reference
-7. **Public posting:** Within 30 days of the incident, the Town publishes a brief public-record statement acknowledging the campaign occurred and the Town's response (this satisfies IPC-OHRC p5 Transparent)
-
-### 5.3 Why this procedure is defensible
-
-The IPC-OHRC Joint Principles require institutions to (a) be transparent about AI-related processes affecting decision-making, (b) provide recourse mechanisms, and (c) maintain robust governance structures.
-
-A municipality that experiences an AI-driven communication campaign and **does not** have a procedure to detect, document, and disclose it is in tension with all three principles. A municipality that **has** such a procedure and uses it openly is positioned defensibly under both MFIPPA and OHRC frameworks.
-
-This procedure is also defensible against the opposite charge: that the Town suppressed legitimate constituent input by labelling it synthetic. The procedure requires technical evidence (header analysis + multiple signals) before any communication is treated as synthetic, and requires public disclosure when synthetic communications are identified.
-
----
-
-## 6. Interim Generative AI Staff Use Policy template
-
-Thorold can adopt this policy by council resolution. Three pages, no procurement required, effective immediately.
-
-### Policy text
-
-*The Town of Thorold permits staff use of approved generative AI tools (Microsoft 365 Copilot, ChatGPT Enterprise, Claude, and successor tools formally listed by the IT Director) for the purposes of drafting, summarization, research support, and productivity, subject to the following conditions:*
-
-1. **No MFIPPA-protected information** may be entered as input into any generative AI tool not specifically procured with a Data Processing Agreement covering municipal data
-2. **No personal information about residents, staff, or council members** beyond what is already public may be entered into any generative AI tool
-3. **No confidential procurement, HR, or legal information** may be entered into any generative AI tool
-4. **Generative AI output used in any document that will be circulated externally or to council** must be reviewed and approved by the staff member responsible for the document, who remains accountable for accuracy
-5. **Generative AI output cited as fact in any report to council** must be disclosed as such, similar to how Niagara Falls' Erik Nickel correctly disclaimed ChatGPT use in his sidewalk maintenance report
-6. **Use of generative AI in hiring, performance evaluation, discipline, or other staff-affecting decisions is prohibited** without specific written authorization from the CAO and a completed AIA
-7. **The IT Director maintains a current list of approved tools** which is published on the Town's intranet and updated quarterly
-8. **Suspected violations of this policy** are reported to the AI Governance Lead, who may direct immediate cessation pending review
-
-### Why this policy is sufficient for Thorold's current state
-
-Thorold does not have a production AI platform comparable to St. Catharines' Catharine. The dominant compliance exposure is informal staff use, and this policy addresses 80% of that exposure. As the Town adopts production AI in the future, this policy becomes the foundation that more specific AIAs build on.
-
----
-
-## 7. NIST AI RMF mapping
-
-| NIST control | Coverage by this AIA |
-|---|---|
-| GOVERN-1.1 | Policy adoption documents legal & regulatory posture |
-| GOVERN-1.5 | Ongoing oversight via AI Governance Lead |
-| GOVERN-2.1 | Roles + responsibilities defined |
-| GOVERN-2.2 | Workforce training implied by policy adoption |
-| MAP-1.1 | Context of use established for both AI-001 + AI-004 |
-| MAP-5.1 | Likelihood + magnitude of impact documented |
-| MEASURE-2.8 | Transparency through public statement procedure |
-| MEASURE-2.11 | Fairness considered in disparate-impact concerns |
-| MANAGE-1.3 | Risk mitigation decisions documented |
-| MANAGE-4.3 | Incident communication procedure established |
-
-10 NIST controls satisfied at policy level via this AIA alone.
-
----
-
-## 8. Implementation timeline
-
-| Action | Owner | Deadline |
+| Principle | Score | Reason |
 |---|---|---|
-| Adopt Generative AI Staff Use Policy by council resolution | Council + Clerk | 30 days |
-| Adopt Council Astroturfing Response Procedure by council resolution | Council + Clerk | 30 days |
-| Designate AI Governance Lead | CAO | 30 days |
-| IT Director publishes approved tool list | IT Director | 60 days |
-| First quarterly review of policy effectiveness | AI Governance Lead | 120 days |
-| Public AI inventory updated with policy adoption | Clerk | 60 days |
+| p1 Valid and Reliable | ⚠️ UNKNOWN | No validation procedure documented |
+| p2 Safe | ⚠️ PARTIAL | No decommissioning authority for staff GenAI use |
+| p3 Privacy Protective | ❌ FAIL | Staff GenAI consumer-tier provides no MFIPPA data residency or processing guarantees |
+| p4 Human Rights Affirming | ⚠️ POTENTIAL RISK | No disparate-impact analysis for GenAI-informed decisions |
+| p5 Transparent | ❌ FAIL | No public AI inventory; residents cannot know when staff GenAI was used |
+| p6 Accountable Governance | ❌ FAIL | No designated AI Lead, no policy, no risk assessment |
+| p7 Accountable Recourse | ❌ FAIL | No public recourse for suspected GenAI-influenced decisions |
+
+**Aggregate score Category A: 1 / 7**
+
+This is the standard score for Ontario municipalities without a generative AI policy in May 2026. **It is also the lowest-cost compliance fix in the bundle.**
+
+### A.3 Interim Generative AI Use Policy — Town of Thorold
+
+While the Town completes its full AI governance buildout, Sentainel recommends adopting the following interim policy by Council resolution within 60 days:
+
+**1.** No personal information of residents may be entered into any consumer-tier generative AI tool (ChatGPT free, Claude free, Gemini consumer, etc.). This includes complaint context, addresses, demographic data, FOI request content, or anything that could re-identify a resident.
+
+**2.** Generative AI outputs used in any council-distributed material must be (a) cited with the prompt and date of generation, (b) validated against an authoritative source, and (c) flagged with the disclosure: "This report incorporates content generated by [AI tool] on [date]."
+
+**3.** Staff may not use generative AI for any decision that materially affects an individual or identifiable group, including hiring, benefits eligibility, bylaw enforcement targeting, or grant evaluation.
+
+**4.** Any staff member who becomes aware of generative AI use outside this policy must report it to the AI Governance Lead (once designated) or to the Clerk's office (interim).
+
+**5.** This policy is effective immediately and supersedes any departmental practice until the full AI Policy is adopted by Council.
+
+**Cost to implement: zero direct cost.** Adoption time: one Council meeting. Compliance value: largest single jump in IPC-OHRC scoring available to the Town.
 
 ---
 
-## 9. Reviewer + sign-off
+## Part B: Council Astroturfing Response (THORODL-SPECIFIC)
 
-**Prepared by:** Sentainel Compliance Platform, May 2026
-**Drawn from:** IPC-OHRC Joint Principles + Trustworthy AI Framework + Canada's National Observer documentation + Sentainel platform analysis
-**Intended reviewer:** Town of Thorold CAO + Council + Clerk
+### B.1 The 2024–2025 incident in detail
 
-This AIA is a draft template generated by the Sentainel platform. It is intended as the foundation of the Town's actual AIA + Generative AI Staff Use Policy, not a substitute for council-approved versions. The Town should engage counsel before final adoption.
+A climate denial group used customized chatbots to generate mass emails to Thorold city councillors opposing climate policy. The campaign succeeded: Thorold Council voted 7-1 to withdraw from the Partners for Climate Protection program. Source: Canada's National Observer, April 30, 2026.
+
+### B.2 Why this is an AI compliance concern for the Town
+
+Thorold Council was the victim, not the perpetrator. However, under emerging Ontario AI governance standards, the Town has a forward-looking duty to:
+
+- Maintain transparent decision-making processes robust against synthetic communication campaigns (IPC-OHRC p5)
+- Provide public recourse mechanisms when AI-driven harm affects residents or institutions (IPC-OHRC p7)
+- Document governance procedures that can distinguish authentic resident input from synthetic campaigns (Trustworthy AI Framework ops-2)
+
+If Thorold Council faces another AI-driven campaign in 2026–2027 and does not have hardened processes in place, IPC + media will reference the 2024–2025 incident as evidence of failure to act on known risk.
+
+### B.3 Signals that distinguish authentic input from AI-generated pressure
+
+Research on AI-driven municipal communication campaigns identifies these signals:
+
+**High AI-likelihood signals:**
+
+- High volume of substantively similar emails received in a compressed window (e.g., 100+ in 72 hours)
+- Emails from constituents who have no prior council communication history
+- Phrasing patterns that mirror talking points published by an external advocacy organization
+- Email addresses that do not match Town voter rolls or service records
+- Lack of follow-up engagement when councillors respond directly
+- Surface-level civic literacy with no engagement on actual local policy detail
+
+**Authentic-input signals:**
+
+- Variety in tone, phrasing, and detail
+- Engagement with specific local context (street names, neighbours, meeting attendance)
+- Follow-up dialog after councillor response
+- Co-occurrence with attendance at council meetings, deputations, or community group activity
+- Pre-existing relationship with council members or staff
+
+### B.4 Recommended Council Procedural Protections
+
+**B.4.1 Communication intake disclosure.** All written communications to council are subject to a standard intake process that logs:
+
+- Sender email + IP region (if available)
+- Timestamp
+- Subject matter
+- Whether the sender has prior communication history with the Town
+- Whether substantively similar communications have been received in the prior 30 days
+
+This log is reviewable by the AI Governance Lead before Council deliberation on any matter receiving >25 communications in a 30-day window.
+
+**B.4.2 Council notice procedure.** Where the AI Governance Lead identifies signals consistent with an AI-driven campaign, Council is briefed in writing before deliberation. The briefing does **not** dismiss the communications — authentic constituents may share the underlying concerns regardless of campaign origin. The briefing simply ensures Council is aware of the communication pattern.
+
+**B.4.3 Deliberation pause option.** Where signals are strong and the matter is significant, the Mayor or CAO may recommend a one-meeting deliberation pause to allow further intake analysis. This is procedural prudence, not a delay of legitimate constituent voice.
+
+**B.4.4 Public-facing transparency.** Quarterly the Town publishes an aggregate summary of communication patterns including any campaigns identified. This is IPC-OHRC p5 (Transparent) and creates community accountability for both the Town's response and any campaign organizers.
+
+**B.4.5 IPC + OHRC coordination.** Where an AI-driven campaign has the characteristics of an attempt to manipulate municipal decision-making on Code-protected grounds (e.g., targeting policies affecting racialized or marginalized communities), the AI Governance Lead refers the matter to both the IPC and the OHRC for guidance.
+
+### B.5 What this procedure is **not**
+
+- It is not a constraint on legitimate constituent advocacy. Authentic constituents may use any communication method including digital tools to express views to Council.
+- It is not a basis for ignoring underlying policy concerns. AI-driven campaigns often surface real community sentiment even when the campaign itself is synthetic.
+- It is not a partisan instrument. The procedure applies equally to campaigns from any ideological direction.
+- It is not a censorship mechanism. The procedure governs Town intake, briefing, and disclosure, not the communications themselves.
+
+### B.6 Principle-by-principle scoring (Category B, after procedure adopted)
+
+| Principle | Score (after procedure) | Reason |
+|---|---|---|
+| p1 Valid and Reliable | ✅ PASS | Procedure validates patterns against documented signals |
+| p2 Safe | ✅ PASS | Council legitimacy harm-prevention mechanism in place |
+| p3 Privacy Protective | ✅ PASS | Intake logging respects sender privacy + uses minimum necessary data |
+| p4 Human Rights Affirming | ✅ PASS | Code-protected groups have explicit referral pathway |
+| p5 Transparent | ✅ PASS | Quarterly public disclosure |
+| p6 Accountable Governance | ✅ PASS | AI Governance Lead operates procedure |
+| p7 Accountable Recourse | ✅ PASS | Affected parties can challenge classification |
+
+**Aggregate score Category B (after adoption): 7 / 7**
+
+This would make Thorold the **first Ontario municipality** with a documented IPC-OHRC-compliant procedure for AI-driven communication campaigns.
+
+---
+
+## 3. NIST AI RMF mapping (both categories)
+
+Category A (staff GenAI use):
+- GOVERN-1.1, GOVERN-1.6, GOVERN-2.1, GOVERN-2.2, MAP-3.5, MEASURE-2.8
+- GAI-3, GAI-6, GAI-9 (NIST AI 600-1 GenAI Profile)
+
+Category B (astroturfing response):
+- GOVERN-1.1 (regulatory tracking)
+- GOVERN-3.1 (diversity in risk management — the Code-protected group referral path)
+- GOVERN-5.1 + GOVERN-5.2 (stakeholder feedback channels including procedure transparency)
+- MAP-1.2 (interdisciplinary review)
+- MAP-5.1 (likelihood + magnitude of harm)
+- MEASURE-3.3 (stakeholder feedback on procedure)
+- MANAGE-4.3 (incidents communicated externally)
+
+---
+
+## 4. Approval pathway
+
+**Category A (Interim Generative AI Use Policy):**
+- Recommend Council adoption within 60 days
+- Can be effective immediately on resolution; no further infrastructure required
+
+**Category B (Council Astroturfing Response Procedure):**
+- Recommend Mayor + Clerk + CAO endorsement first
+- Pilot procedure for 90 days while Council reviews
+- Council resolution to formalize at end of pilot
+
+---
+
+## 5. Reviewer sign-off
+
+This AIA is a template generated by the Sentainel platform. The Town should retain Ontario municipal law counsel + procedural specialist for Category B procedure review before adoption. Nothing in this document constitutes a legal opinion.
+
+**Note on regional generalizability:** The Category B procedure documented here may be useful to other Ontario municipalities facing similar AI-driven communication campaigns. Sentainel makes this template available for adaptation by any Ontario municipality. The Town of Thorold is invited to be a citation reference if it adopts this procedure.

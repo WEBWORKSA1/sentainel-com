@@ -1,195 +1,194 @@
-# Town of Thorold — IPC Complaint Preparation Pack
-## What to do when the Office of the Information and Privacy Commissioner of Ontario begins an investigation
+# IPC Complaint Preparation Pack — Town of Thorold
+## What to do when an IPC investigation begins
 
-**Prepared by Sentainel Compliance for the Town of Thorold**
-**Date: May 2026 · Confidential when activated**
+**Prepared by Sentainel Compliance · Defensive runbook**
+**Date: May 2026**
 
 ---
 
 ## Purpose
 
-This document is the Town's standing playbook for responding to an IPC investigation about the Town's use of AI. It is intended to be read **before** an investigation begins and activated immediately when one does.
+MFIPPA Bill 97 (effective January 1, 2027) gives the IPC binding order authority against MFIPPA institutions including the Town of Thorold. The IPC has stated the IPC-OHRC Joint Principles "ground our assessment" of any AI use under MFIPPA.
+
+This pack contains the materials the Town should have ready **before** an IPC complaint arrives. Preparation is faster, cheaper, and more credible than reactive response. For a Town of Thorold's administrative scale, preparation is also essential because reactive response would consume disproportionate staff resources.
 
 ---
 
-## Trigger conditions
+## Thorold-specific IPC complaint risk profile
 
-Activate this playbook when any of the following occur:
+Thorold's IPC complaint risk profile differs from peer Niagara cities in three ways:
 
-1. The Town receives written notice from the IPC of an investigation, complaint, or inquiry under MFIPPA
-2. A media outlet contacts the Town about AI use and refers to IPC scrutiny
-3. The AI Governance Lead becomes aware of a complaint involving the Town's AI use that has been or is likely to be escalated to the IPC
-4. The Town's Astroturfing Response Procedure (03-aia-template.md § 5) is activated in connection with a council vote and there is reason to believe IPC scrutiny will follow
+1. **Lower base-rate exposure** — no flagship production AI like St. Catharines' Catharine
+2. **Higher AI-incident-derived exposure** — the 2024–2025 astroturfing incident creates a public-record duty to demonstrate hardened procedures
+3. **Smaller administrative buffer** — reactive response capacity is limited, making preparation more strategically valuable
 
----
+The most likely IPC complaint scenarios for Thorold:
 
-## Immediate actions (Days 0–3)
+**Scenario A: NRPS ALPR-derived complaint.** A resident wrongly flagged on the ALPR hot-list complains. The complaint names NRPS but also names the Town as an MFIPPA institution under whose jurisdiction the resident lives. Town must demonstrate MFIPPA Bill 97 coordination posture.
 
-### Day 0 (within 24 hours of trigger)
+**Scenario B: Generative AI council report complaint.** A future Erik-Nickel-style staff use of consumer AI in council material draws a complaint. Town must demonstrate it had a generative AI policy in place.
 
-1. **Notify CAO and Mayor** in writing of the trigger event
-2. **Convene an internal response team** consisting of:
- - AI Governance Lead (response coordinator)
- - Clerk
- - IT Director
- - Mayor or designated council member
- - External counsel (retain at this point if not already on retainer)
-3. **Preserve all relevant records.** This is the highest-priority action. The Town must not delete, modify, or alter:
- - AI system logs and audit trails for the affected period
- - Email correspondence about the affected decision or AI system
- - Vendor contracts, data processing agreements, and vendor communications
- - Council meeting records related to the issue
- - Public-facing AI inventory entries and disclosure pages as they existed at the time of the complaint
-4. **Issue a litigation hold** to all staff involved in the relevant AI system or decision
+**Scenario C: Astroturfing repeat incident.** Another AI-driven email campaign targets Council; a resident files an IPC complaint arguing the Town's deliberation procedures did not adequately distinguish authentic from synthetic input. Town must demonstrate procedural integrity hardening.
 
-### Day 1
-
-5. **Acknowledge the IPC's communication** within 24 hours
-6. **Identify the IPC investigator** assigned and obtain their contact information
-7. **Review the complaint** to determine:
- - Which AI system or decision is at issue
- - Which IPC-OHRC principles are implicated
- - Which MFIPPA Bill 97 obligations are implicated
- - The complainant's stated remedy
-
-### Day 2–3
-
-8. **Prepare initial evidence packet** including:
- - Relevant AI Inventory entry (from `01-ai-inventory.md`)
- - Applicable PIA (from `02-pia-template.md`)
- - Applicable AIA (from `03-aia-template.md`)
- - IPC-OHRC alignment scorecard entry (from `04-ipc-ohrc-alignment.md`)
- - Vendor due-diligence record (from `09-vendor-questionnaire.md`)
- - Recourse workflow documentation (from `06-recourse-workflow.md`)
- - NIST AI RMF mapping (extract relevant rows from `coverage-matrix.csv`)
-9. **Engage counsel** for review of evidence packet before submission
-10. **Identify any privilege concerns** for documents that may be subject to solicitor-client or council-deliberation privilege
+**Scenario D: Bylaw enforcement AI complaint.** AI-informed bylaw enforcement decision affects a resident on Code-protected grounds. Town must demonstrate disparate-impact analysis was conducted.
 
 ---
 
-## Investigation phase (Days 4–60)
+## Phase 1: The Town receives an IPC complaint notice
 
-### Standard IPC investigation pattern
+### What the Town will receive
 
-IPC investigations typically proceed through:
+The IPC will send formal notice identifying:
 
-1. **Initial information request** — the IPC asks the Town to produce specified documents within a defined timeframe (typically 30 days)
-2. **Interviews** — the IPC may interview staff involved in the AI system or decision
-3. **Site visit** — in some cases, the IPC may visit the Town's offices
-4. **Mediation offer** — the IPC often offers mediation to resolve the matter without a formal order
-5. **Formal order or dismissal** — if mediation fails or is declined, the IPC may issue a binding order under MFIPPA Bill 97
+- The complainant (may be redacted)
+- The Town system or practice complained of
+- The specific MFIPPA + IPC-OHRC Principles cited
+- A deadline for the Town's response (typically 30 days, sometimes shorter)
 
-### Town response priorities
+### Immediate steps (Day 0–3)
 
-**Produce requested documents within the IPC's timeframe.** Late or incomplete production is the most common reason for adverse IPC outcomes.
-
-**Cooperate transparently.** The IPC views cooperation favorably. Documented adversarial posture is generally counterproductive.
-
-**Lean on the NIST AI RMF safe-harbor matrix.** When asked "how did the Town know it was complying?", the answer is: the Town aligned its AI use with the NIST AI Risk Management Framework, which is the recognized international standard. The matrix at `cross-references/coverage-matrix.csv` is the documented basis for this alignment.
-
-**Use the public AI inventory as the framing document.** If the Town has a public AI inventory at the time of the complaint, that inventory becomes the centerpiece of the Town's defense. If the inventory does not yet exist when the complaint arrives, expedite its publication; the IPC views recent publication positively as evidence of good-faith remediation.
-
-**Consider mediation.** The IPC's mediation track is significantly less costly than formal proceedings and typically results in agreed remediation that the Town would have done anyway.
+1. **Acknowledge receipt** to the IPC within 48 hours
+2. **Convene IPC Response Team**: AI Governance Lead + Clerk + Town legal counsel + CAO + (depending on scenario) NRPS liaison or Mayor
+3. **Pull the relevant Sentainel evidence package** for the system or scenario complained of
+4. **Issue a hold** on any pending changes to the system
+5. **Identify the complaint category** and corresponding scenario above
 
 ---
 
-## Mediation track (typical outcome)
+## Phase 2: Assembling the response package
 
-IPC mediation under MFIPPA typically results in the Town agreeing to:
+The IPC will expect to see evidence corresponding to the scenario. For each Thorold-specific scenario:
 
-- Publish the AI Inventory entry (if not already published)
-- Complete the PIA and AIA for the relevant system
-- Adopt or publish a public recourse mechanism
-- Implement specific accuracy reporting or monitoring procedures
-- In some cases, pay reasonable costs to the complainant
+### Scenario A (NRPS ALPR)
 
-The Town's pre-existing Sentainel artifacts (this entire bundle) are typically sufficient to satisfy 80% of mediation outcomes without additional work.
+- This Sentainel package's `02-pia-template.md`
+- Town's signed coordinated PIA with NRPS + peer Niagara cities (if completed by then)
+- Sentainel matrix entry for ALPR (cross-references/coverage-matrix.csv)
+- NIST AI RMF mapping from `cross-references/mappings/nist-to-ca-on-mfippa.yaml`
 
----
+### Scenario B (Generative AI council report)
 
-## Formal order phase (Days 60+)
+- Interim Generative AI Use Policy adoption record (Council resolution)
+- This Sentainel package's `03-aia-template.md` Part A
+- AI Governance Lead designation
+- Specific incident documentation: who used what AI, what disclosure was made, what validation occurred
 
-If mediation is unsuccessful or declined, the IPC may issue a formal order under MFIPPA Bill 97 (effective January 1, 2027). Formal orders may direct the Town to:
+### Scenario C (Astroturfing repeat incident)
 
-- Implement specific compliance measures with deadlines
-- Pay administrative monetary penalties (the framework for these is being developed under MFIPPA Bill 97 + EDSTA)
-- Cease specified AI use until remediation is complete
-- Provide annual compliance reports to the IPC
-- Publicly disclose the order and the Town's response
+- Council Astroturfing Response Procedure adoption record (Council resolution)
+- This Sentainel package's `03-aia-template.md` Part B
+- Procedural integrity log for the affected deliberation
+- AI Governance Lead briefing memo to Council prior to deliberation
+- Quarterly public report on communication patterns (if procedure was in place)
 
-Formal orders are enforceable through the Ontario Superior Court of Justice.
+### Scenario D (Bylaw enforcement AI)
 
-**The Town's best defense against a formal order is to have done the work in advance.** The Sentainel platform's value proposition is that the Town's compliance documentation exists before any complaint arrives, which dramatically reduces the probability that mediation fails or that a formal order is necessary.
+- AI inventory entry for the bylaw enforcement system
+- IPC-OHRC alignment scorecard (this package's `04-ipc-ohrc-alignment.md`)
+- Disparate impact analysis (if completed) or commitment to complete
+- Recourse workflow record of the resident's prior complaint, if any (`06-recourse-workflow.md`)
 
----
+### Foundation documents (always include)
 
-## Communications strategy
-
-### Internal communications
-
-Within the Town:
-
-- Brief council in closed session when a complaint is received
-- Brief department heads on the scope of the investigation
-- Brief affected staff on litigation hold requirements and interview protocols
-- Provide regular status updates to the CAO and Mayor
-
-### External communications
-
-With the IPC:
-
-- Maintain professional cooperative tone
-- Acknowledge all communications promptly
-- Designate AI Governance Lead as primary point of contact
-- Refer technical questions to IT Director with AI Governance Lead present
-
-With media (if approached):
-
-- Designate the Mayor or Mayor's designate as media contact
-- Statement template: "The Town is cooperating with an inquiry from the Office of the Information and Privacy Commissioner. The Town takes its obligations under MFIPPA seriously. We will not comment on the specifics of an ongoing inquiry but will share findings publicly when the inquiry is complete."
-- Do not speculate about outcomes
-- Do not characterize the complainant
-- Do not disclose the complainant's identity
-
-With the public:
-
-- If the matter is publicly known, post a brief statement on thorold.ca within 5 business days of the trigger event
-- Statement should acknowledge the inquiry, confirm cooperation, and indicate when an update will be provided
-- Do not promise specific outcomes
+- This package's `01-ai-inventory.md`
+- AI Governance Lead designation
+- Town's published AI policy or interim policy
+- IPC-OHRC alignment scorecard
+- NIST AI RMF safe-harbor mapping for the system
 
 ---
 
-## NIST AI RMF mapping
+## Phase 3: The Town's response
 
-| NIST control | Coverage by this complaint prep |
-|---|---|
-| GOVERN-1.4 | Risk management documented across lifecycle including complaint response |
-| GOVERN-4.3 | Incident sharing across organizational boundaries |
-| MANAGE-1.3 | Risk mitigation decisions documented |
-| MANAGE-2.3 | Superseded systems response (when complaint involves a deprecated AI) |
-| MANAGE-4.1 | Post-deployment monitoring informs complaint response |
-| MANAGE-4.3 | Incidents communicated to oversight bodies (IPC) |
+### Tone
+
+The IPC and OHRC are not adversarial. They prefer engaged municipalities. The response should:
+
+- Acknowledge the concern substantively
+- Demonstrate good-faith compliance posture
+- Identify any gaps the Town itself has already remediated
+- Provide the evidence package
+- Propose corrective action where appropriate
+
+### What to avoid
+
+- Stonewalling or boilerplate denials
+- Citing MFIPPA s. 28 alone without addressing IPC-OHRC Principles
+- Failing to address the principle the complainant specifically invoked
+- Promising remediation without timeline
+- Disclosing the complainant's identity in any internal communication
+
+### Sample defensible posture phrases
+
+For demonstrating NIST AI RMF alignment:
+
+> "The Town of Thorold has mapped this system to the NIST AI Risk Management Framework via the Sentainel compliance infrastructure. The mapping is published at sentainel-com.vercel.app/matrix. The specific controls satisfied are [GOVERN-1.1, MEASURE-2.7, etc.]. This safe-harbor approach is recognized in Texas TRAIGA s. 552.105 and increasingly referenced in Canadian regulatory guidance."
+
+For demonstrating astroturfing-procedure compliance (Scenario C):
+
+> "The Town adopted a Council Astroturfing Response Procedure in [date] in response to the documented 2024–2025 incident. The procedure is the first such municipal procedure in Ontario. For the deliberation complained of, the procedural log demonstrates [specific signals reviewed, briefing provided to Council, transparency disclosure made]."
+
+For demonstrating Generative AI policy compliance (Scenario B):
+
+> "The Town's Interim Generative AI Use Policy was adopted by Council resolution on [date]. The policy requires citation, validation, and disclosure of all generative AI outputs used in council-distributed materials. The specific staff use complained of [either was or was not] in compliance with the policy. [If non-compliant: corrective action taken includes...]"
+
+For demonstrating regional coordination (Scenario A):
+
+> "The Niagara Regional Police Service ALPR system is governed by a coordinated MFIPPA Bill 97 PIA across all four Niagara cities, completed [date]. The Town of Thorold's role in the coordinated PIA is documented at [reference]. Resident-facing recourse for ALPR-specific concerns is available through both NRPS-internal review and the Town's public AI Concerns workflow at thorold.com/ai-concerns."
 
 ---
 
-## Pre-positioned evidence checklist
+## Phase 4: If the IPC issues a binding order
 
-For an IPC investigation to be successfully defended, the following should already exist when the complaint arrives:
+### Compliance window
 
-- [ ] Public AI inventory on thorold.ca
-- [ ] Designated AI Governance Lead (named publicly)
-- [ ] Adopted Generative AI Staff Use Policy
-- [ ] Adopted Council Astroturfing Response Procedure
-- [ ] Published recourse mechanism
-- [ ] Quarterly status reports to council
-- [ ] Vendor compliance attestations for all AI-touching procurements
-- [ ] NIST AI RMF mapping for each significant AI exposure
+MFIPPA Bill 97 IPC binding orders are typically subject to 30–90 day compliance windows.
 
-Thorold currently has none of these in public-record form. Adopting them within 90 days is the central recommendation of this bundle.
+### Compliance options
+
+1. **Fully comply** — the cheapest and fastest outcome
+2. **Seek judicial review** — only where the order is clearly outside IPC jurisdiction or facially unreasonable (legal cost: $100K+)
+3. **Negotiated compliance** — common middle path; the IPC engages cooperatively with municipalities demonstrating good-faith remediation
+
+### Reporting on compliance
+
+All compliance actions are reported to the IPC with documentary evidence.
 
 ---
 
-## Reviewer + sign-off
+## Phase 5: Lessons-learned + remediation
 
-**Prepared by:** Sentainel Compliance Platform, May 2026
-**Intended reviewer:** Town of Thorold CAO + Clerk + AI Governance Lead + external counsel
+After any IPC complaint (resolved or not), the AI Governance Lead must:
+
+1. Update the AI inventory
+2. Update the relevant PIA / AIA / scorecard
+3. Brief Council in camera if appropriate
+4. Update the recourse workflow if procedural gaps were identified
+5. Update the Council Astroturfing Response Procedure if the incident was Scenario C
+6. Publish a quarterly AI compliance report including the complaint in aggregate statistics
+
+---
+
+## Coordination across the four Niagara cities
+
+For Scenarios A and (potentially) C, IPC complaints may affect all four Niagara cities. Sentainel recommends:
+
+- Standing inter-municipal AI coordination protocol (see `demos/niagara/niagara-falls/07-ipc-complaint-prep.md`)
+- Joint quarterly AI Governance Lead meetings across the four cities
+- Shared response procedure for shared-system complaints
+
+For a Town of Thorold's administrative scale, regional coordination is particularly valuable because the per-city cost of complaint response is amortized across larger neighbours.
+
+---
+
+## When to engage Sentainel
+
+If the Town of Thorold receives an IPC complaint involving AI, Sentainel Compliance offers:
+
+- Immediate evidence package compilation (typically 5–7 business days)
+- NIST AI RMF mapping for any system in the complaint
+- IPC response drafting support
+- Regional coordination across the four Niagara cities if shared systems involved
+- Specific Scenario C support (astroturfing-related complaints, drawing on the unique Thorold procedural framework)
+
+Contact: `web@sentainel.com`
