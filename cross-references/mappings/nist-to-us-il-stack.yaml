@@ -1,0 +1,434 @@
+# NIST AI RMF Cross-Reference: Illinois AI Hiring Stack
+# Covers: 775 ILCS 5/2-102(L) (HRA AI Amendments) + 820 ILCS 42 (AIVIA)
+# 8 obligations total: 4 HRA AI + 4 AIVIA (unified s.5, s.10, s.15, s.30)
+#
+# Strategic context: Illinois lacks an explicit statutory safe harbor
+# (unlike Texas TRAIGA § 552.105(e)(2)(D)). However, NIST AI RMF
+# substantial compliance functions as practitioner-recognized good-faith
+# evidence in IDHR investigations and IHRC adjudication. The 2025 IDHR
+# proposed rules reference NIST AI RMF as a benchmark.
+#
+# Implementation priority tiers reflect Sentainel's sequencing for new
+# Illinois customers.
+
+regulation_slug: us-il-hra-ai
+companion_regulation_slug: us-il-aivia
+mapping_version: 1.0
+last_reviewed: 2026-05-13
+reviewer: web@sentainel.com
+
+safe_harbor_status:
+  type: practitioner_recognized
+  notes: |
+    No explicit statutory safe harbor. NIST AI RMF substantial
+    compliance is good-faith evidence in IDHR proceedings and
+    likely to be incorporated by reference in IDHR final rules
+    (proposed rules cite NIST AI RMF as benchmark).
+
+implementation_priority_tiers:
+  tier_1_critical_first_30_days:
+    description: |
+      Controls that directly satisfy multiple Illinois obligations
+      and would be cited in any IDHR investigation response.
+    controls:
+      - GOVERN-1.1   # Legal & regulatory requirements managed
+      - GOVERN-1.6   # AI inventory mechanisms (so you know what's in IL scope)
+      - MAP-1.1      # Context of use
+      - MEASURE-2.8  # Transparency (underpins all IL notice obligations)
+      - MEASURE-2.11 # Fairness & bias evaluation (directly defends disparate-impact claims)
+
+  tier_2_high_priority_60_days:
+    description: |
+      Controls that support stronger defensibility and align with
+      proposed IDHR rule expectations.
+    controls:
+      - GOVERN-3.1   # Diversity in risk management (disparate-impact defense)
+      - GOVERN-5.1   # Stakeholder feedback (consent workflows)
+      - MAP-1.2      # Interdisciplinary actors (fairness review composition)
+      - MAP-3.5      # Human oversight (out of "sole AI reliance" under AIVIA s. 30)
+      - MEASURE-2.9  # Explainability (supports AIVIA s. 5(2) explanation requirement)
+      - MANAGE-1.3   # Decisions inform mitigation
+      - MANAGE-4.1   # Post-deployment monitoring
+
+  tier_3_completeness_120_days:
+    description: |
+      Controls completing the defensive posture. Lower individual
+      priority but needed for full IDHR-investigation defense.
+    controls:
+      - GOVERN-2.2   # Workforce training
+      - GOVERN-4.1   # Risk practices documented
+      - GOVERN-6.1   # Third-party policies (vendor management)
+      - MAP-4.1      # Map third-party legal risks (vendor DPAs)
+      - MEASURE-2.7  # Security & privacy risks (BIPA overlay)
+      - MEASURE-2.10 # Privacy risk
+      - MANAGE-2.3   # Superseded systems response (s. 15 deletion)
+      - MANAGE-2.4   # Supersede deficient AI
+      - MANAGE-3.1   # Third-party risk monitoring
+      - MANAGE-4.3   # Incidents communicated
+
+obligation_mappings:
+
+  # =====================================================================
+  # HRA AI obligations
+  # =====================================================================
+
+  - obligation_slug: us-il-hra-ai-2-102-l-1-no-discrimination
+    citation: 775 ILCS 5/2-102(L)(1) (first clause)
+    obligation_summary: |
+      Employer must not use AI that has the effect of subjecting
+      employees to discrimination on the basis of protected
+      classes. Disparate-impact standard (no intent required).
+    controls:
+      - control_id: GOVERN-1.1
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Document Illinois HRA AI applicability and disparate-
+          impact standard in regulatory inventory.
+      - control_id: GOVERN-3.1
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Diversity in risk management — interdisciplinary review
+          composition strengthens disparate-impact defense.
+      - control_id: MAP-1.2
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Interdisciplinary actors review AI for disparate impact
+          across all 19 IL protected classes.
+      - control_id: MAP-5.1
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Likelihood and magnitude of impact — disparate-impact
+          analysis is impact assessment per protected class.
+      - control_id: MEASURE-2.11
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Fairness and bias evaluation directly defends against
+          HRA AI disparate-impact claims. 4/5ths rule analysis
+          across all 19 protected classes.
+      - control_id: MANAGE-1.3
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Decisions inform mitigation — disparate-impact findings
+          trigger AI tuning or replacement.
+      - control_id: MANAGE-2.4
+        coverage_level: supports
+        implementation_note: |
+          Supersede deficient AI — if disparate impact cannot be
+          remediated, replace the AI.
+
+  - obligation_slug: us-il-hra-ai-2-102-l-1-no-zipcode-proxy
+    citation: 775 ILCS 5/2-102(L)(1) (second clause)
+    obligation_summary: |
+      Employer may not use zip codes as a proxy for protected
+      classes in AI-driven employment decisions.
+    controls:
+      - control_id: GOVERN-1.1
+        coverage_level: fully_satisfies
+        implementation_note: Document the zip-code-proxy prohibition.
+      - control_id: MAP-1.1
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Context of use — feature inventory documents whether
+          zip code or derivative features are in use.
+      - control_id: MAP-4.1
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Map third-party legal risks — vendor due diligence on
+          feature set including zip code derivatives.
+      - control_id: MEASURE-2.11
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Fairness & bias — correlation analysis identifies zip-
+          code-derived features (commute, neighborhood, etc.).
+      - control_id: MANAGE-1.3
+        coverage_level: supports
+        implementation_note: |
+          Decisions inform mitigation — flagged features trigger
+          remediation workflows.
+
+  - obligation_slug: us-il-hra-ai-2-102-l-2-employee-notice
+    citation: 775 ILCS 5/2-102(L)(2)
+    obligation_summary: |
+      Employer must provide notice to employees that AI is being
+      used for covered employment decisions. Form and timing per
+      IDHR rules (pending).
+    controls:
+      - control_id: GOVERN-1.1
+        coverage_level: fully_satisfies
+        implementation_note: Notice template repository, version-controlled.
+      - control_id: GOVERN-5.1
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Stakeholder feedback — applicant/employee questions
+          following notice delivery feed back into program.
+      - control_id: MAP-2.2
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Knowledge limits — notice must accurately describe
+          what the AI can and cannot do.
+      - control_id: MEASURE-2.8
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Transparency — notice IS the transparency mechanism for
+          AI use disclosure.
+      - control_id: MEASURE-2.9
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Explainability — notice content should include
+          explainability summary.
+      - control_id: MANAGE-4.1
+        coverage_level: supports
+        implementation_note: |
+          Post-deployment monitoring — track notice delivery rates
+          and applicant questions.
+
+  - obligation_slug: us-il-hra-ai-2-102-l-idhr-rulemaking-compliance
+    citation: 775 ILCS 5/2-102(L) (final paragraph)
+    obligation_summary: |
+      Continuous obligation to monitor IDHR rulemaking activity
+      and conform AI compliance program to new rules as they
+      publish.
+    controls:
+      - control_id: GOVERN-1.1
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Regulatory monitoring is a GOVERN-1.1 function. Sentainel
+          provides the operational answer.
+      - control_id: GOVERN-1.5
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Ongoing oversight — IDHR rule changes trigger program
+          updates within agency-provided transition windows.
+      - control_id: GOVERN-1.7
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Decommissioning procedures — if IDHR rules require
+          retiring an AI deployment, decommissioning is the
+          response.
+      - control_id: MANAGE-2.2
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Mechanisms sustain value — refresh of policies, notice
+          templates in response to IDHR rule changes.
+      - control_id: MANAGE-2.4
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Supersede deficient AI — if new IDHR rules render
+          existing deployment non-compliant, replace.
+
+  # =====================================================================
+  # AIVIA obligations
+  # =====================================================================
+
+  - obligation_slug: us-il-aivia-s5-pre-interview-notice-consent
+    citation: 820 ILCS 42/5
+    obligation_summary: |
+      Three-part procedure BEFORE video interview: notice that AI
+      may analyze video, information on how AI works and what
+      it evaluates, consent from applicant. Cannot evaluate non-
+      consenting applicants with AI.
+    controls:
+      - control_id: GOVERN-1.1
+        coverage_level: fully_satisfies
+        implementation_note: AIVIA tracked in regulatory inventory.
+      - control_id: GOVERN-5.1
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Stakeholder feedback — applicant consent IS stakeholder
+          input on AI use.
+      - control_id: MAP-2.2
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Knowledge limits — explanation requirement (s. 5(2))
+          requires describing what AI can and cannot do.
+      - control_id: MAP-3.5
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Human oversight — non-consenting applicants must have
+          human-only review pathway.
+      - control_id: MEASURE-2.8
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Transparency — notice and explanation requirements are
+          transparency operationalized.
+      - control_id: MEASURE-2.9
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Explainability — explanation requirement (s. 5(2)) IS
+          an explainability obligation.
+      - control_id: MEASURE-3.3
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Stakeholder feedback channels — applicants who decline
+          consent provide signal on AI acceptance.
+
+  - obligation_slug: us-il-aivia-s10-sharing-limited
+    citation: 820 ILCS 42/10
+    obligation_summary: |
+      Employer may not share applicant videos except with persons
+      whose expertise or technology is necessary to evaluate.
+    controls:
+      - control_id: GOVERN-1.1
+        coverage_level: fully_satisfies
+        implementation_note: Sharing limitation in regulatory inventory.
+      - control_id: GOVERN-6.1
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Third-party policies — vendor DPAs must restrict
+          downstream use per s. 10 narrow exception.
+      - control_id: GOVERN-6.2
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Contingency processes — vendor change scenarios with
+          data residency considerations.
+      - control_id: MAP-4.1
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Map third-party legal risks — vendor contract audit is
+          the operational answer to s. 10.
+      - control_id: MEASURE-2.7
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Security & privacy risks — access control on applicant
+          videos directly implements s. 10.
+      - control_id: MANAGE-3.1
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Third-party risk monitoring — vendor compliance with
+          downstream-use restrictions is ongoing oversight.
+
+  - obligation_slug: us-il-aivia-s15-destruction-on-request
+    citation: 820 ILCS 42/15
+    obligation_summary: |
+      Within 30 days of applicant request, employer must delete
+      the video and instruct third parties holding copies to also
+      delete, including all backups.
+    controls:
+      - control_id: GOVERN-1.1
+        coverage_level: fully_satisfies
+        implementation_note: Deletion right in regulatory inventory.
+      - control_id: GOVERN-1.7
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Decommissioning procedures — deletion workflow is
+          decommissioning at the data level.
+      - control_id: GOVERN-6.1
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Third-party policies — vendor obligations to comply
+          with employer's deletion instruction.
+      - control_id: MAP-4.1
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Map third-party legal risks — failure of vendor to
+          delete cascades to employer.
+      - control_id: MEASURE-2.7
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Security & privacy risks — deletion verification is
+          privacy operationalization.
+      - control_id: MEASURE-2.10
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Privacy risk — applicant erasure right is a privacy
+          control.
+      - control_id: MANAGE-2.3
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Superseded systems response — deletion of artifacts on
+          system retirement / on request.
+      - control_id: MANAGE-3.1
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Third-party risk monitoring — vendor deletion compliance
+          tracked.
+      - control_id: MANAGE-4.3
+        coverage_level: supports
+        implementation_note: |
+          Incidents communicated — failure to delete is a
+          communicable incident.
+
+  - obligation_slug: us-il-aivia-s30-dceo-demographic-reporting
+    citation: 820 ILCS 42/30
+    obligation_summary: |
+      Sole-AI filtering employers must annually report demographic
+      data to DCEO for racial-bias analysis. December 31
+      submission deadline.
+    controls:
+      - control_id: GOVERN-1.1
+        coverage_level: fully_satisfies
+        implementation_note: Reporting obligation in regulatory inventory.
+      - control_id: GOVERN-1.6
+        coverage_level: fully_satisfies
+        implementation_note: |
+          AI inventory mechanisms — must know which deployments
+          are in sole-AI scope.
+      - control_id: GOVERN-3.1
+        coverage_level: partially_satisfies
+        implementation_note: |
+          Diversity in risk management — demographic monitoring
+          enables bias detection.
+      - control_id: MAP-3.5
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Human oversight — adding human review takes employer
+          OUT of sole-AI scope (preferred posture for most
+          customers).
+      - control_id: MEASURE-2.1
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Test sets & metrics — DCEO report data IS the metric
+          set on AI-driven filtering decisions.
+      - control_id: MEASURE-2.3
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Performance evaluation — disparate-impact statistics
+          are AI performance evaluation.
+      - control_id: MEASURE-2.11
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Fairness & bias — the report content IS fairness
+          measurement.
+      - control_id: MANAGE-4.1
+        coverage_level: fully_satisfies
+        implementation_note: |
+          Post-deployment monitoring — annual report cadence with
+          continuous demographic data capture.
+
+# =====================================================================
+# Gap analysis: where Illinois obligations have no clean NIST mapping
+# =====================================================================
+illinois_specific_gaps:
+  - obligation_aspect: Zip-code proxy prohibition
+    nist_gap: |
+      NIST AI RMF treats feature selection generally under MAP-1.1
+      and MEASURE-2.11 but does not name zip code specifically.
+      Sentainel feature-detection logic is implemented at the
+      platform layer, not at the framework layer.
+  - obligation_aspect: AIVIA 30-day deletion clock
+    nist_gap: |
+      NIST AI RMF endorses data lifecycle controls broadly but
+      does not specify deletion timelines. AIVIA's 30-day SLA is
+      operationally implemented in Sentainel's workflow engine.
+  - obligation_aspect: DCEO demographic reporting format
+    nist_gap: |
+      NIST AI RMF endorses metrics and monitoring but does not
+      define report formats or submission cadences. DCEO format
+      is operationalized in Sentainel's reporting module.
+
+# =====================================================================
+# Quick reference: high-leverage controls for Illinois compliance
+# =====================================================================
+high_leverage_summary:
+  description: |
+    Implementing these 8 controls satisfies ~85% of the Illinois
+    AI hiring obligations across HRA AI + AIVIA.
+  controls:
+    - GOVERN-1.1   # universal anchor
+    - GOVERN-1.6   # AI inventory
+    - MEASURE-2.8  # transparency
+    - MEASURE-2.11 # fairness & bias
+    - MEASURE-2.9  # explainability (AIVIA s. 5(2))
+    - MAP-3.5      # human oversight (out of sole-AI scope)
+    - MANAGE-2.3   # deletion workflow
+    - GOVERN-6.1   # vendor policies (AIVIA s. 10)
