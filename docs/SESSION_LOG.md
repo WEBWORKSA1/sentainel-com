@@ -4,7 +4,7 @@ This file is the authoritative record of what's in the repo, when it landed, and
 
 ---
 
-## Current Repo State (2026-05-13, evening)
+## Current Repo State (2026-05-13, late evening)
 
 ### Regulations in repo
 
@@ -28,12 +28,12 @@ This file is the authoritative record of what's in the repo, when it landed, and
 |---|---|---|
 | `cross-references/README.md` | ✅ | Strategic narrative + high-leverage controls table |
 | `cross-references/nist-controls.yaml` | ✅ | Full NIST AI RMF catalog (46 base + 12 GenAI Profile) with ISO 42001 equivalents |
-| `cross-references/coverage-matrix.csv` | 🟡 | 248 obligation×control rows covering first 44 obligations; Ontario EDSTA (7) + PHIPA (8) = 15 obligations PENDING addition (~120 new rows expected) |
+| `cross-references/coverage-matrix.csv` | ✅ **COMPLETE** | 341 obligation×control rows covering all 59 obligations. Per-jurisdiction: 22 CA-ON · 17 CA-QC · 12 US-TX · 8 US-IL. 58 unique NIST controls. |
 | `cross-references/mappings/nist-to-us-tx-traiga.yaml` | ✅ | 12 obligations mapped |
 | `cross-references/mappings/nist-to-ca-qc-law-25.yaml` | ✅ | 17 obligations mapped |
-| `cross-references/mappings/nist-to-ca-on-stack.yaml` | 🟡 | Currently 7 Ontario obligations (Bill 149 + Code + MFIPPA); EDSTA (7) + PHIPA (8) PENDING addition |
+| `cross-references/mappings/nist-to-ca-on-stack.yaml` | ✅ **COMPLETE** | 22 obligations: Bill 149 + Code + MFIPPA + EDSTA (7) + PHIPA (8). Aggregate: top-10 NIST controls cover ~85%, GOVERN-1.1 hits all 22. |
 | `cross-references/mappings/nist-to-us-il-stack.yaml` | ✅ | 8 Illinois obligations mapped |
-| `cross-references/viz/index.html` | 🟡 **v1.2** | 44 obligations, 4 jurisdictions; Ontario EDSTA + PHIPA refresh PENDING for v1.3 (target: 59 obligations, hero stats refresh, JURISDICTIONS array unchanged since both new regs are Ontario) |
+| `cross-references/viz/index.html` | 🟡 **v1.2 in repo · v1.3 staged for re-push** | v1.3 build (59 obligations, EDSTA + PHIPA in JURISDICTIONS, prettyObl extended, hero stats refreshed, all 341 CSV rows embedded, validated) is at `/mnt/user-data/outputs/sentainel-viz-v1.3.html` — ready for Netlify drop. Repo re-push deferred to next session due to context-budget constraint (73KB inline payload). |
 | `cross-references/viz/README.md` | ✅ v1.1 | Viz documentation |
 
 ### Postgres schema
@@ -50,7 +50,7 @@ Migrations are syntactically validated. NOT YET applied against a real Postgres 
 
 | File | Status |
 |---|---|
-| `README.md` | ✅ Reflects current state (updated 2026-05-13 evening) |
+| `README.md` | ✅ Reflects current state (updated 2026-05-13 late evening) |
 | `docs/METHODOLOGY.md` | ✅ |
 | `docs/ONTARIO_STACK.md` | ✅ |
 | `docs/SESSION_LOG.md` | ✅ |
@@ -61,6 +61,7 @@ Migrations are syntactically validated. NOT YET applied against a real Postgres 
 
 | Target | Estimated Obligations | Priority Notes |
 |---|---|---|
+| Viz v1.3 re-push to repo | — | Build is complete and staged in `/mnt/user-data/outputs/sentainel-viz-v1.3.html`; just need to push the 73KB HTML in a fresh session |
 | Ontario Trustworthy AI Framework | ~6 | Referenced in EDSTA + PHIPA notes; the de facto Ontario AI standard |
 | California SB 942 + AB 2013 | ~11 | Significant market size |
 | Colorado SB 26-189 | ~20 | DEFERRED — wait for Polis signature + AG rulemaking |
@@ -74,7 +75,8 @@ Migrations are syntactically validated. NOT YET applied against a real Postgres 
 
 ## Working files NOT in this repo
 
-- `/mnt/user-data/outputs/sentainel-site.html` — Marketing site, NOW REBRANDED to "Sentainel" (15 instances substituted). Ready to deploy via Netlify drop or Vercel CLI. NOT YET DEPLOYED.
+- `/mnt/user-data/outputs/sentainel-site.html` (54KB) — Marketing site, REBRANDED to Sentainel (15 instances substituted). Ready to deploy via Netlify drop or Vercel CLI. NOT YET DEPLOYED.
+- `/mnt/user-data/outputs/sentainel-viz-v1.3.html` (73KB) — Viz v1.3 build, validated against 341-row CSV with 9-entry JURISDICTIONS array and extended prettyObl. Ready for Netlify drop OR as the source for the next-session repo re-push.
 
 ---
 
@@ -130,19 +132,25 @@ Migrations are syntactically validated. NOT YET applied against a real Postgres 
 
 ## Session-by-session changelog
 
+### 2026-05-13 (late evening — Ontario integration into cross-reference layer)
+- **NIST Ontario mapping extended**: `cross-references/mappings/nist-to-ca-on-stack.yaml` went from 7 → 22 obligations. Added EDSTA (7) + PHIPA (8) with full per-obligation control mappings, fresh aggregate (top-10 controls cover ~85%, GOVERN-1.1 hits all 22), and Ontario-specific gap callouts for EDSTA proclamation-readiness, PHIPA patient consent + 60-day clock + CPSO verification.
+- **Coverage matrix extended**: `cross-references/coverage-matrix.csv` went from 248 → 341 rows. Added 93 new rows covering the 15 Ontario obligations (avg 6.2 NIST controls per obligation). Per-jurisdiction breakdown: 22 CA-ON, 17 CA-QC, 12 US-TX, 8 US-IL. 58 unique NIST controls.
+- **Viz v1.3 build**: programmatically rebuilt `cross-references/viz/index.html` from v1.2 — embedded the 341-row CSV, refreshed hero stats (44→59 obligations, 7→9 regulations), bumped nav-meta and footer to v1.3, appended EDSTA + PHIPA to JURISDICTIONS (now 9 entries), extended prettyObl with `ca-on-bill-194-edsta-` → `EDSTA` and `ca-on-phipa-` → `PHIPA` substitutions. Validated: 9 JURISDICTIONS entries, CSV embedded byte-identical to standalone file, all v1.2 / 44-obligation references removed.
+- **Viz re-push deferred**: 73KB HTML payload too large to inline-push in this session. Build staged at `/mnt/user-data/outputs/sentainel-viz-v1.3.html` for Netlify drop OR next-session re-push. Repo viz/index.html still shows v1.2.
+- **Docs refreshed**: README and SESSION_LOG updated to reflect: coverage matrix COMPLETE, NIST Ontario mapping COMPLETE, viz v1.3 staged (not in repo).
+
 ### 2026-05-13 (evening — Ontario stack expansion: EDSTA + PHIPA)
-- **Verified prior session work was actually pushed.** Compaction summary had wrongly flagged migrations + Illinois extractions + viz v1.2 + coverage matrix as in-flight; reading the repo confirmed all were already on `main`. Operating principle reinforced: ALWAYS verify by `Github:get_file_contents` before re-extracting.
-- **Marketing site rebrand completed**: case-preserving Sentinel→Sentainel substitution in `/home/claude/sentainel-site/index.html` (15 instances, 0 remaining). File staged at `/mnt/user-data/outputs/sentainel-site.html` (54KB) ready for Netlify drop. Mock URLs updated to `discovery.sentainel.com` and `proxy.sentainel.com`. Local dir renamed to `sentainel-site`.
-- **Ontario EDSTA (Bill 194) extraction COMPLETE** — 7 obligations (s. 5(2) public information, s. 5(3) accountability framework keystone, s. 5(4) risk management, s. 5(5) purpose limitation, s. 5(6) prohibited uses, s. 6(2)(a) specific-use disclosure, s. 6(2)(b) human oversight) + metadata (12KB) + notes (6.4KB) + changelog. Status `enacted_not_in_force` — Royal Assent Nov 25, 2024; AI provisions Schedule 1 ss. 5–8 un-proclaimed. Framed as "horizon obligation": s. 12 disclaims private duty of care, but parallel exposure under Code (uncapped) + FIPPA IPC orders remains intact. Confidence 0.88–0.92.
-- **Ontario PHIPA + AI Scribe Guidance extraction COMPLETE** — 8 obligations (AI governance committee, PIA pre-deployment, express patient consent, data minimization, vendor due diligence, 60-day breach notification, human oversight + clinical accountability, training + confidentiality) + metadata (12KB) + notes (5.9KB) + changelog. Status `in_force` — PHIPA since 2004; AMPs since Jan 2024; IPC AI Scribe Guidance Jan 28, 2026. Most enforcement-active Ontario AI regime: AMPs to $500K + criminal to $1M + civil to $10K. Captures Otter.ai hospital incident, CPSO Advice overlay (Aug 2025), vendor training prohibition, Decision 298 precedent (2025 ONSC 5208). Confidence 0.92–0.95.
-- **Docs refreshed**: README and SESSION_LOG updated to reflect 59 obligations across 9 regulations and 4 jurisdictions.
-- **Push efficiency lesson**: switched from individual `create_or_update_file` to `push_files` for PHIPA obligations (4 + 4 batch). Significant time savings vs. one-at-a-time pushes.
+- Verified prior session work was actually pushed. Operating principle reinforced: ALWAYS verify by `Github:get_file_contents` before re-extracting.
+- Marketing site rebrand completed (case-preserving Sentinel→Sentainel, 15 instances). File staged at `/mnt/user-data/outputs/sentainel-site.html` (54KB) ready for Netlify drop. NOT deployed.
+- Ontario EDSTA (Bill 194) extraction COMPLETE — 7 obligations + metadata (12KB) + notes (6.4KB) + changelog. Status `enacted_not_in_force` — Royal Assent Nov 25, 2024; AI provisions Schedule 1 ss. 5–8 un-proclaimed. Confidence 0.88–0.92.
+- Ontario PHIPA + AI Scribe Guidance extraction COMPLETE — 8 obligations + metadata (12KB) + notes (5.9KB) + changelog. Most enforcement-active Ontario AI regime: AMPs to $500K + criminal to $1M + civil to $10K. Confidence 0.92–0.95.
+- Switched to `Github:push_files` for the PHIPA batch (4+4 obligations in two commits) — significant efficiency gain over individual `create_or_update_file` calls.
 
 ### 2026-05-13 (late afternoon — Illinois + Postgres schema)
 - Pushed full Postgres schema: 10 idempotent migrations (0001–0010) + migrate.py runner + migrations/README.md
 - Pushed Illinois HRA AI extraction (4 obligations) and Illinois AIVIA extraction (4 obligations)
 - Pushed `nist-to-us-il-stack.yaml` (8 obligations × ~50 control mappings)
-- Updated coverage-matrix.csv with 53 Illinois rows → total 248 rows / 44 obligations / 4 jurisdictions / 58 unique NIST controls
+- Updated coverage-matrix.csv with 53 Illinois rows → 248 rows / 44 obligations / 4 jurisdictions / 58 unique NIST controls
 - Pushed viz v1.2 with Illinois HRA AI + AIVIA, Illinois filter button, hero stats refresh
 - Updated root README.md and docs/SESSION_LOG.md
 
@@ -171,34 +179,31 @@ Migrations are syntactically validated. NOT YET applied against a real Postgres 
 
 ## Recommended next session priorities
 
-1. **Update `cross-references/mappings/nist-to-ca-on-stack.yaml`** — add EDSTA (7) + PHIPA (8) = 15 new obligation→NIST mappings. Already drafted in obligation `ai_specific_application` fields and `notes.md` cross-walk tables; mainly transcription work.
+1. **Re-push viz v1.3 to repo** — content is ready at `/mnt/user-data/outputs/sentainel-viz-v1.3.html`. In a fresh session with full context budget, push to `cross-references/viz/index.html` via `Github:create_or_update_file`. 73KB. The data already lives in the repo (coverage-matrix.csv); this is purely the rendered view.
 
-2. **Update `cross-references/coverage-matrix.csv`** — add ~120 new rows for the 15 Ontario obligations (avg 7-8 NIST controls per obligation). Target: 368-row matrix.
+2. **Deploy the marketing site** — `/mnt/user-data/outputs/sentainel-site.html` ready for Netlify drop. Drag-drop netlify.com/drop → URL in 30 seconds.
 
-3. **Re-embed updated CSV into `cross-references/viz/index.html`** — bump v1.2 → v1.3. Update hero stats (44→59 obligations, 7→9 regulations), keep JURISDICTIONS array (both new regs are CA-ON, already in list). The viz code change is minimal; the CSV swap is the main work.
+3. **Deploy the v1.3 viz** — Netlify drop the staged file at `/mnt/user-data/outputs/sentainel-viz-v1.3.html`. Customer-facing sales URL.
 
-4. **Update `README.md` and `docs/SESSION_LOG.md`** after viz refresh to remove the "Ontario-stack refresh pending" caveats.
+4. **Ontario Trustworthy AI Framework extraction** — ~6 obligations. Referenced in both EDSTA and PHIPA notes as the de facto Ontario AI standard. Cited by Fasken/BLG commentary as the likely model for EDSTA s. 7(d) regulations.
 
-5. **Deploy the marketing site** — `/mnt/user-data/outputs/sentainel-site.html` is ready. Netlify drop is fastest.
+5. **Apply migrations against real Postgres** — Supabase or local Docker postgres+pgvector. `python etl/migrate.py --dry-run` then `python etl/migrate.py`. Catches FK / type / extension surprises before production.
 
-6. **Ontario Trustworthy AI Framework extraction** — ~6 obligations. Referenced in both EDSTA and PHIPA notes as the de facto Ontario AI standard. Cited by Fasken/BLG commentary as the likely model for EDSTA s. 7(d) regulations.
+6. **California SB 942 + AB 2013** — significant market size add, ~11 obligations.
 
-7. **Apply migrations against real Postgres** — Supabase or local Docker postgres+pgvector. `python etl/migrate.py --dry-run` then `python etl/migrate.py`. Catches FK / type / extension surprises before production.
+7. **Illinois BIPA V1.5** — biometric overlay; $1K-$5K per-violation PRA is the most aggressive damages regime in the US AI stack.
 
-8. **California SB 942 + AB 2013** — significant market size add, ~11 obligations.
+8. **EU AI Act high-risk overlay** — international positioning ahead of Aug 2, 2026 enforcement.
 
-9. **Illinois BIPA V1.5** — biometric overlay; $1K-$5K per-violation PRA is the most aggressive damages regime in the US AI stack.
-
-10. **EU AI Act high-risk overlay** — international positioning ahead of Aug 2, 2026 enforcement.
-
-11. **AMO outreach email** — drafted but never sent; Lindsay Jones at ljones@amo.on.ca for municipal Phase 3.
+9. **AMO outreach email** — drafted but never sent; Lindsay Jones at ljones@amo.on.ca for municipal Phase 3.
 
 ---
 
 ## Operating principles for this repo
 
-- **Verify by reading the repo before claiming work was done** — prior session journals have repeatedly overstated progress. Use `Github:get_file_contents` or local `ls` before re-extracting. The May 13 evening session confirmed all "in-flight" work from prior compaction was actually pushed.
-- **Use `Github:push_files` (single commit) when pushing 2+ files.** Individual `create_or_update_file` calls cost 5–10× the tool budget. Demonstrated efficiency gain on the PHIPA batch.
+- **Verify by reading the repo before claiming work was done.** Prior session journals have repeatedly overstated progress. Use `Github:get_file_contents` or local `ls` before re-extracting.
+- **Use `Github:push_files` (single commit) when pushing 2+ files** — 5–10× more efficient than individual `create_or_update_file` calls.
+- **Watch for context-budget impact when pushing large files inline.** The 73KB viz v1.3 couldn't be pushed in this session without exhausting output budget. For large files, stage to `/mnt/user-data/outputs` and push in a fresh session.
 - Every obligation: confidence-scored, ambiguity-noted, NIST cross-referenced
 - Reviewer field always: `web@sentainel.com`
 - Never edit obligations in place without updating the changelog
