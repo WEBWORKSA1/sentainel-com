@@ -1,0 +1,114 @@
+---
+slug: ca-on-mfippa
+short_name: Ontario MFIPPA (Bill 97 amended)
+long_name: |
+  Municipal Freedom of Information and Protection of Privacy Act,
+  R.S.O. 1990, c. M.56, as amended by the Plan to Protect Ontario Act
+  (Budget Measures), 2026 (Bill 97), Schedule 11
+citation: R.S.O. 1990, c. M.56 (as amended by S.O. 2026, c. ___, Sch. 11)
+jurisdiction:
+  code: CA-ON
+  level: state_province
+  parent: CA-Federal
+status: in_force_with_pending_amendments
+status_notes: |
+  Base MFIPPA is in force (1990). Bill 97 amendments received Royal
+  Assent on April 23, 2026. Procedural amendments come into force
+  July 1, 2026. Privacy-related amendments (mandatory PIAs, breach
+  reporting, IPC binding orders, whistleblower protections) come
+  into force January 1, 2027.
+signed_date: 1990-01-01
+effective_date: 1990-01-01
+bill_97_signed_date: 2026-04-23
+bill_97_procedural_force_date: 2026-07-01
+bill_97_privacy_force_date: 2027-01-01
+sunset_date: null
+source_url: https://www.ontario.ca/laws/statute/90m56
+bill_97_source_url: https://www.ola.org/en/legislative-business/bills/parliament-44/session-1/bill-97
+companion_legislation:
+  - ca-on-bill-194-edst
+  - ca-on-fippa
+  - ca-on-human-rights-code
+summary: |
+  MFIPPA governs the collection, use, disclosure, and protection of
+  personal information by Ontario municipal institutions: municipal
+  corporations, local boards, police services boards, public library
+  boards, boards of health, school boards (in some respects),
+  conservation authorities, and transit commissions.
+
+  Bill 97 (April 23, 2026) transformed MFIPPA from a static access-
+  to-information statute into an active privacy governance regime
+  aligned with FIPPA's 2025 amendments. Most consequentially for AI:
+  mandatory Privacy Impact Assessments before collecting personal
+  information, mandatory breach notification, and IPC binding-order
+  authority — all starting January 1, 2027.
+
+  For municipal AI deployment, MFIPPA Bill 97 is the operational
+  spine. Every AI tool processing resident data triggers PIA
+  obligations. Combined with the Ontario Human Rights Code (Code
+  primacy, uncapped discrimination damages) and the pending EDSTA
+  regulations, MFIPPA forms the core of Ontario's municipal AI
+  compliance stack.
+scope_description: |
+  Applies to MFIPPA institutions as defined in s. 2(1):
+  - Every municipality
+  - A school board, conservation authority, board of health, board
+    of commissioners of police, transit commission, public library
+    board, or other local board as defined in the Municipal Affairs
+    Act
+  - Any agency, board, commission, corporation, or other body
+    designated as an institution in the regulations
+
+  Geography-based: applies to any institution operating in Ontario
+  regardless of where headquartered. Captures shared services agencies
+  serving multiple municipalities.
+extraterritorial_reach: false
+extraterritorial_notes: |
+  MFIPPA itself is municipally scoped. However, vendor flow-down
+  obligations from MFIPPA institutions reach private-sector AI
+  vendors regardless of vendor location. A US-based SaaS company
+  selling AI to Toronto City Hall is contractually bound by MFIPPA-
+  derived requirements even though MFIPPA does not directly apply.
+safe_harbor_via: []
+notes: |
+  MFIPPA has NO statutory affirmative defense for AI compliance.
+  Like Bill 149, the regime is disclosure-and-process based, not
+  risk-based. NIST AI RMF alignment helps defend parallel Code
+  complaints but does not provide statutory protection under MFIPPA.
+
+  The Code has PRIMACY over MFIPPA. Discriminatory AI outcomes
+  trigger uncapped Code damages regardless of MFIPPA compliance.
+penalty_schedules:
+  - tier_name: offence_general
+    basis: per_violation
+    max_amount: 5000
+    currency: CAD
+    citation: MFIPPA s. 48 (1)
+    notes: |
+      Under base MFIPPA, the offence provisions cap at $5,000 for
+      individuals. Bill 97 may amend these — track final consolidated
+      Act text once published.
+  - tier_name: ipc_binding_order_non_compliance
+    basis: per_violation
+    max_amount: null
+    currency: CAD
+    citation: MFIPPA s. ___ (as amended by Bill 97)
+    notes: |
+      Bill 97 grants the IPC express authority to issue binding
+      orders for corrective action. Non-compliance with a binding
+      order can be enforced through the courts. Exact penalty
+      structure pending consolidated Act text.
+  - tier_name: parallel_code_exposure
+    basis: per_violation
+    max_amount: null
+    currency: CAD
+    citation: Ontario Human Rights Code (uncapped damages)
+    notes: |
+      AI-driven decisions producing discriminatory outcomes face
+      HRTO complaints with uncapped general damages, lost wages,
+      and public interest remedies. This is the practical exposure
+      ceiling for municipal AI.
+last_reviewed: 2026-05-13
+reviewer: web@sentainel.com
+extraction_method: claude-opus-4-7-2026-05-13 + manual review
+---
